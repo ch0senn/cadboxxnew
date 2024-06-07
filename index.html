@@ -288,20 +288,57 @@
 	</style>
 </head>
 <body>
-    <!--<div id="container">
-        <button id="export-scene" class="button"><span>Export GLTF</span></button>
-        <button id="export-scene-bin" class="button"><span>Export GLB</span></button>
-        <button id="export-sphere" class="button"><span>Export Sphorb</span></button>
-        <button id="entvr" class="button" onclick="evr()"><span>Enter VR</span></button>
-        <button id="cam2" class="button" onclick="cmm2()"><span>Camera 2</span></button>
-        <button id="screenshot-p" class="button" onclick="screenshotp()"><span>screen persp</span></button>
-        <button id="screenshot-r" class="button" onclick="screenshotr()"><span>screen equi</span></button>
-
-
-
-
-    </div>-->
-
+   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+          data-mdb-toggle="dropdown" aria-expanded="false">
+          Dropdown link
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li>
+            <a class="dropdown-item" href="#">Action</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Another action</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              Submenu &raquo;
+            </a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li>
+                <a class="dropdown-item" href="#">Submenu item 1</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Submenu item 2</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li>
+                    <a class="dropdown-item" href="#">Multi level 1</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Multi level 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Submenu item 4</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Submenu item 5</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
 
     <a-scene physics="gravity:-10; friction:0.1; restitution:0.5">
         <!--environment="preset: contact"-->
@@ -1176,57 +1213,7 @@
         };
     </script>
 	    
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <!-- Dropdown -->
-      <li class="nav-item dropdown">
-        <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          Dropdown link
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li>
-            <a class="dropdown-item" href="#">Action</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Another action</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              Submenu &raquo;
-            </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">Submenu item 1</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Submenu item 2</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
-                <ul class="dropdown-menu dropdown-submenu">
-                  <li>
-                    <a class="dropdown-item" href="#">Multi level 1</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Multi level 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Submenu item 4</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Submenu item 5</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
+
 	    
     <script>
         function exportGLTF(input, options) {

@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
@@ -1135,111 +1143,39 @@
     </ul>
   </div>
 </nav>
-    <script>
+     <script>
         // Update individual nodes
         document.querySelector('a-scene').addEventListener('loaded', function () {
             document.getElementById("myNav").style.display = "block";
         })
 
     </script>
-    <script>
-        function exportGLTF(input, options) {
-            AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
-        }
+     <script>
 
-        document.getElementById('export-scene').addEventListener('click', function () {
-            exportGLTF();
-        });
-
-        document.getElementById('export-scene-bin').addEventListener('click', function () {
-            exportGLTF(undefined, { binary: true });
-        });
-
-        document.getElementById('export-redbxx').addEventListener('click', function () {
-            exportGLTF(document.getElementById('redbxx'), { binary: true });
-        });
-
-        document.getElementById('export-redbyy').addEventListener('click', function () {
-            exportGLTF(document.getElementById('redbyy'), { binary: true });
-        });
-
-        document.getElementById('export-redbzz').addEventListener('click', function () {
-            exportGLTF(document.getElementById('redbzz'), { binary: true });
-        });
-
-        document.getElementById('export-two').addEventListener('click', function () {
-            exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
-        });
-
-        document.getElementById('export-selector').addEventListener('click', function () {
-            exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
-        });
-
-    </script>
-    <script>
-        function openNav() {
-            document.getElementById("myNav").style.display = "block";
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.display = "none";
-        }
-    </script>
-    <script>
         function cmm1() {//set position relative to object plane
             var mainCameraEl = document.querySelector('#cam1');
             mainCameraEl.setAttribute('camera', 'active', true);
+
 
             var secondCameraEl = document.querySelector('#cam2');
             secondCameraEl.setAttribute('camera', 'active', false);
             var thirdCameraEl = document.querySelector('#cam3');
             thirdCameraEl.setAttribute('camera', 'active', false);
-            var fourthCameraEl = document.querySelector('#cam4');
-            fourthCameraEl.setAttribute('camera', 'active', false);
-            var fifthCameraEl = document.querySelector('#cam5');
-            fifthCameraEl.setAttribute('camera', 'active', false);
         };
 
         function cmm2() {//load
             var mainCameraEl = document.querySelector('#cam1');
             mainCameraEl.setAttribute('camera', 'active', false);
 
+
             var secondCameraEl = document.querySelector('#cam2');
             secondCameraEl.setAttribute('camera', 'active', true);
             var thirdCameraEl = document.querySelector('#cam3');
             thirdCameraEl.setAttribute('camera', 'active', false);
-            var fourthCameraEl = document.querySelector('#cam4');
-            fourthCameraEl.setAttribute('camera', 'active', false);
-            var fifthCameraEl = document.querySelector('#cam5');
-            fifthCameraEl.setAttribute('camera', 'active', false);
         };
 
-        /*<script>
-
-            function cmm1() {//set position relative to object plane
-                var mainCameraEl = document.querySelector('#cam1');
-            mainCameraEl.setAttribute('camera', 'active', true);
-
-
-            var secondCameraEl = document.querySelector('#cam2');
-            secondCameraEl.setAttribute('camera', 'active', false);
-            var thirdCameraEl = document.querySelector('#cam3');
-            thirdCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm2() {//load
-                var mainCameraEl = document.querySelector('#cam1');
-            mainCameraEl.setAttribute('camera', 'active', false);
-
-
-            var secondCameraEl = document.querySelector('#cam2');
-            secondCameraEl.setAttribute('camera', 'active', true);
-            var thirdCameraEl = document.querySelector('#cam3');
-            thirdCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm3() {
-                var mainCameraEl = document.querySelector('#cam1');
+        function cmm3() {
+            var mainCameraEl = document.querySelector('#cam1');
             mainCameraEl.setAttribute('camera', 'active', false);
 
 
@@ -1247,28 +1183,31 @@
             secondCameraEl.setAttribute('camera', 'active', false);
             var thirdCameraEl = document.querySelector('#cam3');
             thirdCameraEl.setAttribute('camera', 'active', true);
-            };
+        };
 
-            function cmm4() {
-                console.log(document.querySelector("prt1").getAttribute("material"))
-                if (document.querySelector("prt1").getAttribute("src") !== "m02") {
+        function cmm4() {
+            console.log(document.querySelector("prt1").getAttribute("material"))
+            if (document.querySelector("prt1").getAttribute("src") !== "m02") {
                 document.querySelector("prt1").setAttribute("src", "m01");
-                } else {
+            } else {
                 document.querySelector("prt1").setAttribute("src", "m02");
 
-                }
-            };
+            }
+        };
 
-            function cmm44() {//add + remove physics
+        function cmm44() {//add + remove physics
 
-            };
-            function cmm5() {//gravity slider
+        };
+        function cmm5() {//gravity slider
 
-            };
-            function cmm6() {//lighting intensity
+        };
+        function cmm6() {//lighting intensity
 
-            };
-                */
+        };
+
+    </script>
+
+    <script>
         function evr() {
             document.querySelector('a-scene').enterVR();
         };
@@ -1282,9 +1221,7 @@
             document.querySelector('a-scene').components.screenshot.capture('perspective');
         };
     </script>
-	    
 
-	    
     <script>
         function exportGLTF(input, options) {
             AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
@@ -1312,8 +1249,8 @@
 
     </script>
     <script>
-		document.getElemen
-		function catty() {tById('ctrl-alt-i').addEventListener('click', function () {
+        function catty() {
+            document.getElementById('ctrl-alt-i').addEventListener('click', function () {
                 // create a new keyboard event
                 var event = new KeyboardEvent('keydown', {
                     key: 'i',
@@ -1323,255 +1260,1598 @@
                 // dispatch the ctrl-alt+i key press event
                 document.dispatchEvent(event);
             });
-    
-
-    /*to auto-enter-vr*/
-    function cmm6() {
-    var scene = document.querySelector('a-scene');
-    scene.enterVR();
-    };
-
-    function cmm7() {//cadboxx opacity
-    var cadboxx = document.querySelector('planeboxx');
-    entityEl.setAttribute('opacity', 0.25);
-    };
-
-    function cmm8() {//get element by selection
-    sceneEl.components.inspector.openInspector();
-    };
-
-    function cmm9() {//set camera position from entity
-
-    };
-    function cmm10() {//click-animate a component part
-
-    };
-    function cmm11() {//open material dialogue for entity
-
-    };
-    function cmm12() {//export scene glb
-
-    };
-    function cmm13() {//export snapshot during animation dialogue
-
-    };
-    function cmm14() {//record avatar
-
-    };
-    function cmm15() {//open custom animation panel
-
-    };
-    function cmm16() {//set position relative to object plane
-
-    };
-
-    function cmm17() {//load
-    var loadingpanelEl = document.q
-    };
-
-    function cmm18() {//To remove or detach a component from an entity, we can use
-    //var cameraEl = document.querySelector('[camera]');
-    //cameraEl.removeAttribute('wasd-controls');
-
-
-
-    };
-
-    function cmm19() {//
-    // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
-    entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
-    // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
-
-    };
-    function cmm20() {//
-    entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
-    // Or entityEl.setAttribute('position', '1 2 -3');
-    };
-    function cmm21() {//
-
-    };
-    function cmm22() {//
-
-    };
-    function cmm23() {//
-
-    };
-    function cmm24() {//
-
-    };
-    function cmm25() {//
-
-    };
-    function cmm26() {//
-
-    };
-    function cmm27() {//
-
-    };
-    function cmm28() {//
-
-    };
-    function cmm29() {//
-
-    };
-    function cmm30() {//
-    entityEl.setAttribute('dynamic-body', {
-    shape: 'box',
-    mass: 1.5,
-    linearDamping: 0.005
-    });
-    };
-    function cmmd1() {//
-
-    };
-    function cmmd2() {//
-
-    };
-    function cmmd3() {//
-
-    };
-    function cmmd4() {//
-
-    };
-    function cmmd5() {//
-
-    };
-    function cmmd6() {//
-
-    };
-    function cmmd7() {//
-
-    };
-    function cmmd8() {//
-
-    };
-    function cmmd9() {//
-
-    };
-    function cmmd10() {//
-
-    };
-    function cmmd11() {//
-
-    };
-    function cmmd12() {//
-
-    };
-    function cmmd13() {//
-
-    };
-    function cmmd14() {//
-
-    };
-    function cmmd15() {//
-
-    };
-    function cmmd16() {//
-
-    };
-    function cmmd17() {//
-
-    };
-    function cmmd18() {//
-
-    };
-    function cmmd19() {//
-
-    };
-    function cmmd20() {//
-
-    };
-    function cmmd21() {//
-
-    };
-    function cmmd22() {//
-
-    };
-    function cmmd23() {//
-
-    };
-    function cmmd24() {//
-
-    };
-    function cmmd25() {//
-
-    };
-
-    function cmma1() {//
-
-    };
-    function cmma2() {//
-
-    };
-    function cmma3() {//
-
-    };
-    function cmma4() {//
-
-    };
-    function cmma5() {//
-
-    };
-    function cmma6() {//
-
-    };
-    function cmma7() {//
-
-    };
-    function cmma8() {//
-
-    };
-    function cmma9() {//
-
-    };
-    function cmma10() {//
-
-    };
-    function cmma11() {//
-
-    };
-    function cmma12() {//
-
-    };
-    function cmma13() {//
-
-    };
-    function cmma14() {//
-
-    };
-    function cmma15() {//
-
-    };
-    function cmma16() {//
-
-    };
-    function cmma17() {//
-
-    };
-    function cmma18() {//
-
-    };
-    function cmma19() {//
-
-    };
-    function cmma20() {//
-
-    };
-    function cmma21() {//
-
-    };
-    function cmma22() {//
-
-    };
-    function cmma23() {//
-
-    };
-    function cmma24() {//
-
-    };
-    function cmma25() {//
-
-    };
+    </script>
+
+    <script type="text/javascript">
+        var hueb = new Huebee('.color-input', {
+            // options
+            notation: 'hex',
+            saturations: 2,
+            setText: true,
+            customColors: ['#ffffff']
+        });
+        const ADD = 0;
+        const REMOVE = 1;
+        const EDIT = 2;
+        var state = ADD;
+        var cursor3D = document.querySelector('#my-cursor');
+        var scene = document.querySelector('a-scene');
+        var initialScale = 0.01;
+        var rotationYOffset = 0;
+        var selected = null;
+
+        var reader = new FileReader();
+        var colorIndex = 0;
+        var usedColor = 10;
+        hueb.on('change', function (color, hue, sat, lum) {
+            if (state == ADD && cursor3D.getAttribute('stl-model'))
+                cursor3D.setAttribute('material', 'color', color);
+
+            if (state == EDIT && selected)
+                selected.setAttribute('material', 'color', color);
+
+            for (var i = 0; i < hueb.options.customColors.length; i++)
+                if (hueb.options.customColors[i] == color)
+                    return;
+
+            hueb.options.customColors[colorIndex] = color;
+            hueb.updateColors();
+            colorIndex++;
+            if (colorIndex > usedColor)
+                colorIndex = 0;
+        })
+
+        // document.querySelector('#save').addEventListener('click', function() {
+        // TODO: save function for electron implementation
+        //   scene.flushToDOM(true);
+        //   console.log(scene);
+        // });
+
+
+
+        document.querySelector('#evr').addEventListener('click', function () {
+            document.querySelector('a-scene').enterVR();
+        });
+        document.querySelector('#screenshot-r').addEventListener('click', function () {
+            document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+        });
+        document.querySelector('#screenshot-p').addEventListener('click', function () {
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
+        });
+        document.querySelector('#environment').addEventListener('change', function () {
+            document.querySelector('#env').setAttribute('environment', 'preset', event.target.value)
+            //document.querySelector('#env').setAttribute('environment', 'ground', 'flat');
+            //document.querySelector('#env').setAttribute('environment', 'groundYScale', document.querySelector('#env').getAttribute('environment').groundYScale / 2);
+            document.querySelector('#env').setAttribute('environment', 'playArea', 1.5);
+            //document.querySelector('#env').setAttribute('environment', 'shadow', 'true');
+            document.querySelector('#env').setAttribute('environment', 'flatShading', 'true');
+            var reducedDressing = document.querySelector('#env').getAttribute('environment').dressingAmount;
+            if (reducedDressing > 50)
+                document.querySelector('#env').setAttribute('environment', 'dressingAmount', reducedDressing / 2);
+        });
+        document.querySelector('#add').addEventListener('click', function () {
+            state = ADD;
+            if (cursor3D.getAttribute('material'))
+                hueb.setColor(cursor3D.getAttribute('material').color);
+            cursor3D.setAttribute('visible', true);
+            document.querySelector('.active').classList.toggle('active');
+            document.querySelector('#add').classList.toggle('active');
+        });
+        document.querySelector('#remove').addEventListener('click', function () {
+            state = REMOVE;
+            cursor3D.setAttribute('visible', false);
+            document.querySelector('.active').classList.toggle('active');
+            document.querySelector('#remove').classList.toggle('active');
+
+        });
+        document.querySelector('#edit').addEventListener('click', function () {
+            state = EDIT;
+            cursor3D.setAttribute('visible', false);
+            document.querySelector('.active').classList.toggle('active');
+            document.querySelector('#edit').classList.toggle('active');
+
+        });
+        var inventoryIndex = 0;
+        reader.addEventListener("load", function () {
+            if (state != ADD)
+                return;
+            cursor3D.setAttribute('stl-model', { src: reader.result });
+            cursor3D.setAttribute('scale', { x: initialScale, y: initialScale, z: initialScale });
+            cursor3D.setAttribute('material', 'color', hueb.color);
+            var listElement = document.createElement('a-entity')
+            listElement.setAttribute('position', { x: -1.8 + (.45 * inventoryIndex), y: -1, z: -1.5 })
+
+            listElement.setAttribute('rotation', { x: -90, y: 0, z: 0 })
+            listElement.setAttribute('class', 'ignore-ray');
+            listElement.setAttribute('stl-model', { src: reader.result });
+            listElement.setAttribute('scale', { x: initialScale * .2, y: initialScale * .2, z: initialScale * .2 });
+            var shortCutText = document.createElement('a-entity');
+            shortCutText.setAttribute('text', 'value: ' + (inventoryIndex + 1))
+            shortCutText.setAttribute('text', 'anchor: left')
+            shortCutText.setAttribute('text', 'baseline', "center")
+            shortCutText.setAttribute('scale', '1000 1000 1000')
+            //shortCutText.setAttribute('position', {x:-2 + (.45 * inventoryIndex), y:-1.15, z: -1.5})
+            shortCutText.setAttribute('position', { x: 0, y: 0, z: -90 })
+            shortCutText.setAttribute('rotation', { x: 90, y: 0, z: 0 })
+            shortCutText.object3D.layers.set(1)
+            inventoryIndex++;
+
+            listElement.appendChild(shortCutText)
+            document.querySelector('#my-camera').appendChild(listElement)
+        }, false);
+
+
+        scene.addEventListener("drag-and-drop", function (event) {
+            var file = event.detail.file;
+            reader.readAsDataURL(file);
+        });
+        window.addEventListener("keydown", function (event) {
+            //console.log(event.key)
+            if (inventoryIndex + 1 > event.key) {
+                //console.log()
+                cursor3D.setAttribute('stl-model', document.querySelector('#my-camera').children[event.key].getAttribute('stl-model'))
+            }
+        }, true)
+
+        window.addEventListener("contextmenu", function (event) {
+            if (state == ADD && cursor3D.getAttribute('stl-model') != null) {
+                var el = document.createElement('a-entity');
+                el.setAttribute('stl-model', cursor3D.getAttribute('stl-model'));
+                el.setAttribute('scale', cursor3D.getAttribute('scale'));
+                var rotation = { x: THREE.Math.radToDeg(cursor3D.object3D.rotation.x), y: THREE.Math.radToDeg(cursor3D.object3D.rotation.y), z: THREE.Math.radToDeg(cursor3D.object3D.rotation.z) };
+                var position = cursor3D.getAttribute('position');
+                var material = cursor3D.getAttribute('material');
+                el.setAttribute('position', { x: position.x, y: position.y, z: position.z });
+                el.setAttribute('rotation', { x: rotation.x, y: rotation.y, z: rotation.z });
+                el.setAttribute('material', 'color', material.color);
+
+                el.addEventListener('raycaster-intersected', function () {
+                    selected = el;
+
+                    if (state == EDIT)
+                        hueb.setColor(selected.getAttribute('material').color)
+                }, true);
+                el.addEventListener('raycaster-intersected-cleared', function () {
+                    selected = null;
+                }, true);
+
+                scene.appendChild(el);
+            } else if (state == REMOVE && selected) {
+                selected.parentNode.removeChild(selected);
+                selected = null;
+            }
+            event.preventDefault();
+        });
+        //
+        window.addEventListener("wheel", function (event) {
+            var currentlySelected;
+            if (state == ADD) {
+                currentlySelected = cursor3D;
+            } else if (state == EDIT) {
+                currentlySelected = selected;
+            }
+
+            if (!currentlySelected)
+                return;
+            //
+            if (!event.ctrlKey) {
+                var currentScale = currentlySelected.getAttribute('scale').x;
+                var delta = 0.001;
+                if (event.shiftKey)
+                    delta = 0.01;
+                if (event.deltaY > 0) {
+                    delta = -delta;
+                }
+                currentScale += delta;
+                if (currentScale <= 0)
+                    currentScale = 0.001;
+
+                currentlySelected.setAttribute('scale', { x: currentScale, y: currentScale, z: currentScale });
+            } else {
+                var currentRotation = currentlySelected.getAttribute('rotation');
+                var delta = 5;
+                if (event.shiftKey)
+                    delta = 10;
+                if (event.deltaY > 0) {
+                    delta = -delta;
+                }
+                currentRotation.y += delta;
+
+                currentlySelected.setAttribute('rotation', { x: currentRotation.x, y: currentRotation.y, z: currentRotation.z });
+                //console.log(currentRotation.y);
+            }
+            event.preventDefault();
+            //return true;
+        }, true)
+        document.addEventListener("wheel", function () {
+            event.preventDefault();
+        })
+    </script>
+
+    <script>
+
+        function cmm1() {//set position relative to object plane
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', true);
+
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm2() {//load
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', true);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm3() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', true);
+        };
+
+        function cmm4() {
+            console.log(document.querySelector("prt1").getAttribute("material"))
+            if (document.querySelector("prt1").getAttribute("src") !== "m02") {
+                document.querySelector("prt1").setAttribute("src", "m01");
+            } else {
+                document.querySelector("prt1").setAttribute("src", "m02");
+
+            }
+        };
+
+        function cmm44() {//add + remove physics
+
+        };
+        function cmm5() {//gravity slider
+
+        };
+        function cmm6() {//lighting intensity
+
+        };
+
+    </script>
+
+    <script>
+        function evr() {
+            document.querySelector('a-scene').enterVR();
+        };
+        function screenshotr() {
+            document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+        };
+        function screenshotp() {
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
+        };
+        function cammy() {
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
+        };
+    </script>
+
+    <script>
+        function exportGLTF(input, options) {
+            AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+        }
+
+        document.getElementById('export-scene').addEventListener('click', function () {
+            exportGLTF();
+        });
+
+        document.getElementById('export-scene-bin').addEventListener('click', function () {
+            exportGLTF(undefined, { binary: true });
+        });
+
+        document.getElementById('export-sphere').addEventListener('click', function () {
+            exportGLTF(document.getElementById('yellowSphere'), { binary: true });
+        });
+
+        document.getElementById('export-two').addEventListener('click', function () {
+            exportGLTF([document.getElementById('blueBox'), document.getElementById('yellowSphere')]);
+        });
+
+        document.getElementById('export-selector').addEventListener('click', function () {
+            exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+        });
+
+    </script>
+    <script>
+        function catty() {
+            document.getElementById('ctrl-alt-i').addEventListener('click', function () {
+                // create a new keyboard event
+                var event = new KeyboardEvent('keydown', {
+                    key: 'i',
+                    altKey: true,
+                    ctrlKey: true
+                });
+                // dispatch the ctrl-alt+i key press event
+                document.dispatchEvent(event);
+            });
+    </script>
+
+    <script type="text/javascript">
+        var hueb = new Huebee('.color-input', {
+            // options
+            notation: 'hex',
+            saturations: 2,
+            setText: true,
+            customColors: ['#ffffff']
+        });
+        const ADD = 0;
+        const REMOVE = 1;
+        const EDIT = 2;
+        var state = ADD;
+        var cursor3D = document.querySelector('#my-cursor');
+        var scene = document.querySelector('a-scene');
+        var initialScale = 0.01;
+        var rotationYOffset = 0;
+        var selected = null;
+
+        var reader = new FileReader();
+        var colorIndex = 0;
+        var usedColor = 10;
+        hueb.on('change', function (color, hue, sat, lum) {
+            if (state == ADD && cursor3D.getAttribute('stl-model'))
+                cursor3D.setAttribute('material', 'color', color);
+
+            if (state == EDIT && selected)
+                selected.setAttribute('material', 'color', color);
+
+            for (var i = 0; i < hueb.options.customColors.length; i++)
+                if (hueb.options.customColors[i] == color)
+                    return;
+
+            hueb.options.customColors[colorIndex] = color;
+            hueb.updateColors();
+            colorIndex++;
+            if (colorIndex > usedColor)
+                colorIndex = 0;
+        })
+
+        // document.querySelector('#save').addEventListener('click', function() {
+        // TODO: save function for electron implementation
+        //   scene.flushToDOM(true);
+        //   console.log(scene);
+        // });
+
+
+
+        document.querySelector('#evr').addEventListener('click', function () {
+            document.querySelector('a-scene').enterVR();
+        });
+        document.querySelector('#screenshot-r').addEventListener('click', function () {
+            document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+        });
+        document.querySelector('#screenshot-p').addEventListener('click', function () {
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
+        });
+        document.querySelector('#environment').addEventListener('change', function () {
+            document.querySelector('#env').setAttribute('environment', 'preset', event.target.value)
+            //document.querySelector('#env').setAttribute('environment', 'ground', 'flat');
+            //document.querySelector('#env').setAttribute('environment', 'groundYScale', document.querySelector('#env').getAttribute('environment').groundYScale / 2);
+            document.querySelector('#env').setAttribute('environment', 'playArea', 1.5);
+            //document.querySelector('#env').setAttribute('environment', 'shadow', 'true');
+            document.querySelector('#env').setAttribute('environment', 'flatShading', 'true');
+            var reducedDressing = document.querySelector('#env').getAttribute('environment').dressingAmount;
+            if (reducedDressing > 50)
+                document.querySelector('#env').setAttribute('environment', 'dressingAmount', reducedDressing / 2);
+        });
+        document.querySelector('#add').addEventListener('click', function () {
+            state = ADD;
+            if (cursor3D.getAttribute('material'))
+                hueb.setColor(cursor3D.getAttribute('material').color);
+            cursor3D.setAttribute('visible', true);
+            document.querySelector('.active').classList.toggle('active');
+            document.querySelector('#add').classList.toggle('active');
+        });
+        document.querySelector('#remove').addEventListener('click', function () {
+            state = REMOVE;
+            cursor3D.setAttribute('visible', false);
+            document.querySelector('.active').classList.toggle('active');
+            document.querySelector('#remove').classList.toggle('active');
+
+        });
+        document.querySelector('#edit').addEventListener('click', function () {
+            state = EDIT;
+            cursor3D.setAttribute('visible', false);
+            document.querySelector('.active').classList.toggle('active');
+            document.querySelector('#edit').classList.toggle('active');
+
+        });
+        var inventoryIndex = 0;
+        reader.addEventListener("load", function () {
+            if (state != ADD)
+                return;
+            cursor3D.setAttribute('stl-model', { src: reader.result });
+            cursor3D.setAttribute('scale', { x: initialScale, y: initialScale, z: initialScale });
+            cursor3D.setAttribute('material', 'color', hueb.color);
+            var listElement = document.createElement('a-entity')
+            listElement.setAttribute('position', { x: -1.8 + (.45 * inventoryIndex), y: -1, z: -1.5 })
+
+            listElement.setAttribute('rotation', { x: -90, y: 0, z: 0 })
+            listElement.setAttribute('class', 'ignore-ray');
+            listElement.setAttribute('stl-model', { src: reader.result });
+            listElement.setAttribute('scale', { x: initialScale * .2, y: initialScale * .2, z: initialScale * .2 });
+            var shortCutText = document.createElement('a-entity');
+            shortCutText.setAttribute('text', 'value: ' + (inventoryIndex + 1))
+            shortCutText.setAttribute('text', 'anchor: left')
+            shortCutText.setAttribute('text', 'baseline', "center")
+            shortCutText.setAttribute('scale', '1000 1000 1000')
+            //shortCutText.setAttribute('position', {x:-2 + (.45 * inventoryIndex), y:-1.15, z: -1.5})
+            shortCutText.setAttribute('position', { x: 0, y: 0, z: -90 })
+            shortCutText.setAttribute('rotation', { x: 90, y: 0, z: 0 })
+            shortCutText.object3D.layers.set(1)
+            inventoryIndex++;
+
+            listElement.appendChild(shortCutText)
+            document.querySelector('#my-camera').appendChild(listElement)
+        }, false);
+
+
+        scene.addEventListener("drag-and-drop", function (event) {
+            var file = event.detail.file;
+            reader.readAsDataURL(file);
+        });
+        window.addEventListener("keydown", function (event) {
+            //console.log(event.key)
+            if (inventoryIndex + 1 > event.key) {
+                //console.log()
+                cursor3D.setAttribute('stl-model', document.querySelector('#my-camera').children[event.key].getAttribute('stl-model'))
+            }
+        }, true)
+
+        window.addEventListener("contextmenu", function (event) {
+            if (state == ADD && cursor3D.getAttribute('stl-model') != null) {
+                var el = document.createElement('a-entity');
+                el.setAttribute('stl-model', cursor3D.getAttribute('stl-model'));
+                el.setAttribute('scale', cursor3D.getAttribute('scale'));
+                var rotation = { x: THREE.Math.radToDeg(cursor3D.object3D.rotation.x), y: THREE.Math.radToDeg(cursor3D.object3D.rotation.y), z: THREE.Math.radToDeg(cursor3D.object3D.rotation.z) };
+                var position = cursor3D.getAttribute('position');
+                var material = cursor3D.getAttribute('material');
+                el.setAttribute('position', { x: position.x, y: position.y, z: position.z });
+                el.setAttribute('rotation', { x: rotation.x, y: rotation.y, z: rotation.z });
+                el.setAttribute('material', 'color', material.color);
+
+                el.addEventListener('raycaster-intersected', function () {
+                    selected = el;
+
+                    if (state == EDIT)
+                        hueb.setColor(selected.getAttribute('material').color)
+                }, true);
+                el.addEventListener('raycaster-intersected-cleared', function () {
+                    selected = null;
+                }, true);
+
+                scene.appendChild(el);
+            } else if (state == REMOVE && selected) {
+                selected.parentNode.removeChild(selected);
+                selected = null;
+            }
+            event.preventDefault();
+        });
+        //
+        window.addEventListener("wheel", function (event) {
+            var currentlySelected;
+            if (state == ADD) {
+                currentlySelected = cursor3D;
+            } else if (state == EDIT) {
+                currentlySelected = selected;
+            }
+
+            if (!currentlySelected)
+                return;
+            //
+            if (!event.ctrlKey) {
+                var currentScale = currentlySelected.getAttribute('scale').x;
+                var delta = 0.001;
+                if (event.shiftKey)
+                    delta = 0.01;
+                if (event.deltaY > 0) {
+                    delta = -delta;
+                }
+                currentScale += delta;
+                if (currentScale <= 0)
+                    currentScale = 0.001;
+
+                currentlySelected.setAttribute('scale', { x: currentScale, y: currentScale, z: currentScale });
+            } else {
+                var currentRotation = currentlySelected.getAttribute('rotation');
+                var delta = 5;
+                if (event.shiftKey)
+                    delta = 10;
+                if (event.deltaY > 0) {
+                    delta = -delta;
+                }
+                currentRotation.y += delta;
+
+                currentlySelected.setAttribute('rotation', { x: currentRotation.x, y: currentRotation.y, z: currentRotation.z });
+                //console.log(currentRotation.y);
+            }
+            event.preventDefault();
+            //return true;
+        }, true)
+        document.addEventListener("wheel", function () {
+            event.preventDefault();
+        })
+    </script>
+
+  
+
+  
+<!-- Hands. -->
+            <a-entity id="teleHand"
+                      hand-controls="left"
+                      teleport-controls="type: parabolic; collisionEntities: [mixin='voxelcb1'], #anchor"></a-entity>
+
+            <a-entity id="blockHand"
+                      hand-controls="right"
+                      controller-cursor
+                      intersection-spawn="event: click; mixin: voxelcb1"></a-entity>
+
+            <a-light type="point" color="#94c6ff" position="0 0 0" intensity="1" light="intensity: 2" visible="true"></a-light>
+            <a-light type="directional" directionaltarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 -16 16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="16 -16 -16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 -16 -16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="16 16 16" intensity="1"></a-light>
+
+            <a-light type="spot" color="#94c6ff" position="0 16 16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="0 16 -16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="16 16 16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="16 -16 16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="16 0 16" intensity="1"></a-light>
+
+
+            <a-camera id="cam1" position="0 6 12" look-controls active="true">
+                <a-cursor intersection-spawn="event: click; mixin: voxelcb1"></a-cursor>
+            </a-camera>
+            <a-camera id="cam2" position="-12 6 0" look-controls active="false">
+                <a-cursor intersection-spawn="event: click; mixin: voxelccyly"></a-cursor>
+            </a-camera>
+            <a-camera id="cam3" position="12 6 0" look-controls active="false">
+                <a-cursor intersection-spawn="event: click; mixin: voxelccylx"></a-cursor>
+            </a-camera>
+            <a-camera id="cam4" position="0 12 0" look-controls active="false">
+                <a-cursor intersection-spawn="event: click; mixin: voxelccylz"></a-cursor>
+            </a-camera>
+            <a-camera id="cam5" position="0 6 12" look-controls active="false">
+                <a-cursor intersection-spawn="event: click; mixin: voxelcdodd1"></a-cursor>
+            </a-camera>
+            <a-camera id="cam6" position="12 6 0" look-controls active="false">
+                <!---->
+            </a-camera>
+            <a-camera id="cam7" position="-12 6 0" look-controls active="false">
+
+            </a-camera>
+            <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
+
+            </a-camera>
+            <a-camera id="cam9" position="12 6 0" look-controls active="false">
+
+            </a-camera>
+
+            <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
+                <a-cursor></a-cursor>
+            </a-entity>
+            <!--<a-camera>
+            <a-cursor></a-cursor>
+            <!-- Or <a-entity cursor></a-entity>
+            </a-camera>-->
+
+
+            <a-sky color="#ECECEC"></a-sky>
+        </a-scene>
+    </div>
+    <script>
+        document.querySelector('a-scene').addEventListener('loaded', function () {
+            document.getElementById("myNav").style.display = "block";
+        })
+
+    </script>
+
+    <script>
+        function newassemblytemplate() {
+            const bodie = document.querySelector("#part0");
+            const connector1 = document.querySelector("#conn1")
+            const limb = document.createElement("a-sphere");
+            sphere.setAttribute("color", "#crimson");
+            sphere.setAttribute("radius", "0.5");
+            sphere.setAttribute("position", "-3 2 0");
+            bodie.appendChild(limb);
+
+            render();
+        }
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+
+
+    <!--new geometrues-->
+    <script>
+        function newsphere() {
+            const scene = document.querySelector("a-scene");
+            const sphere = document.createElement("a-sphere");
+            sphere.setAttribute("color", "#crimson");
+            sphere.setAttribute("radius", "1.0");
+            sphere.setAttribute("position", "5 0 0");
+            scene.appendChild(sphere);
+
+            render();
+        }
+
+    </script>
+    <script>
+        function newcube() {
+            const scene = document.querySelector("a-scene");
+            const box = document.createElement("a-box");
+            box.setAttribute("color", "blue");
+            box.setAttribute("height", "2");
+            box.setAttribute("width", "2");
+            box.setAttribute("depth", "2");
+            box.setAttribute("position", "-5 0 0");
+            scene.appendChild(box);
+
+            render();
+        }
+
+    </script>
+    <script>
+        function newcyl() {
+            const scene = document.querySelector("a-scene");
+            const cylinder = document.createElement("a-cylinder");
+            cylinder.setAttribute("color", "#FF9500");
+            cylinder.setAttribute("height", "2");
+            cylinder.setAttribute("radius", "1.0");
+            cylinder.setAttribute("position", "0 0 5");
+            scene.appendChild(cylinder);
+
+            render();
+        }
+
+    </script>
+    <script>
+        function newtet() {
+            const scene = document.querySelector("a-scene");
+            const tetrahedron = document.createElement("a-tetrahedron");
+            tetrahedron.setAttribute("color", "#FF9500");
+            tetrahedron.setAttribute("radius", "1.5");
+            tetrahedron.setAttribute("position", "0 0 -5");
+            scene.appendChild(tetrahedron);
+
+            render();
+        }
+
+    </script>
+    <script>
+        function newline() {
+            const scene = document.querySelector("a-scene");
+            const line = document.createElement("a-line");
+            line.setAttribute("color", "black");
+            line.setAttribute("opacity", "1.0");
+            line.setAttribute("points", "0 0 0, 0 1 0");
+            scene.appendChild(line);
+
+            render();
+        }
+
+    </script>
+    <script>
+        function newcircle() {
+            const scene = document.querySelector("a-scene");
+            const circle = document.createElement("a-circle");
+            circle.setAttribute("color", "#FF9500");
+            circle.setAttribute("radius", "1.0");
+            circle.setAttribute("position", "-3 3 0");
+            scene.appendChild(circle);
+
+            render();
+        }
+
+    </script>
+
+    <script>
+        function exportGLTF(input, options) {
+            AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+        }
+
+        document.getElementById('export-scene').addEventListener('click', function () {
+            exportGLTF();
+        });
+
+        document.getElementById('export-scene-bin').addEventListener('click', function () {
+            exportGLTF(undefined, { binary: true });
+        });
+
+        document.getElementById('export-redbxx').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbxx'), { binary: true });
+        });
+
+        document.getElementById('export-redbyy').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbyy'), { binary: true });
+        });
+
+        document.getElementById('export-redbzz').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbzz'), { binary: true });
+        });
+
+        document.getElementById('export-ground').addEventListener('click', function () {
+            exportGLTF(document.getElementById('ground'), { binary: true });
+        });
+
+        document.getElementById('export-two').addEventListener('click', function () {
+            exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+        });
+
+        document.getElementById('export-selector').addEventListener('click', function () {
+            exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+        });
+
+    </script>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+    </script>
+    <script>
+        function myNav() {
+
+        }
+    </script>
+    <script>
+        function cmm1() {//set position relative to object plane
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', true);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm2() {//load
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', true);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm3() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', true);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', trfalseue);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm4() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', true);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm5() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', true);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm6() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', true);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm7() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', true);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm8() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', true);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm9() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', true);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm10() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+            var sixthCameraEl = document.querySelector('#cam6');
+            sixthCameraEl.setAttribute('camera', 'active', false);
+            var seventhCameraEl = document.querySelector('#cam7');
+            seventhCameraEl.setAttribute('camera', 'active', false);
+            var eigthCameraEl = document.querySelector('#cam8');
+            eigthCameraEl.setAttribute('camera', 'active', false);
+            var ninthCameraEl = document.querySelector('#cam9');
+            ninthCameraEl.setAttribute('camera', 'active', false);
+            var tenthCameraEl = document.querySelector('#cam10');
+            tenthCameraEl.setAttribute('camera', 'active', true);
+        };
+
+        /*to auto-enter-vr*/
+        function cmm11() {
+            var scene = document.querySelector('a-scene');
+            scene.enterVR();
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+        /*whatitdoes*/
+        function xxzz() {
+
+        };
+
+
+
+    </script>
+
+
+
+
+
+
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+    <img src="img/cad-boxx.png" width="30" height="30" alt="">
+  </a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    PLATFORMS
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://sketchfab.com/fasteng/" target="_blank" rel="noopener">SKETCHFAB</a>
+                    <!--<a class="dropdown-item" href="https://hubs.mozilla.com/" target="_blank" rel="noopener">HUBS</a>
+                    <a class="dropdown-item" href="https://hubs.mozilla.com/spoke" target="_blank" rel="noopener">SPOKE</a>
+   -->                 
+                    <a class="dropdown-item" href="https://glitch.com/" target="_blank" rel="noopener">GLITCH</a>
+   
+                    <a class="dropdown-item" href="V1_NEW.html" target="_blank" rel="noopener">CADBOXX</a>
+                        
+                    <a class="dropdown-item" href="V2_NEW.html" target="_blank" rel="noopener">V2_NEW</a>
+                    <a class="dropdown-item" href="V3_NEW.html" target="_blank" rel="noopener">V3_NEW</a>
+                    <a class="dropdown-item" href="V4_NEW.html" target="_blank" rel="noopener">V4_NEW</a>
+                    <a class="dropdown-item" href="V5_NEW.html" target="_blank" rel="noopener">V5_NEW</a>
+                    
+                    
+                        
+                </div>
+            </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    EXPORT
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" id="export-scene" onclick="export()" >Scene   </a>
+                    <a class="dropdown-item" id="export-scene-bin">GLB</a>
+                    <a class="dropdown-item" id="export-assy">ASSEMBLY</a>
+                    <a class="dropdown-item" id="export-redbnn">BNN</a>
+                    <a class="dropdown-item" id="export-redboo">BOO</a>
+                    <a class="dropdown-item" id="export-redbpp">BPP</a>
+                    <a class="dropdown-item" id="export-redbqq">BQQ</a>
+                    <a class="dropdown-item" id="export-redbrr">BRR</a>
+                    <a class="dropdown-item" id="export-redbss">BSS</a>
+                    <a class="dropdown-item" id="export-redbxx">BXX</a>
+                    <a class="dropdown-item" id="export-redbyy">BYY</a>
+                    <a class="dropdown-item" id="export-redbzz">BZZ</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    views
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="window.open("https://hubs.mozilla.com", "_blank");">Hubs</a>
+                    <a class="dropdown-item" onclick="window.open("https://spoke.mozilla.com", "_blank");">Spoke</a>
+                    <a class="dropdown-item" onclick="window.open("https://sketchfab.com", "_blank");">Sketchfab</a>
+
+                    <a class="dropdown-item" onclick="cmm2()">Cam2</a>
+                    <a class="dropdown-item" onclick="cmm3()">Cam3</a>
+                    <a class="dropdown-item" onclick="cmm4()">Cam4</a>
+                    <a class="dropdown-item" onclick="cmm5()">Cam5</a>
+                    <a class="dropdown-item" onclick="cmm6()">Cam6</a>
+                    <a class="dropdown-item" onclick="cmm7()">Cam7</a>
+                    <a class="dropdown-item" onclick="cmm8()">Cam8</a>
+                    <a class="dropdown-item" onclick="cmm9()">Cam9</a>
+                    <a class="dropdown-item" onclick="cmm10()">Cam10</a>
+
+
+                </div>
+            </li>
+           <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    geometry
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="newcube()">Box</a>
+                    <a class="dropdown-item" onclick="newsphere()">Sphere</a>
+                    <a class="dropdown-item" onclick="newcyl()">Cylinder</a>
+                    <a class="dropdown-item" onclick="newtet()">Tet</a>
+                    <a class="dropdown-item" onclick="newplane()">Plane</a>
+                    <a class="dropdown-item" onclick="newcircle()">Circle</a>
+                    <a class="dropdown-item" onclick="newcurve()">Curve</a>
+                    <a class="dropdown-item" onclick="newpoint()">Poiint</a>
+                    <a class="dropdown-item" onclick="newline()">Line</a>
+                    <a class="dropdown-item" onclick="newsketch()">Sketch</a>
+                    <a class="dropdown-item" onclick="newaxis()">Axis</a>
+
+                </div>
+            </li>
+-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    utiks
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="evr()">EnterVR</a>
+                    <a class="dropdown-item" onclick="screenshotp()">PERSP</a>
+                    <a class="dropdown-item" onclick="screenshotr()">RECT</a>
+                   <a class="dropdown-item" onclick="pvis1()">PVIS1</a>
+                    <a class="dropdown-item" onclick="pvis2()">PVIS2</a>
+                    <a class="dropdown-item" onclick="pvis3()">PVIS3</a>
+<!--                    <a class="dropdown-item" onclick="newcurve()">PVIS3</a>
+                    <a class="dropdown-item" onclick="newpoint()">Poiint</a>
+                    <a class="dropdown-item" onclick="newline()">Line</a>
+                    <a class="dropdown-item" onclick="newsketch()">Sketch</a>
+                    <a class="dropdown-item" onclick="newaxis()">Axis</a>
+-->
+                </div>
+            </li>
+<!--
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    GLB GEOM
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="newglbox()">Box</a>
+                    <a class="dropdown-item" onclick="newglbsphere()">Sphere</a>
+                    <a class="dropdown-item" onclick="newglbcylinder()">Cylinder</a>
+                    <a class="dropdown-item" onclick="newglbplane()">Plane</a>
+                    <a class="dropdown-item" onclick="newmodel-1()">Model1</a>
+                    <a class="dropdown-item" onclick="newmodel-2()">Model2</a>
+                    <a class="dropdown-item" onclick="newmodel-3()">Model3</a>
+                    <a class="dropdown-item" onclick="newmodel-4()">Model4</a>
+
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Joints
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="plainbrg()">PlainBRG</a>
+                    <a class="dropdown-item" onclick="sliding()">Sliding</a>
+                    <a class="dropdown-item" onclick="fixed()">Fixed</a>
+                    <a class="dropdown-item" onclick="balljoint()">Balljoint</a>
+                    <a class="dropdown-item" onclick="distance()">Sphere</a>
+                    <a class="dropdown-item" onclick="hingejoint()">Hinge</a>
+
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Templates
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="steeredwheel()">Steered</a>
+                    <a class="dropdown-item" onclick="rearwheel()">Axled</a>
+                    <a class="dropdown-item" onclick="vehicle()">Vehicle</a>
+                    <a class="dropdown-item" onclick="crankshaft()">Crankshaft</a>
+                    <a class="dropdown-item" onclick="template2()">T2</a>
+                    <a class="dropdown-item" onclick="template3()">T3</a>
+                    <a class="dropdown-item" onclick="template4()">T4</a>
+                    <a class="dropdown-item" onclick="template5()">T5</a>
+                    <a class="dropdown-item" onclick="template6()">T6</a>
+
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    models
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="newglbox()">Box</a>
+                    <a class="dropdown-item" onclick="newglbsphere()">Sphere</a>
+                    <a class="dropdown-item" onclick="newglbcylinder()">Cylinder</a>
+                    <a class="dropdown-item" onclick="newglbplane()">Plane</a>
+                    <a class="dropdown-item" onclick="newconetopoint()">Cone2Point</a>
+                    <a class="dropdown-item" onclick="newconetoflat()">Cone2Flat</a>
+                    <a class="dropdown-item" onclick="newtriangleplane()">TriPlane</a>
+                    <a class="dropdown-item" onclick="newcircle()">Circle</a>
+
+                </div>
+            </li>-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    PART-VIS
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="visp0()">P0</a>
+                    <a class="dropdown-item" onclick="visp1()">P1</a>
+                    <a class="dropdown-item" onclick="visp2()">P2</a>
+                    <a class="dropdown-item" onclick="visp3()">P3</a>
+                    <a class="dropdown-item" onclick="visp4()">P4</a>
+                    <a class="dropdown-item" onclick="visp5()">P5</a>
+                    <a class="dropdown-item" onclick="visp6()">P6</a>
+                    <a class="dropdown-item" onclick="visp7()">P7</a>
+                    <a class="dropdown-item" onclick="visp8()">P8</a>
+                    <a class="dropdown-item" onclick="visp9()">P9</a>
+
+                </div>
+            </li>
+        </div>
+    </nav>
+
+
+    <script>
+        // Update individual nodes
+        document.querySelector('a-scene').addEventListener('loaded', function () {
+            document.getElementById("myNav").style.display = "block";
+        })
+
+    </script>
+
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+    </script>
+    <script>
+        /*to auto-enter-vr*/
+        function cmm6() {
+            var scene = document.querySelector('a-scene');
+            scene.enterVR();
+        };
+
+        function cmm7() {//cadboxx opacity
+            var cadboxx = document.querySelector('planeboxx');
+            entityEl.setAttribute('opacity', 0.25);
+        };
+
+        function cmm8() {//get element by selection
+            sceneEl.components.inspector.openInspector();
+        };
+
+        function cmm9() {//set camera position from entity
+
+        };
+        function cmm10() {//click-animate a component part
+
+        };
+        function cmm11() {//open material dialogue for entity
+
+        };
+        function cmm12() {//export scene glb
+
+        };
+        function cmm13() {//export snapshot during animation dialogue
+
+        };
+        function cmm14() {//record avatar
+
+        };
+        function cmm15() {//open custom animation panel
+
+        };
+        function cmm16() {//set position relative to object plane
+
+        };
+
+        function cmm17() {//load
+            var loadingpanelEl = document.q
+        };
+
+        function cmm18() {//To remove or detach a component from an entity, we can use
+            //var cameraEl = document.querySelector('[camera]');
+            //cameraEl.removeAttribute('wasd-controls');
+
+
+
+        };
+
+        function cmm19() {//
+            // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
+            entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
+            // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
+
+        };
+        function cmm20() {//
+            entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
+            // Or entityEl.setAttribute('position', '1 2 -3');
+        };
+        function cmm21() {//
+
+        };
+        function cmm22() {//
+
+        };
+        function cmm23() {//
+
+        };
+        function cmm24() {//
+
+        };
+        function cmm25() {//
+
+        };
+        function cmm26() {//
+
+        };
+        function cmm27() {//
+
+        };
+        function cmm28() {//
+
+        };
+        function cmm29() {//
+
+        };
+        function cmm30() {//
+            entityEl.setAttribute('dynamic-body', {
+                shape: 'box',
+                mass: 1.5,
+                linearDamping: 0.005
+            });
+        };
+        function cmmd1() {//
+
+        };
+        function cmmd2() {//
+
+        };
+        function cmmd3() {//
+
+        };
+        function cmmd4() {//
+
+        };
+        function cmmd5() {//
+
+        };
+        function cmmd6() {//
+
+        };
+        function cmmd7() {//
+
+        };
+        function cmmd8() {//
+
+        };
+        function cmmd9() {//
+
+        };
+        function cmmd10() {//
+
+        };
+        function cmmd11() {//
+
+        };
+        function cmmd12() {//
+
+        };
+        function cmmd13() {//
+
+        };
+        function cmmd14() {//
+
+        };
+        function cmmd15() {//
+
+        };
+        function cmmd16() {//
+
+        };
+        function cmmd17() {//
+
+        };
+        function cmmd18() {//
+
+        };
+        function cmmd19() {//
+
+        };
+        function cmmd20() {//
+
+        };
+        function cmmd21() {//
+
+        };
+        function cmmd22() {//
+
+        };
+        function cmmd23() {//
+
+        };
+        function cmmd24() {//
+
+        };
+        function cmmd25() {//
+
+        };
+
+        function cmma1() {//
+
+        };
+        function cmma2() {//
+
+        };
+        function cmma3() {//
+
+        };
+        function cmma4() {//
+
+        };
+        function cmma5() {//
+
+        };
+        function cmma6() {//
+
+        };
+        function cmma7() {//
+
+        };
+        function cmma8() {//
+
+        };
+        function cmma9() {//
+
+        };
+        function cmma10() {//
+
+        };
+        function cmma11() {//
+
+        };
+        function cmma12() {//
+
+        };
+        function cmma13() {//
+
+        };
+        function cmma14() {//
+
+        };
+        function cmma15() {//
+
+        };
+        function cmma16() {//
+
+        };
+        function cmma17() {//
+
+        };
+        function cmma18() {//
+
+        };
+        function cmma19() {//
+
+        };
+        function cmma20() {//
+
+        };
+        function cmma21() {//
+
+        };
+        function cmma22() {//
+
+        };
+        function cmma23() {//
+
+        };
+        function cmma24() {//
+
+        };
+        function cmma25() {//
+
+        };
     </script>
 
 
@@ -1650,6 +2930,20 @@
         };
     </script>
 
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
+    
 
+   

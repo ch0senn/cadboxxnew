@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
+	<script src="https://unpkg.com/aframe-controller-cursor-component@0.2.x/dist/aframe-controller-cursor-component.min.js"></script>
+	<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+	<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
+	<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/intersection-spawn.js"></script>
+
+	<script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+	<script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
+	<script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+	<script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+	<script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>
+	<script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+	<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-ground-component@0.0.4/dist/aframe-ground-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-snapto-component/dist/aframe-snapto-component.js"></script>
+	<!--<script src="https://unpkg.com/aframe-touch-inspector@1.1.2/dist/aframe-inspector.min.js"></script>
+		-->
+	<script src="https://unpkg.com/aframe-layout-component@4.3.1/dist/aframe-layout-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+
+
+	<script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+	<script src="https://unpkg.com/aframe-datgui-component/dist/aframe-datgui-component.min.js"></script>
+	<script src="https://cdn.rawgit.com/gftruj/aframe-physics-spring/master/dist/aframe-spring.min.js"></script>
+	<script src="https://unpkg.com/aframe-spherical-controls-component/dist/aframe-spherical-controls-component.min.js"></script>
+	<script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-gltf-helpers@0.0.2/dist/aframe-gltf-helpers.min.js"></script>
+	<script src="https://rawgit.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script>
+	<script src="https://rawgit.com/dbradleyfl/aframe-selectable-light-component/master/dist/aframe-selectable-light-component.min.js"></script>
+
+
+	<script src="js/aframe-extras.min.js"></script>
+	<script src="js/aframe-extras.controls.mih.js"></script>
+	<script src="js/aframe-extras.misc.js"></script>
+	<script src="js/aframe-extras.loaders.js"></script>
+	<script src="js/aframe-extras.pathfinding.js"></script>
+	<script src="js/aframe-extras.primitives.js"></script>
+	<script src="js/aframe-point-component.min.js"></script>
+	<script src="js/aframe-alongpath-component.min.js"></script>
+	<script src="js/aframe-layout-component.min.js"></script>
+	<script src="js/aframe-screenshot-component.min.js"></script>
+	<script src="js/aframe-gltfutils.min.js"></script>
+
+	<script src="js/grab.js"></script>
+	<script src="js/grab.min.js"></script>
+	<script src="js/grab-lock.js"></script>
+	<script src="js/GLTFPart.js"></script>
+	<script src="js/Vartiste.js"></script>
+
+	<script src="js/RegisteredAF.js"></script>
+	<script src="js/manipulator.js"></script>
+	<script src="js/movement-controls.js"></script>
+	<script src="js/PointCloudPLY.js"></script>
+
+	<script src="js/aframe-drag-and-drop-component.min.js"></script>
+	<script src="js/aframe-crawling-cursor.min.js"></script>
+
+	<!--reaction components-->
+	<script src="reaction_components/clickable.js"></script>
+	<script src="reaction_components/draggable.js"></script>
+	<script src="reaction_components/drag-droppable.js"></script>
+	<script src="reaction_components/hoverable.js"></script>
+	<script src="reaction_components/stretchable.js"></script>
+	<script src="reaction_components/droppable.js"></script>
+	<script src="reaction_components/grabbable.js"></script>
+
+
+	<script>
+		//color randomizer
+		AFRAME.registerComponent('color-randomizer', {
+			play: function () {
+				this.el.addEventListener('drag-drop', function (evt) {
+					evt.detail.dropped.setAttribute('material', 'color',
+						'#' + (Math.random() * 0xFFFFFF << 0).toString(16))
+					// color randomizer credit: http://stackoverflow.com/questions/1484506/random-color-generator-in-javascript#comment6801353_5365036
+				})
+			}
+		})
+		// forward mouse and touch events to the super-hands entity
+		AFRAME.registerComponent('capture-mouse', {
+			init: function () {
+				this.eventRepeater = this.eventRepeater.bind(this)
+				this.el.sceneEl.addEventListener('loaded', () => {
+					this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+					this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+					this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+					this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+					this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+				}, { once: true })
+			},
+			eventRepeater: function (evt) {
+				if (evt.type.startsWith('touch')) {
+					evt.preventDefault()
+					// avoid repeating touchmove because it interferes with look-controls
+					if (evt.type === 'touchmove') { return }
+				}
+				this.el.emit(evt.type, evt.detail)
+			}
+		})
+		//click-imoulse
+		AFRAME.registerComponent('click-impulse', {
+			init: function () {
+				var el = this.el;
+
+				el.addEventListener('click', function () {
+					el.body.applyImpulse(
+						/* impulse */
+						new CANNON.Vec3(
+							THREE.Math.randInt(-20, 20),
+							THREE.Math.randInt(-20, 20),
+							THREE.Math.randInt(-20, 20)
+						),
+															/* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+					);
+				});
+
+			}
+		});
+
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="aframe.css">
+
+	<!--<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>-->
+
+	<script src="aframe-gltf-exporter-component.min.js"></script>
+	<style>
+		.button:hover {
+			background-color: #fff;
+			color: #e43b5e;
+		}
+
+		.button {
+			background-color: blue;
+			border-radius: 8px;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 12px;
+			height: 34px;
+			margin-top: 5px;
+			margin-left: 5px;
+			outline: none;
+			position: relative;
+			width: 190px;
+			z-index: 999;
+		}
+
+		#container {
+			position: absolute;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+	</style>
+</head>
+<body>
+	<a-scene physics="gravity:-10">
+		<a-assets>
+			<a-asset-item id="glbxx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx.glb?v=1691476498258"></a-asset-item>
+			<a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+			<a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+			<a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
+			<a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
+
+			<a-asset-item id="glbsphere" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsphere-r1-p010.glb?v=1615396331056"></a-asset-item>
+			<a-asset-item id="glbdodd" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fdodd-rpt5.glb?v=1632901912292"></a-asset-item>
+			<a-asset-item id="glbtett" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
+			<a-asset-item id="glbcyll" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/glcyl.glb?v=1661360434803"></a-asset-item>
+
+			<a-asset-item id="bx1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+
+
+			<img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+			<img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+			<a-mixin id="voxel"
+					 gltf-model="#cb1"
+					 scale="1 1 1"
+					 snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+			<a-mixin id="wire-ball"
+					 geometry="primitive:sphere;radius:0.5;"
+					 material="wireframe:true;color:red"
+					 scale="1 1 1"
+					 snap="offset: 0 0 0; snap: 0 1 0"></a-mixin>
+
+		</a-assets>
+
+		<a-entity id="bx1" gltf-model="#cb1" position="0 3 0" mass="4" dynamic-body></a-entity>
+		<a-entity id="bx2" gltf-model="#cb1" position="0 5 0" mass="4" dynamic-body></a-entity>
+		<a-entity id="bx3" gltf-model="#cb1" position="0 7 0" mass="4" dynamic-body></a-entity>
+		<a-entity id="bx4" gltf-model="#cb1" position="0 9 0" mass="4" dynamic-body></a-entity>
+
+		<a-cylinder id="ground" color="blue" radius="50" height="0.1"></a-cylinder>
+		<a-light id="lite" color="white" type="hemisphere" intensity="2"></a-light>
+
+		<a-sky id="background" color="lightblue" radius="50"></a-sky>
+
+		<!-- Hands. -->
+		<a-entity id="teleHand" hand-controls="left" teleport-controls="type: parabolic; collisionEntities: [mixin='wire-ball'], #bx1"></a-entity>
+		<a-entity id="blockHand" hand-controls="right" controller-cursor intersection-spawn="event: click; mixin: wire-ball"></a-entity>
+
+		<!-- Camera. -->
+		<a-camera>
+			<a-cursor intersection-spawn="event: click; mixin: wire-ball"></a-cursor>
+		</a-camera>
+	</a-scene>
+</body>
+
+</html>

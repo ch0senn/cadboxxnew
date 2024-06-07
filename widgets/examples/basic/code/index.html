@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title><!--code for js fumctions></code--></title>
+</head>
+<body>
+
+    <script>
+        //For geometry, defaults to buffer attributes(vertices in array) contained in:
+
+        el.getObject3D('mesh').geometry.attributes
+        //To get easier to manage, set to non - buffer(geometry = "primitive: box; buffer: false") and get from:
+
+        el.getObject3D('mesh').geometry.vertices
+        //For gltf - model, it also has a geometr(ies)(buffer geometry):
+
+        el.getObject3D('mesh').traverse(node => {
+            if (node.geometry) {
+                // node.geometry.attributes...
+            }
+        });
+    </script>
+    <script>
+        //Adding a Component with .setAttribute()
+        //To add a component, we can use .setAttribute(componentName, data). Let’s add a geometry component to the entity.
+
+        entityEl.setAttribute('geometry', {
+            primitive: 'box',
+            height: 3,
+            width: 1
+        });
+        //Or adding the community physics component:
+
+        entityEl.setAttribute('dynamic-body', {
+            shape: 'box',
+            mass: 1.5,
+            linearDamping: 0.005
+        });
+        //Unlike a normal HTML .setAttribute(), an entity’s .setAttribute() is improved to take a variety of types of arguments such as objects, or to be able to update a single property of a component. Read more about Entity.setAttribute().
+
+        //Updating a Component with .setAttribute()
+        //To update a component, we also use .setAttribute(). Updating a component takes several forms.
+
+        //Updating Property of Single-Property Component
+        //Let’s update the property of the position component, a single-property component. We can pass either an object or a string. It is slightly preferred to pass an object so A-Frame doesn’t have to parse the string.
+
+        entityEl.setAttribute('position', { x: 1, y: 2, z: -3 });
+    // Read on to see why `entityEl.object3D.position.set(1, 2, -3)` is preferred though.
+
+
+    </script>
+</body>
+</html>

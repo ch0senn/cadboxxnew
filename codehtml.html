@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ASSEMBLER</title>
+    <meta name="description" content="Anime UI — A-Frame">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <style>
+        .button:hover {
+            background-color: #fff;
+            color: #e43b5e;
+        }
+
+        .button {
+            background-color: blue;
+            border-radius: 8px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 34px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: none;
+            position: relative;
+            width: 150px;
+            z-index: 999;
+        }
+
+        #container {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!--<center>
+        <div id="container">
+            <button id="ctrl-alt-i" class="button"><span>ctrl-alt-i</span></button>
+            <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
+            <button id="export-redbxx" class="button"><span>Exp Blue Box</span></button>
+            <button id="export-redbyy" class="button"><span>Exp cadboxx</span></button>
+            <button id="export-redbzz" class="button"><span>Export Assembly</span></button>
+            <button type="button" class="button" onclick="alert('To go Dynamic press CTRL+ALT+i together')"><span>DYNAMIC</span></button>
+            <button type="button" class="button" onclick="openNav()">HELP</button>
+        </div>
+
+    </center>
+        -->
+
+    <script>
+        AFRAME.registerComponent('auto-enter-vr', {
+            init: function () {
+                this.el.sceneEl.enterVR();
+            }
+        });
+    </script>
+    <script>
+        AFRAME.registerComponent('cai', {
+            init: function () {
+                document.getElementById('ctrl-alt-i').addEventListener('click', function () {
+                    // create a new keyboard event
+                    var event = new KeyboardEvent('keydown', {
+                        key: 'i',
+                        altKey: true,
+                        ctrlKey: true
+                    });
+                    // dispatch the ctrl-alt+i key press event
+                    document.dispatchEvent(event);
+                });
+            }
+        });
+    </script>
+    <script>
+        var setaxis = function () {
+            console.log(document.querySelector("a-sphere").getAttribute("color"))
+            if (document.querySelector("a-sphere").getAttribute("color") !== "blue") {
+                document.querySelector("a-sphere").setAttribute("color", "blue");
+            } else {
+                document.querySelector("a-sphere").setAttribute("color", "green");
+
+            }
+        }
+
+    </script>
+    <script>
+        var setplane = function () {
+            console.log(document.querySelector("a-sphere").getAttribute("color"))
+            if (document.querySelector("a-sphere").getAttribute("color") !== "blue") {
+                document.querySelector("a-sphere").setAttribute("color", "blue");
+            } else {
+                document.querySelector("a-sphere").setAttribute("color", "green");
+
+            }
+        }
+
+    </script>
+
+    <script>
+        var setscale = function () {
+            console.log(document.querySelector("a-sphere").getAttribute("color"))
+            if (document.querySelector("a-sphere").getAttribute("color") !== "blue") {
+                document.querySelector("a-sphere").setAttribute("color", "blue");
+            } else {
+                document.querySelector("a-sphere").setAttribute("color", "green");
+
+            }
+        }
+
+    </script>
+
+
+    <script>
+        var changesphere = function () {
+            console.log(document.querySelector("a-sphere").getAttribute("color"))
+            if (document.querySelector("a-sphere").getAttribute("color") !== "blue") {
+                document.querySelector("a-sphere").setAttribute("color", "blue");
+            } else {
+                document.querySelector("a-sphere").setAttribute("color", "green");
+
+            }
+        }
+
+    </script>
+
+    <script>
+        var changecylinder = function () {
+            console.log(document.querySelector("a-cylinder").getAttribute("color"))
+            if (document.querySelector("a-cylinder").getAttribute("color") !== "blue") {
+                document.querySelector("a-cylinder").setAttribute("color", "blue");
+            } else {
+                document.querySelector("a-cylinder").setAttribute("color", "green");
+
+            }
+        }
+
+    </script>
+
+    <script>
+        var changebox = function () {
+            console.log(document.querySelector("a-box").getAttribute("color"))
+            if (document.querySelector("a-box").getAttribute("color") !== "blue") {
+                document.querySelector("a-box").setAttribute("color", "blue");
+            } else {
+                document.querySelector("a-box").setAttribute("color", "green");
+
+            }
+        }
+
+    </script>
+
+    <button onclick="changesphere()">
+        change sphere
+    </button>
+
+    <button onclick="changecylinder()">
+        change cylinder
+    </button>
+
+
+    <button onclick="changebox()">
+        change box
+    </button>
+
+
+    <button onclick="setmaterial()">
+        set material
+    </button>
+
+    <button onclick="setplane()">
+        set plane
+    </button>
+
+
+    <button onclick="setaxis()">
+        setaxis
+    </button>
+
+
+    <a-scene auto-enter-vr renderer="colorManagement: true;" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" id="space-station" animation__animation_aa="" pool__aa="" camera="" raycaster="" cursor="" event-set__aa="" geometry="" gltf-model="" oculus-touch-controls="" sound__aa="">
+        <a-assets>
+            <a-asset-item id="engine" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/engine-edges.glb?v=1667026289142"></a-asset-item>
+            <a-asset-item id="engine" src="engine-edges.glb"></a-asset-item>
+            <a-asset-item id="pp11" src="assets/p1.glb"></a-asset-item>
+            <a-asset-item id="crank" src="assets/Crankshaft_Pistons.glb"></a-asset-item>
+            <a-asset-item id="linear" src="assets/linear-screw-1000-assy.glb"></a-asset-item>
+            <a-asset-item id="assembly" src="assets/assembly.glb"></a-asset-item>
+            <a-asset-item id="hands" src="assets/hands44.obj"></a-asset-item>
+            <a-asset-item id="fv8" src="assets/ferrariv8.glb"></a-asset-item>
+            <a-asset-item id="g16" src="assets/gear16.glb"></a-asset-item>
+            <a-asset-item id="sshafts" src="assets/splitshafts.glb"></a-asset-item>
+            <a-asset-item id="centerx" src="ujassy"></a-asset-item>
+            <a-asset-item id="3pm" src="ujassy"></a-asset-item>
+            <a-asset-item id="12pm" src="ujassy"></a-asset-item>
+            <a-asset-item id="9pm" src="ujassy"></a-asset-item>
+            <a-asset-item id="6pm" src="ujassy"></a-asset-item>
+            <a-asset-item id="lowy" src="ujassy"></a-asset-item>
+            <a-asset-item id="uppery" src="ujassy"></a-asset-item>
+
+            <a-mixin id="delayVisible" event-set__loaded="visible: true" visible="false"></a-mixin>
+            <audio id="blip1" src="audio/321103__nsstudios__blip1.wav"></audio>
+            <audio id="blip2" src="audio/321104__nsstudios__blip2.wav"></audio>
+            <img id="ring1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cblogo-t.png?v=1648022923987">
+            <img id="ring2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+            <img id="ring3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
+            <img id="ring4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/screenshot-toolbar-menu-1664451802701.png?v=1664451899625">
+            <img id="ring5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/model.png?v=1665597644170">
+            <!--img id="glow1" src="img/glow1.png">
+            <img id="ring1" src="img/ring1.png">
+            <img id="ring2" src="img/ring2.png">
+            <img id="ring3" src="img/ring3.png">
+            <img id="ring4" src="img/ring4.png">
+            <img id="ring5" src="img/ring5.png">
+            <img id="schematic1" src="img/schematic1.png">
+            <img id="schematic2" src="img/schematic2.png">
+            <img id="schematic3" src="img/schematic3.png">
+            <img id="schematic4" src="img/schematic4.png">
+            <img id="schematic5" src="img/schematic5.png">
+            <img id="text1" src="img/text1.png">
+            <img id="text2" src="img/text2.png">
+            <img id="text3" src="img/text3.png">-->
+            <img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+            <a-asset-item id="cadboxx-floor" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/ground-plane_with_mesh.glb?v=1678034073866"></a-asset-item>
+            <a-asset-item id="ujassy" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/uj-allinone.glb?v=1684691828710"></a-asset-item>
+
+
+        </a-assets>
+
+        <a-entity position="0 2 -4" rotation="0 0 0">
+            <a-camera position="0 0 0" near="0.1" camera="" rotation="" look-controls="" wasd-controls="" data-aframe-inspector-original-camera=""></a-camera>
+        </a-entity>
+
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+
+
+
+
+        <a-entity id="seenmodel" gltf-model="#engine" position="0 0 0" scale="2 2 2" static-body></a-entity>
+        <a-entity id="ground" gltf-model="#cadboxx-floor" position="0 0 0" static-body></a-entity>
+
+
+        <a-entity id="" layout="type:circle">
+            <a-entity id="assplane1" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+            <a-entity id="assplane2" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+            <a-entity id="assplane3" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+            <a-entity id="assplane4" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+            <a-entity id="assplane5" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+            <a-entity id="assplane6" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+            <a-entity id="assplane7" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+            <a-entity id="assplane8" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+            <a-entity id="assplane9" gltf-model="#centerx" position="0 0 -1" scale="1 1 1" visible="false"> ></a-entity>
+
+
+        </a-entity>
+
+        <a-light type="point" color="#94c6ff" distance="15" position="0 0 -12" intensity="2" animation="property: light.intensity; from: 0; to: 2; delay: 750; dur: 500" light="intensity: 2" visible=""></a-light>
+        <a-light type="point" color="#94c6ff" distance="17" position="0 0 -6" intensity="2" animation="property: light.intensity; from: 0; to: 1; delay: 500; dur: 500" light="intensity: 1"></a-light>
+        <a-light type="hemisphere" position="0 0 0" color="#4f6487" intensity="2"></a-light>
+
+        <a-sky id="skeye" src="
+https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/pexels-philippe-donn-1169754.jpg?v=1684659976269" position="0 0 0" radius="100"></a-sky>
+
+        <a-entity sound="autoplay: true; src: audio/321103__nsstudios__blip1.wav"></a-entity>
+        <a-entity sound="autoplay: true; src: audio/321104__nsstudios__blip2.wav"></a-entity>
+    </a-scene>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+    </script>
+    <script src="js/aframe/aframe-physics-system.min.js"></script>
+    <script>
+        function exportGLTF(input, options) {
+            AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+        }
+
+        document.getElementById('export-scene').addEventListener('click', function () {
+            exportGLTF();
+        });
+
+        document.getElementById('export-scene-bin').addEventListener('click', function () {
+            exportGLTF(undefined, { binary: true });
+        });
+
+        document.getElementById('export-redbxx').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbxx'), { binary: true });
+        });
+
+        document.getElementById('export-redbyy').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbyy'), { binary: true });
+        });
+
+        document.getElementById('export-redbzz').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbzz'), { binary: true });
+        });
+
+        document.getElementById('export-two').addEventListener('click', function () {
+            exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+        });
+
+        document.getElementById('export-selector').addEventListener('click', function () {
+            exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+        });
+
+    </script>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+    </script>
+    <script>
+        function cmm1() {//set position relative to object plane
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', true);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm2() {//load
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', true);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+
+
+        };
+
+        function cmm3() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', true);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm4() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', true);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm5() {
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', true);
+        };
+
+        /*to auto-enter-vr*/
+        function cmm6() {
+            var scene = document.querySelector('a-scene');
+            scene.enterVR();
+        };
+
+        function cmm7() {//cadboxx opacity
+            var cadboxx = document.querySelector('planeboxx');
+            entityEl.setAttribute('opacity', 0.25);
+        };
+
+        function cmm8() {//get element by selection
+            sceneEl.components.inspector.openInspector();
+        };
+
+        function cmm9() {//set camera position from entity
+
+        };
+        function cmm10() {//click-animate a component part
+
+        };
+        function cmm11() {//open material dialogue for entity
+
+        };
+        function cmm12() {//export scene glb
+
+        };
+        function cmm13() {//export snapshot during animation dialogue
+
+        };
+        function cmm14() {//record avatar
+
+        };
+        function cmm15() {//open custom animation panel
+
+        };
+        function cmm16() {//set position relative to object plane
+
+        };
+
+        function cmm17() {//load
+            var loadingpanelEl = document.q
+        };
+
+        function cmm18() {//To remove or detach a component from an entity, we can use
+            //var cameraEl = document.querySelector('[camera]');
+            //cameraEl.removeAttribute('wasd-controls');
+
+
+
+        };
+
+        function cmm19() {//
+            // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
+            entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
+            // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
+
+        };
+        function cmm20() {//
+            entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
+            // Or entityEl.setAttribute('position', '1 2 -3');
+        };
+        function cmm21() {//
+
+        };
+        function cmm22() {//
+
+        };
+        function cmm23() {//
+
+        };
+        function cmm24() {//
+
+        };
+        function cmm25() {//
+
+        };
+        function cmm26() {//
+
+        };
+        function cmm27() {//
+
+        };
+        function cmm28() {//
+
+        };
+        function cmm29() {//
+
+        };
+        function cmm30() {//
+            entityEl.setAttribute('dynamic-body', {
+                shape: 'box',
+                mass: 1.5,
+                linearDamping: 0.005
+            });
+        };
+        function cmmd1() {//
+
+        };
+        function cmmd2() {//
+
+        };
+        function cmmd3() {//
+
+        };
+        function cmmd4() {//
+
+        };
+        function cmmd5() {//
+
+        };
+        function cmmd6() {//
+
+        };
+        function cmmd7() {//
+
+        };
+        function cmmd8() {//
+
+        };
+        function cmmd9() {//
+
+        };
+        function cmmd10() {//
+
+        };
+        function cmmd11() {//
+
+        };
+        function cmmd12() {//
+
+        };
+        function cmmd13() {//
+
+        };
+        function cmmd14() {//
+
+        };
+        function cmmd15() {//
+
+        };
+        function cmmd16() {//
+
+        };
+        function cmmd17() {//
+
+        };
+        function cmmd18() {//
+
+        };
+        function cmmd19() {//
+
+        };
+        function cmmd20() {//
+
+        };
+        function cmmd21() {//
+
+        };
+        function cmmd22() {//
+
+        };
+        function cmmd23() {//
+
+        };
+        function cmmd24() {//
+
+        };
+        function cmmd25() {//
+
+        };
+
+        function cmma1() {//
+
+        };
+        function cmma2() {//
+
+        };
+        function cmma3() {//
+
+        };
+        function cmma4() {//
+
+        };
+        function cmma5() {//
+
+        };
+        function cmma6() {//
+
+        };
+        function cmma7() {//
+
+        };
+        function cmma8() {//
+
+        };
+        function cmma9() {//
+
+        };
+        function cmma10() {//
+
+        };
+        function cmma11() {//
+
+        };
+        function cmma12() {//
+
+        };
+        function cmma13() {//
+
+        };
+        function cmma14() {//
+
+        };
+        function cmma15() {//
+
+        };
+        function cmma16() {//
+
+        };
+        function cmma17() {//
+
+        };
+        function cmma18() {//
+
+        };
+        function cmma19() {//
+
+        };
+        function cmma20() {//
+
+        };
+        function cmma21() {//
+
+        };
+        function cmma22() {//
+
+        };
+        function cmma23() {//
+
+        };
+        function cmma24() {//
+
+        };
+        function cmma25() {//
+
+        };
+
+
+
+    </script>
+    <script>
+        window.matl1 = function () {
+            var knot = document.getElementById("prt1");
+            knot.setAttribute('material', 'src', '#m01');
+        }
+        window.matl2 = function () {
+            var knot = document.getElementById("prt2");
+            knot.setAttribute('material', 'src', '#m02');
+        }
+        window.matl3 = function () {
+            var knot = document.getElementById("prt3");
+            knot.setAttribute('material', 'src', '#m03');
+        }
+        window.matl4 = function () {
+            var knot = document.getElementById("prt4");
+            knot.setAttribute('material', 'src', '#m04');
+        }
+        window.matl5 = function () {
+            var knot = document.getElementById("prt5");
+            knot.setAttribute('material', 'src', '#m05');
+        }
+        window.matl6 = function () {
+            var knot = document.getElementById("prt6");
+            knot.setAttribute('material', 'src', '#m06');
+        }
+        window.matl7 = function () {
+            var knot = document.getElementById("prt7");
+            knot.setAttribute('material', 'src', '#m07');
+        }
+        window.matl8 = function () {
+            var knot = document.getElementById("prt8");
+            knot.setAttribute('material', 'src', '#m08');
+        }
+        window.matl9 = function () {
+            var knot = document.getElementById("prt9");
+            knot.setAttribute('material', 'src', '#m09');
+        }
+        window.matl10 = function () {
+            var knot = document.getElementById("prt10");
+            knot.setAttribute('material', 'src', '#m10');
+        }
+        window.matl11 = function () {
+            var knot = document.getElementById("prt11");
+            knot.setAttribute('material', 'src', '#m11');
+        }
+        window.matl12 = function () {
+            var knot = document.getElementById("prt12");
+            knot.setAttribute('material', 'src', '#m12');
+        }
+        window.matl13 = function () {
+            var knot = document.getElementById("prt13");
+            knot.setAttribute('material', 'src', '#m13');
+        }
+        window.matl14 = function () {
+            var knot = document.getElementById("prt14");
+            knot.setAttribute('material', 'src', '#m14');
+        }
+        window.matl15 = function () {
+            var knot = document.getElementById("prt15");
+            knot.setAttribute('material', 'src', '#m15');
+        }
+        window.matl16 = function () {
+            var knot = document.getElementById("prt16");
+            knot.setAttribute('material', 'src', '#m16');
+        }
+        window.matl17 = function () {
+            var knot = document.getElementById("prt17");
+            knot.setAttribute('material', 'src', '#m17');
+        }
+        window.matl18 = function () {
+            var knot = document.getElementById("prt18");
+            knot.setAttribute('material', 'src', '#m18');
+        }
+    </script>
+
+</body>
+</html>
+<!--mouse click
+    <a-box position="0 1.0 0" rotation="0 0 0" color="#4CC3D9" shadow
+             event-set__enter="_event: mouseenter; color: #026fc9"
+             event-set__leave="_event: mouseleave; color: #4CC3D9">
+
+<a-animation attribute="position"
+             dur="3000"
+             fill="forwards"
+             to="0 3 0"
+             direction="alternate"
+             begin="click"></a-animation>
+<a-animation attribute="rotation"
+             dur="3000"
+             fill="forwards"
+             to="0 360 0"
+             direction="alternate"
+             begin="click">
+
+</a-animation>
+      </a-box>
+
+<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow
+          event-set__enter="_event: mouseenter; color: #026fc9"
+          event-set__leave="_event: mouseleave; color: #EF2D5E">
+
+
+    <a-animation attribute="position"
+                 dur="1000"
+                 fill="forwards"
+                 to="0 2.5 -6"
+                 direction="alternate"
+                 begin="click"></a-animation>
+</a-sphere>
+-->
+<!--
+   <a-entity layout="type:circle; position: 0 5 0;radius:5; rotation:0 0 90">
+       <a-entity id="target1" gltf-model="#bb030" rotation="0 40 0" scale="1 1 1">
+
+       </a-entity>
+       <a-entity id="target2" gltf-model="#bb030" rotation="0 80 0" scale="1 1 1">
+
+       </a-entity>
+       <a-entity id="target3" gltf-model="#bb030" rotation="0 120 0" scale="1 1 1">
+
+       </a-entity>
+       <a-entity id="target4" gltf-model="#bb030" rotation="0 160 0" scale="1 1 1">
+
+       </a-entity>
+       <a-entity id="target5" gltf-model="#bb030" rotation="0 200 0" scale="1 1 1">
+
+       </a-entity>
+       <a-entity id="target6" gltf-model="#bb030" rotation="0 240 0" scale="1 1 1">
+
+       </a-entity>
+       <a-entity id="target7" gltf-model="#bb030" rotation="0 280 0" scale="1 1 1">
+
+       </a-entity>
+       <a-entity id="target8" gltf-model="#bb030" rotation="0 320 0" scale="1 1 1">
+
+       </a-entity>
+       <a-entity id="target9" gltf-model="#bb030" rotation="0 360 0" scale="1 1 1">
+
+       </a-entity>
+   </a-entity>
+   -->

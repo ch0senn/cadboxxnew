@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #aaa;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 500px;
+	background-color: #afa;
+}
+
+ul.dropdown > li {
+	border: 1px solid #ccc;
+	list-style: none;
+	display: inline-block;
+	position: relative;
+	width: 18%;
+}
+
+li a {
+	line-height: 30px;
+	display: block;
+}
+.dropdown .dropped:hover .dropdown-level-2 {
+	display: block;
+}
+
+.dropdown-level-2 {
+	display: none;
+	position: absolute;
+}
+
+.popup {
+	margin-top: 100px;
+}
+
+.modal {
+	display: none;
+}

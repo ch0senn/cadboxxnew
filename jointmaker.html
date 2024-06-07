@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Joint Maker Physics</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.x/dist/aframe-controller-cursor-component.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/intersection-spawn.js"></script>
+    <!--
+    <script src="https://unpkg.com/aframe-touch-inspector@1.1.2/dist/aframe-inspector.min.js"></script>
+    --><script src="https://unpkg.com/aframe-layout-component@4.3.1/dist/aframe-layout-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-datgui-component/dist/aframe-datgui-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://cdn.rawgit.com/gftruj/aframe-physics-spring/master/dist/aframe-spring.min.js"></script>
+    <script src="https://unpkg.com/aframe-spherical-controls-component/dist/aframe-spherical-controls-component.min.js"></script>
+    <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-gltf-helpers@0.0.2/dist/aframe-gltf-helpers.min.js"></script>
+    <script src="https://rawgit.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script>
+    <script src="https://rawgit.com/dbradleyfl/aframe-selectable-light-component/master/dist/aframe-selectable-light-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-csg-meshs/index.js"></script>
+    <!--extras--
+      <script src="js/aframe-master.min.js"></script>WONT RUN IF YOU REF IT HERE  BUT IT IS THERE--
+    -->
+    <script src="3dassembly/js/aframe-extras.min.js"></script>
+    <script src="3dassembly/js/aframe-extras.controls.mih.js"></script>
+    <script src="3dassembly/js/aframe-extras.misc.js"></script>
+    <script src="3dassembly/js/aframe-extras.loaders.js"></script>
+    <script src="3dassembly/js/aframe-extras.pathfinding.js"></script>
+    <script src="3dassembly/js/aframe-extras.primitives.js"></script>
+    <script src="3dassembly/js/aframe-stl-model-component.min.js"></script>
+    <script src="3dassembly/js/aframe-drag-and-drop-component.min.js"></script>
+    <script src="3dassembly/js/aframe-crawling-cursor.min.js"></script>
+
+    <!--reaction components-->
+    <script src="3dassembly/reaction_components/clickable.js"></script>
+    <script src="3dassembly/reaction_components/draggable.js"></script>
+    <script src="3dassembly/reaction_components/drag-droppable.js"></script>
+    <script src="3dassembly/reaction_components/hoverable.js"></script>
+    <script src="3dassembly/reaction_components/stretchable.js"></script>
+    <script src="3dassembly/reaction_components/droppable.js"></script>
+    <script src="3dassembly/reaction_components/grabbable.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="aframe.css">
+    <script src="https://cdn.rawgit.com/gftruj/aframe-physics-spring/master/dist/aframe-spring.min.js"></script>
+    <script src="https://unpkg.com/aframe-spherical-controls-component/dist/aframe-spherical-controls-component.min.js"></script>
+    <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-gltf-helpers@0.0.2/dist/aframe-gltf-helpers.min.js"></script>
+    <script src="https://rawgit.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script>
+    <!--<script src="~/js/play-all-model-animations.js"></script>
+    <script src="../dist/aframe-gui.min.js"></script-->
+    <script src="../dist/aframe-gui.js"></script>
+    <script src="https://rawgit.com/andreasplesch/aframe-faceset-component/master/dist/aframe-faceset-component.min.js"></script>
+    <script src="https://rawgit.com/andreasplesch/aframe-polygon-primitive/master/dist/aframe-polygon-primitive.min.js"></script>
+
+    <script>
+        AFRAME.registerComponent('click-impulse', {
+            init: function () {
+                var el = this.el;
+
+                el.addEventListener('click', function () {
+                    el.body.applyImpulse(
+                        /* impulse */
+                        new CANNON.Vec3(
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20)
+                        ),
+                                                                                        /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                    );
+                });
+
+            }
+        });
+
+        // forward mouse and touch events to the super-hands entity
+        AFRAME.registerComponent('capture-mouse', {
+            init: function () {
+                this.eventRepeater = this.eventRepeater.bind(this)
+                this.el.sceneEl.addEventListener('loaded', () => {
+                    this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+                }, { once: true })
+            },
+            eventRepeater: function (evt) {
+                if (evt.type.startsWith('touch')) {
+                    evt.preventDefault()
+                    // avoid repeating touchmove because it interferes with look-controls
+                    if (evt.type === 'touchmove') { return }
+                }
+                this.el.emit(evt.type, evt.detail)
+            }
+        })</script>
+    <style>
+        button {
+            width: 100px;
+            height: 30px;
+            position: relative;
+            top: 1px;
+            z-index: 2;
+        }
+    </style>
+
+
+    <script>
+        // forward mouse and touch events to the super-hands entity
+        AFRAME.registerComponent('capture-mouse', {
+            init: function () {
+                this.eventRepeater = this.eventRepeater.bind(this)
+                this.el.sceneEl.addEventListener('loaded', () => {
+                    this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+                }, { once: true })
+            },
+            eventRepeater: function (evt) {
+                if (evt.type.startsWith('touch')) {
+                    evt.preventDefault()
+                    // avoid repeating touchmove because it interferes with look-controls
+                    if (evt.type === 'touchmove') { return }
+                }
+                this.el.emit(evt.type, evt.detail)
+            }
+        })</script>
+    <link rel="stylesheet" type="text/css" href="aframe.css">
+</head>
+<body>
+    <a-scene physics="gravity:0 -9.81 0">
+        <a-assets>
+            <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
+                     hoverable grabbable stretchable draggable droppable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+            <a-mixin id="gltfmodel" gltf-model="#cbb1"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+            <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
+            <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
+            <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
+
+            <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+            <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+            <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
+            <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
+
+            <a-asset-item id="glbsphere" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsphere-r1-p010.glb?v=1615396331056"></a-asset-item>
+            <a-asset-item id="glbdodd" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fdodd-rpt5.glb?v=1632901912292"></a-asset-item>
+            <a-asset-item id="glbtett" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
+            <a-asset-item id="glbcyll" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/glcyl.glb?v=1661360434803"></a-asset-item>
+
+            <a-asset-item id="single-floor" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/single-floor.glb?v=1699903743116"></a-asset-item>
+            <a-asset-item id="pistonplus" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/pistonplus.glb?v=1674335113584"></a-asset-item>
+
+            <a-asset-item id="waddler" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/waddler.glb?v=1668021723166"></a-asset-item>
+
+            <img id="galaxy" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/galaxy.jpg">
+            <img id="moon" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/moon_1024.jpg">
+            <img id="clouds" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_clouds_2048.png">
+            <img id="venus" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/5710820393_a36f3c730b_m.jpg">
+            <img id="pic1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/border-pic.jpg?v=1654934865728">
+            <img id="pic2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+            <img id="pic3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/skateboard1200x400bg-white.png?v=1659609701460">
+            <img id="pic4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
+            <img id="pic5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/roboxx.png?v=1659362885712">
+            <img id="pic6" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx.png?v=1659434696690">
+
+            <!--sphorb-->
+            <a-asset-item id="bb02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb1.glb?v=1655710163279"></a-asset-item>
+            <a-asset-item id="bb03" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb2.glb?v=1655710178528"></a-asset-item>
+            <a-asset-item id="bb04" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb3.glb?v=1655710192379"></a-asset-item>
+            <a-asset-item id="bb05" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb4.glb?v=1655710213868"></a-asset-item>
+
+            <a-asset-item id="hand" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/hand.glb?v=1700128071348"></a-asset-item>
+
+            <a-asset-item id="chlink1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink1.glb?v=1606822463366"></a-asset-item>
+            <a-asset-item id="chlink2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink2.glb?v=1606822434718"></a-asset-item>
+
+            <!--boxaxis-->
+            <a-asset-item id="bb07" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-boxx.glb?v=1655717437382"></a-asset-item>
+            <a-asset-item id="bb08" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-xx.glb?v=1655717457786"></a-asset-item>
+            <a-asset-item id="bb09" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-x-x.glb?v=1655717477839"></a-asset-item>
+            <a-asset-item id="bb010" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-yy.glb?v=1655717521091"></a-asset-item>
+            <a-asset-item id="bb011" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-y-y.glb?v=1655717561218"></a-asset-item>
+            <a-asset-item id="bb012" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-zz.glb?v=1655717583030"></a-asset-item>
+            <a-asset-item id="bb013" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-z-z.glb?v=1655717667672"></a-asset-item>
+
+
+
+            <a-asset-item id="bb019" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/generic-wheel.glb?v=1655896082243"></a-asset-item>
+            <!--stub gears-->
+            <a-asset-item id="bb020" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/32stub.glb?v=1656255390214"></a-asset-item>
+            <a-asset-item id="bb021" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/16stub.glb?v=1656313611998"></a-asset-item>
+
+            <a-asset-item id="bb022" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/roller-ball-assy.glb?v=1655472956891"></a-asset-item>
+            <a-asset-item id="bb023" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxx-standard.glb?v=1618293365748"></a-asset-item>
+            <!--gears-->
+            <a-asset-item id="bb024" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/g16-3.glb?v=1656487133082"></a-asset-item>
+            <a-asset-item id="bb025" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/g32-3.glb?v=1656486880844"></a-asset-item>
+            <a-asset-item id="bb026" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/g48-3.glb?v=1656487231427"></a-asset-item>
+            <!--fan-->
+            <a-asset-item id="bb027" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/fan-center.glb?v=1656475522384"></a-asset-item>
+            <a-asset-item id="bb028" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/fan-blades.glb?v=1656475487109"></a-asset-item>
+            <!--plane-->
+            <a-asset-item id="bb030" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplanex1sq.glb?v=1635660167471"></a-asset-item>
+
+            <a-asset-item id="bb019" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/generic-wheel.glb?v=1655896082243"></a-asset-item>
+            <!--stub gears-->
+            <!--uj-->
+            <a-asset-item id="bb036" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/yyyzzz.glb?v=1656646905880"></a-asset-item>
+            <a-asset-item id="bb037" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/yyyxxx.glb?v=1656646922662"></a-asset-item>
+            <a-asset-item id="bb038" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/dddxxx.glb?v=1656646954681"></a-asset-item>
+
+            <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+            <!--lead screw-->
+            <a-asset-item id="bb039" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/linear-screw-2000-1.glb?v=1659723632101"></a-asset-item>
+            <a-asset-item id="bb040" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/linear-nut-1.glb?v=1659723551067"></a-asset-item>
+            <a-asset-item id="bb041" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/linear-screw-1000.glb?v=1659858281452"></a-asset-item>
+            <!--hex n ball-->
+            <a-asset-item id="bb042" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/full-hex-50-hole.glb?v=1659723446134"></a-asset-item>
+            <a-asset-item id="bb043" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/bottom-sq-100x100x10.glb?v=1659723230346"></a-asset-item>
+            <a-asset-item id="bb044" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/dia50x200.glb?v=1659723364778"></a-asset-item>
+            <a-asset-item id="bb045" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/100-ball-25-hole.glb?v=1659722995037"></a-asset-item>
+            <a-asset-item id="bb046" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/100-ball-cube.glb?v=1659723053725"></a-asset-item>
+            <a-asset-item id="bb047" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/ball-and-top-hex100afx10.glb?v=1659723148016"></a-asset-item>
+            <a-asset-item id="bb048" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/100-ball.glb?v=1659722945849"></a-asset-item>
+            <a-asset-item id="bb049" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/50-ball.glb?v=1659722813834"></a-asset-item>
+            <a-asset-item id="bb050" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/50-ball-w-bottom-sq-100x10.glb?v=1659722855011"></a-asset-item>
+            <a-asset-item id="bb051" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/90cube.glb?v=1659856346086"></a-asset-item>
+            <a-asset-item id="bb052" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/100ball25hole.glb?v=1659856419099"></a-asset-item>
+            <a-asset-item id="bb053" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/25shaft100ball.glb?v=1659856366279"></a-asset-item>
+            <a-asset-item id="bb054" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/top-hexagon-100afx10.glb?v=1659850795703"></a-asset-item>
+
+            <a-asset-item id="snooker" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/tableview.glb?v=1658906349771"></a-asset-item>
+
+            <a-asset-item id="buggy-wheel-chrome" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/Buggy-wheel-chrome.glb?v=1661360545183"></a-asset-item>
+
+            <a-asset-item id="steer-ring" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/steer-ring.glb?v=1661754904188"></a-asset-item>
+            <a-asset-item id="wheel-spinner" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/wheel-spinner.glb?v=1661754959348"></a-asset-item>
+
+            <a-asset-item id="central-link" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/central-link.glb?v=1661445167231"></a-asset-item>
+
+            <a-mixin id="cubed" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="cyll" geometry="primitive: cylinder; radius: 0.5; height: 1.0"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="sphh" geometry="primitive: sphere; radius: 0.5"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="octt" geometry="primitive: octahedron; radius: 0.5"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="dodd" geometry="primitive: dodecahedron; radius: 0.5"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="tett" geometry="primitive: tetrahedron; radius: 0.5"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="tria" geometry="primitive: triangle" material="side: double"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="toru" geometry="primitive: torus; radius: .5; radiusTubular: 0.05; arc: 360"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     static-body shadow>
+            </a-mixin>
+            <a-mixin id="plan" geometry="primitive: plane; side:double; height: 1.0; width: 1.0"
+                     material="side: double" hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="cone" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.25"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="voxel"
+                     gltf-model="#cb1"
+                     intersection-spawn="event: click; mixin: voxel"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"
+                     event-set__mouseenter="material.opacity: 0.7"
+                     event-set__mouseleave="material.opacity: 1.0"
+                     event-set__dragover-start="material.wireframe: true"
+                     event-set__dragover-end="material.wireframe: false"></a-mixin>
+
+            <a-mixin id="gglb" geometry="gltf-model: model;"
+                     hoverable grabbable stretchable draggable droppable
+                     dynamic-body shadow>
+            </a-mixin>
+
+
+            <a-mixin id="constraint_hinge_x" constraint="type: hinge;axis:1 0 0;targetAxis:1 0 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+            <a-mixin id="constraint_hinge_y" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+            <a-mixin id="constraint_hinge_z" constraint="type: hinge;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+
+
+
+            <a-mixin id="constraint_distance" constraint="type: distance;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+
+
+            <a-mixin id="constraint_slider" constraint="type: slider;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+
+
+            <a-mixin id="constraint_lock" constraint="type: lock;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+
+            <a-mixin id="constraint_pointTopoint_x" constraint="type: pointTopoint;axis:1 0 0;targetAxis:1 0 0;pivot:1 0 0;targetPivot:0 0 0"></a-mixin>
+            <a-mixin id="constraint_pointTopoint_y" constraint="type: pointTopoint;axis:0 1 0;targetAxis:0 1 0;pivot:0 1 0;targetPivot:0 0 0"></a-mixin>
+            <a-mixin id="constraint_pointTopoint_z" constraint="type: pointTopoint;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 1;targetPivot:0 0 0"></a-mixin>
+
+            <a-mixin id="weight1" mass="1.0"></a-mixin>
+            <a-mixin id="weight2" mass="2.0"></a-mixin>
+            <a-mixin id="weight4" mass="4.0"></a-mixin>
+            <a-mixin id="weight8" mass="8.0"></a-mixin>
+            <a-mixin id="weight16" mass="16.0"></a-mixin>
+            <a-mixin id="weight32" mass="32.0"></a-mixin>
+
+            <img id="im1" src="../images/boxx1.png" />
+            <img id="im2" src="../images/Enginewo.png" />
+            <img id="im3" src="../images/cadboxxstd.png" />
+            <img id="im4" src="../images/posx.jpg" />
+            <img id="im5" src="../images/posy.jpg" />
+            <img id="im6" src="../images/posz.jpg" />
+            <img id="im7" src="../images/negx.jpg" />
+            <img id="im8" src="../images/negy.jpg" />
+            <img id="im9" src="../images/negz.jpg" />
+
+
+            <a-mixin id="hingeBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+            <a-mixin id="sliderBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+            <a-mixin id="lockBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+            <a-mixin id="pointBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+            <a-mixin id="rotxBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+            <a-mixin id="rotyBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+            <a-mixin id="rotzBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+
+
+            <a-mixin id="red" material="color: red"></a-mixin>
+            <a-mixin id="blue" material="color: blue"></a-mixin>
+            <a-mixin id="brown" material="color: brown"></a-mixin>
+            <a-mixin id="green" material="color: green"></a-mixin>
+            <a-mixin id="orange" material="color: orange"></a-mixin>
+            <a-mixin id="yellow" material="color: yellow"></a-mixin>
+
+            <!--
+        <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+
+        <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+
+        <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+            -->
+
+            <a-mixin id="trigger-box" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
+                     class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
+                     static-body></a-mixin>
+            <a-mixin id="trigger" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
+                     class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
+                     static-body></a-mixin>
+
+            <a-mixin id="hinge-bodya" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+            <a-mixin id="hinge-bodyb" gltf-model="#ccyly" position="0 2.5 0" rotation="0 0 0" scale="2 1 2"
+                     constraint="type:hinge;target:#bodya;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 2.5 0"
+                     dynamic-body click-impulse></a-mixin>
+            <a-mixin id="hinge-bottom-bodya" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+            <a-mixin id="hinge-bottom-bodyb" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="1 1 1"
+                     constraint="type:hinge;target:#bodyc;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 2 0"
+                     dynamic-body click-impulse></a-mixin>
+            <a-mixin id="hinge-planes-bodya" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+            <a-mixin id="hinge-planes-bodyb" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1"
+                     constraint="type:hinge;target:#bodye;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                     dynamic-body click-impulse></a-mixin>
+
+            <a-mixin id="p2p-planes-bodya" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+            <a-mixin id="p2p-planes-bodyb" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1"
+                     constraint="type:pointTopoint;target:#bodye;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                     dynamic-body click-impulse></a-mixin>
+
+
+
+            <a-mixin id="p2p-bodya" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+            <a-mixin id="p2p-bodyb" gltf-model="#ccyly" position="0 2.5 0" rotation="0 0 0" scale="2 2 2"
+                     constraint="type:pointTopoint;target:#bodye;axis:0 0 0;targetAxis:0 0 0;pivot:0 0 0;targetPivot:0 -2 0"
+                     dynamic-body click-impulse></a-mixin>
+
+            <a-asset-item id="prt1" src="#bb021"></a-asset-item>
+            <a-asset-item id="prt2" src="#prt02"></a-asset-item>
+            <a-asset-item id="prt3" src="#prt03"></a-asset-item>
+            <a-asset-item id="prt4" src="#prt04"></a-asset-item>
+            <a-asset-item id="prt5" src="#prt05"></a-asset-item>
+            <a-asset-item id="prt6" src="#prt06"></a-asset-item>
+            <a-asset-item id="prt7" src="#prt07"></a-asset-item>
+            <a-asset-item id="prt8" src="#prt08"></a-asset-item>
+            <a-asset-item id="prt9" src="#prt09"></a-asset-item>
+
+
+
+            <a-mixin id="rotxx" animation__rotation__xx="property: rotation; dir: forward; dur: 2000;
+                        repeat: indefinite; easing: linear; loop: true; to: 360 0 0"></a-mixin>
+            <a-mixin id="rotyy" animation__rotation__yy="property: rotation; dir: forward; dur: 4000;
+                        repeat: indefinite; easing: linear; loop: true; to: 0 360 0"></a-mixin>
+            <a-mixin id="rotzz" animation__rotation__zz="property: rotation; dir: forward; dur: 3000;
+                        repeat: indefinite; easing: linear; loop: true; to: 0 0 360"></a-mixin>
+            <a-mixin id="rotxyz" animation__rotation__xyz="property: rotation; dir: forward; dur: 3000;
+                        repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
+
+
+            <a-asset-item id="crank4cyl" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
+            <a-asset-item id="crank4cyl-we" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity id="planeboxx" position="0 0 0" scale="1 1 1">
+            <a-entity id="planeboxx" position="0 0 0">
+                <a-entity id="planebox" position="0 0 0">
+                    <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
+                    <a-plane side="double" color="green" position="0 20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
+                    <a-plane side="double" color="blue" position="0 0 20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>
+                    <a-plane side="double" color="blue" position="0 0 -20" rotation="0 0 0" height="40" width="40" material="" satic-body></a-plane>
+                    <a-plane side="double" color="red" position="20 0 0" rotation="0 -90 0" height="40" width="40" material="" static-body></a-plane>
+                    <a-plane side="double" color="red" position="-20 0 0" rotation="0 90 0" height="40" width="40" material="" static-body></a-plane>
+                </a-entity>
+                <!--mesh overlay for walls-->
+                <a-box position="0 -20 0" rotation="0 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="0 20 0" rotation="0 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="0 0 -20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="0 0 20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="-20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1.0" gridhelper="size: 25;divisions:5" static-body></a-box>
+
+
+                <a-box position="0 0 -20" rotation="0 0 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                    <a-entity id="cmnd1" mixin="trigger-box1" position="-10 2 0" rotation="0 0 0" onclick="cmm1()"></a-entity>
+                    <a-entity id="cmnd2" mixin="trigger-box1" position="-10 6 0" rotation="0 0 0" onclick="cmm2()" static-body></a-entity>
+                    <a-entity id="cmnd3" mixin="trigger-box1" position="-10 10 0" rotation="0 0 0" onclick="cmm3()" static-body></a-entity>
+                    <a-entity id="cmnd4" mixin="trigger-box1" position="-5 2 0" rotation="0 0 0" onclick="cmm4()" static-body></a-entity>
+                    <a-entity id="cmnd5" mixin="trigger-box1" position="-5 6 0" rotation="0 0 0" onclick="cmm5()" static-body></a-entity>
+                    <a-entity id="cmnd6" mixin="trigger-box1" position="-5 10 0" rotation="0 0 0" onclick="cmm6()" static-body></a-entity>
+                    <a-entity id="cmnd7" mixin="trigger-box1" position="0 2 0" rotation="0 0 0" onclick="cmm7()" static-body></a-entity>
+                    <a-entity id="cmnd8" mixin="trigger-box1" position="0 6 0" rotation="0 0 0" onclick="cmm8()" static-body></a-entity>
+                    <a-entity id="cmnd9" mixin="trigger-box1" position="0 10 0" rotation="0 0 0" onclick="cmm9()" static-body></a-entity>
+                    <a-entity id="cmnd10" mixin="trigger-box1" position="5 2 0" rotation="0 0 0" onclick="cmm10()" static-body></a-entity>
+                    <a-entity id="cmnd11" mixin="trigger-box1" position="5 6 0" rotation="0 0 0" onclick="cmm11()" static-body></a-entity>
+                    <a-entity id="cmnd12" mixin="trigger-box1" position="5 10 0" rotation="0 0 0" onclick="cmm12()" static-body></a-entity>
+                    <a-entity id="cmnd13" mixin="trigger-box1" position="10 2 0" rotation="0 0 0" onclick="cmm13()" static-body></a-entity>
+                    <a-entity id="cmnd14" mixin="trigger-box1" position="10 6 0" rotation="0 0 0" onclick="cmm14()" static-body></a-entity>
+                    <a-entity id="cmnd15" mixin="trigger-box1" position="10 10 0" rotation="0 0 0" onclick="cmm15()" static-body></a-entity>
+
+                </a-box>
+
+                <a-box position="-20 0 0" rotation="0 90 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                    <a-entity id="cmnd21" mixin="trigger-box2" position="-10 2 0" rotation="0 90 0" onclick="cmm21()" static-body></a-entity>
+                    <a-entity id="cmnd22" mixin="trigger-box2" position="-10 6 0" rotation="0 90 0" onclick="cmm22()" static-body></a-entity>
+                    <a-entity id="cmnd23" mixin="trigger-box2" position="-10 10 0" rotation="0 90 0" onclick="cmm23()" static-body></a-entity>
+                    <a-entity id="cmnd24" mixin="trigger-box2" position="-5 2 0" rotation="0 90 0" onclick="cmm24()" static-body></a-entity>
+                    <a-entity id="cmnd25" mixin="trigger-box2" position="-5 6 0" rotation="0 90 0" onclick="cmm25()" static-body></a-entity>
+                    <a-entity id="cmnd26" mixin="trigger-box2" position="-5 10 0" rotation="0 90 0" onclick="cmm26()" static-body></a-entity>
+                    <a-entity id="cmnd27" mixin="trigger-box2" position="0 2 0" rotation="0 90 0" onclick="cmm27()" static-body></a-entity>
+                    <a-entity id="cmnd28" mixin="trigger-box2" position="0 6 0" rotation="0 90 0" onclick="cmm28()" static-body></a-entity>
+                    <a-entity id="cmnd29" mixin="trigger-box2" position="0 10 0" rotation="0 90 0" onclick="cmm29()" static-body></a-entity>
+                    <a-entity id="cmnd210" mixin="trigger-box2" position="5 2 0" rotation="0 90 0" onclick="cmm210()" static-body></a-entity>
+                    <a-entity id="cmnd211" mixin="trigger-box2" position="5 6 0" rotation="0 90 0" onclick="cmm211()" static-body></a-entity>
+                    <a-entity id="cmnd212" mixin="trigger-box2" position="5 10 0" rotation="0 90 0" onclick="cmm212()" static-body></a-entity>
+                    <a-entity id="cmnd213" mixin="trigger-box2" position="10 2 0" rotation="0 90 0" onclick="cmm213()" static-body></a-entity>
+                    <a-entity id="cmnd214" mixin="trigger-box2" position="10 6 0" rotation="0 90 0" onclick="cmm214()" static-body></a-entity>
+                    <a-entity id="cmnd215" mixin="trigger-box2" position="10 10 0" rotation="0 90 0" onclick="cmm215()" static-body></a-entity>
+
+                </a-box>
+
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="rotorxx" position="-17.5 0 0" rotation="0 0 0" scale="1 1 1" visible="false">
+
+            <a-entity id="flywheelx" gltf-model="#ccylx" material="wireframe:false" position="0 0 0" rotation="0 0 0" scale="10 10 10"
+                      animation__rotation__xx="property: rotation; dir: forward; dur: 5000;
+                      repeat: indefinite; easing: linear; loop: true; to: 360 0 0">
+                <a-entity id="crank-throwx" position="0 0 0" rotation="0 90 0" layout="type: circle; radius: 0.25">
+                    <a-entity id="poxs-one" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph1" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-two" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph2" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-three" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph3" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-four" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph4" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-five" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph5" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-six" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph6" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-seven" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph7" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-eight" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph8" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-nine" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph9" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-ten" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph10" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-eleven" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph11" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+                    <a-entity id="poxs-twelve" gltf-model="#ccylx" scale=".5 .5 .5" rotation="0 90 0"><a-sphere id="sph12" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
+
+                </a-entity>
+            </a-entity>
+
+
+        </a-entity>
+
+        <!--<a-entity id="conball" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/rb4.glb?v=1676584307623" position="0 0 0" scale="2 2 2" static-body>
+        <a-entity id="rbass" mixiin="rotxyz" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+            <a-entity id="bra1" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/rb1.glb?v=1676584285725" position="0 0 0.005" scale="1 1 1" static-body></a-entity>
+            <a-entity id="bra2" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/rb1.glb?v=1676584285725" position="0 0.005 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="bra3" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/rb1.glb?v=1676584285725" position="0.005 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="bra4" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/rb1.glb?v=1676584285725" position="0 0 -0.005" scale="1 1 1" static-body></a-entity>
+            <a-entity id="bra5" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/rb1.glb?v=1676584285725" position="0 -0.005 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="bra6" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/rb1.glb?v=1676584285725" position="-0.005 0 0" scale="1 1 1" static-body></a-entity>
+
+        </a-entity>
+
+    </a-entity>
+
+    <!--
+    <a-box position="-2 2 -2" src="#metal" rotation="90 0 0" width="3" depth="3" height="2" opacity="1" dynamic-body></a-box>
+    <a-box position="2 2 2" src="#metal1" rotation="0 0 90" width="3" depth="3" height="2" opacity="1" dynamic-body></a-box>
+    <a-box position="3 3 3" src="#metal2" rotation="0 0 90" width="3" depth="3" height="2" opacity="1" dynamic-body></a-box>
+
+
+    <!---->
+        <!--
+    <a-entity id="sky-scraper" position="0 0 0" rotation="0 0 0" scale="1 1 1">
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_ground_level.glb?v=1700071311269"
+                  position="0 0 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 .4 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 .8 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 1.2 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 1.6 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 2.0 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 2.4 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 2.8 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 3.2 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 3.6 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 4 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 4.4 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 4.8 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 5.2 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 5.6 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 6 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 6.4 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 6.8 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 7.2 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 7.6 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 8.0 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 8.4 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 8.8 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 9.2 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 9.6 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/building_single_level.glb?v=1700071289985"
+                  position="0 10.0 0" rotation="0 0 0" scale="10 10 10"></a-entity>
+
+
+    </a-entity>-->
+        <!--dynamic-sphorb-->
+    <a-entity id="whorbassy" mixin="###" position="0 10 0" rotation="0 0 0" scale=".5 .5 .5" static-body>
+        <a-entity id="whorb1" gltf-model="#bb02" mixin="###" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+        <!--<a-entity id="whorb2" gltf-model="#bb03" class="clickable" mixin="###" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" dynamic-body
+                  ></a-entity>
+        <a-entity id="whorb3" gltf-model="#bb04" mixin="###" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" dynamic-body
+                  ></a-entity>-->
+        <a-entity id="whorb4" gltf-model="#bb05" target="#whorb1" mixin="constraint_hinge_z" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000"
+                  dynamic-body click-impulse ></a-entity>
+
+    </a-entity>
+    <!--dynamic-sphorb-end-->
+        <!--
+        <a-cylinder id="centerx" radius="0.1" height="0.1" color="green" material="wireframe:false" position="0 0 0" rotation="0 0 90"></a-cylinder>
+               -->
+        <!--sphorb--
+    <a-entity id="orbassy" mixin="rot0" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body>
+        <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+        <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                  animation__rotation__xx="property: rotation; dir: forward; dur: 2000;
+    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+        <a-entity id="orb3" gltf-model="#bb04" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                  animation__rotation__yy="property: rotation; dir: forward; dur: 2000;
+    repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+        <a-entity id="orb4" gltf-model="#bb05" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                  animation__rotation__zz="property: rotation; dir: forward; dur: 2000;
+    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+
+    </a-entity>
+    <!--sphorb-end-->
+        <!--stuff--
+    <a-entity id="ringassy" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="ring1" mixin="toru red rotxx" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body></a-entity>
+        <a-entity id="ring2" mixin="toru blue rotyy" position="0 0 0" rotation="0 0 0" scale="2 2 2" static-body></a-entity>
+        <a-entity id="ring3" mixin="toru green rotxyz" position="0 0 0" rotation="0 0 0" scale="6 6 6" static-body></a-entity>
+        <a-entity id="ring4" mixin="toru brown rotxx" position="0 0 0" rotation="0 0 0" scale="10 10 10" static-body></a-entity>
+
+    </a-entity>-->
+        <!--glb child-->
+        <a-entity id="redbxyz" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body visible="false">
+            <a-entity id="ring1" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="5 5 5" static-body></a-entity>
+        </a-entity>
+        <a-entity id="redbxx" mixin="rotxx" position="-8.0 0 0" rotation="0 90 0" scale="1 1 1" static-body visible="true">
+            <a-entity id="prt3" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale=".05 .05 .05" static-body></a-entity>
+        </a-entity>
+        <a-entity id="redbyy" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body visible="false">
+            <a-entity id="prt2" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="5 5 5" static-body></a-entity>
+        </a-entity>
+        <a-entity id="redbzz" mixin="rotzz" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body visible="false">
+            <a-entity id="prt1" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="10 10 10" static-body></a-entity>
+        </a-entity>
+        <!--chains--
+    <a-entity id="chains" mixin="" position="5 3 0" rotation="0 0 0" scale="1 1 1" static-body visible="true">
+        <a-entity id="ch1" gltf-model="#chlink1" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+            <a-entity id="ch2" gltf-model="#chlink2" position="0 -0.5 0" rotation="0 0 0" scale="1 1 1"
+                      constraint="type:hinge;target:#chlink1;axis:1 0 0;targetAxis:1 0 0;pivot:0 0.5 0;targetPivot:0 -0.5 0"
+                      dynamic-body></a-entity>
+
+        </a-entity>
+
+
+
+        <a-entity camera look-controls wasd-controls position="0 1 1"
+                  capture-mouse
+                  raycaster cursor="rayOrigin:mouse"
+                  body="type: static; shape: sphere; sphereRadius: 0.001"
+                  super-hands="colliderEvent: raycaster-intersection;
+                             colliderEventProperty: els;
+                             colliderEndEvent:raycaster-intersection-cleared;
+                             colliderEndEventProperty: clearedEls;">
+        </a-entity>
+        <!--<a-entity class="transformer" position="0 1.6 -1"
+              color-randomizer droppable body="type: static; shape: none"
+              shape="shape: box; halfExtents: 0.25 0.25 0.25"
+              geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
+              event-set__dragon="_event: dragover-start; material.color: orange"
+              event-set__dragoff="_event: dragover-end; material.color: purple"
+              material="color:purple" shadow>
+        <a-entity text="value: Drag&drop to change color;
+              width: 0.5; wrapCount: 12; align: center"
+                  position="0 0 0.25">
+        </a-entity>
+    </a-entity>--
+
+        <a-entity class="cube" mixin="cube" position="0 0.265 -1" material="color: red"></a-entity>
+        <a-entity class="cube" mixin="cube" position="0 0.265 -0.5" material="color: red"></a-entity>
+        <a-entity class="cube" mixin="cube" position="-1 0.265 -1" material="color: blue"></a-entity>
+        <a-entity class="cube" mixin="cube" position="-1 0.265 -0.5" material="color: blue"></a-entity>
+        <a-entity class="cube" mixin="cube" position="1 0.265 -1" material="color: green"></a-entity>
+        <a-entity class="cube" mixin="cube" position="1 0.265 -0.5" material="color: green"></a-entity>
+        <!-- ground collider keeps objets from falling -->
+        <a-box body="type: static; shape: none" shape="shape: box; halfExtents: 50 0.0005 50" width=100 height=0.001 depth=100 visible="false"></a-box>
+        <!--<a-sphere id="lite1" color="white" position="0 15 0">
+        <a-entity light="type: spot; target: #lite2; color: #EEE; intensity: 2.0"></a-entity>
+    </a-sphere>
+    <a-sphere id="lite2" color="white" position="0 -15 0">
+        <a-entity light="type: spot; target: #lite1; color: #EEE; intensity: 2.0"></a-entity>
+    </a-sphere>
+        -->
+        <a-entity position="15 15 15" light="type: directional;directionaltarget:#lite2; intensity:1.0"></a-entity>
+        <a-entity position="15 15 -15" light="type: directional;directionaltarget:#lite2; intensity:1.0"></a-entity>
+        <a-entity position="15 -15 15" light="type: directional;directionaltarget:#lite1; intensity:1.0"></a-entity>
+        <a-entity position="15 -15 -15" light="type: directional;directionaltarget:#lite1; intensity:1.0"></a-entity>
+        <a-entity position="-19 19 19" light="type: directional;directionaltarget:#lite2; intensity:1.0"></a-entity>
+        <a-entity position="-19 19 -19" light="type: directional;directionaltarget:#lite2; intensity:1.0"></a-entity>
+        <a-entity position="-19 -19 19" light="type: directional;directionaltarget:#lite1; intensity:1.0"></a-entity>
+        <a-entity position="-19 -19 -19" light="type: directional;directionaltarget:#lite1; intensity:1.0"></a-entity>
+        <!--
+    <a-entity position="15 15 15" light="type: ambient; intensity:2.0"></a-entity>
+    <a-entity position="15 15 -15" light="type: ambient; intensity:2.0"></a-entity>
+    <a-entity position="15 -15 15" light="type: ambient; intensity:2.0"></a-entity>
+    <a-entity position="15 -15 -15" light="type: ambient; intensity:2.0"></a-entity>
+    <a-entity position="-19 19 19" light="type: ambient; intensity:2.0"></a-entity>
+    <a-entity position="-19 19 -19" light="type: ambient; intensity:2.0"></a-entity>
+    <a-entity position="-19 -19 19" light="type: ambient; intensity:2.0"></a-entity>
+    <a-entity position="-19 -19 -19" light="type: ambient; intensity:2.0"></a-entity>
+    -->
+        <a-entity position="18 18 18" light="type: spot;target:0 0 0; intensity:2.0;angle:60;distance:0"></a-entity>
+
+        <a-entity position="18 18 -18" light="type: spot;target:0 0 0; intensity:2.0;angle:60;distance:0"></a-entity>
+
+        <a-entity position="18 -18 18" light="type: spot;target:0 0 0; intensity:2.0;angle:60;distance:0"></a-entity>
+
+        <a-entity position="18 -18 -18" light="type: spot;target:0 0 0; intensity:2.0;angle:60;distance:0"></a-entity>
+
+        <a-entity position="-19 19 19" light="type: spot;target:0 0 0; intensity:2.0;angle:60;distance:0"></a-entity>
+
+        <a-entity position="-19 19 -19" light="type: spot;target:0 0 0; intensity:2.0;angle:60;distance:0"></a-entity>
+
+        <a-entity position="-19 -19 19" light="type: spot;target:0 0 0; intensity:2.0;angle:60;distance:0"></a-entity>
+
+        <a-entity position="-19 -19 -19" light="type: spot;target:0 0 0; intensity:2.0;angle:45;distance:0"></a-entity>
+
+        <a-entity id="anchor01" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+
+            <a-entity id="plane01" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="plane02" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="plane03" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="plane04" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="plane05" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="plane06" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="plane07" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="plane08" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+            <a-entity id="plane09" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+
+        </a-entity>
+
+        <!--
+    <a-entity id="my-camera" look-controls wasd-controls="fly: true; acceleration:100" camera="userHeight: 3" raycaster="far: 3; near: 2" crawling-cursor="target: #my-cursor"><a-cursor></a-cursor></a-entity>
+    <a-entity id="my-cursor" rotation="-90 0 0"></a-entity>
+    <a-entity id="geo" geometry="gltf-model:#ccyl1"></a-entity><!--//select mixins from list var modmix = ""
+    -->
+
+        <a-box id="ground" position="0 0 0" rotation="0 0 0" width="30" depth="30" height="0.001" color="lightblue" opacity=".1" gridhelper="size:30;divisions:15;ColoredCenterLine:yellow" static-body></a-box>
+        <a-sky src="#im2" radius="50"></a-sky>
+
+        <!-- Hands. -->
+        <a-entity id="teleHand" hand-controls="left" teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground"></a-entity>
+        <a-entity id="blockHand" hand-controls="right" controller-cursor intersection-spawn="event: click; mixin: voxel"></a-entity>
+
+
+
+    </a-scene>
+</body>
+</html>

@@ -1,0 +1,371 @@
+﻿<html>
+<head>
+    <title>A-Frame UI Widgets</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-lines@^1.1.0/lines.js"></script>
+    <script src="https://unpkg.com/aframe-touch-inspector@1.1.2/dist/aframe-inspector.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.3.0/dist/aframe-orbit-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script>
+    <script src="aframe-gltf-exporter-component.min.js"></script>
+    <script src="js/aframe-screenshot-component.js"></script>
+    <script src="js/aframe-layout-component.js"></script>
+    <script src="js/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <!--super keyboard-->
+    <link rel="stylesheet" type="text/css" href="aframe.css">
+    <script>
+        AFRAME.registerComponent('cai', {
+            init: function () {
+                document.getElementById('ctrl-alt-i').addEventListener('click', function () {
+                    // create a new keyboard event
+                    var event = new KeyboardEvent('keydown', {
+                        key: 'i',
+                        altKey: true,
+                        ctrlKey: true
+                    });
+                    // dispatch the ctrl-alt+i key press event
+                    document.dispatchEvent(event);
+                });
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        if (window.AFRAME == null) {
+            console.error("aframe not found, please import it before this component.")
+        }
+
+        AFRAME.registerSystem("track-cursor", {
+            init: function () {
+                this.el.setAttribute("cursor", { rayOrigin: "mouse" });
+            }
+        });
+
+        AFRAME.registerComponent("track-cursor", {
+            init: function () {
+                this.el.addEventListener("mousedown", e => {
+                    if (this.el.is("cursor-hovered")) {
+                        this.el.sceneEl.camera.el.setAttribute("look-controls", {
+                            enabled: false
+                        });
+                        this.el.addState("dragging");
+                    }
+                })
+                this.el.addEventListener("click", e => {
+                    if (this.el.is("dragging")) {
+                        this.el.sceneEl.camera.el.setAttribute("look-controls", {
+                            enabled: true
+                        });
+                        this.el.removeState("dragging");
+                    }
+                })
+            },
+        });
+
+        AFRAME.registerComponent("dragndrop", {
+            dependencies: ["track-cursor"],
+            init: function () {
+                this.range = 0;
+                this.dist = 0;
+
+                this.el.addEventListener("stateadded", e => {
+                    if (e.detail == "dragging") {
+                        this.range = 0;
+                        this.dist = this.el.object3D.position
+                            .clone()
+                            .sub(this.el.sceneEl.camera.el.object3D.position)
+                            .length();
+                    }
+                })
+
+                this.direction = new AFRAME.THREE.Vector3();
+                this.target = new AFRAME.THREE.Vector3();
+                document.addEventListener("wheel", e => {
+                    if (e.deltaY < 0) {
+                        this.range += 0.1;
+                    } else {
+                        this.range -= 0.1;
+                    }
+                });
+            },
+            updateDirection: function () {
+                this.direction.copy(this.el.sceneEl.getAttribute("raycaster").direction);
+            },
+            updateTarget: function () {
+                let camera = this.el.sceneEl.camera.el
+                this.target.copy(
+                    camera.object3D.position
+                        .clone()
+                        .add(this.direction.clone().multiplyScalar(this.dist + this.range))
+                );
+            },
+            tick: function () {
+                if (this.el.is("dragging")) {
+                    this.updateDirection();
+                    this.updateTarget();
+                    this.el.object3D.position.copy(this.target);
+                }
+            }
+        });
+    </script>
+
+    <script>
+        AFRAME.registerComponent('click-impulse', {
+            init: function () {
+                var el = this.el;
+
+                el.addEventListener('click', function () {
+                    el.body.applyImpulse(
+                        /* impulse */
+                        new CANNON.Vec3(
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20)
+                        ),
+                                                                                                    /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                    );
+                });
+
+            }
+        });
+
+        // forward mouse and touch events to the super-hands entity
+        AFRAME.registerComponent('capture-mouse', {
+            init: function () {
+                this.eventRepeater = this.eventRepeater.bind(this)
+                this.el.sceneEl.addEventListener('loaded', () => {
+                    this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+                }, { once: true })
+            },
+            eventRepeater: function (evt) {
+                if (evt.type.startsWith('touch')) {
+                    evt.preventDefault()
+                    // avoid repeating touchmove because it interferes with look-controls
+                    if (evt.type === 'touchmove') { return }
+                }
+                this.el.emit(evt.type, evt.detail)
+            }
+        })
+    </script>
+
+    <script src="build.js"></script>
+
+</head>
+<body>
+    <a-scene physics="gravity:-10;restitution:0.5;friction:0.1"
+             gltf-exporter>
+
+        <a-assets>
+            <a-mixin id="beveled-square" geometry="primitive: cone; radiusTop: 0.15; radiusBottom: 0.19; height: 0.02; segmentsRadial: 4; segmentsHeight: 1" rotation="0 45 0"></a-mixin>
+            <a-mixin id="square" geometry="primitive: box; width: 0.18; height: 0.025; depth: 0.18;" position="0 0.02 0"></a-mixin>
+            <a-mixin id="blue" material="color: #1E2768;"></a-mixin>
+            <a-mixin id="darkgreen" material="color: #22FF90;"></a-mixin>
+            <a-mixin id="yellow" material="color: #FFF88E;"></a-mixin>
+            <a-mixin id="offset" position="0 0.01 0"></a-mixin>
+
+
+
+
+        </a-assets>
+
+        <a-entity id="planeboxxx" position="0 0 0" scale="1 1 1">
+            <a-entity id="planeboxx" position="0 0 0">
+                <a-entity id="planebox" position="0 0 0">
+                    <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body>
+
+                    </a-plane>
+                    <a-plane side="double" color="green" position="0 20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
+                    <a-plane side="double" color="blue" position="0 0 20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>
+                    <a-plane side="double" color="blue" position="0 0 -20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>
+                    <a-plane side="double" color="red" position="20 0 0" rotation="0 -90 0" height="40" width="40" material="" static-body></a-plane>
+                    <a-plane side="double" color="red" position="-20 0 0" rotation="0 90 0" height="40" width="40" material="" static-body></a-plane>
+                </a-entity>
+                <!--mesh overlay for walls-->
+                <a-box position="0 -20 0" rotation="0 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="0 20 0" rotation="0 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="0 0 -20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="0 0 20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="-20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                <a-box position="20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1.0" gridhelper="size: 25;divisions:5" static-body></a-box>
+
+                <a-box position="0 0 -20" rotation="0 0 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                    <a-entity id="cmnd1" mixin="trigger-box4" position="-10 0 0" rotation="0 0 0" onclick="cmm1()" static-body><a-sphere id="cmcdsph1" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd2" mixin="trigger-box4" position="-10 5 0" rotation="0 0 0" onclick="cmm2()" static-body><a-sphere id="cmcdsph2" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd3" mixin="trigger-box4" position="-10 -5 0" rotation="0 0 0" onclick="cmm3()" static-body><a-sphere id="cmcdsph3" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd4" mixin="trigger-box4" position="-5 0 0" rotation="0 0 0" onclick="cmm4()" static-body><a-sphere id="cmcdsph4" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd5" mixin="trigger-box4" position="-5 5 0" rotation="0 0 0" onclick="cmm5()" static-body><a-sphere id="cmcdsph5" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd6" mixin="trigger-box4" position="-5 -5 0" rotation="0 0 0" onclick="cmm6()" static-body><a-sphere id="cmcdsph6" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd7" mixin="trigger-box4" position="0 0 0" rotation="0 0 0" onclick="cmm7()" static-body><a-sphere id="cmcdsph7" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd8" mixin="trigger-box4" position="0 5 0" rotation="0 0 0" onclick="cmm8()" static-body><a-sphere id="cmcdsph8" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd9" mixin="trigger-box4" position="0 -5 0" rotation="0 0 0" onclick="cmm9()" static-body><a-sphere id="cmcdsph9" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd10" mixin="trigger-box4" position="5 0 0" rotation="0 0 0" onclick="cmm10()" static-body><a-sphere id="cmcdsph10" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd11" mixin="trigger-box4" position="5 5 0" rotation="0 0 0" onclick="cmm11()" static-body><a-sphere id="cmcdsph11" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd12" mixin="trigger-box4" position="5 -5 0" rotation="0 0 0" onclick="cmm12()" static-body><a-sphere id="cmcdsph12" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd13" mixin="trigger-box4" position="10 0 0" rotation="0 0 0" onclick="cmm13()" static-body><a-sphere id="cmcdsph13" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd14" mixin="trigger-box4" position="10 5 0" rotation="0 0 0" onclick="cmm14()" static-body><a-sphere id="cmcdsph14" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                    <a-entity id="cmnd15" mixin="trigger-box4" position="10 -5 0" rotation="0 0 0" onclick="cmm15()" static-body><a-sphere id="cmcdsph15" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+
+                </a-box>
+
+                <a-box position="-20 0 0" rotation="0 90 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                    <a-entity id="cmnd21" mixin="trigger-box2" position="-10 0 0" rotation="0 90 0" onclick="cmm21()" static-body></a-entity>
+                    <a-entity id="cmnd22" mixin="trigger-box2" position="-10 5 0" rotation="0 90 0" onclick="cmm22()" static-body></a-entity>
+                    <a-entity id="cmnd23" mixin="trigger-box2" position="-10 -5 0" rotation="0 90 0" onclick="cmm23()" static-body></a-entity>
+                    <a-entity id="cmnd24" mixin="trigger-box2" position="-5 0 0" rotation="0 90 0" onclick="cmm24()" static-body></a-entity>
+                    <a-entity id="cmnd25" mixin="trigger-box2" position="-5 5 0" rotation="0 90 0" onclick="cmm25()" static-body></a-entity>
+                    <a-entity id="cmnd26" mixin="trigger-box2" position="-5 -5 0" rotation="0 90 0" onclick="cmm26()" static-body></a-entity>
+                    <a-entity id="cmnd27" mixin="trigger-box2" position="0 0 0" rotation="0 90 0" onclick="cmm27()" static-body></a-entity>
+                    <a-entity id="cmnd28" mixin="trigger-box2" position="0 5 0" rotation="0 90 0" onclick="cmm28()" static-body></a-entity>
+                    <a-entity id="cmnd29" mixin="trigger-box2" position="0 -5 0" rotation="0 90 0" onclick="cmm29()" static-body></a-entity>
+                    <a-entity id="cmnd210" mixin="trigger-box2" position="5 0 0" rotation="0 90 0" onclick="cmm210()" static-body></a-entity>
+                    <a-entity id="cmnd211" mixin="trigger-box2" position="5 5 0" rotation="0 90 0" onclick="cmm211()" static-body></a-entity>
+                    <a-entity id="cmnd212" mixin="trigger-box2" position="5 -5 0" rotation="0 90 0" onclick="cmm212()" static-body></a-entity>
+                    <a-entity id="cmnd213" mixin="trigger-box2" position="10 0 0" rotation="0 90 0" onclick="cmm213()" static-body></a-entity>
+                    <a-entity id="cmnd214" mixin="trigger-box2" position="10 5 0" rotation="0 90 0" onclick="cmm214()" static-body></a-entity>
+                    <a-entity id="cmnd215" mixin="trigger-box2" position="10 -5 0" rotation="0 90 0" onclick="cmm215()" static-body></a-entity>
+
+                </a-box>
+                <a-box position="0 -20 0" rotation="0 0 0" width="40" depth="40" height="0.5" color="lightblue" opacity=".1" static-body>
+                    <a-entity id="cmnd31" mixin="trigger-box3" position="-10 0 0" rotation="0 90 0" onclick="cmm21()" static-body></a-entity>
+                    <a-entity id="cmnd32" mixin="trigger-box3" position="-10 0 5" rotation="0 90 0" onclick="cmm22()" static-body></a-entity>
+                    <a-entity id="cmnd33" mixin="trigger-box3" position="-10 0 10" rotation="0 90 0" onclick="cmm23()" static-body></a-entity>
+                    <a-entity id="cmnd34" mixin="trigger-box3" position="-5 0 0" rotation="0 90 0" onclick="cmm24()" static-body></a-entity>
+                    <a-entity id="cmnd35" mixin="trigger-box3" position="-5 0 5" rotation="0 90 0" onclick="cmm25()" static-body></a-entity>
+                    <a-entity id="cmnd36" mixin="trigger-box3" position="-5 0 10" rotation="0 90 0" onclick="cmm26()" static-body></a-entity>
+                    <a-entity id="cmnd37" mixin="trigger-box3" position="0 0 0" rotation="0 90 0" onclick="cmm27()" static-body></a-entity>
+                    <a-entity id="cmnd38" mixin="trigger-box3" position="0 0 5" rotation="0 90 0" onclick="cmm28()" static-body></a-entity>
+                    <a-entity id="cmnd39" mixin="trigger-box3" position="0 0 10" rotation="0 90 0" onclick="cmm29()" static-body></a-entity>
+                    <a-entity id="cmnd310" mixin="trigger-box3" position="5 0 0" rotation="0 90 0" onclick="cmm210()" static-body></a-entity>
+                    <a-entity id="cmnd311" mixin="trigger-box3" position="5 0 5" rotation="0 90 0" onclick="cmm211()" static-body></a-entity>
+                    <a-entity id="cmnd312" mixin="trigger-box3" position="5 0 10" rotation="0 90 0" onclick="cmm212()" static-body></a-entity>
+                    <a-entity id="cmnd313" mixin="trigger-box3" position="10 0 0" rotation="0 90 0" onclick="cmm213()" static-body></a-entity>
+                    <a-entity id="cmnd314" mixin="trigger-box3" position="10 0 5" rotation="0 90 0" onclick="cmm214()" static-body></a-entity>
+                    <a-entity id="cmnd315" mixin="trigger-box3" position="10 0 10" rotation="0 90 0" onclick="cmm215()" static-body></a-entity>
+                    <a-entity id="cmnd316" mixin="trigger-box3" position="-10 0 0" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                    <a-entity id="cmnd317" mixin="trigger-box3" position="-10 0 -5" rotation="0 90 0" onclick="cmm217()" static-body></a-entity>
+                    <a-entity id="cmnd318" mixin="trigger-box3" position="-10 0 -10" rotation="0 90 0" onclick="cmm218()" static-body></a-entity>
+                    <a-entity id="cmnd319" mixin="trigger-box3" position="-5 0 0" rotation="0 90 0" onclick="cmm219()" static-body></a-entity>
+                    <a-entity id="cmnd320" mixin="trigger-box3" position="-5 0 -5" rotation="0 90 0" onclick="cmm220()" static-body></a-entity>
+                    <a-entity id="cmnd321" mixin="trigger-box3" position="-5 0 -10" rotation="0 90 0" onclick="cmm221()" static-body></a-entity>
+                    <a-entity id="cmnd322" mixin="trigger-box3" position="0 0 0" rotation="0 90 0" onclick="cmm222()" static-body></a-entity>
+                    <a-entity id="cmnd323" mixin="trigger-box3" position="0 0 -5" rotation="0 90 0" onclick="cmm223()" static-body></a-entity>
+                    <a-entity id="cmnd324" mixin="trigger-box3" position="0 0 -10" rotation="0 90 0" onclick="cmm224()" static-body></a-entity>
+                    <a-entity id="cmnd325" mixin="trigger-box3" position="5 0 0" rotation="0 90 0" onclick="cmm225()" static-body></a-entity>
+                    <a-entity id="cmnd326" mixin="trigger-box3" position="5 0 -5" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                    <a-entity id="cmnd327" mixin="trigger-box3" position="5 0 -10" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                    <a-entity id="cmnd328" mixin="trigger-box3" position="10 0 0" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                    <a-entity id="cmnd329" mixin="trigger-box3" position="10 0 -5" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                    <a-entity id="cmnd330" mixin="trigger-box3" position="10 0 -10" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+
+                </a-box>
+            </a-entity>
+        </a-entity>
+
+        <!--<a-sphere src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cb-sphere.png?v=1691596177019" position="0 0 0" radius="50" ></a-sphere>
+            -->
+        <a-light type="point" color="#94c6ff" distance="15" position="0 0 -12" intensity="2" animation="property: light.intensity; from: 0; to: 2; delay: 750; dur: 500" light="intensity: 2" visible=""></a-light>
+        <a-light type="point" color="#94c6ff" distance="17" position="0 0 -6" intensity="2" animation="property: light.intensity; from: 0; to: 1; delay: 500; dur: 500" light="intensity: 1"></a-light>
+        <a-light type="hemisphere" position="0 0 0" color="#4f6487" intensity="2"></a-light>
+
+
+        <!--assembly-planes-->
+        <!-- Hands -->
+        <a-entity hand-controls="left"></a-entity>
+        <a-entity hand-controls="right"></a-entity>
+
+        <!-- UI widgets template -->
+        <a-entity position="0 1 0" rotation="0 0 0" scale="2 2 2">
+            <a-entity id="target"
+                      position="0 0.5 -1.5"
+                      geometry="primitive: torusKnot; radius: 0.5; radiusTubular: 0.02; p: 3; q: 2"
+                      material="color: orange">
+            </a-entity>
+
+            <!-- Button, custom styles -->
+            <a-entity id="buttonCustom" ui-button="value: 0; base: beveled-square, blue; top: square, darkgreen; pressed: yellow, offset" position="-0.7 0.1 -0.3" rotation="45 0 0"></a-entity>
+
+            <!-- Button, uses default styles -->
+            <a-entity id="buttonStd" ui-button position="-0.35 0.1 -0.3" rotation="45 0 0"></a-entity>
+
+            <!-- Rotary Knob -->
+            <a-entity id="rotaryKnob" ui-rotary position="0 0.1 -0.3" rotation="45 0 0"></a-entity>
+
+            <!-- Toggle Switch -->
+            <a-entity id="toggleSwitch" ui-toggle="value: 0" position="0.3 0.1 -0.3" rotation="45 0 0"></a-entity>
+
+            <!-- Slider -->
+            <a-entity id="valueSlider" ui-slider="min: 1; max: 10; value: 5" position="0 0 0" rotation></a-entity>
+
+            <!--<a-box id="bxx1" position="2 2 2" rotation="0 0 0" scale="3 3 3" material="color:green"></a-box>
+            -->
+        </a-entity>
+
+        <a-sky color="#333333"></a-sky>
+        <a-camera mouse-cursor wasd-controls>
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-scene>
+
+    <script>
+        // Object which we're going to modify
+        var targetEntity = document.querySelector('#target');
+
+        // picks random color buttonCustom
+        var buttonCustom = document.querySelector('#buttonCustom');
+        buttonCustom.addEventListener('pressed', function (e) {
+            var scene = document.querySelector('a-scene');
+            if (scene.getAttribute('stats')) {
+                scene.setAttribute('stats', 'false');
+            } else {
+                scene.setAttribute('stats', 'true');
+            }
+        });
+
+        // picks random color buttonCustom
+        var buttonStd = document.querySelector('#buttonStd');
+        buttonStd.addEventListener('pressed', function () {
+            var randomHexColor = Math.floor(Math.random() * 0xffffff).toString(16);
+            targetEntity.setAttribute('material', {
+                color: '#' + randomHexColor
+            });
+        });
+
+        // changes size
+        var valueSlider = document.querySelector('#valueSlider');
+        valueSlider.addEventListener('change', function (e) {
+            targetEntity.setAttribute('geometry', { q: e.detail.value });
+        });
+
+        // animates object
+        var toggleSwitch = document.querySelector('#toggleSwitch');
+        var interval;
+        toggleSwitch.addEventListener('change', function (e) {
+            if (e.detail.value) {
+                interval = setInterval(function () {
+                    targetEntity.setAttribute('rotation', {
+                        y: targetEntity.getAttribute('rotation').y + 1
+                    })
+                }, 10);
+            } else {
+                clearInterval(interval);
+            }
+        });
+
+        // changes tubular radius
+        var rotaryKnob = document.querySelector('#rotaryKnob');
+        rotaryKnob.addEventListener('change', function (e) {
+            var value = e.detail.value * 0.1;
+            targetEntity.setAttribute('geometry', {
+                radiusTubular: targetEntity.getAttribute('geometry').radiusTubular + value
+            });
+        });
+    </script>
+</body>
+</html>

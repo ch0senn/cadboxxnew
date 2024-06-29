@@ -1,0 +1,154 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A-Frame GUI Dropdown</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+    
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    
+    <script src="js/aframe-gui.js"></script>
+    <script src="js/gui-env.js"></script>
+
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene gui-env embedded arjs='sourceType: webcam;'>
+        <a-assets>
+            <a-asset-item id="iconfontsolid" src="assets/fonts/fa-solid-900.ttf"></a-asset-item>
+            <a-asset-item id="textfont" src="assets/fonts/PermanentMarker-Regular.ttf"></a-asset-item>
+            <video id="webcam" playsinline></video>
+        </a-assets>
+
+        <a-torus-knot id="knot"
+                      color="#BCC6CD" arc="180" p="2" q="10" radius="4" radius-tubular="0.1" position="-1.5 2 -7" rotation="90 0 0"
+                      animation="property: rotation; to: 90 360 0; dur: 10000; easing:linear; loop:true;">
+        </a-torus-knot>
+
+        <a-entity position="2 1.5 -4" rotation="0 0 0">
+            <a-entity id="dropdownContainer" position="0 0 -1">
+
+                <a-gui-flex-container flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+                                      opacity="0" width="2.5" height="0.75"
+                                      position="0 0.375 0" rotation="0 0 0">
+                    <a-gui-icon-label-button id="mydropdown"
+                                             width="2.5" height="0.75"
+                                             onclick="openDropdown"
+                                             icon="f0c9"
+                                             icon-font="assets/fonts/fa-solid-900.ttf"
+                                             value="dropdown"
+                                             font-family="assets/fonts/PermanentMarker-Regular.ttf"
+                                             font-size="0.25"
+                                             visible="true"
+                                             animation__rotateIn="property: rotation; to: 180 0 0; dur: 1000; startEvents:opendropdown"
+                                             animation__visibleIn="property: visible; to: false; delay: 500; startEvents:opendropdown"
+                                             animation__rotateOut="property: rotation; to: 0 0 0; dur: 1000; startEvents:closedropdown"
+                                             animation__visibleOut="property: visible; to: true; delay: 500; startEvents:closedropdown">
+                    </a-gui-icon-label-button>
+                </a-gui-flex-container>
+
+                <a-gui-flex-container id="myoptions"
+                                      flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1"
+                                      opacity="0" width="2.5" height="0.75"
+                                      position="0 0 -0.15" rotation="0 0 0" scale="1 0.001 0.001"
+                                      visible="false"
+                                      animation__positionIn="property: position; to: 0 0.375 0.15; dur: 1000; startEvents:opendropdown"
+                                      animation__scaleIn="property: scale; to: 1 1 1; dur: 1000; startEvents:opendropdown"
+                                      animation__visibleIn="property: visible; to: true; dur: 100; startEvents:opendropdown"
+                                      animation__positionOut="property: position; to: 0 0 -0.15; dur: 1000; startEvents:closedropdown"
+                                      animation__scaleOut="property: scale; to: 1 0.001 0.001; dur: 1000; startEvents:closedropdown"
+                                      animation__visibleOut="property: visible; to: false; dur: 100; delay: 500; startEvents:closedropdown">
+                    <a-gui-button width="2.5" height="0.75"
+                                  onclick="red"
+                                  font-family="assets/fonts/PermanentMarker-Regular.ttf"
+                                  font-size="0.3"
+                                  value="Red">
+                    </a-gui-button>
+                    <a-gui-button width="2.5" height="0.75"
+                                  onclick="blue"
+                                  font-family="assets/fonts/PermanentMarker-Regular.ttf"
+                                  font-size="0.3"
+                                  value="Blue">
+                    </a-gui-button>
+                    <a-gui-button width="2.5" height="0.75"
+                                  onclick="green"
+                                  font-family="assets/fonts/PermanentMarker-Regular.ttf"
+                                  font-size="0.3"
+                                  value="Green">
+                    </a-gui-button>
+                    <a-gui-icon-button height="0.5"
+                                       onclick="closeDropdown"
+                                       icon="f00d"
+                                       icon-font="assets/fonts/fa-solid-900.ttf">
+                    </a-gui-icon-button>
+
+                </a-gui-flex-container>
+
+
+            </a-entity>
+        </a-entity>
+
+        <!-- Camera + cursor. -->
+        <a-entity id="cameraRig" position="0 1.6 0">
+            <a-camera camera="active: true" look-controls wasd-controls position="0 0 0">
+                <a-gui-cursor id="cursor"
+                              raycaster="objects: [gui-interactable]"
+                              fuse="true" fuse-timeout="2000"
+                              design="ring">
+                </a-gui-cursor> <!-- /cursor -->
+            </a-camera> <!-- /camera -->
+        </a-entity>
+
+    </a-scene>
+
+    <script>
+		window.closeDropdown = function() {
+			console.log("closedropdown");
+			var mydropdown = document.getElementById("mydropdown");
+            mydropdown.emit('closedropdown');
+			var myoptions = document.getElementById("myoptions");
+            myoptions.emit('closedropdown');
+
+		}
+		window.openDropdown = function() {
+			console.log("opendropdown");
+			var mydropdown = document.getElementById("mydropdown");
+            mydropdown.emit('opendropdown');
+			var myoptions = document.getElementById("myoptions");
+            myoptions.emit('opendropdown');
+
+		}
+
+		window.red = function() {
+			var knot = document.getElementById("knot");
+			knot.setAttribute('material', 'color', '#DC2531');
+		}
+		window.green = function() {
+			var knot = document.getElementById("knot");
+			knot.setAttribute('material', 'color', '#69FFD2');
+		}
+		window.blue = function() {
+			var knot = document.getElementById("knot");
+			knot.setAttribute('material', 'color', '#1FA4E9');
+		}
+
+
+
+    </script>
+
+    <script>
+	// You can also set which camera to use (front/back/etc)
+	// @SEE https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+	navigator.mediaDevices.getUserMedia({audio: false, video: true})
+	.then(stream => {
+	  let $video = document.querySelector('video')
+	  $video.srcObject = stream
+	  $video.onloadedmetadata = () => {
+		$video.play()
+	  }
+	})
+    </script>
+
+</body>
+</html>

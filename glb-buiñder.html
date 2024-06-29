@@ -44,11 +44,12 @@
         <button id="export-scene" class="button"><span>Export GLTF</span></button>
         <button id="export-scene-bin" class="button"><span>Export GLB</span></button>
         <button id="export-sphere" class="button"><span>Export Sphorb</span></button>
-        <button id="export-sky-scraper" class="button"><span>Export SS</span></button>
+        <button id="export-sky-scraper" class="button"><span>Export Matl Box</span></button>
         <button id="entvr" class="button" onclick="evr()"><span>Enter VR</span></button>
         <button id="cam2" class="button" onclick="cmm2()"><span>Camera 2</span></button>
         <button id="screenshot-p" class="button" onclick="screenshotp()"><span>screen persp</span></button>
         <button id="screenshot-r" class="button" onclick="screenshotr()"><span>screen equi</span></button>
+        <button id="cubewithtexture" class="button" onclick="newmatlcube()"><span>texturecube</span></button>
 
     </div>
 
@@ -299,7 +300,8 @@
             <a-mixin id="cone" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.25"
                      hoverable grabbable stretchable draggable droppable clickable
                      dynamic-body shadow>
-            </a-mixin><!--
+            </a-mixin>
+            <!--
             <a-mixin id="voxel"
                      gltf-model="#groundfloorsq"
                      intersection-spawn="event: click; mixin: voxel"
@@ -552,6 +554,21 @@
             box.setAttribute("width", "2");
             box.setAttribute("depth", "2");
             box.setAttribute("position", "0 1 0");
+            scene.appendChild(box);
+
+            render();
+        }
+
+    </script>
+    <script>
+        function newmatlcube() {
+            const scene = document.querySelector("a-scene");
+            const box = document.createElement("a-box");
+            box.setAttribute("material", "src", "#m06");
+            box.setAttribute("height", "5");
+            box.setAttribute("width", "5");
+            box.setAttribute("depth", "5");
+            box.setAttribute("position", "0 3 0");
             scene.appendChild(box);
 
             render();

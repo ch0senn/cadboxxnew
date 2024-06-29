@@ -437,12 +437,12 @@
                         <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
                         <!--
-                    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-                    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-                    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                        -->
+    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+        -->
 
                         <a-mixin id="trigger-box" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
                                  class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
@@ -508,16 +508,39 @@
                         <a-mixin id="trigger-box6" gltf-model="#glbcyll" scale="4 4 4"
                                  class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
                                  static-body></a-mixin>
+                        
                         <a-mixin id="rotxx" animation__rotation__xx="property: rotation; dir: forward; dur: 42000;
-                        repeat: indefinite; easing: linear; loop: true; to: 360 0 0"></a-mixin>
+                                repeat: indefinite; easing: linear; loop: true; to: 360 0 0"></a-mixin>
                         <a-mixin id="rotyy" animation__rotation__yy="property: rotation; dir: forward; dur: 9000;
-                        repeat: indefinite; easing: linear; loop: true; to: 0 360 0"></a-mixin>
+                                repeat: indefinite; easing: linear; loop: true; to: 0 360 0"></a-mixin>
                         <a-mixin id="rotzz" animation__rotation__zz="property: rotation; dir: forward; dur: 23000;
-                        repeat: indefinite; easing: linear; loop: true; to: 0 0 360"></a-mixin>
+                                repeat: indefinite; easing: linear; loop: true; to: 0 0 360"></a-mixin>
                         <a-mixin id="rotxyz" animation__rotation__xyz="property: rotation; dir: forward; dur: 13000;
-                        repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
+                                repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
+                        
                         <a-asset-item id="crank4cyl" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
                         <a-asset-item id="crank4cyl-we" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
+                        
+                        <a-mixin id="all-interactions"
+                                 hoverable grabbable stretchable draggable droppable
+                                 event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                                 event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                                 dynamic-body click-impulse></a-mixin>
+
+                        <a-mixin id="grab-move"
+                                 hoverable grabbable draggable droppable
+                                 event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                                 event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                                 dynamic-body></a-mixin>
+
+                        <a-mixin id="physics-hands"
+                                 physics-collider phase-shift
+                                 collision-filter="collisionForces: false"
+                                 static-body="shape: sphere; sphereRadius: 0.02"
+                                 super-hands="colliderEvent: collisions;
+                  colliderEventProperty: els;
+                  colliderEndEvent: collisions;
+                  colliderEndEventProperty: clearedEls;"></a-mixin>
 
                         <a-gltf-model id="airplane" src="#"></a-gltf-model>
                         <a-gltf-model id="airplane2" src="#"></a-gltf-model>

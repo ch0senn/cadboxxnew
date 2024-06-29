@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My A-Frame Scene</title>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.x/dist/aframe-controller-cursor-component.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/intersection-spawn.js"></script>
+
+    </head>º
+<body>
+    <a-scene>
+        <a-entity id="cbanim" position="0 0 0" rotation="0 0 0"
+                  animation__box-x="property: rotation; dir: forward; dur: 10000;
+                                 easing: linear; loop: true; to: 360 360 360">
+            <!--rpx-->
+            <a-plane id="redpos" position="20 0 0" rotation="0 0 0" width="40" height="40" side="double" color="red"
+                     animation__redpos="property: position; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 20 0 0"
+                     animation__redrot="property: rotation; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 90 0"></a-plane>
+
+            <a-box id="ypx" position="20 0 0" rotation="0 0 0" height="0.2" width="30" depth="30" color="yellow"
+                   animation__yellowposx="property: position; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 20 0 0"
+                   animation__ypxrot="property: rotation; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 0 90"></a-box>
+            <!--rnx-->
+            <a-plane id="redneg" position="-20 0 0" rotation="0 0 0" width="40" height="40" side="double" color="red"
+                     animation__redneg="property: position; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: -20 0 0"
+                     animation__redrot="property: rotation; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: 0 90 0"></a-plane>
+
+            <a-box id="ynx" position="-20 0 0" rotation="0 0 0" height="0.2" width="30" depth="30" color="yellow"
+                   animation__yellowposx="property: position; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: -20 0 0"
+                   animation__ypxrot="property: rotation; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 0 90"></a-box>
+
+
+            <!--gpy-->
+            <a-plane id="greenpos" position="0 20 0" rotation="0 0 0" width="40" height="40" side="double" color="green"
+                     animation__greenpos="property: position; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 20 0"
+                     animation__greenrot="property: rotation; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 90 0 0"></a-plane>
+
+            <a-box id="ypy" position="0 0 0" rotation="0 0 0" height="0.2" width="30" depth="30" color="yellow"
+                   animation__yellowposy="property: position; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 20 0"
+                   animation__ypyrot="property: rotation; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 0 0"></a-box>
+            <!--gny-->
+            <a-plane id="greenneg" position="0 -20 0" rotation="0 0 0" width="40" height="40" side="double" color="green"
+                     animation__redneg="property: position; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: 0 -20 0"
+                     animation__redrot="property: rotation; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: 90 0 0"></a-plane>
+
+            <a-box id="yny" position="0 -20 0" rotation="0 0 0" height="0.2" width="30" depth="30" color="yellow"
+                   animation__yellownegy="property: position; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: 0 -20 0"
+                   animation__yellowrotyn="property: rotation; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: 0 0 0"></a-box>
+
+
+            <!--gpy--
+                  <a-plane id="greenpos" position="0 0 0" rotation="0 0 0" width="40" height="40" side="double" color="green"
+                    animation__greenposy="property: position; dir: forward; dur: 3000;
+                                   easing: easeInSine; loop: false; to: 0 20 0"
+                    animation__greenrotpy="property: rotation; dir: forward; dur: 3000;
+                                   easing: easeInSine; loop: false; to: 90 0 0"
+                    ></a-plane>
+
+                  <a-box id="ypx" position="0 0 0" rotation="0 0 0" height="0.2" width="30" depth="30" color="yellow"
+                    animation__yellowposx="property: position; dir: forward; dur: 3000;
+                                   easing: easeInSine; loop: false; to: 0 20 0"
+                    animation__ypxrot="property: rotation; dir: forward; dur: 3000;
+                                   easing: easeInSine; loop: false; to: 0 0 0"
+                ></a-box>
+            <!--gny--
+                <a-plane id="greenneg" position="0 0 0" rotation="0 0 0" width="40" height="40" side="double" color="green"
+                      animation__greennegy="property: position; dir: forward; dur: 3000;
+                                     easing: easeInSine; loop: false; to: 0 -20 0"
+                      animation__greenrot="property: rotation; dir: forward; dur: 3000;
+                                     easing: easeInSine; loop: false; to: 90 0 0"
+                      ></a-plane>
+
+                    <a-box id="ynx" position="0 0 0" rotation="0 0 0" height="0.2" width="30" depth="30" color="yellow"
+                      animation__yellownegy="property: position; dir: forward; dur: 3000;
+                                     easing: easeInSine; loop: false; to: 0 -20 0"
+                      animation__yellowrotny="property: rotation; dir: forward; dur: 3000;
+                                     easing: easeInSine; loop: false; to: 0 0 0"
+                    ></a-box>
+
+
+
+                      <!--bpz-->
+            <a-plane id="bluepos" position="0 0 20" rotation="0 0 0" width="40" height="40" side="double" color="blue"
+                     animation__greenposy="property: position; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 0 20"
+                     animation__greenrotpy="property: rotation; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 360 0"></a-plane>
+
+            <a-box id="ypx" position="0 0 20" rotation="0 0 0" height="0.2" width="30" depth="30" color="yellow"
+                   animation__yellowposx="property: position; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 0 0 20"
+                   animation__ypxrot="property: rotation; dir: forward; dur: 3000;
+                                 easing: linear; loop: false; to: 90 0 0"></a-box>
+            <!--bnz-->
+            <a-plane id="blueneg" position="0 0 -20" rotation="0 0 0" width="40" height="40" side="double" color="blue"
+                     animation__bluenegy="property: position; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: 0 0 -20"
+                     animation__bluerot="property: rotation; dir: forward; dur: 6000;
+                                   easing: linear; loop: false; to: 0 360 0"></a-plane>
+
+            <a-box id="ynx" position="0 0 -20" rotation="0 0 0" height="0.2" width="30" depth="30" color="yellow"
+                   animation__yellownegz="property: position; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: 0 0 -20"
+                   animation__yellowrotnz="property: rotation; dir: forward; dur: 3000;
+                                   easing: linear; loop: false; to: 90 0 0"></a-box>
+
+
+
+
+
+
+        </a-entity>
+
+        <a-entity camera position="0 0 35" rotation="0 0 0" look-controls wasd-controls orbit-cintrols
+                  animation__redpos="property: position; dir: forward; dur: 12000;
+                                 easing: linear; loop: false; to: 0 0 0"
+                  animation__redpos="property: position; dir: forward; dur: 12000;
+                                 easing: linear; loop: false; to: 0 55 0">
+            <a-cursor></a-cursor>
+        </a-entity>
+
+    </a-scene>
+</body>
+</html>
+
+
+<!--
+ <a-plane id="greenpos" position="0 0 0" rotation="0 0 0" width="40" height="40" side="double" color="green"
+                  animation__greenpos="property: position; dir: forward; dur: 1000;
+                                 easing: easeInSine; loop: false; to: 20 0 0"
+                  animation__greenrot="property: rotation; dir: forward; dur: 1000;
+                                 easing: easeInSine; loop: false; to: 0 90 0">
+                  ></a-plane>
+
+                <a-box id="ypy" position="0 0 0" rotation="0 0 0" height="0.2" width="35" depth="35" color="yellow"
+                  animation__yellowposx="property: position; dir: forward; dur: 1000;
+                                 easing: easeInSine; loop: false; to: 20 0 0"
+                  animation__rot="property: rotation; dir: forward; dur: 1000;
+                                 easing: easeInSine; loop: false; to: 0 0 90"
+              ></a-box>
+              <a-plane id="greenneg" position="0 0 0" rotation="0 0 0" width="40" height="40" side="double" color="blue"
+                    animation__greenpos="property: position; dir: forward; dur: 3000;
+                                   easing: easeInSine; loop: false; to: -20 0 0"
+                    animation__greenrot="property: rotation; dir: forward; dur: 3000;
+                                   easing: easeInSine; loop: false; to: 0 90 0"
+                    ></a-plane>
+
+                  <a-box id="yny" position="0 0 0" rotation="0 0 0" height="0.2" width="35" depth="35" color="yellow"
+                    animation__yellownegy="property: position; dir: forward; dur: 3000;
+                                   easing: easeInSine; loop: false; to: 0 -20 0"
+                    animation__yellownegrot="property: rotation; dir: forward; dur: 3000;
+                                   easing: easeInSine; loop: false; to: 0 0 0"
+                  ></a-box>
+-->

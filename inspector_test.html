@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Inspector test</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-touch-inspector@1.1.2/dist/aframe-inspector.min.js"></script>
+    <script src="https://unpkg.com/aframe-ground-component@0.0.4/dist/aframe-ground-component.min.js"></script>
+    <script src="aframe-gltf-exporter-component.min.js"></script>
+    <script src="aframe-ui-widgets.min.js"></script>
+    <script src="aframe-mouse-cursor-component.js" ></script>
+    <script>
+        AFRAME.registerComponent('click-impulse', {
+            init: function () {
+                var el = this.el; impulse
+
+                el.addEventListener('click', function () {
+                    el.body.applyImpulse(
+                        /* impulse */
+                        new CANNON.Vec3(
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20)
+                        ),
+                                                                                                                                                /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                    );
+                });
+
+            }
+        });
+
+        // forward mouse and touch events to the super-hands entity
+        AFRAME.registerComponent('capture-mouse', {
+            init: function () {
+                this.eventRepeater = this.eventRepeater.bind(this)
+                this.el.sceneEl.addEventListener('loaded', () => {
+                    this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+                }, { once: true })
+            },
+            eventRepeater: function (evt) {
+                if (evt.type.startsWith('touch')) {
+                    evt.preventDefault()
+                    // avoid repeating touchmove because it interferes with look-controls
+                    if (evt.type === 'touchmove') { return }
+                }
+                this.el.emit(evt.type, evt.detail)
+            }
+        })
+    </script>
+    <style>
+       #container {
+           width:100%;
+           display:inline-block;
+           height:fit-content;
+           z-index:999;
+       }
+    </style>
+
+</head>
+
+<!--<div id="container">
+    <button>
+        <input type="image" src="img/night-city.png" width="100" height="100" onclick="openEditor();" />
+    </button>
+    <button>
+        <input type="image" src="img/night-city.png" width="100" height="100" onclick="openEditor();" />
+    </button>
+    <button>
+        <input type="image" src="img/night-city.png" width="100" height="100" onclick="openEditor();" />
+    </button>
+</div-->
+
+<body>
+    <a-scene physics="gravity:-10;restitution:0.5;friction:0.2" gltf-exporter>
+        <a-assets>
+            <img id="nc" src="night-city.png" />
+            <img id="m01" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-dlkr-5676470%20(1).jpg?v=1671179886918" />
+            <img id="m02" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-eva-bronzini-6485438.jpg?v=1671179938437" />
+            <img id="m03" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978462.jpg?v=1671180017611" />
+            <img id="m04" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978503.jpg?v=1671180039120" />
+            <img id="m05" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-milo-textures-2768398.jpg?v=1671180129644" />
+            <img id="m06" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-207300.jpg?v=1671180185041" />
+            <img id="m07" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-268415.jpg?v=1671180285873" />
+            <img id="m08" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-piyapong-sayduang-4541011.jpg?v=1671180304280" />
+            <img id="m09" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-235985.jpg?v=1671180256508" />
+            <img id="m10" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-steve-johnson-6353321.jpg?v=1671180659869" />
+            <img id="m11" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_01.jpg?v=1671449502907" />
+            <img id="m12" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_02.jpg?v=1671449528541" />
+            <img id="m13" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_03.jpg?v=1671449535258" />
+            <img id="m14" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_05.jpg?v=1671449549312" />
+            <img id="m15" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_07.jpg?v=1671449555859" />
+            <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
+            <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
+            <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
+
+            <a-mixin id="cube" geometry="primitive: box; width: 2.0; height: 2.0; depth: 2.0"
+                     hoverable grabbable stretchable draggable droppable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     body="shape: none" shape="shape: box; halfExtents: 1 1 1" shadow></a-mixin>
+            <a-mixin id="gltfmodel" gltf-model="#boxglbgreen"
+                     body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+
+            <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+            <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+            <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
+            <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
+
+            <a-asset-item id="glbsphere" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsphere-r1-p010.glb?v=1615396331056"></a-asset-item>
+            <a-asset-item id="glbdodd" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fdodd-rpt5.glb?v=1632901912292"></a-asset-item>
+            <a-asset-item id="glbtett" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
+            <a-asset-item id="glbcyll" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/glcyl.glb?v=1661360434803"></a-asset-item>
+
+            <a-mixin id="voxel"
+                     geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5"
+                     material="shader: standard"
+                     random-color
+                     snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
+            <a-mixin id="voxelcb1"
+                     gltf-model="#cb1"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+            <a-mixin id="voxelccyly"
+                     gltf-model="#ccyly"
+                     snap="offset: 0 0.5 0; snap: .5 .5 .5"></a-mixin>
+            <a-mixin id="voxelccylx"
+                     gltf-model="#ccylx"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+            <a-mixin id="voxelccylz"
+                     gltf-model="#ccylz"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+            <a-mixin id="voxeldodd1"
+                     gltf-model="#glbdodd"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+
+            <!--glb models-->
+            <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+            <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+            <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
+            <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
+
+            <a-asset-item id="boxglbred" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxred.glb?v=1688019604745"></a-asset-item>
+            <a-asset-item id="boxglbblue" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxblue.glb?v=1688019583475"></a-asset-item>
+            <a-asset-item id="boxglbgreen" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxgreen.glb?v=1688019561769"></a-asset-item>
+
+            <a-asset-item id="pybx1" src=""></a-asset-item>
+            <a-asset-item id="pybx2" src=""></a-asset-item>
+            <a-asset-item id="pybx3" src=""></a-asset-item>
+            <a-asset-item id="pybx4" src=""></a-asset-item>
+            <a-asset-item id="pybx5" src=""></a-asset-item>
+            <a-asset-item id="pybx6" src=""></a-asset-item>
+
+            <a-asset-item id="glb-box1" src=""></a-asset-item>
+            <a-asset-item id="glb-box2" src=""></a-asset-item>
+            <a-asset-item id="glb-box3" src=""></a-asset-item>
+            <a-asset-item id="glb-box4" src=""></a-asset-item>
+            <a-asset-item id="glb-box5" src=""></a-asset-item>
+            <a-asset-item id="glb-box6" src=""></a-asset-item>
+            <a-asset-item id="glb-box7" src=""></a-asset-item>
+            <a-asset-item id="glb-box8" src=""></a-asset-item>
+            <a-asset-item id="glb-box9" src=""></a-asset-item>
+            <a-asset-item id="glb-box0" src=""></a-asset-item>
+
+
+            <a-mixin id="all-interactions"
+                     hoverable grabbable stretchable draggable droppable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     dynamic-body click-impulse></a-mixin>
+
+            <a-mixin id="grab-move"
+                     hoverable grabbable draggable droppable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     dynamic-body></a-mixin>
+
+            <a-mixin id="physics-hands"
+                     physics-collider phase-shift
+                     collision-filter="collisionForces: false"
+                     static-body="shape: sphere; sphereRadius: 0.02"
+                     super-hands="colliderEvent: collisions;
+                              colliderEventProperty: els;
+                              colliderEndEvent: collisions;
+                              colliderEndEventProperty: clearedEls;"></a-mixin>
+
+        </a-assets>
+
+        
+
+        <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>
+
+        <a-box class="button" mixin="all-interactions" position="-1 3.5 -3" rotation="0 45 0" color="#4CC3D9" click-impulse dynamic-body></a-box>
+        <a-sphere class="button" mixin="all-interactions" position="0 3.25 -5" radius="1.25" color="#EF2D5E" click-impulse dynamic-body></a-sphere>
+        <a-cylinder class="" mixin="all-interactions" position="1 3.75 -3" radius="0.5" height="1.5" color="#FFC65D" click-impulse dynamic-body></a-cylinder>
+        <a-sphere position="0 0 0" rotation="0 0 0" radius="60" color="#7BC8A4"></a-sphere>
+        <a-sky color="#ECECEC"></a-sky>
+
+
+
+
+
+
+        <script>
+
+            function openEditor() {
+                var inspector = scene.components.inspector;
+
+                // Show inspector immediately.
+                //inspector.injectInspector();
+
+                // Show inspector after event.
+                scene.addEventListener('loaded', function () {
+                    inspector.injectInspector();
+                });
+            }
+        </script>
+    </a-scene>
+    <script>
+        // Update individual nodes
+        document.querySelector('a-scene').addEventListener('loaded', function () {
+            inspector.injectInspector();
+        })
+
+    </script>
+</body>
+</html>

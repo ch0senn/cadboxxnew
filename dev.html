@@ -16,204 +16,204 @@
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="aframe.css">
-        <script>
-            AFRAME.registerComponent('cai', {
-                init: function () {
-                    document.getElementById('ctrl-alt-i').addEventListener('click', function () {
-                        // create a new keyboard event
-                        var event = new KeyboardEvent('keydown', {
-                            key: 'i',
-                            altKey: true,
-                            ctrlKey: true
-                        });
-                        // dispatch the ctrl-alt+i key press event
-                        document.dispatchEvent(event);
+    <script>
+        AFRAME.registerComponent('cai', {
+            init: function () {
+                document.getElementById('ctrl-alt-i').addEventListener('click', function () {
+                    // create a new keyboard event
+                    var event = new KeyboardEvent('keydown', {
+                        key: 'i',
+                        altKey: true,
+                        ctrlKey: true
                     });
-                }
-            });
-        </script>
-        <script>
-            AFRAME.registerComponent('click-impulse', {
-                init: function () {
-                    var el = this.el;
-
-                    el.addEventListener('click', function () {
-                        el.body.applyImpulse(
-                            /* impulse */
-                            new CANNON.Vec3(
-                                THREE.Math.randInt(-20, 20),
-                                THREE.Math.randInt(-20, 20),
-                                THREE.Math.randInt(-20, 20)
-                            ),
-                                                                                            /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
-                        );
-                    });
-
-                }
-            });
-
-            // forward mouse and touch events to the super-hands entity
-            AFRAME.registerComponent('capture-mouse', {
-                init: function () {
-                    this.eventRepeater = this.eventRepeater.bind(this)
-                    this.el.sceneEl.addEventListener('loaded', () => {
-                        this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
-                        this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
-                        this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
-                        this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
-                        this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
-                    }, { once: true })
-                },
-                eventRepeater: function (evt) {
-                    if (evt.type.startsWith('touch')) {
-                        evt.preventDefault()
-                        // avoid repeating touchmove because it interferes with look-controls
-                        if (evt.type === 'touchmove') { return }
-                    }
-                    this.el.emit(evt.type, evt.detail)
-                }
-            })
-        </script>
-
-
-        <style>
-            .button:hover {
-                background-color: #fff;
-                color: #e43b5e;
+                    // dispatch the ctrl-alt+i key press event
+                    document.dispatchEvent(event);
+                });
             }
+        });
+    </script>
+    <script>
+        AFRAME.registerComponent('click-impulse', {
+            init: function () {
+                var el = this.el;
 
-            .button {
-                background-color: blue;
-                border-radius: 8px;
-                border: none;
-                color: #fff;
-                cursor: pointer;
-                display: inline-block;
-                font-size: 12px;
-                height: 34px;
-                margin-top: 5px;
-                margin-left: 5px;
-                outline: none;
-                position: relative;
-                width: 190px;
-                z-index: 999;
+                el.addEventListener('click', function () {
+                    el.body.applyImpulse(
+                        /* impulse */
+                        new CANNON.Vec3(
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20)
+                        ),
+                                                                                                    /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                    );
+                });
+
             }
+        });
 
-            #container {
-                position: absolute;
-                width: 100%;
-                display: flex;
-                justify-content: center;
+        // forward mouse and touch events to the super-hands entity
+        AFRAME.registerComponent('capture-mouse', {
+            init: function () {
+                this.eventRepeater = this.eventRepeater.bind(this)
+                this.el.sceneEl.addEventListener('loaded', () => {
+                    this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+                }, { once: true })
+            },
+            eventRepeater: function (evt) {
+                if (evt.type.startsWith('touch')) {
+                    evt.preventDefault()
+                    // avoid repeating touchmove because it interferes with look-controls
+                    if (evt.type === 'touchmove') { return }
+                }
+                this.el.emit(evt.type, evt.detail)
             }
-        </style>
-        </head>
-        <body>
-            <div id="container">
-                <button id="export-scene" class="button"><span>Export Scene</span></button>
-                <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
-                <button id="export-sphere" class="button"><span>Export Sphorb</span></button>
-                <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
-                <button id="cam2" class="button"><span>camera 2</span></button>
-                <button id="shote" class="button"><span>screenshote</span></button>
-                <button id="shotp" class="button"><span>screenshotp</span></button>
+        })
+    </script>
+
+
+    <style>
+        .button:hover {
+            background-color: #fff;
+            color: #e43b5e;
+        }
+
+        .button {
+            background-color: blue;
+            border-radius: 8px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 34px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: none;
+            position: relative;
+            width: 190px;
+            z-index: 999;
+        }
+
+        #container {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="export-scene" class="button"><span>Export Scene</span></button>
+        <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
+        <button id="export-sphere" class="button"><span>Export Sphorb</span></button>
+        <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
+        <button id="cam2" class="button"><span>camera 2</span></button>
+        <button id="shote" class="button"><span>screenshote</span></button>
+        <button id="shotp" class="button"><span>screenshotp</span></button>
 
 
 
 
-            </div>
+    </div>
 
-            <a-scene gltf-exporter screenshot physics cai renderer="colorManagement: true;" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" id="space-station" animation__animation_aa="" pool__aa="" camera="" raycaster="" cursor="" event-set__aa="" geometry="" gltf-model="" oculus-touch-controls="" sound__aa="">
-                <a-assets>
-                    <a-mixin id="cam-motion"></a-mixin>
-                    <a-mixin id="c9am-motion"></a-mixin>
-                    <a-mixin id="c6am-motion"></a-mixin>
-
-
-
-
-                    <a-asset-item id="engine" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/engine-edges.glb?v=1667026289142"></a-asset-item>
-                    <!--<a-asset-item id="engine" src="engine-edges.glb"></a-asset-item>
-        <a-asset-item id="pp11" src="assets/p1.glb"></a-asset-item>
-        <a-asset-item id="crank" src="assets/Crankshaft_Pistons.glb"></a-asset-item>
-        <a-asset-item id="linear" src="assets/linear-screw-1000-assy.glb"></a-asset-item>
-        <a-asset-item id="assembly" src="assets/assembly.glb"></a-asset-item>
-        <a-asset-item id="hands" src="assets/hands44.obj"></a-asset-item>
-        <a-asset-item id="fv8" src="assets/ferrariv8.glb"></a-asset-item>
-        <a-asset-item id="g16" src="assets/gear16.glb"></a-asset-item>
-        <a-asset-item id="sshafts" src="assets/splitshafts.glb"></a-asset-item>
-            -->
-                    <a-mixin id="image" geometry="height: 2; width: 2"></a-mixin>
-                    <a-mixin id="delayVisible" event-set__loaded="visible: true" visible="false"></a-mixin>
-                    <audio id="blip1" src="audio/321103__nsstudios__blip1.wav"></audio>
-                    <audio id="blip2" src="audio/321104__nsstudios__blip2.wav"></audio>
-                    <img id="ring1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cblogo-t.png?v=1648022923987">
-                    <img id="ring2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
-                    <img id="ring3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
-                    <img id="ring4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/screenshot-toolbar-menu-1664451802701.png?v=1664451899625">
-                    <img id="ring5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/model.png?v=1665597644170">
-                    <!--img id="glow1" src="img/glow1.png">
-        <img id="ring1" src="img/ring1.png">
-        <img id="ring2" src="img/ring2.png">
-        <img id="ring3" src="img/ring3.png">
-        <img id="ring4" src="img/ring4.png">
-        <img id="ring5" src="img/ring5.png">
-        <img id="schematic1" src="img/schematic1.png">
-        <img id="schematic2" src="img/schematic2.png">
-        <img id="schematic3" src="img/schematic3.png">
-        <img id="schematic4" src="img/schematic4.png">
-        <img id="schematic5" src="img/schematic5.png">
-        <img id="text1" src="img/text1.png">
-        <img id="text2" src="img/text2.png">
-        <img id="text3" src="img/text3.png">-->
-                    <img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
-                    <a-asset-item id="cadboxx-floor" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/ground-plane_with_mesh.glb?v=1678034073866"></a-asset-item>
-
-
-                    <!--sphorb-->
-                    <a-asset-item id="bb02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb1.glb?v=1655710163279"></a-asset-item>
-                    <a-asset-item id="bb03" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb2.glb?v=1655710178528"></a-asset-item>
-                    <a-asset-item id="bb04" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb3.glb?v=1655710192379"></a-asset-item>
-                    <a-asset-item id="bb05" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb4.glb?v=1655710213868"></a-asset-item>
-
-                </a-assets>
-
-                <a-entity gltf-part-plus="src: #draco-buildings-model; part: SM3D_Bld_Mixed_Corner_4fl;" model-center anisotropy></a-entity>
-
-                <!--sphorb--
-    <a-entity id="yellowSphere" mixin="rot0" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body>
-        <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
-        <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
-                  animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
-        repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
-        <a-entity id="orb3" gltf-model="#bb04" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
-                  animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
-        repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
-        <a-entity id="orb4" gltf-model="#bb05" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
-                  animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
-        repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
-
-    </a-entity>
-    <!--sphorb-end-->
-
-                <a-entity id="any" gltf-model="#ccylx" position="0 0 0" static-body></a-entity>
-
-                <a-entity camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 10; initialPosition: 0 5 7.5"></a-entity>
+    <a-scene gltf-exporter screenshot physics cai renderer="colorManagement: true;" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" id="space-station" animation__animation_aa="" pool__aa="" camera="" raycaster="" cursor="" event-set__aa="" geometry="" gltf-model="" oculus-touch-controls="" sound__aa="">
+        <a-assets>
+            <a-mixin id="cam-motion"></a-mixin>
+            <a-mixin id="c9am-motion"></a-mixin>
+            <a-mixin id="c6am-motion"></a-mixin>
 
 
 
-                <a-entity id="seenmodel" gltf-model="#engine" position="0 0 0" scale="2 2 2" static-body></a-entity>
-                <a-entity id="ground" gltf-model="#cadboxx-floor" position="0 0 0" static-body></a-entity>
+
+            <a-asset-item id="engine" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/engine-edges.glb?v=1667026289142"></a-asset-item>
+            <!--<a-asset-item id="engine" src="engine-edges.glb"></a-asset-item>
+            <a-asset-item id="pp11" src="assets/p1.glb"></a-asset-item>
+            <a-asset-item id="crank" src="assets/Crankshaft_Pistons.glb"></a-asset-item>
+            <a-asset-item id="linear" src="assets/linear-screw-1000-assy.glb"></a-asset-item>
+            <a-asset-item id="assembly" src="assets/assembly.glb"></a-asset-item>
+            <a-asset-item id="hands" src="assets/hands44.obj"></a-asset-item>
+            <a-asset-item id="fv8" src="assets/ferrariv8.glb"></a-asset-item>
+            <a-asset-item id="g16" src="assets/gear16.glb"></a-asset-item>
+            <a-asset-item id="sshafts" src="assets/splitshafts.glb"></a-asset-item>
+                -->
+            <a-mixin id="image" geometry="height: 2; width: 2"></a-mixin>
+            <a-mixin id="delayVisible" event-set__loaded="visible: true" visible="false"></a-mixin>
+            <audio id="blip1" src="audio/321103__nsstudios__blip1.wav"></audio>
+            <audio id="blip2" src="audio/321104__nsstudios__blip2.wav"></audio>
+            <img id="ring1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cblogo-t.png?v=1648022923987">
+            <img id="ring2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+            <img id="ring3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
+            <img id="ring4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/screenshot-toolbar-menu-1664451802701.png?v=1664451899625">
+            <img id="ring5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/model.png?v=1665597644170">
+            <!--img id="glow1" src="img/glow1.png">
+            <img id="ring1" src="img/ring1.png">
+            <img id="ring2" src="img/ring2.png">
+            <img id="ring3" src="img/ring3.png">
+            <img id="ring4" src="img/ring4.png">
+            <img id="ring5" src="img/ring5.png">
+            <img id="schematic1" src="img/schematic1.png">
+            <img id="schematic2" src="img/schematic2.png">
+            <img id="schematic3" src="img/schematic3.png">
+            <img id="schematic4" src="img/schematic4.png">
+            <img id="schematic5" src="img/schematic5.png">
+            <img id="text1" src="img/text1.png">
+            <img id="text2" src="img/text2.png">
+            <img id="text3" src="img/text3.png">-->
+            <img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+            <a-asset-item id="cadboxx-floor" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/ground-plane_with_mesh.glb?v=1678034073866"></a-asset-item>
 
 
-                <a-light type="point" color="#94c6ff" position="0 0 0" intensity="2" light="intensity: 2" visible="true"></a-light>
-                <a-light type="point" color="#94c6ff" position="0 6 6" intensity="2" animation="property: light.intensity; from: 0; to: 1; delay: 500; dur: 500" light="intensity: 1"></a-light>
-                <a-light type="hemisphere" position="0 0 0" color="#4f6487" intensity="5"></a-light>
+            <!--sphorb-->
+            <a-asset-item id="bb02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb1.glb?v=1655710163279"></a-asset-item>
+            <a-asset-item id="bb03" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb2.glb?v=1655710178528"></a-asset-item>
+            <a-asset-item id="bb04" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb3.glb?v=1655710192379"></a-asset-item>
+            <a-asset-item id="bb05" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb4.glb?v=1655710213868"></a-asset-item>
 
-                <a-sky id="skeye" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/night-city.jpg?v=1681036115747" position="0 0 0" radius="100"></a-sky>
+        </a-assets>
 
-                <a-entity sound="autoplay: true; src: audio/321103__nsstudios__blip1.wav"></a-entity>
-                <a-entity sound="autoplay: true; src: audio/321104__nsstudios__blip2.wav"></a-entity>
-            </a-scene>
+        <a-entity gltf-part-plus="src: #draco-buildings-model; part: SM3D_Bld_Mixed_Corner_4fl;" model-center anisotropy></a-entity>
+
+        <!--sphorb--
+        <a-entity id="yellowSphere" mixin="rot0" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body>
+            <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+            <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+            repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+            <a-entity id="orb3" gltf-model="#bb04" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
+            repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+            <a-entity id="orb4" gltf-model="#bb05" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
+            repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+
+        </a-entity>
+        <!--sphorb-end-->
+
+        <a-entity id="any" gltf-model="#ccylx" position="0 0 0" static-body></a-entity>
+
+        <a-entity camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 10; initialPosition: 0 5 7.5"></a-entity>
+
+
+
+        <a-entity id="seenmodel" gltf-model="#engine" position="0 0 0" scale="2 2 2" static-body></a-entity>
+        <a-entity id="ground" gltf-model="#cadboxx-floor" position="0 0 0" static-body></a-entity>
+
+
+        <a-light type="point" color="#94c6ff" position="0 0 0" intensity="2" light="intensity: 2" visible="true"></a-light>
+        <a-light type="point" color="#94c6ff" position="0 6 6" intensity="2" animation="property: light.intensity; from: 0; to: 1; delay: 500; dur: 500" light="intensity: 1"></a-light>
+        <a-light type="hemisphere" position="0 0 0" color="#4f6487" intensity="5"></a-light>
+
+        <a-sky id="skeye" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/night-city.jpg?v=1681036115747" position="0 0 0" radius="100"></a-sky>
+
+        <a-entity sound="autoplay: true; src: audio/321103__nsstudios__blip1.wav"></a-entity>
+        <a-entity sound="autoplay: true; src: audio/321104__nsstudios__blip2.wav"></a-entity>
+    </a-scene>
     <script>
         function exportGLTF(input, options) {
             AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
@@ -262,14 +262,99 @@
     </script>
 </body>
 </html>
+
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
+<script src="https://unpkg.com/aframe-controller-cursor-component@0.2.x/dist/aframe-controller-cursor-component.min.js"></script>
+<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
+<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/intersection-spawn.js"></script>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+            <a-mixin id="voxel"
+                     geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5"
+                     material="shader: standard"
+                     random-color
+                     snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
+        
+        
+        
+        
+        
+        
+        </a-assets>
+
+
+
+
+
+        <a-gltf-model id="ground" src="#groundTexture" position="0 0 0" rotation="0 0 0" scale="1 1 1" ></a-gltf-model>
+
+        <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+
+        <!-- Hands. -->
+        <a-entity id="teleHand" hand-controls="left" teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground"></a-entity>
+        <a-entity id="blockHand" hand-controls="right" controller-cursor intersection-spawn="event: click; mixin: voxel"></a-entity>
+
+        <!-- Camera. -->
+        <a-camera>
+            <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
+        </a-camera>
+    </a-scene>
+    <!-- Camera. --
+    <a-entity id="cameraWrapper" position="0 1 8">
+        <a-entity id="camera" camera look-controls wasd-controls></a-entity>
+    </a-entity>
+    </a-scene-->
+</body>
+<script>
+    function exportGLTF(input, options) {
+        AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+    }
+
+    document.getElementById('export-scene').addEventListener('click', function () {
+        exportGLTF();
+    });
+
+    document.getElementById('export-scene-bin').addEventListener('click', function () {
+        exportGLTF(undefined, { binary: true });
+    });
+
+    document.getElementById('export-redbxx').addEventListener('click', function () {
+        exportGLTF(document.getElementById('redbxx'), { binary: true });
+    });
+
+    document.getElementById('export-redbyy').addEventListener('click', function () {
+        exportGLTF(document.getElementById('redbyy'), { binary: true });
+    });
+
+    document.getElementById('export-redbzz').addEventListener('click', function () {
+        exportGLTF(document.getElementById('redbzz'), { binary: true });
+    });
+
+    document.getElementById('export-two').addEventListener('click', function () {
+        exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+    });
+
+    document.getElementById('export-selector').addEventListener('click', function () {
+        exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+    });
+    </script>
+    </body>
+</html>
+
+
 <!--
 <head>
     <title>My A-Frame Scene</title>
-    
+
 <body>
     <a-scene>
-        
-    
+
     </a-scene>
 </body>
 -->

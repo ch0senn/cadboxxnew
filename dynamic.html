@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>CADBOXX</title>
@@ -389,7 +389,7 @@
                 <button class="clickable" onclick="closeAllNav()">CLOSE</button>
             </div>
         </center>
-        <div style="height:15px" ></div>
+        <div style="height:15px"></div>
         <center>
             <div id="btnnbar" display="inline-block">
                 <button class="clickable" onclick="myNavh1()">HELP 1</button>
@@ -816,12 +816,12 @@
                 <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
                 <!--
-            <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+                <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-            <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+                <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-            <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                -->
+                <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                    -->
 
                 <a-mixin id="trigger-box" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
                          class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
@@ -1046,7 +1046,7 @@
 
 
                     </a-entity><!--end hingepin-->
-                    <!--<a-entity id="target2" gltf-model="#bb030" rotation="90 0 0" scale="1 1 1">
+            <!--<a-entity id="target2" gltf-model="#bb030" rotation="90 0 0" scale="1 1 1">
                         <a-entity id="d4" class="clickable" mixin="t2 constryy" position="0 -2 0"
                                   dynamic-body click-impulse></a-entity>
                         <a-entity id="d3" class="clickable" mixin="t2 constryy" position="0 2 0"
@@ -1183,20 +1183,20 @@
                 </a-entity>
             </a-entity><!--end hingepin-->
             <!--
-        <a-entity class="transformer" position="0 1.6 -4"
-                  color-randomizer droppable body="type: static; shape: none"
-                  shape="shape: box; halfExtents: 0.25 0.25 0.25"
-                  geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
-                  event-set__dragon="_event: dragover-start; material.color: orange"
-                  event-set__dragoff="_event: dragover-end; material.color: purple"
-                  material="color:purple" shadow>
-            <a-entity text="value: Drag&drop to change color;
-                        width: 0.5; wrapCount: 12; align: center"
-                      position="0 0 0.25">
+            <a-entity class="transformer" position="0 1.6 -4"
+                      color-randomizer droppable body="type: static; shape: none"
+                      shape="shape: box; halfExtents: 0.25 0.25 0.25"
+                      geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
+                      event-set__dragon="_event: dragover-start; material.color: orange"
+                      event-set__dragoff="_event: dragover-end; material.color: purple"
+                      material="color:purple" shadow>
+                <a-entity text="value: Drag&drop to change color;
+                            width: 0.5; wrapCount: 12; align: center"
+                          position="0 0 0.25">
+                </a-entity>
             </a-entity>
-        </a-entity>
 
-        <!--sphorb-->
+            <!--sphorb-->
             <a-entity id="yellowSphere" mixin="rot0" position="0 0 0" rotation="0 0 0" scale=".3 .3 .3" static-body>
                 <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
                 <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
@@ -1212,7 +1212,7 @@
             </a-entity>
             <!--sphorb-end--
 
-        <!-- ground collider keeps objets from falling -->
+            <!-- ground collider keeps objets from falling -->
             <a-box body="type: static; shape: none" shape="shape: box; halfExtents: 50 0.0005 50" width=100 height=0.001 depth=100 visible="false"></a-box>
 
 
@@ -1255,7 +1255,7 @@
                 <a-cursor intersection-spawn="event: click; mixin: voxelcdodd1"></a-cursor>
             </a-camera>
             <a-camera id="cam6" position="12 6 0" look-controls active="false">
-            
+
             </a-camera>
             <a-camera id="cam7" position="-12 6 0" look-controls active="false">
 
@@ -1994,9 +1994,9 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!----<a class="navbar-brand" href="#">CADBOXX</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-        </button-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button-->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     PLATFORMS
@@ -2186,253 +2186,253 @@
                 document.getElementById("myNav").style.display = "none";
             }
         </script>
-            /*to auto-enter-vr*/
-            function autoEvr() {
-                var scene = document.querySelector('a-scene');
-                scene.enterVR();
-            };
+        /*to auto-enter-vr*/
+        function autoEvr() {
+        var scene = document.querySelector('a-scene');
+        scene.enterVR();
+        };
 
-            function cmm7() {//cadboxx opacity
-                var cadboxx = document.querySelector('planeboxx');
-                entityEl.setAttribute('opacity', 0.25);
-            };
+        function cmm7() {//cadboxx opacity
+        var cadboxx = document.querySelector('planeboxx');
+        entityEl.setAttribute('opacity', 0.25);
+        };
 
-            function cmm8() {//get element by selection
-                sceneEl.components.inspector.openInspector();
-            };
+        function cmm8() {//get element by selection
+        sceneEl.components.inspector.openInspector();
+        };
 
-            function cmm9() {//set camera position from entity
+        function cmm9() {//set camera position from entity
 
-            };
-            function cmm10() {//click-animate a component part
+        };
+        function cmm10() {//click-animate a component part
 
-            };
-            function cmm11() {//open material dialogue for entity
+        };
+        function cmm11() {//open material dialogue for entity
 
-            };
-            function cmm12() {//export scene glb
+        };
+        function cmm12() {//export scene glb
 
-            };
-            function cmm13() {//export snapshot during animation dialogue
+        };
+        function cmm13() {//export snapshot during animation dialogue
 
-            };
-            function cmm14() {//record avatar
+        };
+        function cmm14() {//record avatar
 
-            };
-            function cmm15() {//open custom animation panel
+        };
+        function cmm15() {//open custom animation panel
 
-            };
-            function cmm16() {//set position relative to object plane
+        };
+        function cmm16() {//set position relative to object plane
 
-            };
+        };
 
-            function cmm17() {//load
-                var loadingpanelEl = document.q
-            };
+        function cmm17() {//load
+        var loadingpanelEl = document.q
+        };
 
-            function cmm18() {//To remove or detach a component from an entity, we can use
-                //var cameraEl = document.querySelector('[camera]');
-                //cameraEl.removeAttribute('wasd-controls');
+        function cmm18() {//To remove or detach a component from an entity, we can use
+        //var cameraEl = document.querySelector('[camera]');
+        //cameraEl.removeAttribute('wasd-controls');
 
 
 
-            };
+        };
 
-            function cmm19() {//
-                // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
-                entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
-                // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
+        function cmm19() {//
+        // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
+        entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
+        // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
 
-            };
-            function cmm20() {//
-                entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
-                // Or entityEl.setAttribute('position', '1 2 -3');
-            };
-            function cmm21() {//
+        };
+        function cmm20() {//
+        entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
+        // Or entityEl.setAttribute('position', '1 2 -3');
+        };
+        function cmm21() {//
 
-            };
-            function cmm22() {//
+        };
+        function cmm22() {//
 
-            };
-            function cmm23() {//
+        };
+        function cmm23() {//
 
-            };
-            function cmm24() {//
+        };
+        function cmm24() {//
 
-            };
-            function cmm25() {//
+        };
+        function cmm25() {//
 
-            };
-            function cmm26() {//
+        };
+        function cmm26() {//
 
-            };
-            function cmm27() {//
+        };
+        function cmm27() {//
 
-            };
-            function cmm28() {//
+        };
+        function cmm28() {//
 
-            };
-            function cmm29() {//
+        };
+        function cmm29() {//
 
-            };
-            function cmm30() {//
-                entityEl.setAttribute('dynamic-body', {
-                    shape: 'box',
-                    mass: 1.5,
-                    linearDamping: 0.005
-                });
-            };
-            function newglbcube() {//
+        };
+        function cmm30() {//
+        entityEl.setAttribute('dynamic-body', {
+        shape: 'box',
+        mass: 1.5,
+        linearDamping: 0.005
+        });
+        };
+        function newglbcube() {//
 
-            };
-            function newglbsphere() {//
+        };
+        function newglbsphere() {//
 
-            };
-            function newglbconetf() {//
+        };
+        function newglbconetf() {//
 
-            };
-            function newglbconetp() {//
+        };
+        function newglbconetp() {//
 
-            };
-            function newglbcyl() {//
+        };
+        function newglbcyl() {//
 
-            };
-            function newglbtube() {//
+        };
+        function newglbtube() {//
 
-            };
-            function newglbplane() {//
+        };
+        function newglbplane() {//
 
-            };
-            function newjoint1() {//
+        };
+        function newjoint1() {//
 
-            };
-            function cmmd9() {//
+        };
+        function cmmd9() {//
 
-            };
-            function cmmd10() {//
+        };
+        function cmmd10() {//
 
-            };
-            function cmmd11() {//
+        };
+        function cmmd11() {//
 
-            };
-            function cmmd12() {//
+        };
+        function cmmd12() {//
 
-            };
-            function cmmd13() {//
+        };
+        function cmmd13() {//
 
-            };
-            function cmmd14() {//
+        };
+        function cmmd14() {//
 
-            };
-            function cmmd15() {//
+        };
+        function cmmd15() {//
 
-            };
-            function cmmd16() {//
+        };
+        function cmmd16() {//
 
-            };
-            function cmmd17() {//
+        };
+        function cmmd17() {//
 
-            };
-            function cmmd18() {//
+        };
+        function cmmd18() {//
 
-            };
-            function cmmd19() {//
+        };
+        function cmmd19() {//
 
-            };
-            function cmmd20() {//
+        };
+        function cmmd20() {//
 
-            };
-            function cmmd21() {//
+        };
+        function cmmd21() {//
 
-            };
-            function cmmd22() {//
+        };
+        function cmmd22() {//
 
-            };
-            function cmmd23() {//
+        };
+        function cmmd23() {//
 
-            };
-            function cmmd24() {//
+        };
+        function cmmd24() {//
 
-            };
-            function cmmd25() {//
+        };
+        function cmmd25() {//
 
-            };
+        };
 
-            function cmma1() {//
+        function cmma1() {//
 
-            };
-            function cmma2() {//
+        };
+        function cmma2() {//
 
-            };
-            function cmma3() {//
+        };
+        function cmma3() {//
 
-            };
-            function cmma4() {//
+        };
+        function cmma4() {//
 
-            };
-            function cmma5() {//
+        };
+        function cmma5() {//
 
-            };
-            function cmma6() {//
+        };
+        function cmma6() {//
 
-            };
-            function cmma7() {//
+        };
+        function cmma7() {//
 
-            };
-            function cmma8() {//
+        };
+        function cmma8() {//
 
-            };
-            function cmma9() {//
+        };
+        function cmma9() {//
 
-            };
-            function cmma10() {//
+        };
+        function cmma10() {//
 
-            };
-            function cmma11() {//
+        };
+        function cmma11() {//
 
-            };
-            function cmma12() {//
+        };
+        function cmma12() {//
 
-            };
-            function cmma13() {//
+        };
+        function cmma13() {//
 
-            };
-            function cmma14() {//
+        };
+        function cmma14() {//
 
-            };
-            function cmma15() {//
+        };
+        function cmma15() {//
 
-            };
-            function cmma16() {//
+        };
+        function cmma16() {//
 
-            };
-            function cmma17() {//
+        };
+        function cmma17() {//
 
-            };
-            function cmma18() {//
+        };
+        function cmma18() {//
 
-            };
-            function cmma19() {//
+        };
+        function cmma19() {//
 
-            };
-            function cmma20() {//
+        };
+        function cmma20() {//
 
-            };
-            function cmma21() {//
+        };
+        function cmma21() {//
 
-            };
-            function cmma22() {//
+        };
+        function cmma22() {//
 
-            };
-            function cmma23() {//
+        };
+        function cmma23() {//
 
-            };
-            function cmma24() {//
+        };
+        function cmma24() {//
 
-            };
-            function cmma25() {//
+        };
+        function cmma25() {//
 
-            };
+        };
         </script>
 
 

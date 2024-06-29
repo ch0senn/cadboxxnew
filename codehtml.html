@@ -52,7 +52,17 @@
 
     </center>
         -->
+    <delaunay>
+        <title>My A-Frame Scene</title>
+        <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-triangleset-component/dist/aframe-triangleset-component.min.js"></script>
+    </delaunay>
 
+    <body>
+        <a-scene>
+            <a-entity geometry="primitive: triangleset"></a-entity>
+        </a-scene>
+    </body>
     <script>
         AFRAME.registerComponent('auto-enter-vr', {
             init: function () {
@@ -143,11 +153,11 @@
 
     <script>
         var changebox = function () {
-            console.log(document.querySelector("a-box").getAttribute("color"))
-            if (document.querySelector("a-box").getAttribute("color") !== "blue") {
-                document.querySelector("a-box").setAttribute("color", "blue");
+            console.log(document.querySelector("a-box").getAttribute("material.src"))
+            if (document.querySelector("a-box").getAttribute("material.src") !== "m06") {
+                document.querySelector("a-box").setAttribute("material.src", "m06");
             } else {
-                document.querySelector("a-box").setAttribute("color", "green");
+                document.querySelector("a-box").setAttribute("material.src", "m09");
 
             }
         }
@@ -502,152 +512,14 @@ https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/pexels-philippe-d
         function cmmd3() {//
 
         };
-        function cmmd4() {//
-
+        function openEditor() {
+            window.postMessage('INJECT_AFRAME_INSPECTOR', '*');
         };
-        function cmmd5() {//
-
-        };
-        function cmmd6() {//
-
-        };
-        function cmmd7() {//
-
-        };
-        function cmmd8() {//
-
-        };
-        function cmmd9() {//
-
-        };
-        function cmmd10() {//
-
-        };
-        function cmmd11() {//
-
-        };
-        function cmmd12() {//
-
-        };
-        function cmmd13() {//
-
-        };
-        function cmmd14() {//
-
-        };
-        function cmmd15() {//
-
-        };
-        function cmmd16() {//
-
-        };
-        function cmmd17() {//
-
-        };
-        function cmmd18() {//
-
-        };
-        function cmmd19() {//
-
-        };
-        function cmmd20() {//
-
-        };
-        function cmmd21() {//
-
-        };
-        function cmmd22() {//
-
-        };
-        function cmmd23() {//
-
-        };
-        function cmmd24() {//
-
-        };
-        function cmmd25() {//
-
-        };
-
-        function cmma1() {//
-
-        };
-        function cmma2() {//
-
-        };
-        function cmma3() {//
-
-        };
-        function cmma4() {//
-
-        };
-        function cmma5() {//
-
-        };
-        function cmma6() {//
-
-        };
-        function cmma7() {//
-
-        };
-        function cmma8() {//
-
-        };
-        function cmma9() {//
-
-        };
-        function cmma10() {//
-
-        };
-        function cmma11() {//
-
-        };
-        function cmma12() {//
-
-        };
-        function cmma13() {//
-
-        };
-        function cmma14() {//
-
-        };
-        function cmma15() {//
-
-        };
-        function cmma16() {//
-
-        };
-        function cmma17() {//
-
-        };
-        function cmma18() {//
-
-        };
-        function cmma19() {//
-
-        };
-        function cmma20() {//
-
-        };
-        function cmma21() {//
-
-        };
-        function cmma22() {//
-
-        };
-        function cmma23() {//
-
-        };
-        function cmma24() {//
-
-        };
-        function cmma25() {//
-
-        };
-
-
-
     </script>
+
+    <input type="image" src="img/text4.png" width="35" height="35" onclick="openEditor();" />
+
+
     <script>
         window.matl1 = function () {
             var knot = document.getElementById("prt1");
@@ -790,3 +662,91 @@ https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/pexels-philippe-d
        </a-entity>
    </a-entity>
    -->
+<head>
+    <title>My A-Frame Scene</title>
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <!-- super-hands; not needed, but recommended -->
+    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+    <!-- The component -->
+    <script src="https://unpkg.com/aframe-responsive-component@0.1.4/dist/aframe-responsive-component.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <!-- progressive-controls, not needed but recommended -->
+        <a-entity progressive-controls="objects:.obj" class="controller">
+            <a-entity id="rhand"
+                      class="right-controller" collision-filter="collisionForces: false">
+            </a-entity>
+            <a-entity id="lhand"
+                      class="left-controller" collision-filter="collisionForces: false">
+            </a-entity>
+        </a-entity>
+
+        <!-- Where the magic happens -->
+        <!-- Oculus will overwrite default when an oculus touch controller is connected.
+            If any other controller is connected, it will use its property instead
+        -->
+        <a-entity class="obj"
+                  responsive='controller: .controller;
+                  _default:[{"attr":"geometry", "value":["primitive:sphere","radius:0.2"]},
+                            {"attr" : "position", "value":["0 1 -1"]},
+                            {"attr" : "material", "value" : ["color:magenta"]};
+                  oculus:[{"attr" : "geomtry", "value" : ["primitive:box", "height:0.1"]},
+                          {"attr" : "position", "value":["0 1 -2"]},
+                         {"attr" : "material", "value" : ["color:#00BCD4"]};
+                  ]'></a-entity>
+    </a-scene>
+</body>
+<!--bootstrap-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    
+    </head>
+    
+
+    <body>
+        <a-assets>
+            <!--images-->
+
+            <!--mixins-->
+
+            <!--parts-->
+
+        </a-assets>
+
+
+
+
+        <!--scene bits and bats-->
+
+    <!--hands and cams and lights-->
+
+    <script>
+        var mybutton = document.querySelector('#mybutton');
+        mybutton.addEventListener('pressed', function () {
+            // do stuff here.
+        });
+    </script>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+</html>

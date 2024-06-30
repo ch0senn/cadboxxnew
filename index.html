@@ -365,20 +365,7 @@
     </style>
 
 </head>
-<!--div id="container">
-    <button id="matl1" class="button" onclick="matl01()"><span>Material 1</span></button>
-    <button id="matl2" class="button" onclick="matl02()"><span>Material 2</span></button>
 
-    <button id="matl3" class="button" onclick="matl03()"><span>Material 3</span></button>
-    <button id="matl4" class="button" onclick="matl04()"><span>Material 4</span></button>
-    <button id="matl5" class="button" onclick="matl05()"><span>Material 5</span></button>
-    <button id="matl6" class="button" onclick="matl06()"><span>Material 6</span></button>
-    <button id="openEditor" class="button" onclick="cmmd6()"><span>openEd</span></button>
-    <button id="entervr" class="button" onclick="evr()"><span>EnterVR</span></button>
-    <button id="screenp" class="button" onclick="screenshotp()"><span>PERSP</span></button>
-    <button id="screenr" class="button" onclick="screenshotr()"><span>EQUIRECT</span></button>
-
-</div-->
 <div id="myNavh01" class="overlay">
     <div class="overlay-content">
         <center>
@@ -818,19 +805,34 @@
                 <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
                 <!--
-                <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-                <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-                <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                    -->
+    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+        -->
 
-                <a-mixin id="trigger-box" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
-                         class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
-                         static-body></a-mixin>
-                <a-mixin id="trigger" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
-                         class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
-                         static-body></a-mixin>
+                <a-mixin id="trigger-box1" gltf-model="#cb1" scale="10 10 10"
+                         class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                         static-body click-impulse></a-mixin>
+                <a-mixin id="trigger-box2" gltf-model="#ccylx" scale="10 10 10"
+                         class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                         static-body click-impulse></a-mixin>
+                <a-mixin id="bigendx" gltf-model="#ccylx" scale="10 10 10"
+                         class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:1 0 0;pivot:0 0 0;targetPivot:1 0 0"
+                         static-body click-impulse></a-mixin>
+                <a-mixin id="trigger-box3" gltf-model="#ccyly" scale="10 10 10"
+                         class="clickclass=" clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                         static-body click-impulse></a-mixin>
+                <a-mixin id="trigger-box4" gltf-model="#ccylz" scale="10 10 10"
+                         class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                         static-body click-impulse></a-mixin>
+                <a-mixin id="trigger-box5" gltf-model="#glbdodd" scale="2 2 2"
+                         class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                         static-body click-impulse></a-mixin>
+                <a-mixin id="trigger-box6" gltf-model="#glbcyll" scale="4 4 4"
+                         class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                         static-body click-impulse></a-mixin>
 
                 <a-mixin id="hinge-bodya" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
                 <a-mixin id="hinge-bodyb" gltf-model="#ccyly" position="0 2.5 0" rotation="0 0 0" scale="2 1 2"
@@ -890,14 +892,14 @@
 
             </a-assets>
 
-
+            <!--
             <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
             <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
             <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
             <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
             <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
             <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-
+                -->
 
 
             <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>

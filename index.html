@@ -371,10 +371,10 @@
     }
 
     .button {
-        background-color: #e43b5e;
+        background-color: whitesmoke;
         border-radius: 8px;
         border: none;
-        color: #fff;
+        color: black;
         cursor: pointer;
         display: inline-block;
         font-size: 12px;
@@ -398,7 +398,7 @@
 <style>
     #mySidenav a {
         position: absolute;
-        left: -80px;
+        left: -130px;
         transition: 0.3s;
         padding: 15px;
         width: 140px;
@@ -434,10 +434,10 @@
     #arrange {
         top: 240px;
         margin-left: 10px;
-        background-color: azure;
-        font-family:Arial;
-
-    #motion {
+        background-color: whitesmoke;
+    }
+           
+           #motion {
         top: 300px;
         margin-left: 10px;
         background-color: whitesmoke;
@@ -446,11 +446,48 @@
 
     #study {
         top: 360px;
-        margin-left: 20px;
-        background-color: darkblue;
+        margin-left: 10px;
+        background-color: whitesmoke;
     }
 </style>
+    <style>
+        #mySidenavv a {
+            position: absolute;
+            right: 130px;
+            transition: 0.3s;
+            padding: 15px;
+            width: 140px;
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            border-radius: 0 5px 5px 0;
+            z-index: 999;
+        }
 
+            #mySidenavv a:hover {
+                right: 0;
+            }
+
+        #1111 {
+            top: 60px;
+            margin-right: 10px;
+            background-color: whitesmoke;
+        }
+
+        #2222 {
+            top: 120px;
+            margin-right: 10px;
+            background-color: whitesmoke;
+        }
+
+        #3333 {
+            top: 180px;
+            margin-right: 10px;
+            background-color: whitesmoke;
+        }
+
+        
+    </style>
 </head>
 <body>
     <div id="container">
@@ -469,6 +506,12 @@
         <a href="#" id="motion">MOTION</a>
         <a href="#" id="study">STUDY</a>
 
+    </div>
+    <div id="mySidenavv" class="sidenav">
+        <a href="#" id="1111">1111</a>
+        <a href="#" id="2222">2222</a>
+        <a href="#" id="3333">3333</a>
+        
     </div>
     <div id="myNavh01" class="overlay">
         <div class="overlay-content">
@@ -901,12 +944,12 @@
                     <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
                     <!--
-            <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+                    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-            <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+                    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-            <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                -->
+                    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                        -->
 
                     <a-mixin id="trigger-box1" gltf-model="#cb1" scale="10 10 10"
                              class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
@@ -989,13 +1032,13 @@
                 </a-assets>
 
                 <!--
-        <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-            -->
+                <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                    -->
 
 
                 <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>
@@ -1091,12 +1134,12 @@
                     </a-entity>
                 </a-entity>
                 <!--
-        <a-entity id="merged" geometry-merger="preserveOriginal: false" material="color:grey">
-            <a-entity geometry="primitive: box; buffer: false" position="-1 0.5 -2"></a-entity>
-            <a-entity geometry="primitive: sphere; buffer: false" position="0 0.5 -2"></a-entity>
-            <a-entity geometry="primitive: cylinder; buffer: false" position="1 0.5 -2" scale="0.5 0.5 05"></a-entity>
-        </a-entity>
-            -->
+                <a-entity id="merged" geometry-merger="preserveOriginal: false" material="color:grey">
+                    <a-entity geometry="primitive: box; buffer: false" position="-1 0.5 -2"></a-entity>
+                    <a-entity geometry="primitive: sphere; buffer: false" position="0 0.5 -2"></a-entity>
+                    <a-entity geometry="primitive: cylinder; buffer: false" position="1 0.5 -2" scale="0.5 0.5 05"></a-entity>
+                </a-entity>
+                    -->
 
 
 
@@ -1238,86 +1281,86 @@
                 </a-entity>
 
                 <!-- HINGE PIN working--
-        <a-entity id="joint1">
-            <a-entity class="clickable" mixin="constryy" position="0 -1 0" gltf-model="#prt1"
-                      constraint="type: hinge;
-                   target: #target1;
-                   axis: 0 1 0;
-                   targetAxis: 0 1 0;
-                   pivot: 0 0 0;
-                   targetPivot: 0 -1.0 0;" dynamic-body click-impulse></a-entity>
-            <a-entity class="clickable" mixin="constryy" position="0 1 0" gltf-model="#prt2"
-                      constraint="type: hinge;
-                   target: #target1;
-                   axis: 0 1 0;
-                   targetAxis: 0 1 0;
-                   pivot: 0 0 0;
-                   targetPivot: 0 1.0 0;" dynamic-body click-impulse></a-entity>
-        </a-entity><!--end hingepin-->
+                <a-entity id="joint1">
+                    <a-entity class="clickable" mixin="constryy" position="0 -1 0" gltf-model="#prt1"
+                              constraint="type: hinge;
+                           target: #target1;
+                           axis: 0 1 0;
+                           targetAxis: 0 1 0;
+                           pivot: 0 0 0;
+                           targetPivot: 0 -1.0 0;" dynamic-body click-impulse></a-entity>
+                    <a-entity class="clickable" mixin="constryy" position="0 1 0" gltf-model="#prt2"
+                              constraint="type: hinge;
+                           target: #target1;
+                           axis: 0 1 0;
+                           targetAxis: 0 1 0;
+                           pivot: 0 0 0;
+                           targetPivot: 0 1.0 0;" dynamic-body click-impulse></a-entity>
+                </a-entity><!--end hingepin-->
                 <!-- HINGE PIN working--
-        <a-entity id="joint2">
-            <a-entity class="clickable" mixin="constryy" position="0 -1 0" gltf-model="#prt3"
-                      constraint="type: hinge;
-                   target: #target2;
-                   axis: 0 1 0;
-                   targetAxis: 0 1 0;
-                   pivot: 0 0 0;
-                   targetPivot: 0 -1.0 0;" dynamic-body click-impulse></a-entity>
-            <a-entity class="clickable" mixin="constryy" position="0 1 0" gltf-model="#prt4"
-                      constraint="type: hinge;
-                   target: #target2;
-                   axis: 0 1 0;
-                   targetAxis: 0 1 0;
-                   pivot: 0 0 0;
-                   targetPivot: 0 1.0 0;" dynamic-body click-impulse></a-entity>
-        </a-entity><!--end hingepin-->
+                <a-entity id="joint2">
+                    <a-entity class="clickable" mixin="constryy" position="0 -1 0" gltf-model="#prt3"
+                              constraint="type: hinge;
+                           target: #target2;
+                           axis: 0 1 0;
+                           targetAxis: 0 1 0;
+                           pivot: 0 0 0;
+                           targetPivot: 0 -1.0 0;" dynamic-body click-impulse></a-entity>
+                    <a-entity class="clickable" mixin="constryy" position="0 1 0" gltf-model="#prt4"
+                              constraint="type: hinge;
+                           target: #target2;
+                           axis: 0 1 0;
+                           targetAxis: 0 1 0;
+                           pivot: 0 0 0;
+                           targetPivot: 0 1.0 0;" dynamic-body click-impulse></a-entity>
+                </a-entity><!--end hingepin-->
                 <!-- HINGE PIN working--
-        <a-entity id="redbxx" position="-10 5 -5" rotation="0 0 0">
+                <a-entity id="redbxx" position="-10 5 -5" rotation="0 0 0">
 
-            <a-cylinder id="hinge3-target" position="0 0.1 0 " color="#777" static-body radius="0.5" height="0.1">
+                    <a-cylinder id="hinge3-target" position="0 0.1 0 " color="#777" static-body radius="0.5" height="0.1">
 
-            </a-cylinder>
-            <a-entity class="clickable" mixin="cubed" position="0 -1 0" material="color: yellow"
-                      constraint="type: hinge;
-                   target: #hinge3-target;
-                   axis: 0 1 0;
-                   targetAxis: 0 1 0;
-                   pivot: 0 0 0;
-                   targetPivot: 0 -1.0 0;" dynamic-body click-impulse>
+                    </a-cylinder>
+                    <a-entity class="clickable" mixin="cubed" position="0 -1 0" material="color: yellow"
+                              constraint="type: hinge;
+                           target: #hinge3-target;
+                           axis: 0 1 0;
+                           targetAxis: 0 1 0;
+                           pivot: 0 0 0;
+                           targetPivot: 0 -1.0 0;" dynamic-body click-impulse>
 
-            </a-entity>
-        </a-entity><!--end hingepin-->
+                    </a-entity>
+                </a-entity><!--end hingepin-->
                 <!--
-        <a-entity class="transformer" position="0 1.6 -4"
-                  color-randomizer droppable body="type: static; shape: none"
-                  shape="shape: box; halfExtents: 0.25 0.25 0.25"
-                  geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
-                  event-set__dragon="_event: dragover-start; material.color: orange"
-                  event-set__dragoff="_event: dragover-end; material.color: purple"
-                  material="color:purple" shadow>
-            <a-entity text="value: Drag&drop to change color;
-                        width: 0.5; wrapCount: 12; align: center"
-                      position="0 0 0.25">
-            </a-entity>
-        </a-entity>
+                <a-entity class="transformer" position="0 1.6 -4"
+                          color-randomizer droppable body="type: static; shape: none"
+                          shape="shape: box; halfExtents: 0.25 0.25 0.25"
+                          geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
+                          event-set__dragon="_event: dragover-start; material.color: orange"
+                          event-set__dragoff="_event: dragover-end; material.color: purple"
+                          material="color:purple" shadow>
+                    <a-entity text="value: Drag&drop to change color;
+                                width: 0.5; wrapCount: 12; align: center"
+                              position="0 0 0.25">
+                    </a-entity>
+                </a-entity>
 
-        <!--sphorb--
-        <a-entity id="yellowSphere" mixin="rot0" position="0 0 0" rotation="0 0 0" scale=".3 .3 .3" static-body>
-            <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
-            <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
-                      animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
-                repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
-            <a-entity id="orb3" gltf-model="#bb04" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
-                      animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
-                repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
-            <a-entity id="orb4" gltf-model="#bb05" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
-                      animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
-                repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+                <!--sphorb--
+                <a-entity id="yellowSphere" mixin="rot0" position="0 0 0" rotation="0 0 0" scale=".3 .3 .3" static-body>
+                    <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+                    <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                              animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+                        repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+                    <a-entity id="orb3" gltf-model="#bb04" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                              animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
+                        repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+                    <a-entity id="orb4" gltf-model="#bb05" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                              animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
+                        repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
 
-        </a-entity>
-        <!--sphorb-end--
+                </a-entity>
+                <!--sphorb-end--
 
-        <!-- ground collider keeps objets from falling -->
+                <!-- ground collider keeps objets from falling -->
                 <a-box body="type: static; shape: none" shape="shape: box; halfExtents: 50 0.0005 50" width=100 height=0.001 depth=100 visible="false"></a-box>
 
 
@@ -2162,9 +2205,9 @@
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <!----<a class="navbar-brand" href="#">CADBOXX</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-        </button-->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         PLATFORMS

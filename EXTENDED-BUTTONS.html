@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>CADBOXX</title>
@@ -200,7 +200,7 @@
                             THREE.Math.randInt(-20, 20),
                             THREE.Math.randInt(-20, 20)
                         ),
-                                                                                                                                                                                                                        /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                                                                                                                                                                                                            /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
                     );
                 });
 
@@ -314,7 +314,7 @@
         .overlay {
             height: 100%;
             width: 100%;
-            opacity: 0.4;
+            opacity: 0.8;
             display: none;
             position: fixed;
             z-index: 1;
@@ -378,12 +378,12 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 24px;
+            height: 34px;
             margin-top: 5px;
             margin-left: 5px;
             outline: none;
             position: relative;
-            width: 90px;
+            width: 100px;
             z-index: 999;
         }
 
@@ -394,157 +394,7 @@
             justify-content: center;
         }
     </style>
-    <style>
-        .button2:hover {
-            background-color: #fff;
-            color: #e43b5e;
-        }
 
-        .button2 {
-            background-color: green;
-            border-radius: 8px;
-            border: none;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 12px;
-            height: 24px;
-            margin-top: 5px;
-            margin-left: 5px;
-            outline: none;
-            position: relative;
-            width: 100px;
-            z-index: 999;
-        }
-
-        #container2 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-    <style>
-        .button3:hover {
-            background-color: #fff;
-            color: #e43b5e;
-        }
-
-        .button3 {
-            background-color: red;
-            border-radius: 8px;
-            border: none;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 12px;
-            height: 24px;
-            margin-top: 5px;
-            margin-left: 5px;
-            outline: none;
-            position: relative;
-            width: 100px;
-            z-index: 999;
-        }
-
-        #container3 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-    <style>
-        .button4:hover {
-            background-color: #fff;
-            color: #e43b5e;
-        }
-
-        .button4 {
-            background-color: mediumpurple;
-            border-radius: 8px;
-            border: none;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 12px;
-            height: 24px;
-            margin-top: 5px;
-            margin-left: 5px;
-            outline: none;
-            position: relative;
-            width: 100px;
-            z-index: 999;
-        }
-
-        #container4 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-
-    <style>
-        .button5:hover {
-            background-color: #fff;
-            color: #e43b5e;
-        }
-
-        .button5 {
-            background-color: gold;
-            border-radius: 8px;
-            border: none;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 12px;
-            height: 24px;
-            margin-top: 5px;
-            margin-left: 5px;
-            outline: none;
-            position: relative;
-            width: 100px;
-            z-index: 999;
-        }
-
-        #container5 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-    <style>
-        .button6:hover {
-            background-color: #fff;
-            color: #e43b5e;
-        }
-
-        .button6 {
-            background-color: red;
-            border-radius: 8px;
-            border: none;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 12px;
-            height: 24px;
-            margin-top: 5px;
-            margin-left: 5px;
-            outline: none;
-            position: relative;
-            width: 100px;
-            z-index: 999;
-        }
-
-        #container6 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
     <style>
         #mySidenav a {
             position: absolute;
@@ -563,7 +413,7 @@
                 left: 0;
             }
 
-        #cameras {
+        #file {
             top: 60px;
             margin-left: 10px;
             background-color: whitesmoke;
@@ -636,60 +486,6 @@
             background-color: whitesmoke;
         }
     </style>
-    <style>
-        #mySidenav3 a {
-            position: absolute;
-            left: 40px;
-            transition: 0s;
-            padding: 15px;
-            width: 90px;
-            text-decoration: none;
-            font-size: 20px;
-            color: black;
-            border-radius: 0 5px 5px 0;
-            z-index: 999;
-        }
-
-        #mySidenav3 a {
-            left: 0;
-        }
-
-        #mybutton01 {
-            top: 60px;
-            left: 10px;
-            background-color: whitesmoke;
-        }
-
-        #mybutton02 {
-            top: 120px;
-            left: 10px;
-            background-color: whitesmoke;
-        }
-
-        #mybutton03 {
-            top: 180px;
-            left: 10px;
-            background-color: whitesmoke;
-        }
-
-        #mybutton04 {
-            top: 240px;
-            left: 10px;
-            background-color: whitesmoke;
-        }
-
-        #mybutton05 {
-            top: 300px;
-            left: 10px;
-            background-color: whitesmoke;
-        }
-
-        #mybutton06 {
-            top: 360px;
-            left: 10px;
-            background-color: whitesmoke;
-        }
-    </style>
 </head>
 <body>
     <div id="container">
@@ -699,72 +495,22 @@
         <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
         <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
     </div>
-    <div id="container2">
-        <button id="camera1" class="button" onclick="cmm1()"><span>CAM1</span></button>
-        <button id="camera2" class="button" onclick="cmm2()"><span>CAM2</span></button>
-        <button id="camera3" class="button" onclick="cmm3()"><span>CAM3</span></button>
-        <button id="camera4" class="button" onclick="cmm4()"><span>CAM4</span></button>
-        <button id="camera5" class="button" onclick="cmm5()"><span>CAM5</span></button>
-    </div>
-    <div id="container3">
-        <button id="bodya" class="button" onclick=""><span>Scene</span></button>
-        <button id="bodyb" class="button" onclick=""><span>Scene Binary</span></button>
-        <button id="pivot" class="button" onclick=""><span>phere</span></button>
-        <button id="targetpivot" class="button" onclick=""><span>Sphere and Box (Array)</span></button>
-        <button id="createconstraint" class="button" onclick=""><span>boxes (Selector)</span></button>
-    </div>
-    <div id="container4">
-        <button id="" class="button" onclick="cmm1()"><span>CAM1</span></button>
-        <button id="" class="button" onclick="cmm2()"><span>CAM2</span></button>
-        <button id="" class="button" onclick="cmm3()"><span>CAM3</span></button>
-        <button id="" class="button" onclick="cmm4()"><span>CAM4</span></button>
-        <button id="" class="button" onclick="cmm5()"><span>CAM5</span></button>
-    </div>
-    <div id="container5">
-        <button id="" class="button" ><span>CAM1</span></button>
-        <button id="" class="button" ><span>CAM2</span></button>
-        <button id="" class="button" ><span>CAM3</span></button>
-        <button id="" class="button" ><span>CAM4</span></button>
-        <button id="" class="button" ><span>CAM5</span></button>
-    </div>
-    <div id="container6">
-        <button id="" class="button" onclick="cmm1()"><span>CAM1</span></button>
-        <button id="" class="button" onclick="cmm2()"><span>CAM2</span></button>
-        <button id="" class="button" onclick="cmm3()"><span>CAM3</span></button>
-        <button id="" class="button" onclick="cmm4()"><span>CAM4</span></button>
-        <button id="" class="button" onclick="cmm5()"><span>CAM5</span></button>
-    </div>
-    <!--div id="mySidenav" class="sidenav">
-        <a id="cameras" class="clickable" onclick="myNavh6()">CAMERAS</a>
-        <a href="static.html" target="_blank" id="create">CREATE</a>
-        <a href="assembler.html" target="_blank" id="assemble">ASSEMBLE</a>
-        <a href="setup.html" target="_blank" id="arrange">ARRANGE</a>
-        <a href="dynamic.html" target="_blank" id="dynamic">MOTION</a>
-        <a href="graphs.html" target="_blank" id="study">STUDY</a>
 
-    </div-->
+    <div id="mySidenav" class="sidenav">
+        <a href="#" id="file">FILE</a>
+        <a href="#" id="create">CREATE</a>
+        <a href="#" id="assemble">ASSEMBLE</a>
+        <a href="#" id="arrange">ARRANGE</a>
+        <a href="#" id="motion">MOTION</a>
+        <a href="#" id="study">STUDY</a>
+
+    </div>
     <div id="mySidenav2" class="sidenav">
         <a href="https://github.com/" target="_blank" id="abcd">GitHub</a>
         <a href="https://sketchfab.com/fasteng" target="_blank" id="efgh">SketchFab</a>
         <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
 
     </div>
-    <div id="mySidenav3" class="sidenav">
-        <a id="mybutton01" class="button" onclick="butn01()">Cameras</a>
-        <a id="mybutton02" class="button" onclick="butn02()">Joints</a>
-        <a id="mybutton03" class="button" onclick="butn03()">Templates</a>
-        <a id="mybutton04" class="button" onclick="enterVR()">Motion</a>
-        <a id="mybutton05" class="button" onclick="enterVR()">Assembly</a>
-        <a id="mybutton06" class="button" onclick="butn03()">Exporter</a>
-
-        <!--a href="static.html" target="_blank" id="create">CREATE</!--a>
-        <a href="assembler.html" target="_blank" id="assemble">ASSEMBLE</a>
-        <a href="setup.html" target="_blank" id="arrange">ARRANGE</a>
-        <a href="dynamic.html" target="_blank" id="dynamic">MOTION</a>
-        <a href="graphs.html" target="_blank" id="study">STUDY</a>
-            -->
-    </div>
-
     <div id="myNavh01" class="overlay">
         <div class="overlay-content">
             <center>
@@ -779,7 +525,7 @@
             </center>
             <div style="height:15px"></div>
             <center>
-                <div id="btnnbar1" display="inline-block">
+                <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="myNavh1()">HELP 1</button>
                     <button class="clickable" onclick="myNavh2()">HELP 2</button>
                     <button class="clickable" onclick="myNavh3()">HELP 3</button>
@@ -804,7 +550,7 @@
     <div id="myNavh02" class="overlay">
         <div class="overlay-content">
             <center>
-                <div id="btnnbar2" display="inline-block">
+                <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="myNavh1()"> HELP 1</button>
                     <button class="clickable" onclick="myNavh2()">HELP 2</button>
                     <button class="clickable" onclick="myNavh3()">HELP 3</button>
@@ -828,7 +574,7 @@
     <div id="myNavh03" class="overlay">
         <div class="overlay-content">
             <center>
-                <div id="btnnbarh03" display="inline-block">
+                <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="myNavh1()">HELP 1</button>
                     <button class="clickable" onclick="myNavh2()">HELP 2</button>
                     <button class="clickable" onclick="myNavh3()">HELP 3</button>
@@ -854,7 +600,7 @@
     <div id="myNavh04" class="overlay">
         <div class="overlay-content">
             <center>
-                <div id="btnnbarh04" display="inline-block">
+                <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="myNavh1()">HELP 1</button>
                     <button class="clickable" onclick="myNavh2()">HELP 2</button>
                     <button class="clickable" onclick="myNavh3()">HELP 3</button>
@@ -881,7 +627,7 @@
     <div id="myNavh05" class="overlay">
         <div class="overlay-content">
             <center>
-                <div id="btnnbarh05" display="inline-block">
+                <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="myNavh1()">HELP 1</button>
                     <button class="clickable" onclick="myNavh2()">HELP 2</button>
                     <button class="clickable" onclick="myNavh3()">HELP 3</button>
@@ -908,21 +654,19 @@
     <div id="myNavh06" class="overlay">
         <div class="overlay-content">
             <center>
-                <div id="btnnbar1" display="inline-block">
-                    <button id="p011" class="clickable" style="width:60px;height:60px" onclick="cmm2()">CAM2</button>
-                    <button id="p012" class="clickable" style="width:60px;height:60px" onclick="cmm3()">CAM3</button>
-                    <button id="p013" class="clickable" style="width:60px;height:60px" onclick="cmm5()">CAM5</button>
-                    <button id="p014" class="clickable" style="width:60px;height:60px" onclick="cmm1()">CAM1</button>
-                    <button id="p015" class="clickable" style="width:60px;height:60px" onclick="cmm6()">CAM1</button>
-                    <button id="p016" class="clickable" style="width:60px;height:60px" onclick="cmm4()">CAM1</button>
-
-
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
                     <button class="clickable" onclick="closeAllNav()">CLOSE</button>
 
                 </div>
             </center>
             <center>
-                <div id="btnnbar2" display="inline-block">
+                <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="myNavh1()">HELP 1</button>
                     <button class="clickable" onclick="myNavh2()">HELP 2</button>
                     <button class="clickable" onclick="myNavh3()">HELP 3</button>
@@ -933,23 +677,22 @@
                 </div>
             </center>
             <center>
-                <div id="btnnbar3" display="inline-block">
+                <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="myNavh1()">HELP 1</button>
                     <button class="clickable" onclick="myNavh2()">HELP 2</button>
                     <button class="clickable" onclick="myNavh3()">HELP 3</button>
                     <button class="clickable" onclick="myNavh4()"> HELP 4</button>
                     <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="myNavh6()">HELP &</button>
                     <button class="clickable" onclick="closeAllNav()">CLOSE</button>
 
                 </div>
             </center>
             <center>
-                <div id="btnnbar4" display="inline-block">
+                <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="myNavh1()">HELP 1</button>
                     <button class="clickable" onclick="myNavh2()">HELP 2</button>
                     <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()">HELP 4</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
                     <button class="clickable" onclick="myNavh5()">HELP 5</button>
                     <button class="clickable" onclick="myNavh6()">HELP 6</button>
 
@@ -1200,12 +943,12 @@
                     <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
                     <!--
-            <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+                    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-            <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+                    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-            <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                -->
+                    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                        -->
 
                     <a-mixin id="trigger-box1" gltf-model="#cb1" scale="10 10 10"
                              class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
@@ -1272,10 +1015,6 @@
                     <a-mixin id="m06" src="#m01"></a-mixin>
 
 
-                    <a-mixin id="constraint_hinge_x" constraint="type: hinge;axis:1 0 0;targetAxis:1 0 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                    <a-mixin id="constraint_hinge_y" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                    <a-mixin id="constraint_hinge_z" constraint="type: hinge;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-
                     <a-mixin id="rotxx" animation__rotation__xx="property: rotation; dir: forward; dur: 2000;
                 repeat: indefinite; easing: linear; loop: true; to: 360 0 0"></a-mixin>
                     <a-mixin id="rotyy" animation__rotation__yy="property: rotation; dir: forward; dur: 4000;
@@ -1292,13 +1031,13 @@
                 </a-assets>
 
                 <!--
-        <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-        <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-            -->
+                <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                    -->
 
 
                 <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>
@@ -1320,7 +1059,7 @@
                         <a-box position="0 0 20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
                         <a-box position="-20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
                         <a-box position="20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1.0" gridhelper="size: 25;divisions:5" static-body></a-box>
-                        
+
                         <a-box position="0 0 -20" rotation="0 0 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
                             <a-entity id="cmnd1" mixin="trigger-box4" position="-10 0 0" rotation="0 0 0" onclick="cmm1()" static-body><a-sphere id="cmcdsph1" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
                             <a-entity id="cmnd2" mixin="trigger-box4" position="-10 5 0" rotation="0 0 0" onclick="cmm2()" static-body><a-sphere id="cmcdsph2" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
@@ -1394,82 +1133,12 @@
                     </a-entity>
                 </a-entity>
 
-                <!--cylinder alignment 4--
-                      <a-entity id="4cyl" position="0 2 0" rotation="0 0 0" scale="10 10 10" static-body>
-                          <a-entity id="ccyl1-4" gltf-model="#ccyly" position="-1.5 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-                          <a-entity id="ccyl2-4" gltf-model="#ccyly" position="-0.5 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-                          <a-entity id="ccyl3-4" gltf-model="#ccyly" position="0.5 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-                          <a-entity id="ccyl4-4" gltf-model="#ccyly" position="1.0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-
-                       </a-entity>
-
-                      <!--crankshaft--
-                      <a-entity id="rotorxx" position="0 0 0" rotation="0 0 0" scale="1 1 1">
-
-                          <a-entity id="flywheelx" gltf-model="#ccylx" material="wireframe:false" position="0 0 0" rotation="0 0 0" scale="10 10 10"
-                                    animation__rotation__xx="property: rotation; dir: forward; dur: 5000;
-        repeat: indefinite; easing: linear; loop: true; to: 360 0 0">
-
-                              <a-entity id="crank-throwx" position="0 0 0" rotation="0 0 0" scale="1 1 1" >
-                                  <a-entity id="poxs-one" gltf-model="#ccyly" position="-1.5 0 0"  scale="1 1 1" rotation="0 0 90"><a-sphere id="sph1" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
-                                  <a-entity id="poxs-two" gltf-model="#ccyly" position="-0.5 0 0"  scale="1 1 1" rotation="0 0 90"><a-sphere id="sph2" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
-                                  <a-entity id="poxs-three" gltf-model="#ccyly" position="0.5 0 0" scale="1 1 1" rotation="0 0 90"><a-sphere id="sph3" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></!--a-entity>
-                                  <a-entity id="poxs-four" gltf-model="#ccyly" position="1.5 0 0"  scale="1 1 1" rotation="0 0 90"><a-sphere id="sph4" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="wireframe:true;color:black"></a-sphere></a-entity>
-
-                              </a-entity>
-                          </a-entity>
-                      </a-entity>
 
 
-                      <!-- ground collider keeps objets from falling -->
+
+                <!-- ground collider keeps objets from falling -->
                 <a-box body="type: static; shape: none" shape="shape: box; halfExtents: 50 0.0005 50" width=100 height=0.001 depth=100 visible="false"></a-box>
 
-
-                <a-entity id="cbxxtemplate" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
-                    <a-entity id="cylx" gltf-model="#ccylx" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-                    <a-entity id="cyly" gltf-model="#ccyly" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-                    <a-entity id="cylz" gltf-model="#cyclz" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-                    <a-entity id="planexz" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-                    <a-entity id="planexy" gltf-model="#bb030" position="0 0 0" rotation="90 0 0" scale="1 1 1" static-body></a-entity>
-                    <a-entity id="planeyz" gltf-model="#bb030" position="0 0 0" rotation="0 90 0" scale="1 1 1" static-body></a-entity>
-                    <a-entity id="sphere" gltf-model="#glbsphere" position="0 0 0" rotation="0 90 0" scale="1 1 1" static-body></a-entity>
-
-                </a-entity>
-
-
-
-                <!--series--
-        <a-entity id="cb4-series-assy" position="0 -2 5" rotation="0 0 0" scale="1 1 1">
-            <a-entity id="cb1" gltf-model="#cb1" position="-5 1 0" rotation="0 0 0" scale="1 1 1" dynamic-body>
-                <a-entity id="cb2" gltf-model="#cb1" position="-4 1 0" rotation="0 0 0" scale="1 1 1" dynamic-body>
-                    <a-entity id="cb3" gltf-model="#cb1" position="-3 1 0" rotation="0 0 0" scale="1 1 1" dynamic-body>
-                        <a-entity id="cb4" gltf-model="#cb1" position="-2 1 0" rotation="0 0 0" scale="1 1 1" dynamic-body>
-
-                        </a-entity>
-                    </a-entity>
-                </a-entity>
-            </a-entity>
-        </a-entity>
-        <!--parallel--
-        <a-entity id="cb4-parralel-assy" position="-10 -10 -10" rotation="0 0 0" scale="1 1 1">
-            <a-entity id="plane1" gltf-model="#bb030" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body>
-                <a-entity id="cb1" gltf-model="#ccyl1" position="-4 1 2.5" rotation="0 0 90" scale="1 1 1" dynamic-body>
-
-                </a-entity>
-                <a-entity id="cb2" gltf-model="#ccyl1" position="4 1 2.5" rotation="0 0 90" scale="1 1 1" dynamic-body>
-
-                </a-entity>
-                <a-entity id="cb3" gltf-model="#cbcyl" position="-4 1 -2.5" rotation="0 0 90" scale="1 1 1" dynamic-body>
-
-                </a-entity>
-                <a-entity id="cb4" gltf-model="#ccyl1" position="4 1 =2.5" rotation="0 0 90" scale="1 1 1" dynamic-body>
-
-                </a-entity>
-            </a-entity>
-            <!--audio-->
-                <audio id="blip1" src="audio/321103__nsstudios__blip1.wav"></audio>
-                <audio id="blip2" src="audio/321104__nsstudios__blip2.wav"></audio>
-                <!--lighting-->
 
                 <a-light type="point" color="#94c6ff" position="0 0 0" intensity="1" light="intensity: 1" visible="true"></a-light>
                 <a-light type="directional" directionaltarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
@@ -1487,11 +1156,7 @@
                 <a-light type="spot" color="#white" position="16 0 16" intensity="1"></a-light>
                 <a-entity light="type: hemisphere; color: #white; groundColor: #3C3; intensity: 2"></a-entity>
 
-                <a-entity id="cam1" camera active="false" position="0 3 12">
-                    <a-camera look-controls wasd-controls></a-camera>
-                </a-entity><!--over-ridden by the touch-inspector camera-->
-
-                <a-entity camera id="cam2" active="true" look-controls wasd-controls position="0 5 15"
+                <a-entity camera id="cam1" active="true" look-controls wasd-controls position="0 5 15"
                           capture-mouse
                           raycaster cursor="rayOrigin:mouse"
                           body="type: static; shape: sphere; sphereRadius: 0.001"
@@ -1501,39 +1166,42 @@
                              colliderEndEventProperty: clearedEls;">
                 </a-entity>
 
-                <a-camera id="cam3" position="0 8 8" look-controls active="false">
+                <a-entity id="cam2" camera active="false" position="0 3 12">
+                    <a-camera look-controls wasd-controls></a-camera>
+                </a-entity>
+                <a-camera id="cam3" position="12 6 0" look-controls active="false">
                     <a-cursor intersection-spawn="event: click; mixin: voxelccylx"></a-cursor>
                 </a-camera>
-                <a-camera id="cam4" position="0 12 12" look-controls active="false">
+                <a-camera id="cam4" position="0 12 0" look-controls active="false">
                     <a-cursor intersection-spawn="event: click; mixin: voxelccylz"></a-cursor>
                 </a-camera>
-                <a-camera id="cam5" orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 9 12" active="false">
-
+                <a-camera id="cam5" position="0 6 12" look-controls active="false">
+                    <a-cursor intersection-spawn="event: click; mixin: voxelcdodd1"></a-cursor>
                 </a-camera>
-                <a-camera id="cam6" position="12 6 0" touch-controls active="false">
+                <a-camera id="cam6" position="12 6 0" look-controls active="false">
 
                 </a-camera>
                 <!--camera id="cam7" position="-12 6 0" look-controls active="false">
 
-        </!--a-camera>
-        <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
+                </!--a-camera>
+                <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
 
-        </a-camera>
-        <a-camera id="cam9" position="12 6 0" look-controls active="false">
+                </a-camera>
+                <a-camera id="cam9" position="12 6 0" look-controls active="false">
 
-        </a-camera>
+                </a-camera>
 
-        <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
-            <a-cursor></a-cursor>
-        </a-entity-->
+                <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
+                    <a-cursor></a-cursor>
+                </a-entity-->
 
-                <a-sky radius="70" color="lightblue"></a-sky>
+                <a-sky radius="50" color="lightblue"></a-sky>
 
             </a-scene>
             <script src="js/aframe-physics-system.min.js"></script>
             <script>
                 document.querySelector('a-scene').addEventListener('loaded', function () {
-                    document.getElementById("myNavh06").style.display = "block";
+                    document.getElementById("myNavh01").style.display = "block";
                 })
 
             </script>
@@ -1557,13 +1225,6 @@
                 var mybutton01 = document.querySelector('#mybutton01');
                 mybutton01.addEventListener('pressed', function () {
                     // do stuff here.
-                    document.getElementById("container").style.display = "block";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "none";
-
                 });
             </script>
 
@@ -1571,13 +1232,6 @@
                 var mybutton02 = document.querySelector('#mybutton02');
                 mybutton02.addEventListener('pressed', function () {
                     // do stuff here.
-                    document.getElementById("container2").style.display = "block";
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "none";
-
                 });
             </script>
 
@@ -1585,13 +1239,6 @@
                 var mybutton03 = document.querySelector('#mybutton03');
                 mybutton03.addEventListener('pressed', function () {
                     // do stuff here.
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "block";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "none";
-
                 });
             </script>
 
@@ -1599,13 +1246,6 @@
                 var mybutton04 = document.querySelector('#mybutton04');
                 mybutton04.addEventListener('pressed', function () {
                     // do stuff here.
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "block";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "none";
-
                 });
             </script>
 
@@ -1613,13 +1253,6 @@
                 var mybutton05 = document.querySelector('#mybutton05');
                 mybutton05.addEventListener('pressed', function () {
                     // do stuff here.
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "block";
-                    document.getElementById("container6").style.display = "none";
-
                 });
             </script>
 
@@ -1627,14 +1260,6 @@
                 var mybutton06 = document.querySelector('#mybutton06');
                 mybutton06.addEventListener('pressed', function () {
                     // do stuff here.
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "block";
-
-
                 });
             </script>
 
@@ -1976,6 +1601,7 @@
                     document.getElementById("myNavh03").style.display = "none";
                     document.getElementById("myNavh04").style.display = "none";
                     document.getElementById("myNavh05").style.display = "none";
+                    document.getElementById("myNavh06").style.display = "none";
 
                 }
             </script>
@@ -2032,64 +1658,7 @@
 
 
             </script>
-            <script>
-                function con1 () {
-                    document.getElementById("container").style.display = "block";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "none";
 
-                }
-                function con2 () {
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container2").style.display = "block";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "none";
-
-                }
-                function con3 () {
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container3").style.display = "block";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "none";
-
-                }
-                function con4 () {
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "block";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "none";
-
-                }
-                function con5 () {
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "block";
-                    document.getElementById("container6").style.display = "none";
-
-                }
-                function con6 () {
-                    document.getElementById("container").style.display = "none";
-                    document.getElementById("container2").style.display = "none";
-                    document.getElementById("container3").style.display = "none";
-                    document.getElementById("container4").style.display = "none";
-                    document.getElementById("container5").style.display = "none";
-                    document.getElementById("container6").style.display = "block";
-
-                }
-
-
-            </script>
             <script>
                 function myPartsdisplay() {
                     document.getElementById("part01").style.display = "block";
@@ -2480,12 +2049,12 @@
                 }
             </script>
             <script>
-                /*to auto-enter-vr*/
-                function autoEvr() {
-                    var scene = document.querySelector('a-scene');
-                    scene.enterVR();
+            function autoEvr() {
+                var scene = document.querySelector('a-scene');
+                scene.enterVR();
                 };
             </script>
+            
             <script>
                 function cmm7() {//cadboxx opacity
                     var cadboxx = document.querySelector('planeboxx');

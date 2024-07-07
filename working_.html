@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>CADBOXX</title>
+    <title>containers test</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
@@ -378,12 +378,12 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 24px;
+            height: 34px;
             margin-top: 5px;
             margin-left: 5px;
             outline: none;
             position: relative;
-            width: 90px;
+            width: 100px;
             z-index: 999;
         }
 
@@ -408,7 +408,7 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 24px;
+            height: 34px;
             margin-top: 5px;
             margin-left: 5px;
             outline: none;
@@ -438,7 +438,7 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 24px;
+            height: 34px;
             margin-top: 5px;
             margin-left: 5px;
             outline: none;
@@ -468,7 +468,7 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 24px;
+            height: 34px;
             margin-top: 5px;
             margin-left: 5px;
             outline: none;
@@ -499,7 +499,7 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 24px;
+            height: 34px;
             margin-top: 5px;
             margin-left: 5px;
             outline: none;
@@ -529,7 +529,7 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 24px;
+            height: 34px;
             margin-top: 5px;
             margin-left: 5px;
             outline: none;
@@ -721,11 +721,11 @@
         <button id="" class="button" onclick="cmm5()"><span>CAM5</span></button>
     </div>
     <div id="container5">
-        <button id="" class="button" ><span>CAM1</span></button>
-        <button id="" class="button" ><span>CAM2</span></button>
-        <button id="" class="button" ><span>CAM3</span></button>
-        <button id="" class="button" ><span>CAM4</span></button>
-        <button id="" class="button" ><span>CAM5</span></button>
+        <button id="" class="button"><span>CAM1</span></button>
+        <button id="" class="button"><span>CAM2</span></button>
+        <button id="" class="button"><span>CAM3</span></button>
+        <button id="" class="button"><span>CAM4</span></button>
+        <button id="" class="button"><span>CAM5</span></button>
     </div>
     <div id="container6">
         <button id="" class="button" onclick="cmm1()"><span>CAM1</span></button>
@@ -750,12 +750,12 @@
 
     </div>
     <div id="mySidenav3" class="sidenav">
-        <a id="mybutton01" class="button" onclick="butn01()">Cameras</a>
-        <a id="mybutton02" class="button" onclick="butn02()">Joints</a>
-        <a id="mybutton03" class="button" onclick="butn03()">Templates</a>
-        <a id="mybutton04" class="button" onclick="enterVR()">Motion</a>
-        <a id="mybutton05" class="button" onclick="enterVR()">Assembly</a>
-        <a id="mybutton06" class="button" onclick="butn03()">Exporter</a>
+        <a id="mybutton01" class="clickable" onclick="con01()">Cameras</a>
+        <a id="mybutton02" class="clickable" onclick="con02()">Joints</a>
+        <a id="mybutton03" class="clickable" onclick="con03()">Templates</a>
+        <a id="mybutton04" class="clickable" onclick="con04()">Motion</a>
+        <a id="mybutton05" class="clickable" onclick="con05()">Assembly</a>
+        <a id="mybutton06" class="clickable" onclick="con06()">Exporter</a>
 
         <!--a href="static.html" target="_blank" id="create">CREATE</!--a>
         <a href="assembler.html" target="_blank" id="assemble">ASSEMBLE</a>
@@ -909,12 +909,12 @@
         <div class="overlay-content">
             <center>
                 <div id="btnnbar1" display="inline-block">
-                    <button id="p011" class="clickable" style="width:60px;height:60px" onclick="cmm2()">CAM2</button>
-                    <button id="p012" class="clickable" style="width:60px;height:60px" onclick="cmm3()">CAM3</button>
-                    <button id="p013" class="clickable" style="width:60px;height:60px" onclick="cmm5()">CAM5</button>
-                    <button id="p014" class="clickable" style="width:60px;height:60px" onclick="cmm1()">CAM1</button>
-                    <button id="p015" class="clickable" style="width:60px;height:60px" onclick="cmm6()">CAM1</button>
-                    <button id="p016" class="clickable" style="width:60px;height:60px" onclick="cmm4()">CAM1</button>
+                    <button id="mybutton01" class="clickable" style="width:60px;height:60px" onclick="cmm2()">CAM2</button>
+                    <button id="mybutton02" class="clickable" style="width:60px;height:60px" onclick="cmm3()">CAM3</button>
+                    <button id="mybutton03" class="clickable" style="width:60px;height:60px" onclick="cmm5()">CAM5</button>
+                    <button id="mybutton04" class="clickable" style="width:60px;height:60px" onclick="cmm1()">CAM1</button>
+                    <button id="mybutton05" class="clickable" style="width:60px;height:60px" onclick="cmm6()">CAM1</button>
+                    <button id="mybutton06" class="clickable" style="width:60px;height:60px" onclick="cmm4()">CAM1</button>
 
 
                     <button class="clickable" onclick="closeAllNav()">CLOSE</button>
@@ -1320,7 +1320,7 @@
                         <a-box position="0 0 20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
                         <a-box position="-20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
                         <a-box position="20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1.0" gridhelper="size: 25;divisions:5" static-body></a-box>
-                        
+                        -->
                         <a-box position="0 0 -20" rotation="0 0 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
                             <a-entity id="cmnd1" mixin="trigger-box4" position="-10 0 0" rotation="0 0 0" onclick="cmm1()" static-body><a-sphere id="cmcdsph1" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
                             <a-entity id="cmnd2" mixin="trigger-box4" position="-10 5 0" rotation="0 0 0" onclick="cmm2()" static-body><a-sphere id="cmcdsph2" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
@@ -1487,11 +1487,11 @@
                 <a-light type="spot" color="#white" position="16 0 16" intensity="1"></a-light>
                 <a-entity light="type: hemisphere; color: #white; groundColor: #3C3; intensity: 2"></a-entity>
 
-                <a-entity id="cam1" camera active="false" position="0 3 12">
+                <a-entity id="cam1" camera active="true" position="0 3 12">
                     <a-camera look-controls wasd-controls></a-camera>
                 </a-entity><!--over-ridden by the touch-inspector camera-->
 
-                <a-entity camera id="cam2" active="true" look-controls wasd-controls position="0 5 15"
+                <a-entity camera id="cam2" active="false" look-controls wasd-controls position="0 5 15"
                           capture-mouse
                           raycaster cursor="rayOrigin:mouse"
                           body="type: static; shape: sphere; sphereRadius: 0.001"
@@ -1501,10 +1501,10 @@
                              colliderEndEventProperty: clearedEls;">
                 </a-entity>
 
-                <a-camera id="cam3" position="0 8 8" look-controls active="false">
+                <a-camera id="cam3" position="12 6 0" look-controls active="false">
                     <a-cursor intersection-spawn="event: click; mixin: voxelccylx"></a-cursor>
                 </a-camera>
-                <a-camera id="cam4" position="0 12 12" look-controls active="false">
+                <a-camera id="cam4" position="0 12 0" look-controls active="false">
                     <a-cursor intersection-spawn="event: click; mixin: voxelccylz"></a-cursor>
                 </a-camera>
                 <a-camera id="cam5" orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 9 12" active="false">
@@ -1527,7 +1527,7 @@
             <a-cursor></a-cursor>
         </a-entity-->
 
-                <a-sky radius="70" color="lightblue"></a-sky>
+                <a-sky radius="50" color="lightblue"></a-sky>
 
             </a-scene>
             <script src="js/aframe-physics-system.min.js"></script>
@@ -2033,7 +2033,7 @@
 
             </script>
             <script>
-                function con1 () {
+                function con1() {
                     document.getElementById("container").style.display = "block";
                     document.getElementById("container2").style.display = "none";
                     document.getElementById("container3").style.display = "none";
@@ -2042,7 +2042,7 @@
                     document.getElementById("container6").style.display = "none";
 
                 }
-                function con2 () {
+                function con2() {
                     document.getElementById("container").style.display = "none";
                     document.getElementById("container2").style.display = "block";
                     document.getElementById("container3").style.display = "none";
@@ -2051,7 +2051,7 @@
                     document.getElementById("container6").style.display = "none";
 
                 }
-                function con3 () {
+                function con3() {
                     document.getElementById("container").style.display = "none";
                     document.getElementById("container3").style.display = "block";
                     document.getElementById("container2").style.display = "none";
@@ -2060,7 +2060,7 @@
                     document.getElementById("container6").style.display = "none";
 
                 }
-                function con4 () {
+                function con4() {
                     document.getElementById("container").style.display = "none";
                     document.getElementById("container2").style.display = "none";
                     document.getElementById("container3").style.display = "none";
@@ -2069,7 +2069,7 @@
                     document.getElementById("container6").style.display = "none";
 
                 }
-                function con5 () {
+                function con5() {
                     document.getElementById("container").style.display = "none";
                     document.getElementById("container2").style.display = "none";
                     document.getElementById("container3").style.display = "none";
@@ -2078,7 +2078,7 @@
                     document.getElementById("container6").style.display = "none";
 
                 }
-                function con6 () {
+                function con6() {
                     document.getElementById("container").style.display = "none";
                     document.getElementById("container2").style.display = "none";
                     document.getElementById("container3").style.display = "none";
@@ -2479,334 +2479,9 @@
                     document.getElementById("myNav").style.display = "none";
                 }
             </script>
-            <script>
-                /*to auto-enter-vr*/
-                function autoEvr() {
-                    var scene = document.querySelector('a-scene');
-                    scene.enterVR();
-                };
-            </script>
-            <script>
-                function cmm7() {//cadboxx opacity
-                    var cadboxx = document.querySelector('planeboxx');
-                    entityEl.setAttribute('opacity', 0.25);
-                };
+            
 
-                function cmm8() {//get element by selection
-                    sceneEl.components.inspector.openInspector();
-                };
+                    </body >
+                </div >
 
-                function cmm9() {//set camera position from entity
-
-                };
-                function cmm10() {//click-animate a component part
-
-                };
-                function cmm11() {//open material dialogue for entity
-
-                };
-                function cmm12() {//export scene glb
-
-                };
-                function cmm13() {//export snapshot during animation dialogue
-
-                };
-                function cmm14() {//record avatar
-
-                };
-                function cmm15() {//open custom animation panel
-
-                };
-                function cmm16() {//set position relative to object plane
-
-                };
-
-                function cmm17() {//load
-                    var loadingpanelEl = document.q
-                };
-
-                function cmm18() {//To remove or detach a component from an entity, we can use
-                    //var cameraEl = document.querySelector('[camera]');
-                    //cameraEl.removeAttribute('wasd-controls');
-
-
-
-                };
-
-                function cmm19() {//
-                    // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
-                    entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
-                    // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
-
-                };
-                function cmm20() {//
-                    entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
-                    // Or entityEl.setAttribute('position', '1 2 -3');
-                };
-                function cmm21() {//
-
-                };
-                function cmm22() {//
-
-                };
-                function cmm23() {//
-
-                };
-                function cmm24() {//
-
-                };
-                function cmm25() {//
-
-                };
-                function cmm26() {//
-
-                };
-                function cmm27() {//
-
-                };
-                function cmm28() {//
-
-                };
-                function cmm29() {//
-
-                };
-                function cmm30() {//
-                    entityEl.setAttribute('dynamic-body', {
-                        shape: 'box',
-                        mass: 1.5,
-                        linearDamping: 0.005
-                    });
-                };
-                function newglbcube() {//
-
-                };
-                function newglbsphere() {//
-
-                };
-                function newglbconetf() {//
-
-                };
-                function newglbconetp() {//
-
-                };
-                function newglbcyl() {//
-
-                };
-                function newglbtube() {//
-
-                };
-                function newglbplane() {//
-
-                };
-                function newjoint1() {//
-
-                };
-                function cmmd9() {//
-
-                };
-                function cmmd10() {//
-
-                };
-                function cmmd11() {//
-
-                };
-                function cmmd12() {//
-
-                };
-                function cmmd13() {//
-
-                };
-                function cmmd14() {//
-
-                };
-                function cmmd15() {//
-
-                };
-                function cmmd16() {//
-
-                };
-                function cmmd17() {//
-
-                };
-                function cmmd18() {//
-
-                };
-                function cmmd19() {//
-
-                };
-                function cmmd20() {//
-
-                };
-                function cmmd21() {//
-
-                };
-                function cmmd22() {//
-
-                };
-                function cmmd23() {//
-
-                };
-                function cmmd24() {//
-
-                };
-                function cmmd25() {//
-
-                };
-
-                function cmma1() {//
-
-                };
-                function cmma2() {//
-
-                };
-                function cmma3() {//
-
-                };
-                function cmma4() {//
-
-                };
-                function cmma5() {//
-
-                };
-                function cmma6() {//
-
-                };
-                function cmma7() {//
-
-                };
-                function cmma8() {//
-
-                };
-                function cmma9() {//
-
-                };
-                function cmma10() {//
-
-                };
-                function cmma11() {//
-
-                };
-                function cmma12() {//
-
-                };
-                function cmma13() {//
-
-                };
-                function cmma14() {//
-
-                };
-                function cmma15() {//
-
-                };
-                function cmma16() {//
-
-                };
-                function cmma17() {//
-
-                };
-                function cmma18() {//
-
-                };
-                function cmma19() {//
-
-                };
-                function cmma20() {//
-
-                };
-                function cmma21() {//
-
-                };
-                function cmma22() {//
-
-                };
-                function cmma23() {//
-
-                };
-                function cmma24() {//
-
-                };
-                function cmma25() {//
-
-                };
-            </script>
-
-
-            <script>
-                function matl01() {
-                    var knot = document.getElementById("prt1");
-                    knot.setAttribute('material', 'src', '#m01');
-                }
-                function matl02() {
-                    var knot = document.getElementById("prt2");
-                    knot.setAttribute('material', 'src', '#m02');
-                }
-                function matl03() {
-                    var knot = document.getElementBySelection("cursor");
-                    knot.setAttribute('material', 'src', '#m03');
-                }
-                window.matl4 = function () {
-                    var knot = document.getElementById("prt4");
-                    knot.setAttribute('material', 'src', '#m04');
-                }
-                window.matl5 = function () {
-                    var knot = document.getElementById("prt5");
-                    knot.setAttribute('material', 'src', '#m05');
-                }
-                window.matl6 = function () {
-                    var knot = document.getElementById("prt6");
-                    knot.setAttribute('material', 'src', '#m06');
-                }
-                window.matl7 = function () {
-                    var knot = document.getElementById("prt7");
-                    knot.setAttribute('material', 'src', '#m07');
-                }
-                window.matl8 = function () {
-                    var knot = document.getElementById("prt8");
-                    knot.setAttribute('material', 'src', '#m08');
-                }
-                window.matl9 = function () {
-                    var knot = document.getElementById("prt9");
-                    knot.setAttribute('material', 'src', '#m09');
-                }
-                window.matl10 = function () {
-                    var knot = document.getElementById("prt10");
-                    knot.setAttribute('material', 'src', '#m10');
-                }
-                window.matl11 = function () {
-                    var knot = document.getElementById("prt11");
-                    knot.setAttribute('material', 'src', '#m11');
-                }
-                window.matl12 = function () {
-                    var knot = document.getElementById("prt12");
-                    knot.setAttribute('material', 'src', '#m12');
-                }
-                window.matl13 = function () {
-                    var knot = document.getElementById("prt13");
-                    knot.setAttribute('material', 'src', '#m13');
-                }
-                window.matl14 = function () {
-                    var knot = document.getElementById("prt14");
-                    knot.setAttribute('material', 'src', '#m14');
-                }
-                window.matl15 = function () {
-                    var knot = document.getElementById("prt15");
-                    knot.setAttribute('material', 'src', '#m15');
-                }
-                window.matl16 = function () {
-                    var knot = document.getElementById("prt16");
-                    knot.setAttribute('material', 'src', '#m16');
-                }
-                window.matl17 = function () {
-                    var knot = document.getElementById("prt17");
-                    knot.setAttribute('material', 'src', '#m17');
-                }
-                window.matl18 = function () {
-                    var knot = document.getElementById("prt18");
-                    knot.setAttribute('material', 'src', '#m18');
-                };
-            </script>
-
-        </body>
-    </div>
-
-</html>
+</html >

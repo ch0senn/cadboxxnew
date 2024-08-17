@@ -1,17 +1,10 @@
-﻿
-
-
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-touch-inspector@1.1.2/dist/aframe-inspector.min.js"></script>
     <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
@@ -224,7 +217,7 @@
         .overlay {
             height: 100%;
             width: 100%;
-            opacity: 0.8;
+            opacity: 0.0;
             display: none;
             position: fixed;
             z-index: 1;
@@ -236,7 +229,7 @@
 
         .overlay-content {
             position: relative;
-            top: 20%;
+            top: 10%;
             width: 80%;
             text-align: center;
             color: white;
@@ -410,48 +403,19 @@
         <div class="overlay-content">
             <center>
                 <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="myNavh1()">SCENE 1</button>
+                    <button class="clickable" onclick="myNavh2()">SCENE 2</button>
+                    <button class="clickable" onclick="myNavh3()">SCENE 3</button>
+                    <button class="clickable" onclick="myNavh4()"> SCENE 4</button>
+                    <button class="clickable" onclick="myNavh5()">SCENE 5</button>
+                    <button class="clickable" onclick="closeAllNav()">SCENE 6</button>
+                    <button class="clickable" onclick="myNavh4()"> SCENE 7</button>
+                    <button class="clickable" onclick="myNavh5()">SCENE 8</button>
                     <button class="clickable" onclick="closeAllNav()">CLOSE</button>
 
                 </div>
             </center>
-
-            <div id="btnnbar" display="inline-block">
-                <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-
-            </div>
-            </center>
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-
-                </div>
-            </center>
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-
-                </div>
-            </center>
+            
         </div>
     </div>
 
@@ -1400,7 +1364,7 @@
     <script src="js/aframe-physics-system.min.js"></script>
     <script>
         document.querySelector('a-scene').addEventListener('loaded', function () {
-            document.getElementById("myNavh01").style.display = "block";
+            document.getElementById("myNavh06").style.display = "block";
         })
 
     </script>
@@ -2010,201 +1974,11 @@
 
 
 
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!----<a class="navbar-brand" href="#">CADBOXX</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-        </button-->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                PLATFORMS
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="https://sketchfab.com/fasteng/" target="_blank" rel="noopener">SKETCHFAB</a>
-                <a class="dropdown-item" href="https://hubs.mozilla.com/" target="_blank" rel="noopener">HUBS</a>
-                <a class="dropdown-item" href="https://hubs.mozilla.com/spoke" target="_blank" rel="noopener">SPOKE</a>
-                <a class="dropdown-item" href="https://glitch.com/" target="_blank" rel="noopener">GLITCH</a>
-
-                <a class="dropdown-item" href="V1_NEW.html" target="_blank" rel="noopener">V1_NEW</a>
-                <a class="dropdown-item" href="V2_NEW.html" target="_blank" rel="noopener">V2_NEW</a>
-                <a class="dropdown-item" href="V3_NEW.html" target="_blank" rel="noopener">V3_NEW</a>
-                <a class="dropdown-item" href="V4_NEW.html" target="_blank" rel="noopener">V4_NEW</a>
-                <a class="dropdown-item" href="V5_NEW.html" target="_blank" rel="noopener">V5_NEW</a>
-                <a class="dropdown-item" href="twindex.html" target="_blank" rel="noopener">twindex</a>
-
-
-
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                geometry
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" onclick="newcube()">Box</a>
-                <a class="dropdown-item" onclick="newsphere()">Sphere</a>
-                <a class="dropdown-item" onclick="newcyl()">Cylinder</a>
-                <a class="dropdown-item" onclick="newtet()">Tet</a>
-                <a class="dropdown-item" onclick="newplane()">Plane</a>
-                <a class="dropdown-item" onclick="newcircle()">Circle</a>
-                <a class="dropdown-item" onclick="newcurve()">Curve</a>
-                <a class="dropdown-item" onclick="newpoint()">Poiint</a>
-                <a class="dropdown-item" onclick="newline()">Line0</a>
-                <a class="dropdown-item" onclick="newsketch()">Sketch</a>
-                <a class="dropdown-item" onclick="newaxis()">Axis</a>
-
-            </div>
-        </li>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    textures
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="matl01()">M01</a>
-                    <a class="dropdown-item" onclick="matl02()">M02</a>
-                    <a class="dropdown-item" onclick="matl03()">M03</a>
-                    <a class="dropdown-item" onclick="matl04()">M04</a>
-                    <a class="dropdown-item" onclick="matl05()">M05</a>
-                    <a class="dropdown-item" onclick="matl06()">M06</a>
-                    <a class="dropdown-item" onclick="matl07()">M07</a>
-                    <a class="dropdown-item" onclick="matl08()">M08</a>
-                    <a class="dropdown-item" onclick="matl09()">M09</a>
-                    <a class="dropdown-item" onclick="matl10()">M10</a>
-                    <a class="dropdown-item" onclick="matl11()">M11</a>
-                    <a class="dropdown-item" onclick="matl12()">M12</a>
-                    <a class="dropdown-item" onclick="matl13()">M12</a>
-                    <a class="dropdown-item" onclick="matl14()">M14</a>
-                    <a class="dropdown-item" onclick="matl15()">M15</a>
-
-
-
-                </div>
-            </li>
-
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Help Menus
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="myNavh1()">Help01</a>
-                    <a class="dropdown-item" onclick="myNavh2()">Help02</a>
-                    <a class="dropdown-item" onclick="myNavh3()">Help03</a>
-                    <a class="dropdown-item" onclick="myNavh1()">Help04</a>
-                    <a class="dropdown-item" onclick="myNavh1()">Help05</a>
-                    <a class="dropdown-item" onclick="myNavh1()">Help06</a>
-                    <a class="dropdown-item" onclick="myNavh1()">Help07</a>
-                    <a class="dropdown-item" onclick="help08()">Help08</a>
-                    <a class="dropdown-item" onclick="help09()">Help09</a>
-                </div>
-            </li>
-
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    GLB GEOM
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="newglbox()">Box</a>
-                    <a class="dropdown-item" onclick="newglbsphere()">Sphere</a>
-                    <a class="dropdown-item" onclick="newglbcylinder()">Cylinder</a>
-                    <a class="dropdown-item" onclick="newglbplane()">Plane</a>
-                    <a class="dropdown-item" onclick="newmodel1()">Model1</a>
-                    <a class="dropdown-item" onclick="newmodel2()">Model2</a>
-                    <a class="dropdown-item" onclick="newmodel3()">Model3</a>
-                    <a class="dropdown-item" onclick="newmodel4()">Model4</a>
-
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Joints
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="plainbrg()">PlainBRG</a>
-                    <a class="dropdown-item" onclick="sliding()">Sliding</a>
-                    <a class="dropdown-item" onclick="fixed()">Fixed</a>
-                    <a class="dropdown-item" onclick="balljoint()">Balljoint</a>
-                    <a class="dropdown-item" onclick="distance()">Sphere</a>
-                    <a class="dropdown-item" onclick="hingejoint()">Hinge</a>
-
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Templates
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="steeredwheel()">Steered</a>
-                    <a class="dropdown-item" onclick="rearwheel()">Axled</a>
-                    <a class="dropdown-item" onclick="vehicle()">Vehicle</a>
-                    <a class="dropdown-item" onclick="crankshaft()">Crankshaft</a>
-                    <a class="dropdown-item" onclick="template2()">T2</a>
-                    <a class="dropdown-item" onclick="template3()">T3</a>
-                    <a class="dropdown-item" onclick="template4()">T4</a>
-                    <a class="dropdown-item" onclick="template5()">T5</a>
-                    <a class="dropdown-item" onclick="template6()">T6</a>
-
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    models
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="newglbox()">Box</a>
-                    <a class="dropdown-item" onclick="newglbsphere()">Sphere</a>
-                    <a class="dropdown-item" onclick="newglbcylinder()">Cylinder</a>
-                    <a class="dropdown-item" onclick="newglbplane()">Plane</a>
-                    <a class="dropdown-item" onclick="newconetopoint()">Cone2Point</a>
-                    <a class="dropdown-item" onclick="newconetoflat()">Cone2Flat</a>
-                    <a class="dropdown-item" onclick="newtriangleplane()">TriPlane</a>
-                    <a class="dropdown-item" onclick="newcircle()">Circle</a>
-
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    PART-VIS
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="visp0()">P0</a>
-                    <a class="dropdown-item" onclick="visp1()">P1</a>
-                    <a class="dropdown-item" onclick="visp2()">P2</a>
-                    <a class="dropdown-item" onclick="visp3()">P3</a>
-                    <a class="dropdown-item" onclick="visp4()">P4</a>
-                    <a class="dropdown-item" onclick="visp5()">P5</a>
-                    <a class="dropdown-item" onclick="visp6()">P6</a>
-                    <a class="dropdown-item" onclick="visp7()">P7</a>
-                    <a class="dropdown-item" onclick="visp8()">P8</a>
-                    <a class="dropdown-item" onclick="visp9()">P9</a>
-
-                </div>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" onclick="visp5()">P5</a>
-                        <a class="dropdown-item" onclick="visp6()">P6</a>
-                        <a class="dropdown-item" onclick="visp7()">P7</a>
-                        <a class="dropdown-item" onclick="visp8()">P8</a>
-                        <a class="dropdown-item" onclick="visp9()">P9</a>
-
-                    </div>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" onclick="visp5()">P5</a>
-                        <a class="dropdown-item" onclick="visp6()">P6</a>
-                        <a class="dropdown-item" onclick="visp7()">P7</a>
-                        <a class="dropdown-item" onclick="visp8()">P8</a>
-                        <a class="dropdown-item" onclick="visp9()">P9</a>
-
-                    </div>
-                </div>
-
-            </li>
-        </div>
-    </nav>
+    <!----<a class="navbar-brand" href="#">CADBOXX</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+    </button-->
+    
 
 
     <script>
@@ -2549,20 +2323,6 @@
             knot.setAttribute('material', 'src', '#m18');
         };
     </script>
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    </div>
 
 </body>
 </html>

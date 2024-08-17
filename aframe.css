@@ -104,8 +104,8 @@ canvas.a-canvas.a-mouse-cursor-hover:hover {
 a-scene {
   display: block;
   position: relative;
-  height: 100%;
-  width: 100%;
+  height: 50%;
+  width: 50%;
 }
 
 a-assets,

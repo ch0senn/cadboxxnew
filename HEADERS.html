@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+</head>
+
+
+<body>
+    <center>
+        <div style="width:600px;height:450px">
+            <header>
+                <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+                <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
+                <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.x/dist/aframe-controller-cursor-component.min.js"></script>
+                <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+                <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
+                <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/intersection-spawn.js"></script>
+                <style>
+                    
+                </style>
+            </header>
+
+                <a-scene>
+                    <a-assets>
+                        <img id="m01" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-dlkr-5676470%20(1).jpg?v=1671179886918" />
+                        <img id="m02" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-eva-bronzini-6485438.jpg?v=1671179938437" />
+                        <img id="m03" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978462.jpg?v=1671180017611" />
+                        <img id="m04" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978503.jpg?v=1671180039120" />
+                        <img id="m05" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-milo-textures-2768398.jpg?v=1671180129644" />
+                        <img id="m06" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-207300.jpg?v=1671180185041" />
+                        <img id="m07" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-268415.jpg?v=1671180285873" />
+                        <img id="m08" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-piyapong-sayduang-4541011.jpg?v=1671180304280" />
+                        <img id="m09" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-235985.jpg?v=1671180256508" />
+                        <img id="m10" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-steve-johnson-6353321.jpg?v=1671180659869" />
+                        <img id="m11" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_01.jpg?v=1671449502907" />
+                        <img id="m12" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_02.jpg?v=1671449528541" />
+                        <img id="m13" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_03.jpg?v=1671449535258" />
+                        <img id="m14" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_05.jpg?v=1671449549312" />
+                        <img id="m15" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_07.jpg?v=1671449555859" />
+                        <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
+                        <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
+                        <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
+
+
+                        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+                        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+
+                        <a-mixin id="voxelglb"
+                                 gltf-model="primitive: box; height: 1; width: 1; depth: 1"
+                                 material="src: #m09"
+                                 snap="offset: .5 .5 .5; snap: 0.5 0.5 0.5"></a-mixin>
+
+
+                    </a-assets>
+
+                    <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1"></a-cylinder>
+
+                    <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+
+                    <!-- Hands. -->
+                    <a-entity id="teleHand" hand-controls="left" teleport-controls="type: parabolic; collisionEntities: [mixin='voxelglb'], #ground"></a-entity>
+                    <a-entity id="blockHand" hand-controls="right" controller-cursor intersection-spawn="event: click; mixin: voxelglb"></a-entity>
+
+                    <!-- Camera. -->
+                    <a-camera>
+                        <a-cursor intersection-spawn="event: click; mixin: voxelglb"></a-cursor>
+                    </a-camera>
+                </a-scene>
+            </div>
+        </center>
+    </body>
+</html>

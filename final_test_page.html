@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
@@ -68,32 +67,32 @@
         <button id="camera5" class="button" onclick="cmm5()"><span>CAM5</span></button>
     </div>
     <div id="container3">
-        <button id="bodya" class="button" onclick=""><span>Scene</span></button>
-        <button id="bodyb" class="button" onclick=""><span>Scene Binary</span></button>
-        <button id="pivot" class="button" onclick=""><span>phere</span></button>
-        <button id="targetpivot" class="button" onclick=""><span>Sphere and Box (Array)</span></button>
-        <button id="createconstraint" class="button" onclick=""><span>boxes (Selector)</span></button>
+        <button id="bodya" class="button" onclick="evr()"><span>Scene</span></button>
+        <button id="bodyb" class="button" onclick="evr()"><span>Scene Binary</span></button>
+        <button id="pivot" class="button" onclick="evr()"><span>phere</span></button>
+        <button id="targetpivot" class="button" onclick="evr()"><span>Sphere and Box (Array)</span></button>
+        <button id="createconstraint" class="button" onclick="evr()"><span>boxes (Selector)</span></button>
     </div>
     <div id="container4">
-        <button id="" class="button" onclick="cmm1()"><span>CAM1</span></button>
-        <button id="" class="button" onclick="cmm2()"><span>CAM2</span></button>
-        <button id="" class="button" onclick="cmm3()"><span>CAM3</span></button>
-        <button id="" class="button" onclick="cmm4()"><span>CAM4</span></button>
-        <button id="" class="button" onclick="cmm5()"><span>CAM5</span></button>
+        <button id="c41" class="button" onclick="evr()"><span>4444</span></button>
+        <button id="c42" class="button" onclick="evr()"><span>4444</span></button>
+        <button id="c43" class="button" onclick="evr()"><span>4444</span></button>
+        <button id="c44" class="button" onclick="evr()"><span>4444</span></button>
+        <button id="c45" class="button" onclick="evr()"><span>4444</span></button>
     </div>
     <div id="container5">
-        <button id="" class="button"><span>CAM1</span></button>
-        <button id="" class="button"><span>CAM2</span></button>
-        <button id="" class="button"><span>CAM3</span></button>
-        <button id="" class="button"><span>CAM4</span></button>
-        <button id="" class="button"><span>CAM5</span></button>
+        <button id="c51" class="button" onclick="evr()" ><span>5555</span></button>
+        <button id="c52" class="button" onclick="evr()" ><span>5555</span></button>
+        <button id="c53" class="button" onclick="evr()" ><span>5555</span></button>
+        <button id="c54" class="button" onclick="evr()"  ><span>5555</span></button>
+        <button id="c55" class="button" onclick="evr()"  ><span>5555</span></button>
     </div>
     <div id="container6">
-        <button id="" class="button" onclick="cmm1()"><span>CAM1</span></button>
-        <button id="" class="button" onclick="cmm2()"><span>CAM2</span></button>
-        <button id="" class="button" onclick="cmm3()"><span>CAM3</span></button>
-        <button id="" class="button" onclick="cmm4()"><span>CAM4</span></button>
-        <button id="" class="button" onclick="cmm5()"><span>CAM5</span></button>
+        <button id="c61" class="button" onclick="evr()"><span>6666</span></button>
+        <button id="c62" class="button" onclick="evr()"><span>6666</span></button>
+        <button id="c63" class="button" onclick="evr()"><span>6666</span></button>
+        <button id="c64" class="button" onclick="evr()"><span>6666</span></button>
+        <button id="c65" class="button" onclick="evr()"><span>6666</span></button>
     </div>
     <a-scene physics environment="preset: tron; shadow: true">
         <a-assets>
@@ -110,10 +109,10 @@
                      snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
 
             <!--<a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
-             hoverable grabbable stretchable draggable droppable
-             event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-             body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin-->
+                 hoverable grabbable stretchable draggable droppable
+                 event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                 event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                 body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin-->
             <a-mixin id="gltfmodel" gltf-model="#cbb1"
                      hoverable grabbable stretchable draggable droppable clickable
                      event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
@@ -345,12 +344,12 @@
             <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
             <!--
-        <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+            <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-        <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+            <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-        <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-            -->
+            <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                -->
 
             <a-mixin id="trigger-box1" gltf-model="#cb1" scale="10 10 10"
                      class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
@@ -431,13 +430,12 @@
     repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
 
 
-            <a-asset-item id="chassis" src="chassis.glb"></a-asset-item>
-            <a-asset-item id="wheel" src="wheel.glb"></a-asset-item>
+            <a-asset-item id="crank4cyl" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
+            <a-asset-item id="crank4cyl-we" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
 
         </a-assets>
 
-        <a-entity id="chassis" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
-        <a-entity id="wheel" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+
 
 
 
@@ -481,7 +479,7 @@
         <a-entity class="cube" mixin="cube" position="1 0.265 -1" material="color: green"></a-entity>
         <a-entity class="cube" mixin="cube" position="1 0.265 -0.5" material="color: green"></a-entity>
         <!-- ground collider keeps objets from falling -->
-        <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1"></a-cylinder>
+        <a-gltf-model id="ground" src="#" positon="0 0 0" rotation="0 0 0" static-body></a-gltf-model>
 
 
 
@@ -494,21 +492,7 @@
 
     </script>
 
-    <script>
-        function newassemblytemplate() {
-            const bodie = document.querySelector("#part0");
-            const connector1 = document.querySelector("#conn1")
-            const limb = document.createElement("a-sphere");
-            sphere.setAttribute("color", "#crimson");
-            sphere.setAttribute("radius", "0.5");
-            sphere.setAttribute("position", "-3 2 0");
-            bodie.appendChild(limb);
-
-            render();
-        }
-
-    </script>
-
+    
     <script type="text/javascript">
         var mybutton01 = document.querySelector('#mybutton01');
         mybutton01.addEventListener('pressed', function () {

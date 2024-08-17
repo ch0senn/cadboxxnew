@@ -590,9 +590,16 @@
                         <a-gltf-model id="airplane2" src="#"></a-gltf-model>
                         <a-gltf-model id="airplane3" src="#"></a-gltf-model>
 
-
+                        <a-asset-item id="chass" src="chassis.glb"></a-asset-item>
+                        <a-asset-item id="whell" src="wheel.glb"></a-asset-item>
 
                     </a-assets>
+
+                    <a-entity id="chassis" src="#chass" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+                    <a-entity id="wheel" src="#whell" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+
+
+                   
 
                     <a-entity id="planeboxxx" position="0 0 0" scale="1 1 1">
                         <a-entity id="planeboxx" position="0 0 0">
@@ -699,8 +706,6 @@
                     <!-- Hands -->
                     <a-entity hand-controls="left"></a-entity>
                     <a-entity hand-controls="right"></a-entity><!--add controller cursor?-->
-
-                  
                     <!--assembly planes-->
                     <a-entity id="wall-buttons" position="0 12 18" rotation="90 0 0"></a-entity>
                     <a-entity id="assplane1" gltf-model="#bb030" rotation="90 0 0" scale="1 1 1" visible="true" static-body>
@@ -717,7 +722,7 @@
                                       dynamic-body
                                       click-impulse>
                             </a-entity>
-                            
+
                         </a-entity>
                     </a-entity>
 
@@ -738,7 +743,7 @@
                                           click-impulse>
                                 </a-entity>
 
-                                
+
                             </a-entity>
                         </a-entity>
                     </a-entity>
@@ -774,7 +779,7 @@
 
                         </a-entity>
                     </a-entity>
-                    
+
 
 
 

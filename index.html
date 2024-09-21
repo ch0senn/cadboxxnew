@@ -710,10 +710,11 @@
         </div>
     </div>
 
-    <!--container-flex surrounding body-->
-    <div class="container-flex">
+    
+    <body>
+        <!--container-flex surrounding body-->
+        <div class="container-flex">
 
-        <body>
             <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
                 <a-assets>
                     <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
@@ -952,12 +953,12 @@
                     <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
                     <!--
-                    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+                <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-                    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+                <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-                    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                        -->
+                <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                    -->
 
                     <a-mixin id="trigger-box1" gltf-model="#cb1" scale="10 10 10"
                              class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
@@ -1040,13 +1041,13 @@
                 </a-assets>
 
                 <!--
-                <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                    -->
+            <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+            <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+            <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+            <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+            <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+            <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                -->
 
 
                 <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>
@@ -1192,17 +1193,17 @@
                 </a-camera>
                 <!--camera id="cam7" position="-12 6 0" look-controls active="false">
 
-                </!--a-camera>
-                <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
+            </!--a-camera>
+            <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
 
-                </a-camera>
-                <a-camera id="cam9" position="12 6 0" look-controls active="false">
+            </a-camera>
+            <a-camera id="cam9" position="12 6 0" look-controls active="false">
 
-                </a-camera>
+            </a-camera>
 
-                <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
-                    <a-cursor></a-cursor>
-                </a-entity-->
+            <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
+                <a-cursor></a-cursor>
+            </a-entity-->
 
                 <a-sky radius="50" color="lightblue"></a-sky>
 
@@ -2383,10 +2384,9 @@
                     knot.setAttribute('material', 'src', '#m18');
                 };
             </script>
-
-        </body>
-    </div>
-
+        </div>
+    </body>
+    
 </html>
 
 

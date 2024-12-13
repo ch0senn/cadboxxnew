@@ -258,39 +258,183 @@
             color: blue;
         }
 
-        .button {
-            background-color: whitesmoke;
+        .button1:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+        .button2:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+        .button3:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+        .button4:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+        .button5:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+        .button6:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+        .button7:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+
+        .button1 {
+            background-color: red;
             border-radius: 2px;
             border: none;
             color: black;
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 100px;
+            height: 50px;
             margin-top: 5px;
             margin-left: 5px;
             outline: 2px solid grey;
             position: relative;
-            width: 100px;
+            width: 80px;
+            z-index: 999;
+        }
+        .button2 {
+            background-color: yellow;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: 2px solid grey;
+            position: relative;
+            width: 80px;
+            z-index: 999;
+        }
+        .button3 {
+            background-color: deeppink;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: 2px solid grey;
+            position: relative;
+            width: 80px;
+            z-index: 999;
+        }
+        .button4 {
+            background-color: greenyellow;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: 2px solid grey;
+            position: relative;
+            width: 80px;
             z-index: 999;
         }
 
-        #container {
+        .button5 {
+            background-color: orange;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: 2px solid grey;
+            position: relative;
+            width: 80px;
+            z-index: 999;
+        }
+
+        .button6 {
+            background-color: mediumpurple;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: 2px solid grey;
+            position: relative;
+            width: 80px;
+            z-index: 999;
+        }
+
+
+        .container1 {
             position: absolute;
             width: 100%;
             display: flex;
             justify-content: center;
         }
 
-        #container {
+        .container2 {
             position: absolute;
             width: 100%;
             display: flex;
             justify-content: center;
         }
 
+        .container3 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
+        .container4 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
+        .container5 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container6 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
     </style>
     <style>
         a-scene {
@@ -498,98 +642,100 @@
     </style>
 </head>
 <body>
-    <div id="container" class="container-flex">
+    <div id="mainmenu" class="container1" visible="true" >
         <center>
-            <div id="btnmenu" display="inline-block" visible="true">
-                <button class="clickable button" color="red" onclick="menucreate()">CREATE</button>
-                <button class="clickable button" color="red" onclick="menucontrol()">CONTROL</button>
-                <button class="clickable button" color="red" onclick="menuedit()">EDIT</button>
-                <button class="clickable button" color="red" onclick="menuassemble()">ASSEMBLE</button>
-                <button class="clickable button" color="red" onclick="menumotion()">MOTION</button>
-                <button class="clickable button" color="red" onclick="menutest()">TEST</button>
-            
+            <div id="btnbar" display="inline-block" >
+                <button id="bcreate" class="clickable button2" onclick="showcreatemenu()">CREATE</button>
+                <button id="bcontrol" class="clickable button3" onclick="showcontrolmenu()">CONTROL</button>
+                <button id="bedit" class="clickable button3" onclick="showeditmenu()">EDIT</button>
+                <button id="bassemble" class="clickable button4" onclick="showassemblymenu()">ASSEMBLE</button>
+                <button id="bmotion" class="clickable button5" onclick="showmotionmenu()">MOTION</button>
+                <button id="btest" class="clickable button6" onclick="showtestmenu()">TEST</button>
+
             </div>
         </center>
     </div>
-    <div id="container2" class="container-flex" visible="false">
+    <div id="createmenu" class="container2" visible="false">
         <center>
             <div id="btnnbar2" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+                <button id="bcube" class="clickable button1" onclick="newcube()">CUBE</button>
+                <button id="bsphere" class="clickable button1" onclick="newsphere()">SPHERE</button>
+                <button id="bcyl" class="clickable button1" onclick="newcylinder()">CYL</button>
+                <button id="btube" class="clickable button1" onclick="newtube()">TUBE</button>
+                <button id="bcone" class="clickable button1" onclick="newconetopoint()">CONE</button>
+                <button id="bmainmenu" class="clickable button1" onclick="mainmenu()">HOME</button>
             </div>
         </center>
     </div>
-    <div id="container3" class="container-flex" visible="false">
+    <div id="controlmenu" class="container3" visible="false">
         <center>
-            <div id="btnnbar3" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+            <div id="controlmenu" display="inline-block">
+                <button id="bview" class="clickable button2 " onclick="setviews()">VIEWS</button>
+                <button id="bcoords" class="clickable button2 " onclick="newcam()">Coords</button>
+                <button id="bcameras" class="clickable button2 " onclick="newcam()">CAMS</button>
+                <button id="bcontrollers" class="clickable button2 " onclick="newtube()">Control</button>
+                <button id="bhmd" class="clickable button2 " onclick="newconetopoint()">HMD</button>
+                <button id="bhomemenu" class="clickable button2" onclick="mainmenu()">HOME</button>
             </div>
         </center>
     </div>
-    <div id="container4" class="container-flex" visible="false">
+    <div id="editmenu" class="container4" visible="false">
         <center>
             <div id="btnnbar4" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+                <button id="baddition" class="clickable button3 " onclick="addition()">ADDITION</button>
+                <button id="bextrude" class="clickable button3 " onclick="extrUde()">EXTRUDE</button>
+                <button id="bmerge" class="clickable button3" onclick="merge()">MERGE</button>
+                <button id="brevolve" class="clickable button3" onclick="revolve()">REVOLVE</button>
+                <button id="bnewtexturte" class="clickable button3" onclick="newtexture()">TEXTURE</button>
+                <button id="bmainmenu" class="clickable button3" onclick="mainmenu()">HOME</button>
             </div>
         </center>
     </div>
-    <div id="container5" class="container-flex" visible="false">
+    <div id="assemblymenu" class="container5" visible="false">
         <center>
             <div id="btnnbar5" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
+                <button id="fix" class="clickable button4" onclick="setviews()">FIX</button>
+                <button id="group" class="clickable button4" onclick="creategroup()">GROUP</button>
+                <button id="combine" class="clickable button4 " onclick="combinebodies()">COMBINE</button>
+                <button id="center" class="clickable button4 " onclick="centerbodies()">CENTER</button>
+                <button id="constrain" class="clickable button4 " onclick="constrain()">CONSTRAIN</button>
+                <button id="bmainmenu" class="clickable button4" onclick="mainmenu()">HOME</button>
         </center>
     </div>
-    <div id="container6" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar5" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container6" class="container-flex" visible="false">
+    <div id="motionmenu" class="container6" visible="false">
         <center>
             <div id="btnnbar6" display="inline-block">
-                <button id="export-scene" class="button"><span>Export Scene</span></button>
-                <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
-                <button id="export-sphere" class="button"><span>Export Sphere</span></button>
-                <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
-                <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
+                <button id="physics" class="clickable button5" onclick="physicsonoff()">PHYSICS</button>
+                <button id="animate" class="clickable button5 " onclick="animatecomponent()">ANIMATE</button>
+                <button id="cameras" class="clickable button5  " onclick="camlist()">CAMS</button>
+                <button id="recorder" class="clickable button5 " onclick="recorder()">RECORDER</button>
+                <button id="HMD" class="clickable button5 " onclick="hmdview()">HMD</button>
+                <button id="bmainmenu" class="clickable button5 " onclick="mainmenu()">HOME</button>
+                
+            </div>
+        </center>
+    </div>
+    <div id="exportmenu" class="container7" visible="false">
+        <center>
+            <div id="btnnbar7" display="inline-block">
+                <button id="export-scene" class="clickable button6"><span>GLTF Scene</span></button>
+                <button id="export-scene-bin" class="clickable button6"><span>GLB Scene</span></button>
+                <button id="export-bxx" class="clickable button6"><span>Export bxx</span></button>
+                <button id="export-byy" class="clickable button6"><span>Export byy</span></button>
+                <button id="export-bzz" class="clickable button6"><span>Export</span></button>
+                <button id="bmainmenu" class="clickable button6" onclick="mainmenu()">HOME</button>
+
             </div>
         </center>
     </div>
 
     <div id="mySidenav" class="sidenav">
-        <a id="file" class="clickable" onclick="cmm1()">FILE</a>
-        <a id="create" class="clickable" onclick="cmm2()">CREATE</a>
-        <a id="assemble" class="clickable" onclick="cmm3()">ASSEMBLE</a>
-        <a id="arrange" class="clickable" onclick="cmm4()">ARRANGE</a>
-        <a id="motion" class="clickable" onclick="cmm5()">MOTION</a>
-        <a id="study" class="clickable" onclick="cmm6()">STUDY</a>
+        <a id="mainmenu" class="clickable button" onclick="showmainmenu()">MAIN</a>
+        <a id="createmenu" class="clickable button" onclick="showcreatemenu()">CREATE</a>
+        <a id="assembly" class="clickable button" onclick="showassemblymenu()">ASSEMBLY</a>
+        <a id="arrange" class="clickable button" onclick="showarrangemenu()">ARRANGE</a>
+        <a id="motion" class="clickable button" onclick="showmotionmenu()">MOTION</a>
+        <a id="study" class="clickable button" onclick="showexportmenu()">STUDY</a>
 
     </div>
     <!--div id="mySidenav" class="sidenav">
@@ -606,9 +752,9 @@
         <a href="https://sketchfab.com/fasteng" target="_blank" id="efgh">SketchFab</a>
         <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
 
-    </div><!--
-    <div id="myNavh01" class="overlay">
-        <div class="overlay-content">
+    </div>
+    <div id="menucreate" class="overlay">
+        <<div class="overlay-content">
             <center>
                 <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="newcube()">CUBE</button>
@@ -795,14 +941,14 @@
                 </div>
             </center>
         </div>
-    </div>-->
+    </div>
 
 
-    <body>
+    
         <!--container-flex surrounding body-->
         <div class="container-flex">
 
-            <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
+            <a-scene onload="showmainmenu()" gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2"; onload="("showmainmenu()")" >
                 <a-assets>
                     <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                              hoverable grabbable stretchable draggable droppable
@@ -840,7 +986,7 @@
                     <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
 
                     <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
-                    <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+                    <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=16728614127"></a-asset-item>
                     <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
                     <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
 
@@ -1040,12 +1186,12 @@
                     <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
                     <!--
-                    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+            <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-                    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+            <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-                    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                        -->
+            <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                -->
 
                     <a-mixin id="trigger-box1" gltf-model="#cb1" scale="10 10 10"
                              class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
@@ -1121,20 +1267,19 @@
                     <a-mixin id="rotxyz" animation__rotation__xyz="property: rotation; dir: forward; dur: 3000;
                 repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
 
-
                     <a-asset-item id="crank4cyl" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
                     <a-asset-item id="crank4cyl-we" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
 
                 </a-assets>
 
                 <!--
-                <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                    -->
+        <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+        <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+        <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+        <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+        <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+        <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+            -->
 
 
                 <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>
@@ -1280,27 +1425,107 @@
                 </a-camera>
                 <!--camera id="cam7" position="-12 6 0" look-controls active="false">
 
-                </!--a-camera>
-                <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
+        </!--a-camera>
+        <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
 
-                </a-camera>
-                <a-camera id="cam9" position="12 6 0" look-controls active="false">
+        </a-camera>
+        <a-camera id="cam9" position="12 6 0" look-controls active="false">
 
-                </a-camera>
+        </a-camera>
 
-                <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
-                    <a-cursor></a-cursor>
-                </a-entity-->
+        <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
+            <a-cursor></a-cursor>
+        </a-entity-->
 
                 <a-sky radius="50" color="lightblue"></a-sky>
 
             </a-scene>
             <script src="js/aframe-physics-system.min.js"></script>
             <script>
-                document.querySelector('a-scene').addEventListener('loaded', function () {
-                    document.getElementById("myNavh01").style.display = "block";
+                document.querySelector('a-scene').addEventListener('loaded', function ("showmainmenu()") {
+                    //document.getElementById("mainmenu").style.display = "block";
+                    function showmainmenu();
+
                 })
 
+            </script>
+
+            <script>
+            function showmainmenu() {
+                document.getElementById("mainmenu").style.display = "block";
+                document.getElementById("createmenu").style.display = "none";
+                document.getElementById("controlmenu").style.display = "none";
+                document.getElementById("editmenu").style.display = "none";
+                document.getElementById("constrainmenu").style.display = "none";
+                document.getElementById("motionmenu").style.display = "none";
+                document.getElementById("testmenu").style.display = "none";
+
+            }
+            function showcreatemenu() {
+
+                document.getElementById("mainmenu").style.display = "none";
+                document.getElementById("createmenu").style.display = "block";
+                document.getElementById("controlmenu").style.display = "none";
+                document.getElementById("editmenu").style.display = "none";
+                document.getElementById("constrainmenu").style.display = "none";
+                document.getElementById("animatemenu").style.display = "none";
+                document.getElementById("motionmenu").style.display = "none";
+
+
+
+
+
+            }
+            function showcontrolmenu() {
+
+                document.getElementById("mainmenu").style.display = "none";
+                document.getElementById("createmenu").style.display = "none";
+                document.getElementById("controlmenu").style.display = "block";
+                document.getElementById("editmenu").style.display = "none";
+                document.getElementById("constrainmenu").style.display = "none";
+                document.getElementById("animatemenu").style.display = "none";
+                document.getElementById("motionmenu").style.display = "none";
+
+
+
+
+            }
+            function showeditmenu() {
+
+                document.getElementById("mainmenu").style.display = "none";
+                document.getElementById("createmenu").style.display = "none";
+                document.getElementById("controlmenu").style.display = "none";
+                document.getElementById("editmenu").style.display = "block";
+                document.getElementById("constrainmenu").style.display = "none";
+                document.getElementById("animatemenu").style.display = "none";
+                document.getElementById("motionmenu").style.display = "none";
+
+
+
+            }
+                function showconstrainmenu() {
+
+                    document.getElementById("mainmenu").style.display = "none";
+                    document.getElementById("createmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("constrainmenu").style.display = "none";
+                    document.getElementById("animatemenu").style.display = "block";
+                    document.getElementById("motionmenu").style.display = "none";
+
+            }
+
+                function showanimatemenu() {
+
+                    document.getElementById("mainmenu").style.display = "none";
+                    document.getElementById("createmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("constrainmenu").style.display = "block";
+                    document.getElementById("animatemenu").style.display = "none";
+                    document.getElementById("motionmenu").style.display = "none";
+
+                }
             </script>
 
             <script>
@@ -1318,11 +1543,13 @@
 
             </script>
 
+            <!--menucreate menucontrol menuedit menuassemble menumotion menutest -->
+
             <script type="text/javascript">
                 var mybutton01 = document.querySelector('#mybutton01');
-                mybutton01.addEventListener('pressed', function newsphere() {
+                mybutton01.addEventListener('pressed', function showcreatemenu() {
                     // do stuff here.
-                    
+
                 });
             </script>
 
@@ -1694,63 +1921,68 @@
                 }
 
                 function closeAllNav() {
-                    document.getElementById("myNavh01").style.display = "none";
-                    document.getElementById("myNavh02").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh05").style.display = "none";
-                    document.getElementById("myNavh06").style.display = "none";
+                    document.getElementById("createmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("assemblymenu").style.display = "none";
+                    document.getElementById("motionmenu").style.display = "none";
+                    document.getElementById("testmenu").style.display = "none";
 
                 }
             </script>
             <script>
-                function myNavh1() {
-                    document.getElementById("myNavh01").style.display = "block";
-                    document.getElementById("myNavh02").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh05").style.display = "none";
+                function createmenu() {
+                    document.getElementById("createnmenu").style.display = "block";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("assemblymenu").style.display = "none";
+                    document.getElementById("motionmenu").style.display = "none";
+                    document.getElementById("testmenu").style.display = "none";
 
                 }
-                function myNavh2() {
-                    document.getElementById("myNavh02").style.display = "block";
-                    document.getElementById("myNavh01").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh05").style.display = "none";
+                function controlmenu() {
+                    document.getElementById("createnmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "block";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("assemblymenu").style.display = "none";
+                    document.getElementById("motionmenu").style.display = "none";
+                    document.getElementById("testmenu").style.display = "none";
 
                 }
-                function myNavh3() {
-                    document.getElementById("myNavh03").style.display = "block";
-                    document.getElementById("myNavh02").style.display = "none";
-                    document.getElementById("myNavh01").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh05").style.display = "none";
+                function editmenu() {
+                    document.getElementById("createnmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "block";
+                    document.getElementById("assemblymenu").style.display = "none";
+                    document.getElementById("motionmenu").style.display = "none";
+                    document.getElementById("testmenu").style.display = "none";
 
                 }
-                function myNavh4() {
-                    document.getElementById("myNavh04").style.display = "block";
-                    document.getElementById("myNavh02").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh01").style.display = "none";
-                    document.getElementById("myNavh05").style.display = "none";
+                function assemblymenu() {
+                    document.getElementById("createnmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("assemblymenu").style.display = "block";
+                    document.getElementById("motionmenu").style.display = "none";
+                    document.getElementById("testmenu").style.display = "none";
 
                 }
-                function myNavh5() {
-                    document.getElementById("myNavh05").style.display = "block";
-                    document.getElementById("myNavh02").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh01").style.display = "none";
+                function motionmenu() {
+                    ocument.getElementById("createnmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("assemblymenu").style.display = "none";
+                    document.getElementById("motionmenu").style.display = "block";
+                    document.getElementById("testmenu").style.display = "none";
 
                 }
-                function myNavh6() {
-                    document.getElementById("myNavh06").style.display = "block";
-                    document.getElementById("myNavh05").style.display = "none";
-                    document.getElementById("myNavh02").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh01").style.display = "none";
+                function testmenu() {
+                    document.getElementById("createnmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("assemblymenu").style.display = "none";
+                    document.getElementById("motionmenu").style.display = "none";
+                    document.getElementById("testmenu").style.display = "block";
 
                 }
 
@@ -2115,19 +2347,7 @@
                 function xxzz() {
 
                 };
-
-
-
             </script>
-
-
-
-
-
-
-
-
-
 
             <script>
                 // Update individual nodes
@@ -2135,6 +2355,21 @@
                     document.getElementById("myNav").style.display = "block";
                 })
 
+            </script>
+
+            <script>
+                function openMainmenu() {
+                    document.getElementById("mainmenu").style.display = "block";
+                    document.getElementById("createmenu").style.display = "none";
+                    document.getElementById("controlmenu").style.display = "none";
+                    document.getElementById("editmenu").style.display = "none";
+                    document.getElementById("arrangemenu").style.display = "none";
+
+
+
+
+
+                }
             </script>
 
             <script>
@@ -2473,7 +2708,7 @@
                 };
             </script>
         </div>
-    </body>
+    </dy>
 
 </html>
 

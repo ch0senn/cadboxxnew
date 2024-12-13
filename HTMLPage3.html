@@ -7,5 +7,21 @@
 </head>
 <body>
 
+
+    <!--texture changer for glb-->
+    <script>
+        
+        var tex = new THREE.TextureLoader().load('diffuse.png');
+        tex.flipY = false; // for glTF models.
+
+        el.addEventListener('model-loaded', function (e {
+            e.detail.model.traverse(function (node) {
+                if (node.isMesh) node.material.map = tex;
+            });
+});
+
+    </script>
 </body>
+
+
 </html>

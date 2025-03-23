@@ -1,152 +1,2391 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>scenes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <title>CADBOXX</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-touch-inspector@1.1.2/dist/aframe-inspector.min.js"></script>
+    <script src="https://unpkg.com/aframe-ground-component@0.0.4/dist/aframe-ground-component.min.js"></script>
+    <script src="aframe-gltf-exporter-component.min.js"></script>
+    <script src="aframe-ui-widgets.min.js"></script>
+    <script src="aframe-gltf-exporter-component.js"></script>
+    <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.x/dist/aframe-controller-cursor-component.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
+    <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/intersection-spawn.js"></script>
+
+    <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+    <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
+    <script src="https://unpkg.com/aframe-snapto-component/dist/aframe-snapto-component.js"></script>
+
+    <script src="https://unpkg.com/aframe-layout-component@4.3.1/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-datgui-component/dist/aframe-datgui-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/gftruj/aframe-physics-spring/master/dist/aframe-spring.min.js"></script>
+    <script src="https://unpkg.com/aframe-spherical-controls-component/dist/aframe-spherical-controls-component.min.js"></script>
+    <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-gltf-helpers@0.0.2/dist/aframe-gltf-helpers.min.js"></script>
+    <script src="https://rawgit.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script>
+    <script src="https://rawgit.com/dbradleyfl/aframe-selectable-light-component/master/dist/aframe-selectable-light-component.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+
+    <script src="js/aframe-extras.min.js"></script>
+    <script src="js/aframe-extras.controls.min.js"></script>
+    <script src="js/aframe-extras.misc.js"></script>
+    <script src="js/aframe-extras.loaders.js"></script>
+    <script src="js/aframe-extras.pathfinding.js"></script>
+    <script src="js/aframe-extras.primitives.js"></script>
+    <script src="js/aframe-point-component.min.js"></script>
+    <script src="js/aframe-alongpath-component.min.js"></script>
+    <script src="js/aframe-layout-component.min.js"></script>
+    <script src="js/aframe-screenshot-component.min.js"></script>
+    <script src="js/aframe-gltfutils.min.js"></script>
+
+    <script src="js/grab.js"></script>
+    <script src="js/grab.min.js"></script>
+    <script src="js/grab-lock.js"></script>
+    <script src="js/GLTFPart.js"></script>
+    <script src="js/Vartiste.js"></script>
+
+    <script src="js/RegisteredAF.js"></script>
+    <script src="js/manipulator.js"></script>
+    <script src="js/movement-controls.js"></script>
+    <script src="js/PointCloudPLY.js"></script>
+
+    <script src="js/aframe-drag-and-drop-component.min.js"></script>
+    <script src="js/aframe-crawling-cursor.min.js"></script>
+    <script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+
+
+    <!--reaction components-->
+    <script src="reaction_components/clickable.js"></script>
+    <script src="reaction_components/draggable.js"></script>
+    <script src="reaction_components/drag-droppable.js"></script>
+    <script src="reaction_components/hoverable.js"></script>
+    <script src="reaction_components/stretchable.js"></script>
+    <script src="reaction_components/droppable.js"></script>
+    <script src="reaction_components/grabbable.js"></script>
+
+    <!--end-->
+    <script>
+        //color randomizer
+        AFRAME.registerComponent('color-randomizer', {
+            play: function () {
+                this.el.addEventListener('drag-drop', function (evt) {
+                    evt.detail.dropped.setAttribute('material', 'color',
+                        '#' + (Math.random() * 0xFFFFFF << 0).toString(16))
+                    // color randomizer credit: http://stackoverflow.com/questions/1484506/random-color-generator-in-javascript#comment6801353_5365036
+                })
+            }
+        })
+        // forward mouse and touch events to the super-hands entity
+        AFRAME.registerComponent('capture-mouse', {
+            init: function () {
+                this.eventRepeater = this.eventRepeater.bind(this)
+                this.el.sceneEl.addEventListener('loaded', () => {
+                    this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+                }, { once: true })
+            },
+            eventRepeater: function (evt) {
+                if (evt.type.startsWith('touch')) {
+                    evt.preventDefault()
+                    // avoid repeating touchmove because it interferes with look-controls
+                    if (evt.type === 'touchmove') { return }
+                }
+                this.el.emit(evt.type, evt.detail)
+            }
+        })
+    </script>
+
+    <script type="text/javascript">
+        if (window.AFRAME == null) {
+            console.error("aframe not found, please import it before this component.")
+        }
+
+        AFRAME.registerSystem("track-cursor", {
+            init: function () {
+                this.el.setAttribute("cursor", { rayOrigin: "mouse" });
+            }
+        });
+
+        AFRAME.registerComponent("track-cursor", {
+            init: function () {
+                this.el.addEventListener("mousedown", e => {
+                    if (this.el.is("cursor-hovered")) {
+                        this.el.sceneEl.camera.el.setAttribute("look-controls", {
+                            enabled: false
+                        });
+                        this.el.addState("dragging");
+                    }
+                })
+                this.el.addEventListener("click", e => {
+                    if (this.el.is("dragging")) {
+                        this.el.sceneEl.camera.el.setAttribute("look-controls", {
+                            enabled: true
+                        });
+                        this.el.removeState("dragging");
+                    }
+                })
+            },
+        });
+
+        AFRAME.registerComponent("dragndrop", {
+            dependencies: ["track-cursor"],
+            init: function () {
+                this.range = 0;
+                this.dist = 0;
+
+                this.el.addEventListener("stateadded", e => {
+                    if (e.detail == "dragging") {
+                        this.range = 0;
+                        this.dist = this.el.object3D.position
+                            .clone()
+                            .sub(this.el.sceneEl.camera.el.object3D.position)
+                            .length();
+                    }
+                })
+
+                this.direction = new AFRAME.THREE.Vector3();
+                this.target = new AFRAME.THREE.Vector3();
+                document.addEventListener("wheel", e => {
+                    if (e.deltaY < 0) {
+                        this.range += 0.1;
+                    } else {
+                        this.range -= 0.1;
+                    }
+                });
+            },
+            updateDirection: function () {
+                this.direction.copy(this.el.sceneEl.getAttribute("raycaster").direction);
+            },
+            updateTarget: function () {
+                let camera = this.el.sceneEl.camera.el
+                this.target.copy(
+                    camera.object3D.position
+                        .clone()
+                        .add(this.direction.clone().multiplyScalar(this.dist + this.range))
+                );
+            },
+            tick: function () {
+                if (this.el.is("dragging")) {
+                    this.updateDirection();
+                    this.updateTarget();
+                    this.el.object3D.position.copy(this.target);
+                }
+            }
+        });
+    </script>
+
+    <script>
+        AFRAME.registerComponent('click-impulse', {
+            init: function () {
+                var el = this.el;
+
+                el.addEventListener('click', function () {
+                    el.body.applyImpulse(
+                        /* impulse */
+                        new CANNON.Vec3(
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20),
+                            THREE.Math.randInt(-20, 20)
+                        ),
+                                                                                                                                                                                                            /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                    );
+                });
+
+            }
+        });
+
+        // forward mouse and touch events to the super-hands entity
+        AFRAME.registerComponent('capture-mouse', {
+            init: function () {
+                this.eventRepeater = this.eventRepeater.bind(this)
+                this.el.sceneEl.addEventListener('loaded', () => {
+                    this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+                    this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+                }, { once: true })
+            },
+            eventRepeater: function (evt) {
+                if (evt.type.startsWith('touch')) {
+                    evt.preventDefault()
+                    // avoid repeating touchmove because it interferes with look-controls
+                    if (evt.type === 'touchmove') { return }
+                }
+                this.el.emit(evt.type, evt.detail)
+            }
+        })
+    </script>
+    <script>
+        AFRAME.registerComponent('cbprims', {
+            init: function () {
+                let box = document.createElement('a-box');
+                let sphere = document.createElement('a-sphere');
+                box.setAttribute('whatever you want');
+                sphere.setAttribute('whatever you want');
+                this.el.appendChild(box);
+                box.appendChild(sphere);
+            }
+        });
+    </script><!--<a-entity cbprims></a-entity>-->
+    <style>
+        a-scene {
+            height: 100%;
+            width: 100%;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="aframe.css">
+
+    <style>
+        .button:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+        .button {
+            background-color: whitesmoke;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 24px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: 2px solid grey;
+            position: relative;
+            width: 100px;
+            z-index: 999;
+        }
+
+        #container {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <style>
+        a-scene {
+            height: 100%;
+            width: 100%;
+            margin-bottom: 0;
+            margin-top: 0;
+            z-index: 888
+        }
+    </style>
+
+
+
+    <style>
+        #container {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <style>
+    </style>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .overlay {
+            height: 100%;
+            width: 100%;
+            opacity: 0.8;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.9);
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 20%;
+            width: 80%;
+            text-align: center;
+            color: white;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+            .overlay a:hover, .overlay a:focus {
+                color: #f1f1f1;
+            }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+    </style>
+    <style>
+        .button:hover {
+            background-color: #fff;
+            color: #e43b5e;
+        }
+
+        .button {
+            background-color: whitesmoke;
+            border-radius: 8px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 34px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: none;
+            position: relative;
+            width: 100px;
+            z-index: 999;
+        }
+
+        #container {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <style>
+        #mySidenav a {
+            position: absolute;
+            left: -130px;
+            transition: 0.3s;
+            padding: 15px;
+            width: 140px;
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            border-radius: 0 5px 5px 0;
+            z-index: 999;
+        }
+
+            #mySidenav a:hover {
+                left: 0;
+            }
+
+        #file {
+            top: 60px;
+            margin-right: 50px;
+            background-color: whitesmoke;
+            text-justify: right;
+        }
+
+        #create {
+            top: 120px;
+            margin-right: 50px;
+            background-color: whitesmoke;
+        }
+
+        #assemble {
+            top: 180px;
+            margin-right: 50px;
+            background-color: whitesmoke;
+        }
+
+        #arrange {
+            top: 240px;
+            margin-right: 50px;
+            background-color: whitesmoke;
+        }
+
+        #motion {
+            top: 300px;
+            margin-right: 50px;
+            background-color: whitesmoke;
+            font-display: auto;
+        }
+
+        #study {
+            top: 360px;
+            margin-right: 50px;
+            background-color: whitesmoke;
+        }
+    </style>
+    <style>
+        #mySidenav2 a {
+            position: absolute;
+            right: 40px;
+            transition: 0s;
+            padding: 15px;
+            width: 90px;
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            border-radius: 0 5px 5px 0;
+            z-index: 999;
+        }
+
+        #mySidenav2 a {
+            right: 0;
+        }
+
+        #abcd {
+            top: 60px;
+            right: 10px;
+            background-color: whitesmoke;
+        }
+
+        #efgh {
+            top: 120px;
+            right: 10px;
+            background-color: whitesmoke;
+        }
+
+        #ijkl {
+            top: 180px;
+            right: 10px;
+            background-color: whitesmoke;
+        }
+    </style>
 </head>
 <body>
-    <div id="toprow" style="width:100%;height:500px">
-        <div id="tl" style="width: 40%; height: 100%; display: inline-block">
-            <center>
-                <div class="container mt-4">
-                    <h3>SCENE-VIEWER</h3>
-                    <p>Select from the list a scene to view.</p>
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="arrange.html" target="_blank">arrange</a>
-                            <a class="dropdown-item" href="assembly.html" target="_blank">assembly</a>
-                            <a class="dropdown-item" href="joints.html" target="_blank">joints</a>
-                            <a class="dropdown-item" href="templates.html" target="_blank">templates</a>
-                             <a class="dropdown-item" href="cameras.html" target="_blank">cameras</a>
-                            <a class="dropdown-item" href="animation.html" target="_blank">animation</a>
-                            <a class="dropdown-item" href="controls.html" target="_blank">controls</a>
-                            <a class="dropdown-item" href="vritual.html" target="_blank">templates</a>
-                            
-                            <!--a class="dropdown-item" href="index-mouse.html" target="_blank">mouse</a>
-                            <a class="dropdown-item" href="physics/.html" target="_blank">index</a>
-                            <a class="dropdown-item" href="physics/examples/index22.html" target="_blank">i22</a>
-                            <a class="dropdown-item" href="physics/examples/index.html" target="_blank">dropdown</a>
-                            <a class="dropdown-item" href="physics/examples/index.html" target="_blank">textures</a>
-                            <a class="dropdown-item" href="physics/examples/index.html" target="_blank">convert</a>
-                            <a class="dropdown-item" href="physics/examples/index.html" target="_blank">validate</a>
-                            <a class="dropdown-item" href="physics/examples/all_components_mouse_quest.html" target="_blank">all-mouse</a>
-                            <a class="dropdown-item" href="motion.html" target="_blank">Motion</a>
-                            <a class="dropdown-item" href="recording.html" target="_blank">Record</a-->
-                            <!--<a class="dropdown-item" href="#">CSS</a>
-                                <a class="dropdown-item-text" href="#">JS</a>
-                                <span class="dropdown-item-text" href="#">Tutorialmines</span>
-                            -->
-                        </div>
-                    </div>
-                </div>
-            </center>
-        </div>
-        <div id="tr" style="width: 40%; height: 100%; display: inline-block">
-            <center>
-                <div class="container mt-4" style="top200">
-                    <h3>SCENE-VIEWER</h3>
-                    <p>Select from the list a scene to view.</p>
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            Choose Scene
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#">CSS</a>
-                            <a class="dropdown-item-text" href="#">JS</a>
-                            <span class="dropdown-item-text" href="#">Tutorialmines</span>
-                        </div>
-                    </div>
-                </div>
-            </center>
-
-        </div>
-    </div>
-    <div id="bottomrow" style="width:100%;height:500px">
-        <div id="bl" style="width: 40%; height: 100%;  display: inline-block">
-            <center>
-                <div class="container mt-4">
-                    <h3>SCENE-VIEWER</h3>
-                    <p>Select from the list a scene to view.</p>
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            Choose Scene
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#">CSS</a>
-                            <a class="dropdown-item-text" href="#">JS</a>
-                            <span class="dropdown-item-text" href="#">Tutorialmines</span>
-                        </div>
-                    </div>
-                </div>
-            </center>
-        </div>
-        <div id="br" style="width: 40%; height: 100%; display: inline-block">
-            <center>
-                <div class="container mt-4" style="top200">
-                    <h3>SCENE-VIEWER</h3>
-                    <p>Select from the list a scene to view.</p>
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            Choose Scene
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" target="_blank">Scene1</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene2</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene3</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene4</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene5</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene6</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene7</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene8</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene9</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene10</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene11</a>
-                            <a class="dropdown-item" href="#" target="_blank">Scene12</a>
-                            <a class="dropdown-item" href="#">CSS</a>
-                            <a class="dropdown-item-text" href="#">JS</a>
-                            <span class="dropdown-item-text" href="#">Tutorialmines</span>
-                        </div>
-                    </div>
-                </div>
-            </center>
-
-        </div>
+    <div id="container">
+        <button id="export-scene" class="button"><span>Export Scene</span></button>
+        <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
+        <button id="export-sphere" class="button"><span>Export Sphere</span></button>
+        <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
+        <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
     </div>
 
+    <div id="mySidenav" class="sidenav">
+        <a id="file" class="clickable" onclick="cmm1()" >FILE</a>
+        <a id="create" class="clickable" onclick="cmm2()" >CREATE</a>
+        <a id="assemble" class="clickable" onclick="cmm3()" >ASSEMBLE</a>
+        <a id="arrange" class="clickable" onclick="cmm4()" >ARRANGE</a>
+        <a id="motion" class="clickable" onclick="cmm5()" >MOTION</a>
+        <a id="study" class="clickable" onclick="cmm6()" >STUDY</a>
+
+    </div>
+    <!--div id="mySidenav" class="sidenav">
+        <a id="file" class="clickable" onclick="function()" >FILE</a>
+        <a href="#" id="create">CREATE</a>
+        <a href="#" id="assemble">ASSEMBLE</a>
+        <a href="#" id="arrange">ARRANGE</a>
+        <a href="#" id="motion">MOTION</a>
+        <a href="#" id="study">STUDY</a>
+
+    </div-->
+    <div id="mySidenav2" class="sidenav">
+        <a href="https://github.com/" target="_blank" id="abcd">GitHub</a>
+        <a href="https://sketchfab.com/fasteng" target="_blank" id="efgh">SketchFab</a>
+        <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
+
+    </div>
+    <div id="myNavh01" class="overlay">
+        <div class="overlay-content">
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="newcube()">CUBE</button>
+                    <button class="clickable" onclick="newsphere()">SPHERE</button>
+                    <button class="clickable" onclick="newcylinder()">CYLINDER</button>
+                    <button class="clickable" onclick="newtube()">TUBE</button>
+                    <button class="clickable" onclick="newconetopoint()">CONE</button>
+                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+                </div>
+            </center>
+            <div style="height:15px"></div>
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+                </div>
+            </center>
+            <center>
+                <h4>GETTING STARTED : CREATING GEOMETRY</h4>
+                <h4>USE THE CREATE MENU TO PLACE PRIMITIVE SHAPES</h4>
+                <h4>SELECT THE SHAPE TO MODIFY AND SET POSITION, ROTATION AND SCALE.</h4>
+                <h4>ADD OTHER SHAPES TO CREATE THE DESIRED COMPONENT BODY.</h4>
+                <h4>ADD TEXTURES TO THE INDIVIDUAL BODIES AS REQUIRED.</h4>
+                <h4>ADD ANCHOR PLANE AND CONNECTOR PLANE(S).</h4>
+                <h4>EXPORT THE MODEL FROM THE HOME MENU</h4>
+                <h4>THE TEXTURE WILL BE EMBEDDED IN THE NEW MODEL</h4>
+                <h4>UPLOAD TO SKETCHFAB AND INCLUDE IN YOUR SCENES</h4>
+            </center>
+        </div>
+    </div>
+    <div id="myNavh02" class="overlay">
+        <div class="overlay-content">
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()"> HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+                </div>
+            </center>
+            <center>
+                <h4>GETTING STARTED : MODEL ASSEMBLY</h4>
+                <h4>EVERY ASSEMBLY IN CADBOXX HAS AN ANCHOR PART.</h4>
+                <h4>THE ANCHOR IS THE CHASSIS OF THE ASSEMBLY.</h4>
+                <h4>ALL OTHER PARTS ARE CHILDREN OF THE ANCHOR.</h4>
+                <h4>THEY ARE FIXED TO IT OR CONNECTED BY MOVING JOINTS.</h4>
+                <h4>POSITION CONNECTOR PLANES AT THE JOINT LOCATIONS.</h4>
+                <h4>THEN ASSEMBLE THE PART BASE-PLANE WITH THESE PLANES.</h4>
+                <h4>SET THE MOVEMENT CONSTRAINTS BETWEEN THE TWO PLANES.</h4>
+            </center>
+        </div>
+    </div>
+    <div id="myNavh03" class="overlay">
+        <div class="overlay-content">
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+
+                </div>
+            </center>
+            <center>
+                <h4>POSITION AND CONSTRAINING</h4>
+                <h4>IF YOUR JOINT IS THE SAME AS ONE OF OUR TEMPLATES </h4>
+                <h4>THEN WE RECCOMEND USING A TEMPLATE.</h4>
+                <h4>SIMPLY OVER-WRITE THE URL OF THE PLANE WITH THE TEMPLATE URL.</h4>
+                <h4>SET THE BODY NAMES TO SUIT THE CONSTRAINT MIXINS.</h4>
+                <h4>WHEN ALL THE JOINTS AND PARTS ARE IN PLACE HIT CTRL-ALT-I</h4>
+                <h4>STUDY THE MOTION OF THE ASSEMBLY AND ADJUST JOINT PROPERTIES.</h4>
+                <h4>EXPORT THE ASSEMBLY AS A GLB FILE.</h4>
+                <h4></h4>
+            </center>
+        </div>
+    </div>
+    <div id="myNavh04" class="overlay">
+        <div class="overlay-content">
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
+                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+
+                </div>
+            </center>
+            <center>
+                <h4>ANIMATE AND SIMULATE</h4>
+                <h4>YOUR SCENE IS NOW LIVE AND THE USER CAN INTERACT WITH THE MODELS.</h4>
+                <h4>PUSH, PULL, KICK AND THROW YOUR COMPONENTS LIKE YOU WOULD IN REALITY.</h4>
+                <h4>TEST THE MOTION AND PERFORMANCEOF YOUR ASSEMBLY LIVE ON SCREEN.</h4>
+                <h4>ADJUST THE STIFFNESS AND DAMPING OF THE JOINTS TO OPTIMIZE.</h4>
+                <h4>RECORD VIDEOS OF THE ASSEMBLY AS IT MOVES IN VIRTUAL REALITY.</h4>
+                <h4></h4>
+                <h4></h4>
+                <h4></h4>
+            </center>
+        </div>
+    </div>
+    <div id="myNavh05" class="overlay">
+        <div class="overlay-content">
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
+                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+
+                </div>
+            </center>
+            <center>
+                <h4>EXPORT YOUR MODELS</h4>
+                <h4>EXPORT THE MODEL ASSEMBLY IN DIFFERENT SNAPSHOT POSITION</h4>
+                <h4>CREATE SNAPSHOTS OF THE MOVING ASSEMBLY IN DIFFERENT POSITIONS.</h4>
+                <h4>RUN ANIMATIONS TOGETHER WITH PHYSICS SIMULATIONS.</h4>
+                <h4>OBSERVE PARTS COLLIDING AS THEY WOULD NORMALLY.</h4>
+                <h4>ADJUST THE DESIGN TO CHANGE PERFORMANCE.</h4>
+                <h4></h4>
+                <h4></h4>
+                <h4></h4>
+            </center>
+        </div>
+    </div>
+    <div id="myNavh06" class="overlay">
+        <div class="overlay-content">
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
+                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+
+                </div>
+            </center>
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
+
+                </div>
+            </center>
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+
+                </div>
+            </center>
+            <center>
+                <div id="btnnbar" display="inline-block">
+                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
+                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
+                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
+                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
+                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
+                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
+
+                </div>
+            </center>
+        </div>
+    </div>
+
+    <!--container-flex surrounding body-->
+    <div class="container-flex">
+
+        <body>
+            <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
+                <a-assets>
+                    <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
+                             hoverable grabbable stretchable draggable droppable
+                             event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                             body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+                    <a-mixin id="gltfmodel" gltf-model="#cbb1"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                             body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+                    <a-mixin id="beveled-square" geometry="primitive: cone; radiusTop: 0.15; radiusBottom: 0.19; height: 0.02; segmentsRadial: 4; segmentsHeight: 1" rotation="0 45 0"></a-mixin>
+                    <a-mixin id="square" geometry="primitive: box; width: 0.18; height: 0.025; depth: 0.18;" position="0 0.02 0"></a-mixin>
+                    <a-mixin id="blue" material="color: #1E2768;"></a-mixin>
+                    <a-mixin id="darkgreen" material="color: #22FF90;"></a-mixin>
+                    <a-mixin id="yellow" material="color: #FFF88E;"></a-mixin>
+                    <a-mixin id="offset" position="0 0.01 0"></a-mixin>
+                    <img id="m01" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-dlkr-5676470%20(1).jpg?v=1671179886918" />
+                    <img id="m02" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-eva-bronzini-6485438.jpg?v=1671179938437" />
+                    <img id="m03" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978462.jpg?v=1671180017611" />
+                    <img id="m04" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978503.jpg?v=1671180039120" />
+                    <img id="m05" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-milo-textures-2768398.jpg?v=1671180129644" />
+                    <img id="m06" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-207300.jpg?v=1671180185041" />
+                    <img id="m07" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-268415.jpg?v=1671180285873" />
+                    <img id="m08" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-piyapong-sayduang-4541011.jpg?v=1671180304280" />
+                    <img id="m09" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-235985.jpg?v=1671180256508" />
+                    <img id="m10" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-steve-johnson-6353321.jpg?v=1671180659869" />
+                    <img id="m11" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_01.jpg?v=1671449502907" />
+                    <img id="m12" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_02.jpg?v=1671449528541" />
+                    <img id="m13" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_03.jpg?v=1671449535258" />
+                    <img id="m14" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_05.jpg?v=1671449549312" />
+                    <img id="m15" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_07.jpg?v=1671449555859" />
+                    <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
+                    <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
+                    <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
+
+                    <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+                    <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+                    <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
+                    <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
+
+                    <a-asset-item id="glbsphere" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsphere-r1-p010.glb?v=1615396331056"></a-asset-item>
+                    <a-asset-item id="glbdodd" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fdodd-rpt5.glb?v=1632901912292"></a-asset-item>
+                    <a-asset-item id="glbtett" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
+                    <a-asset-item id="glbcyll" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/glcyl.glb?v=1661360434803"></a-asset-item>
+
+                    <a-asset-item id="single-floor" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/single-floor.glb?v=1699903743116"></a-asset-item>
+                    <a-asset-item id="pistonplus" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/pistonplus.glb?v=1674335113584"></a-asset-item>
+
+                    <a-asset-item id="waddler" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/waddler.glb?v=1668021723166"></a-asset-item>
+
+                    <img id="galaxy" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/galaxy.jpg">
+                    <img id="moon" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/moon_1024.jpg">
+                    <img id="clouds" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_clouds_2048.png">
+                    <img id="venus" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/5710820393_a36f3c730b_m.jpg">
+                    <img id="pic1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/border-pic.jpg?v=1654934865728">
+                    <img id="pic2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+                    <img id="pic3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/skateboard1200x400bg-white.png?v=1659609701460">
+                    <img id="pic4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
+                    <img id="pic5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/roboxx.png?v=1659362885712">
+                    <img id="pic6" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx.png?v=1659434696690">
+
+                    <!--sphorb-->
+                    <a-asset-item id="bb02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb1.glb?v=1655710163279"></a-asset-item>
+                    <a-asset-item id="bb03" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb2.glb?v=1655710178528"></a-asset-item>
+                    <a-asset-item id="bb04" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb3.glb?v=1655710192379"></a-asset-item>
+                    <a-asset-item id="bb05" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb4.glb?v=1655710213868"></a-asset-item>
+
+                    <a-asset-item id="hand" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/hand.glb?v=1700128071348"></a-asset-item>
+
+                    <a-asset-item id="chlink1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink1.glb?v=1606822463366"></a-asset-item>
+                    <a-asset-item id="chlink2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink2.glb?v=1606822434718"></a-asset-item>
+
+                    <!--boxaxis-->
+                    <a-asset-item id="bb07" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-boxx.glb?v=1655717437382"></a-asset-item>
+                    <a-asset-item id="bb08" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-xx.glb?v=1655717457786"></a-asset-item>
+                    <a-asset-item id="bb09" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-x-x.glb?v=1655717477839"></a-asset-item>
+                    <a-asset-item id="bb010" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-yy.glb?v=1655717521091"></a-asset-item>
+                    <a-asset-item id="bb011" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-y-y.glb?v=1655717561218"></a-asset-item>
+                    <a-asset-item id="bb012" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-zz.glb?v=1655717583030"></a-asset-item>
+                    <a-asset-item id="bb013" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/box-axis-z-z.glb?v=1655717667672"></a-asset-item>
+
+
+
+                    <a-asset-item id="bb019" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/generic-wheel.glb?v=1655896082243"></a-asset-item>
+                    <!--stub gears-->
+                    <a-asset-item id="bb020" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/32stub.glb?v=1656255390214"></a-asset-item>
+                    <a-asset-item id="bb021" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/16stub.glb?v=1656313611998"></a-asset-item>
+
+                    <a-asset-item id="bb022" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/roller-ball-assy.glb?v=1655472956891"></a-asset-item>
+                    <a-asset-item id="bb023" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fcadboxx-standard.glb?v=1618293365748"></a-asset-item>
+                    <!--gears-->
+                    <a-asset-item id="bb024" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/g16-3.glb?v=1656487133082"></a-asset-item>
+                    <a-asset-item id="bb025" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/g32-3.glb?v=1656486880844"></a-asset-item>
+                    <a-asset-item id="bb026" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/g48-3.glb?v=1656487231427"></a-asset-item>
+                    <!--fan-->
+                    <a-asset-item id="bb027" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/fan-center.glb?v=1656475522384"></a-asset-item>
+                    <a-asset-item id="bb028" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/fan-blades.glb?v=1656475487109"></a-asset-item>
+                    <!--plane-->
+                    <a-asset-item id="bb030" src="https://cdn.glitch.me/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fplanex1sq.glb?v=1635660167471"></a-asset-item>
+
+                    <a-asset-item id="bb019" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/generic-wheel.glb?v=1655896082243"></a-asset-item>
+                    <!--stub gears-->
+                    <!--uj-->
+                    <a-asset-item id="bb036" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/yyyzzz.glb?v=1656646905880"></a-asset-item>
+                    <a-asset-item id="bb037" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/yyyxxx.glb?v=1656646922662"></a-asset-item>
+                    <a-asset-item id="bb038" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/dddxxx.glb?v=1656646954681"></a-asset-item>
+
+                    <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+                    <!--lead screw-->
+                    <a-asset-item id="bb039" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/linear-screw-2000-1.glb?v=1659723632101"></a-asset-item>
+                    <a-asset-item id="bb040" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/linear-nut-1.glb?v=1659723551067"></a-asset-item>
+                    <a-asset-item id="bb041" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/linear-screw-1000.glb?v=1659858281452"></a-asset-item>
+                    <!--hex n ball-->
+                    <a-asset-item id="bb042" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/full-hex-50-hole.glb?v=1659723446134"></a-asset-item>
+                    <a-asset-item id="bb043" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/bottom-sq-100x100x10.glb?v=1659723230346"></a-asset-item>
+                    <a-asset-item id="bb044" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/dia50x200.glb?v=1659723364778"></a-asset-item>
+                    <a-asset-item id="bb045" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/100-ball-25-hole.glb?v=1659722995037"></a-asset-item>
+                    <a-asset-item id="bb046" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/100-ball-cube.glb?v=1659723053725"></a-asset-item>
+                    <a-asset-item id="bb047" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/ball-and-top-hex100afx10.glb?v=1659723148016"></a-asset-item>
+                    <a-asset-item id="bb048" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/100-ball.glb?v=1659722945849"></a-asset-item>
+                    <a-asset-item id="bb049" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/50-ball.glb?v=1659722813834"></a-asset-item>
+                    <a-asset-item id="bb050" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/50-ball-w-bottom-sq-100x10.glb?v=1659722855011"></a-asset-item>
+                    <a-asset-item id="bb051" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/90cube.glb?v=1659856346086"></a-asset-item>
+                    <a-asset-item id="bb052" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/100ball25hole.glb?v=1659856419099"></a-asset-item>
+                    <a-asset-item id="bb053" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/25shaft100ball.glb?v=1659856366279"></a-asset-item>
+                    <a-asset-item id="bb054" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/top-hexagon-100afx10.glb?v=1659850795703"></a-asset-item>
+
+                    <a-asset-item id="snooker" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/tableview.glb?v=1658906349771"></a-asset-item>
+
+                    <a-asset-item id="buggy-wheel-chrome" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/Buggy-wheel-chrome.glb?v=1661360545183"></a-asset-item>
+
+                    <a-asset-item id="steer-ring" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/steer-ring.glb?v=1661754904188"></a-asset-item>
+                    <a-asset-item id="wheel-spinner" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/wheel-spinner.glb?v=1661754959348"></a-asset-item>
+
+                    <a-asset-item id="central-link" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/central-link.glb?v=1661445167231"></a-asset-item>
+
+                    <a-mixin id="cubed" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="cyll" geometry="primitive: cylinder; radius: 0.5; height: 1.0"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="sphh" geometry="primitive: sphere; radius: 0.5"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="octt" geometry="primitive: octahedron; radius: 0.5"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="dodd" geometry="primitive: dodecahedron; radius: 0.5"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="tett" geometry="primitive: tetrahedron; radius: 0.5"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="tria" geometry="primitive: triangle" material="side: double"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="toru" geometry="primitive: torus; radius: .5; radiusTubular: 0.05; arc: 360"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             static-body shadow>
+                    </a-mixin>
+                    <a-mixin id="plan" geometry="primitive: plane; side:double; height: 1.0; width: 1.0"
+                             material="side: double" hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="cone" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.25"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             dynamic-body shadow>
+                    </a-mixin>
+                    <a-mixin id="voxel"
+                             gltf-model="#cb1"
+                             intersection-spawn="event: click; mixin: voxel"
+                             snap="offset: 0.5 0.5 0.5; snap: 1 1 1"
+                             event-set__mouseenter="material.opacity: 0.7"
+                             event-set__mouseleave="material.opacity: 1.0"
+                             event-set__dragover-start="material.wireframe: true"
+                             event-set__dragover-end="material.wireframe: false"></a-mixin>
+
+                    <a-mixin id="gglb" geometry="gltf-model: model;"
+                             hoverable grabbable stretchable draggable droppable
+                             dynamic-body shadow>
+                    </a-mixin>
+
+
+                    <a-mixin id="constraint_hinge_x" constraint="type: hinge;axis:1 0 0;targetAxis:1 0 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                    <a-mixin id="constraint_hinge_y" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                    <a-mixin id="constraint_hinge_z" constraint="type: hinge;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                    <a-mixin id="constraint_distance" constraint="type: distance;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                    <a-mixin id="constraint_slider" constraint="type: slider;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                    <a-mixin id="constraint_lock" constraint="type: lock;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                    <a-mixin id="constraint_pointTopoint_x" constraint="type: pointTopoint;axis:1 0 0;targetAxis:1 0 0;pivot:1 0 0;targetPivot:0 0 0"></a-mixin>
+                    <a-mixin id="constraint_pointTopoint_y" constraint="type: pointTopoint;axis:0 1 0;targetAxis:0 1 0;pivot:0 1 0;targetPivot:0 0 0"></a-mixin>
+                    <a-mixin id="constraint_pointTopoint_z" constraint="type: pointTopoint;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 1;targetPivot:0 0 0"></a-mixin>
+
+                    <a-mixin id="weight1" mass="1.0"></a-mixin>
+                    <a-mixin id="weight2" mass="2.0"></a-mixin>
+                    <a-mixin id="weight4" mass="4.0"></a-mixin>
+                    <a-mixin id="weight8" mass="8.0"></a-mixin>
+                    <a-mixin id="weight16" mass="16.0"></a-mixin>
+                    <a-mixin id="weight32" mass="32.0"></a-mixin>
+
+                    <img id="im1" src="../images/boxx1.png" />
+                    <img id="im2" src="../images/Enginewo.png" />
+                    <img id="im3" src="../images/cadboxxstd.png" />
+                    <img id="im4" src="../images/posx.jpg" />
+                    <img id="im5" src="../images/posy.jpg" />
+                    <img id="im6" src="../images/posz.jpg" />
+                    <img id="im7" src="../images/negx.jpg" />
+                    <img id="im8" src="../images/negy.jpg" />
+                    <img id="im9" src="../images/negz.jpg" />
+
+
+                    <a-mixin id="hingeBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+                    <a-mixin id="sliderBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+                    <a-mixin id="lockBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+                    <a-mixin id="pointBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+                    <a-mixin id="rotxBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+                    <a-mixin id="rotyBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+                    <a-mixin id="rotzBottom1" gltf-model="#cb1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+
+
+                    <a-mixin id="red" material="color: red"></a-mixin>
+                    <a-mixin id="blue" material="color: blue"></a-mixin>
+                    <a-mixin id="brown" material="color: brown"></a-mixin>
+                    <a-mixin id="green" material="color: green"></a-mixin>
+                    <a-mixin id="orange" material="color: orange"></a-mixin>
+                    <a-mixin id="yellow" material="color: yellow"></a-mixin>
+
+                    <!--
+                    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+
+                    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+
+                    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+                        -->
+
+                    <a-mixin id="trigger-box1" gltf-model="#cb1" scale="10 10 10"
+                             class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                             static-body click-impulse></a-mixin>
+                    <a-mixin id="trigger-box2" gltf-model="#ccylx" scale="10 10 10"
+                             class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                             static-body click-impulse></a-mixin>
+                    <a-mixin id="bigendx" gltf-model="#ccylx" scale="10 10 10"
+                             class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:1 0 0;pivot:0 0 0;targetPivot:1 0 0"
+                             static-body click-impulse></a-mixin>
+                    <a-mixin id="trigger-box3" gltf-model="#ccyly" scale="10 10 10"
+                             class="clickclass=" clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                             static-body click-impulse></a-mixin>
+                    <a-mixin id="trigger-box4" gltf-model="#ccylz" scale="10 10 10"
+                             class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                             static-body click-impulse></a-mixin>
+                    <a-mixin id="trigger-box5" gltf-model="#glbdodd" scale="2 2 2"
+                             class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                             static-body click-impulse></a-mixin>
+                    <a-mixin id="trigger-box6" gltf-model="#glbcyll" scale="4 4 4"
+                             class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                             static-body click-impulse></a-mixin>
+
+                    <a-mixin id="hinge-bodya" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+                    <a-mixin id="hinge-bodyb" gltf-model="#ccyly" position="0 2.5 0" rotation="0 0 0" scale="2 1 2"
+                             constraint="type:hinge;target:#bodya;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 2.5 0"
+                             dynamic-body click-impulse></a-mixin>
+                    <a-mixin id="hinge-bottom-bodya" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+                    <a-mixin id="hinge-bottom-bodyb" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="1 1 1"
+                             constraint="type:hinge;target:#bodyc;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 2 0"
+                             dynamic-body click-impulse></a-mixin>
+                    <a-mixin id="hinge-planes-bodya" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+                    <a-mixin id="hinge-planes-bodyb" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1"
+                             constraint="type:hinge;target:#bodye;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                             dynamic-body click-impulse></a-mixin>
+
+                    <a-mixin id="p2p-planes-bodya" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+                    <a-mixin id="p2p-planes-bodyb" gltf-model="#cbplane" position="0 0 0" rotation="0 0 0" scale="1 1 1"
+                             constraint="type:pointTopoint;target:#bodye;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
+                             dynamic-body click-impulse></a-mixin>
+
+
+
+                    <a-mixin id="p2p-bodya" gltf-model="#cb1" position="0 0 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-mixin>
+                    <a-mixin id="p2p-bodyb" gltf-model="#ccyly" position="0 2.5 0" rotation="0 0 0" scale="2 2 2"
+                             constraint="type:pointTopoint;target:#bodye;axis:0 0 0;targetAxis:0 0 0;pivot:0 0 0;targetPivot:0 -2 0"
+                             dynamic-body click-impulse></a-mixin>
+
+                    <a-asset-item id="part1" src="#bb021"></a-asset-item>
+                    <a-asset-item id="part2" src="#prt02"></a-asset-item>
+                    <a-asset-item id="part3" src="#prt03"></a-asset-item>
+                    <a-asset-item id="part4" src="#prt04"></a-asset-item>
+                    <a-asset-item id="part5" src="#prt05"></a-asset-item>
+                    <a-asset-item id="part6" src="#prt06"></a-asset-item>
+                    <a-asset-item id="part7" src="#prt07"></a-asset-item>
+                    <a-asset-item id="part8" src="#prt08"></a-asset-item>
+                    <a-asset-item id="part9" src="#prt09"></a-asset-item>
+
+                    <a-mixin id="m01" src="#m01"></a-mixin>
+                    <a-mixin id="m02" src="#m01"></a-mixin>
+                    <a-mixin id="m03" src="#m01"></a-mixin>
+                    <a-mixin id="m04" src="#m01"></a-mixin>
+                    <a-mixin id="m05" src="#m01"></a-mixin>
+                    <a-mixin id="m06" src="#m01"></a-mixin>
+
+
+                    <a-mixin id="rotxx" animation__rotation__xx="property: rotation; dir: forward; dur: 2000;
+                repeat: indefinite; easing: linear; loop: true; to: 360 0 0"></a-mixin>
+                    <a-mixin id="rotyy" animation__rotation__yy="property: rotation; dir: forward; dur: 4000;
+                repeat: indefinite; easing: linear; loop: true; to: 0 360 0"></a-mixin>
+                    <a-mixin id="rotzz" animation__rotation__zz="property: rotation; dir: forward; dur: 3000;
+                repeat: indefinite; easing: linear; loop: true; to: 0 0 360"></a-mixin>
+                    <a-mixin id="rotxyz" animation__rotation__xyz="property: rotation; dir: forward; dur: 3000;
+                repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
+
+
+                    <a-asset-item id="crank4cyl" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
+                    <a-asset-item id="crank4cyl-we" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
+
+                </a-assets>
+
+                <!--
+                <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
+                    -->
+
+
+                <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>
+
+                <a-entity id="planeboxxx" position="0 0 0" scale="1 1 1">
+                    <a-entity id="planeboxx" position="0 0 0">
+                        <a-entity id="planebox" position="0 0 0">
+                            <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
+                            <a-plane side="double" color="green" position="0 20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
+                            <a-plane side="double" color="blue" position="0 0 20" rotation="0 0 0" height="40" width="40" material="" static-body> </a-plane>
+                            <a-plane side="double" color="blue" position="0 0 -20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>
+                            <a-plane side="double" color="red" position="20 0 0" rotation="0 -90 0" height="40" width="40" material="" static-body></a-plane>
+                            <a-plane side="double" color="red" position="-20 0 0" rotation="0 90 0" height="40" width="40" material="" static-body></a-plane>
+                        </a-entity>
+                        <!--mesh overlay for walls-->
+                        <a-box position="0 -20 0" rotation="0 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="" gridhelper="size: 25;divisions:5" static-body></a-box>
+                        <a-box position="0 20 0" rotation="0 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                        <a-box position="0 0 -20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="" gridhelper="size: 25;divisions:5" static-body></a-box>
+                        <a-box position="0 0 20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                        <a-box position="-20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
+                        <a-box position="20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1.0" gridhelper="size: 25;divisions:5" static-body></a-box>
+
+                        <a-box position="0 0 -20" rotation="0 0 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                            <a-entity id="cmnd1" mixin="trigger-box4" position="-10 0 0" rotation="0 0 0" onclick="cmm1()" static-body><a-sphere id="cmcdsph1" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd2" mixin="trigger-box4" position="-10 5 0" rotation="0 0 0" onclick="cmm2()" static-body><a-sphere id="cmcdsph2" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd3" mixin="trigger-box4" position="-10 -5 0" rotation="0 0 0" onclick="cmm3()" static-body><a-sphere id="cmcdsph3" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd4" mixin="trigger-box4" position="-5 0 0" rotation="0 0 0" onclick="cmm4()" static-body><a-sphere id="cmcdsph4" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd5" mixin="trigger-box4" position="-5 5 0" rotation="0 0 0" onclick="cmm5()" static-body><a-sphere id="cmcdsph5" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd6" mixin="trigger-box4" position="-5 -5 0" rotation="0 0 0" onclick="cmm6()" static-body><a-sphere id="cmcdsph6" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd7" mixin="trigger-box4" position="0 0 0" rotation="0 0 0" onclick="cmm7()" static-body><a-sphere id="cmcdsph7" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd8" mixin="trigger-box4" position="0 5 0" rotation="0 0 0" onclick="cmm8()" static-body><a-sphere id="cmcdsph8" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd9" mixin="trigger-box4" position="0 -5 0" rotation="0 0 0" onclick="cmm9()" static-body><a-sphere id="cmcdsph9" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd10" mixin="trigger-box4" position="5 0 0" rotation="0 0 0" onclick="cmm10()" static-body><a-sphere id="cmcdsph10" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd11" mixin="trigger-box4" position="5 5 0" rotation="0 0 0" onclick="cmm11()" static-body><a-sphere id="cmcdsph11" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd12" mixin="trigger-box4" position="5 -5 0" rotation="0 0 0" onclick="cmm12()" static-body><a-sphere id="cmcdsph12" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd13" mixin="trigger-box4" position="10 0 0" rotation="0 0 0" onclick="cmm13()" static-body><a-sphere id="cmcdsph13" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd14" mixin="trigger-box4" position="10 5 0" rotation="0 0 0" onclick="cmm14()" static-body><a-sphere id="cmcdsph14" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                            <a-entity id="cmnd15" mixin="trigger-box4" position="10 -5 0" rotation="0 0 0" onclick="cmm15()" static-body><a-sphere id="cmcdsph15" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+
+                        </a-box>
+
+                        <a-box position="-20 0 0" rotation="0 90 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                            <a-entity id="cmnd21" mixin="trigger-box2" position="-10 0 0" rotation="0 90 0" onclick="cmm21()" static-body></a-entity>
+                            <a-entity id="cmnd22" mixin="trigger-box2" position="-10 5 0" rotation="0 90 0" onclick="cmm22()" static-body></a-entity>
+                            <a-entity id="cmnd23" mixin="trigger-box2" position="-10 -5 0" rotation="0 90 0" onclick="cmm23()" static-body></a-entity>
+                            <a-entity id="cmnd24" mixin="trigger-box2" position="-5 0 0" rotation="0 90 0" onclick="cmm24()" static-body></a-entity>
+                            <a-entity id="cmnd25" mixin="trigger-box2" position="-5 5 0" rotation="0 90 0" onclick="cmm25()" static-body></a-entity>
+                            <a-entity id="cmnd26" mixin="trigger-box2" position="-5 -5 0" rotation="0 90 0" onclick="cmm26()" static-body></a-entity>
+                            <a-entity id="cmnd27" mixin="trigger-box2" position="0 0 0" rotation="0 90 0" onclick="cmm27()" static-body></a-entity>
+                            <a-entity id="cmnd28" mixin="trigger-box2" position="0 5 0" rotation="0 90 0" onclick="cmm28()" static-body></a-entity>
+                            <a-entity id="cmnd29" mixin="trigger-box2" position="0 -5 0" rotation="0 90 0" onclick="cmm29()" static-body></a-entity>
+                            <a-entity id="cmnd210" mixin="trigger-box2" position="5 0 0" rotation="0 90 0" onclick="cmm210()" static-body></a-entity>
+                            <a-entity id="cmnd211" mixin="trigger-box2" position="5 5 0" rotation="0 90 0" onclick="cmm211()" static-body></a-entity>
+                            <a-entity id="cmnd212" mixin="trigger-box2" position="5 -5 0" rotation="0 90 0" onclick="cmm212()" static-body></a-entity>
+                            <a-entity id="cmnd213" mixin="trigger-box2" position="10 0 0" rotation="0 90 0" onclick="cmm213()" static-body></a-entity>
+                            <a-entity id="cmnd214" mixin="trigger-box2" position="10 5 0" rotation="0 90 0" onclick="cmm214()" static-body></a-entity>
+                            <a-entity id="cmnd215" mixin="trigger-box2" position="10 -5 0" rotation="0 90 0" onclick="cmm215()" static-body></a-entity>
+
+                        </a-box>
+                        <a-box position="0 -20 0" rotation="0 0 0" width="40" depth="40" height="0.5" color="lightblue" opacity=".1" static-body>
+                            <a-entity id="cmnd31" mixin="trigger-box3" position="-10 0 0" rotation="0 90 0" onclick="cmm21()" static-body></a-entity>
+                            <a-entity id="cmnd32" mixin="trigger-box3" position="-10 0 5" rotation="0 90 0" onclick="cmm22()" static-body></a-entity>
+                            <a-entity id="cmnd33" mixin="trigger-box3" position="-10 0 10" rotation="0 90 0" onclick="cmm23()" static-body></a-entity>
+                            <a-entity id="cmnd34" mixin="trigger-box3" position="-5 0 0" rotation="0 90 0" onclick="cmm24()" static-body></a-entity>
+                            <a-entity id="cmnd35" mixin="trigger-box3" position="-5 0 5" rotation="0 90 0" onclick="cmm25()" static-body></a-entity>
+                            <a-entity id="cmnd36" mixin="trigger-box3" position="-5 0 10" rotation="0 90 0" onclick="cmm26()" static-body></a-entity>
+                            <a-entity id="cmnd37" mixin="trigger-box3" position="0 0 0" rotation="0 90 0" onclick="cmm27()" static-body></a-entity>
+                            <a-entity id="cmnd38" mixin="trigger-box3" position="0 0 5" rotation="0 90 0" onclick="cmm28()" static-body></a-entity>
+                            <a-entity id="cmnd39" mixin="trigger-box3" position="0 0 10" rotation="0 90 0" onclick="cmm29()" static-body></a-entity>
+                            <a-entity id="cmnd310" mixin="trigger-box3" position="5 0 0" rotation="0 90 0" onclick="cmm210()" static-body></a-entity>
+                            <a-entity id="cmnd311" mixin="trigger-box3" position="5 0 5" rotation="0 90 0" onclick="cmm211()" static-body></a-entity>
+                            <a-entity id="cmnd312" mixin="trigger-box3" position="5 0 10" rotation="0 90 0" onclick="cmm212()" static-body></a-entity>
+                            <a-entity id="cmnd313" mixin="trigger-box3" position="10 0 0" rotation="0 90 0" onclick="cmm213()" static-body></a-entity>
+                            <a-entity id="cmnd314" mixin="trigger-box3" position="10 0 5" rotation="0 90 0" onclick="cmm214()" static-body></a-entity>
+                            <a-entity id="cmnd315" mixin="trigger-box3" position="10 0 10" rotation="0 90 0" onclick="cmm215()" static-body></a-entity>
+                            <a-entity id="cmnd316" mixin="trigger-box3" position="-10 0 0" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                            <a-entity id="cmnd317" mixin="trigger-box3" position="-10 0 -5" rotation="0 90 0" onclick="cmm217()" static-body></a-entity>
+                            <a-entity id="cmnd318" mixin="trigger-box3" position="-10 0 -10" rotation="0 90 0" onclick="cmm218()" static-body></a-entity>
+                            <a-entity id="cmnd319" mixin="trigger-box3" position="-5 0 0" rotation="0 90 0" onclick="cmm219()" static-body></a-entity>
+                            <a-entity id="cmnd320" mixin="trigger-box3" position="-5 0 -5" rotation="0 90 0" onclick="cmm220()" static-body></a-entity>
+                            <a-entity id="cmnd321" mixin="trigger-box3" position="-5 0 -10" rotation="0 90 0" onclick="cmm221()" static-body></a-entity>
+                            <a-entity id="cmnd322" mixin="trigger-box3" position="0 0 0" rotation="0 90 0" onclick="cmm222()" static-body></a-entity>
+                            <a-entity id="cmnd323" mixin="trigger-box3" position="0 0 -5" rotation="0 90 0" onclick="cmm223()" static-body></a-entity>
+                            <a-entity id="cmnd324" mixin="trigger-box3" position="0 0 -10" rotation="0 90 0" onclick="cmm224()" static-body></a-entity>
+                            <a-entity id="cmnd325" mixin="trigger-box3" position="5 0 0" rotation="0 90 0" onclick="cmm225()" static-body></a-entity>
+                            <a-entity id="cmnd326" mixin="trigger-box3" position="5 0 -5" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                            <a-entity id="cmnd327" mixin="trigger-box3" position="5 0 -10" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                            <a-entity id="cmnd328" mixin="trigger-box3" position="10 0 0" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                            <a-entity id="cmnd329" mixin="trigger-box3" position="10 0 -5" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                            <a-entity id="cmnd330" mixin="trigger-box3" position="10 0 -10" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+
+                        </a-box>
+                    </a-entity>
+                </a-entity>
 
 
 
 
-</body>
+                <!-- ground collider keeps objets from falling -->
+                <a-box body="type: static; shape: none" shape="shape: box; halfExtents: 50 0.0005 50" width=100 height=0.001 depth=100 visible="false"></a-box>
+
+
+                <a-light type="point" color="#94c6ff" position="0 0 0" intensity="1" light="intensity: 1" visible="true"></a-light>
+                <a-light type="directional" directionaltarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
+                <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 -16 16" intensity="1"></a-light>
+                <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="16 -16 -16" intensity="1"></a-light>
+                <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
+                <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 -16 -16" intensity="1"></a-light>
+                <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="16 16 16" intensity="1"></a-light>
+
+                <a-light type="spot" color="#white" position="0 16 16" intensity="1"></a-light>
+                <a-light type="spot" color="#white" position="0 16 -16" intensity="1"></a-light>
+                <a-light type="spot" color="#white" position="16 16 16" intensity="1"></a-light>
+                <a-light type="spot" color="#white" position="-16 16 16" intensity="1"></a-light>
+                <a-light type="spot" color="#white" position="16 -16 16" intensity="1"></a-light>
+                <a-light type="spot" color="#white" position="16 0 16" intensity="1"></a-light>
+                <a-entity light="type: hemisphere; color: #white; groundColor: #3C3; intensity: 2"></a-entity>
+
+                <a-entity camera id="cam1" active="true" look-controls wasd-controls position="0 5 15"
+                          capture-mouse
+                          raycaster cursor="rayOrigin:mouse"
+                          body="type: static; shape: sphere; sphereRadius: 0.001"
+                          super-hands="colliderEvent: raycaster-intersection;
+                             colliderEventProperty: els;
+                             colliderEndEvent:raycaster-intersection-cleared;
+                             colliderEndEventProperty: clearedEls;">
+                </a-entity>
+
+                <a-entity id="cam2" camera active="false" position="0 3 12">
+                    <a-camera look-controls wasd-controls></a-camera>
+                </a-entity>
+                <a-camera id="cam3" position="12 6 0" look-controls active="false">
+                    <a-cursor intersection-spawn="event: click; mixin: voxelccylx"></a-cursor>
+                </a-camera>
+                <a-camera id="cam4" position="0 12 0" look-controls active="false">
+                    <a-cursor intersection-spawn="event: click; mixin: voxelccylz"></a-cursor>
+                </a-camera>
+                <a-camera id="cam5" position="0 6 12" look-controls active="false">
+                    <a-cursor intersection-spawn="event: click; mixin: voxelcdodd1"></a-cursor>
+                </a-camera>
+                <a-camera id="cam6" position="12 6 0" look-controls active="false">
+
+                </a-camera>
+                <!--camera id="cam7" position="-12 6 0" look-controls active="false">
+
+                </!--a-camera>
+                <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
+
+                </a-camera>
+                <a-camera id="cam9" position="12 6 0" look-controls active="false">
+
+                </a-camera>
+
+                <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
+                    <a-cursor></a-cursor>
+                </a-entity-->
+
+                <a-sky radius="50" color="lightblue"></a-sky>
+
+            </a-scene>
+            <script src="js/aframe-physics-system.min.js"></script>
+            <script>
+                document.querySelector('a-scene').addEventListener('loaded', function () {
+                    document.getElementById("myNavh01").style.display = "block";
+                })
+
+            </script>
+
+            <script>
+                function newassemblytemplate() {
+                    const bodie = document.querySelector("#part0");
+                    const connector1 = document.querySelector("#conn1")
+                    const limb = document.createElement("a-sphere");
+                    sphere.setAttribute("color", "#crimson");
+                    sphere.setAttribute("radius", "0.5");
+                    sphere.setAttribute("position", "-3 2 0");
+                    bodie.appendChild(limb);
+
+                    render();
+                }
+
+            </script>
+
+            <script type="text/javascript">
+                var mybutton01 = document.querySelector('#mybutton01');
+                mybutton01.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton02 = document.querySelector('#mybutton02');
+                mybutton02.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton03 = document.querySelector('#mybutton03');
+                mybutton03.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton04 = document.querySelector('#mybutton04');
+                mybutton04.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton05 = document.querySelector('#mybutton05');
+                mybutton05.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton06 = document.querySelector('#mybutton06');
+                mybutton06.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton07 = document.querySelector('#mybutton07');
+                mybutton07.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton08 = document.querySelector('#mybutton08');
+                mybutton08.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton09 = document.querySelector('#mybutton09');
+                mybutton09.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+
+            <script type="text/javascript">
+                var mybutton10 = document.querySelector('#mybutton10');
+                mybutton10.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton11 = document.querySelector('#mybutton11');
+                mybutton11.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton12 = document.querySelector('#mybutton12');
+                mybutton12.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton13 = document.querySelector('#mybutton13');
+                mybutton13.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton15 = document.querySelector('#mybutton15');
+                mybutton15.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton16 = document.querySelector('#mybutton16');
+                mybutton16.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton17 = document.querySelector('#mybutton17');
+                mybutton17.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton18 = document.querySelector('#mybutton18');
+                mybutton18.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton19 = document.querySelector('#mybutton19');
+                mybutton19.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton10 = document.querySelector('#mybutton10');
+                mybutton10.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton21 = document.querySelector('#mybutton21');
+                mybutton21.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton22 = document.querySelector('#mybutton22');
+                mybutton22.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton23 = document.querySelector('#mybutton23');
+                mybutton23.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton25 = document.querySelector('#mybutton25');
+                mybutton25.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton26 = document.querySelector('#mybutton26');
+                mybutton26.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton27 = document.querySelector('#mybutton27');
+                mybutton27.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton28 = document.querySelector('#mybutton28');
+                mybutton28.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton29 = document.querySelector('#mybutton29');
+                mybutton29.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+
+
+
+            <script>
+                function newsphere() {
+                    const scene = document.querySelector("a-scene");
+                    const sphere = document.createElement("a-sphere");
+                    sphere.setAttribute("color", "#crimson");
+                    sphere.setAttribute("radius", "1.0");
+                    sphere.setAttribute("position", "0 0 0");
+                    scene.appendChild(sphere);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcube() {
+                    const scene = document.querySelector("a-scene");
+                    const box = document.createElement("a-box");
+                    box.setAttribute("color", "blue");
+                    box.setAttribute("height", "2");
+                    box.setAttribute("width", "2");
+                    box.setAttribute("depth", "2");
+                    box.setAttribute("position", "0 0 0");
+                    scene.appendChild(box);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcyl() {
+                    const scene = document.querySelector("a-scene");
+                    const cylinder = document.createElement("a-cylinder");
+                    cylinder.setAttribute("color", "#FF9500");
+                    cylinder.setAttribute("height", "2");
+                    cylinder.setAttribute("radius", "0.5");
+                    cylinder.setAttribute("position", "0 0 0");
+                    scene.appendChild(cylinder);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newtet() {
+                    const scene = document.querySelector("a-scene");
+                    const tetrahedron = document.createElement("a-tetrahedron");
+                    tetrahedron.setAttribute("color", "#FF9500");
+                    tetrahedron.setAttribute("radius", "0.5");
+                    tetrahedron.setAttribute("position", "0 0 0");
+                    scene.appendChild(tetrahedron);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newline() {
+                    const scene = document.querySelector("a-scene");
+                    const line = document.createElement("a-line");
+                    line.setAttribute("color", "black");
+                    line.setAttribute("opacity", "1.0");
+                    line.setAttribute("points", "0 0 0, 0 10 0");
+                    scene.appendChild(line);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcircle() {
+                    const scene = document.querySelector("a-scene");
+                    const circle = document.createElement("a-circle");
+                    circle.setAttribute("color", "#FF9500");
+                    circle.setAttribute("radius", "0.5");
+                    circle.setAttribute("position", "0 0 0");
+                    scene.appendChild(circle);
+
+                    render();
+                }
+
+            </script>
+
+            <script>
+                function exportGLTF(input, options) {
+                    AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+                }
+
+                document.getElementById('export-scene').addEventListener('click', function () {
+                    exportGLTF();
+                });
+
+                document.getElementById('export-scene-bin').addEventListener('click', function () {
+                    exportGLTF(undefined, { binary: true });
+                });
+
+                document.getElementById('export-redbxx').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbxx'), { binary: true });
+                });
+
+                document.getElementById('export-redbyy').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbyy'), { binary: true });
+                });
+
+                document.getElementById('export-redbzz').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbzz'), { binary: true });
+                });
+
+                document.getElementById('export-ground').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('ground'), { binary: true });
+                });
+
+                document.getElementById('export-two').addEventListener('click', function () {
+                    exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+                });
+
+                document.getElementById('export-selector').addEventListener('click', function () {
+                    exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+                });
+
+            </script>
+            <script>
+                function openNav() {
+                    document.getElementById("myNav").style.display = "block";
+                }
+
+                function closeAllNav() {
+                    document.getElementById("myNavh01").style.display = "none";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+                    document.getElementById("myNavh06").style.display = "none";
+
+                }
+            </script>
+            <script>
+                function myNavh1() {
+                    document.getElementById("myNavh01").style.display = "block";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+
+                }
+                function myNavh2() {
+                    document.getElementById("myNavh02").style.display = "block";
+                    document.getElementById("myNavh01").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+
+                }
+                function myNavh3() {
+                    document.getElementById("myNavh03").style.display = "block";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh01").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+
+                }
+                function myNavh4() {
+                    document.getElementById("myNavh04").style.display = "block";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh01").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+
+                }
+                function myNavh5() {
+                    document.getElementById("myNavh05").style.display = "block";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh01").style.display = "none";
+
+                }
+                function myNavh6() {
+                    document.getElementById("myNavh06").style.display = "block";
+                    document.getElementById("myNavh05").style.display = "none";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh01").style.display = "none";
+
+                }
+
+
+            </script>
+
+            <script>
+                function myPartsdisplay() {
+                    document.getElementById("part01").style.display = "block";
+                    document.getElementById("part02").style.display = "block";
+                    document.getElementById("part03").style.display = "block";
+                    document.getElementById("part04").style.display = "block";
+                    document.getElementById("part05").style.display = "block";
+                    document.getElementById("part06").style.display = "block";
+                    document.getElementById("part07").style.display = "block";
+                    document.getElementById("part08").style.display = "block";
+                    document.getElementById("part09").style.display = "block";
+                    document.getElementById("part0").style.display = "block";
+
+                }
+                function myPart01() {
+                    document.getElementById("part01").style.display = "block";
+                }
+                function myPart02() {
+                    document.getElementById("part02").style.display = "block";
+                }
+                function myPart05() {
+                    document.getElementById("part03").style.display = "block";
+                }
+                function myPart04() {
+                    document.getElementById("part04").style.display = "block";
+                }
+                function myPart05() {
+                    document.getElementById("part05").style.display = "block";
+                }
+                function myPart06() {
+                    document.getElementById("part06").style.display = "block";
+                }
+                function myPart07() {
+                    document.getElementById("part07").style.display = "block";
+                }
+                function myPart08() {
+                    document.getElementById("part08").style.display = "block";
+                }
+                function myPart09() {
+                    document.getElementById("part09").style.display = "block";
+                }
+                function myPart0() {
+                    document.getElementById("part0").style.display = "block";
+                }
+
+
+            </script>
+
+            <script>
+                function cmm1() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', true);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm2() {//load
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', true);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm3() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', true);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', trfalseue);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm4() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', true);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm5() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', true);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm6() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', true);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm7() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', true);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm8() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', true);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm9() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', true);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm10() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10'); 0
+                    tenthCameraEl.setAttribute('camera', 'active', true);
+                };
+
+                /*to auto-enter-vr*/
+                function cmm11() {
+                    var scene = document.querySelector('a-scene');
+                    scene.enterVR();
+                };
+                /*opens help nav 01*/
+                function help01() {
+                    document.getElementById("myNavh1").style.display = "block";
+                };
+
+                function closehelp01() {
+                    document.getElementById("myNavh1").style.display = "none";
+                };
+                /*whatitdoes*/
+                function help02() {
+                    document.getElementById("myNavh2").style.display = "block";
+                };
+                /*whatitdoes*/
+                function closehelp02() {
+                    document.getElementById("myNavh2").style.display = "none";
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+
+
+
+            </script>
+
+
+
+
+
+
+
+
+
+
+            <script>
+                // Update individual nodes
+                document.querySelector('a-scene').addEventListener('loaded', function () {
+                    document.getElementById("myNav").style.display = "block";
+                })
+
+            </script>
+
+            <script>
+                function openNav() {
+                    document.getElementById("myNav").style.display = "block";
+                }
+
+                function closeNav() {
+                    document.getElementById("myNav").style.display = "none";
+                }
+            </script>
+            <script>
+                function autoEvr() {
+                    var scene = document.querySelector('a-scene');
+                    scene.enterVR();
+                };
+            </script>
+
+            <script>
+                function cmm7() {//cadboxx opacity
+                    var cadboxx = document.querySelector('planeboxx');
+                    entityEl.setAttribute('opacity', 0.25);
+                };
+
+                function cmm8() {//get element by selection
+                    sceneEl.components.inspector.openInspector();
+                };
+
+                function cmm9() {//set camera position from entity
+
+                };
+                function cmm10() {//click-animate a component part
+
+                };
+                function cmm11() {//open material dialogue for entity
+
+                };
+                function cmm12() {//export scene glb
+
+                };
+                function cmm13() {//export snapshot during animation dialogue
+
+                };
+                function cmm14() {//record avatar
+
+                };
+                function cmm15() {//open custom animation panel
+
+                };
+                function cmm16() {//set position relative to object plane
+
+                };
+
+                function cmm17() {//load
+                    var loadingpanelEl = document.q
+                };
+
+                function cmm18() {//To remove or detach a component from an entity, we can use
+                    //var cameraEl = document.querySelector('[camera]');
+                    //cameraEl.removeAttribute('wasd-controls');
+
+
+
+                };
+
+                function cmm19() {//
+                    // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
+                    entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
+                    // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
+
+                };
+                function cmm20() {//
+                    entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
+                    // Or entityEl.setAttribute('position', '1 2 -3');
+                };
+                function cmm21() {//
+
+                };
+                function cmm22() {//
+
+                };
+                function cmm23() {//
+
+                };
+                function cmm24() {//
+
+                };
+                function cmm25() {//
+
+                };
+                function cmm26() {//
+
+                };
+                function cmm27() {//
+
+                };
+                function cmm28() {//
+
+                };
+                function cmm29() {//
+
+                };
+                function cmm30() {//
+                    entityEl.setAttribute('dynamic-body', {
+                        shape: 'box',
+                        mass: 1.5,
+                        linearDamping: 0.005
+                    });
+                };
+                function newglbcube() {//
+
+                };
+                function newglbsphere() {//
+
+                };
+                function newglbconetf() {//
+
+                };
+                function newglbconetp() {//
+
+                };
+                function newglbcyl() {//
+
+                };
+                function newglbtube() {//
+
+                };
+                function newglbplane() {//
+
+                };
+                function newjoint1() {//
+
+                };
+                function cmmd9() {//
+
+                };
+                function cmmd10() {//
+
+                };
+                function cmmd11() {//
+
+                };
+                function cmmd12() {//
+
+                };
+                function cmmd13() {//
+
+                };
+                function cmmd14() {//
+
+                };
+                function cmmd15() {//
+
+                };
+                function cmmd16() {//
+
+                };
+                function cmmd17() {//
+
+                };
+                function cmmd18() {//
+
+                };
+                function cmmd19() {//
+
+                };
+                function cmmd20() {//
+
+                };
+                function cmmd21() {//
+
+                };
+                function cmmd22() {//
+
+                };
+                function cmmd23() {//
+
+                };
+                function cmmd24() {//
+
+                };
+                function cmmd25() {//
+
+                };
+
+                function cmma1() {//
+
+                };
+                function cmma2() {//
+
+                };
+                function cmma3() {//
+
+                };
+                function cmma4() {//
+
+                };
+                function cmma5() {//
+
+                };
+                function cmma6() {//
+
+                };
+                function cmma7() {//
+
+                };
+                function cmma8() {//
+
+                };
+                function cmma9() {//
+
+                };
+                function cmma10() {//
+
+                };
+                function cmma11() {//
+
+                };
+                function cmma12() {//
+
+                };
+                function cmma13() {//
+
+                };
+                function cmma14() {//
+
+                };
+                function cmma15() {//
+
+                };
+                function cmma16() {//
+
+                };
+                function cmma17() {//
+
+                };
+                function cmma18() {//
+
+                };
+                function cmma19() {//
+
+                };
+                function cmma20() {//
+
+                };
+                function cmma21() {//
+
+                };
+                function cmma22() {//
+
+                };
+                function cmma23() {//
+
+                };
+                function cmma24() {//
+
+                };
+                function cmma25() {//
+
+                };
+            </script>
+
+
+            <script>
+                function matl01() {
+                    var knot = document.getElementById("prt1");
+                    knot.setAttribute('material', 'src', '#m01');
+                }
+                function matl02() {
+                    var knot = document.getElementById("prt2");
+                    knot.setAttribute('material', 'src', '#m02');
+                }
+                function matl03() {
+                    var knot = document.getElementBySelection("cursor");
+                    knot.setAttribute('material', 'src', '#m03');
+                }
+                window.matl4 = function () {
+                    var knot = document.getElementById("prt4");
+                    knot.setAttribute('material', 'src', '#m04');
+                }
+                window.matl5 = function () {
+                    var knot = document.getElementById("prt5");
+                    knot.setAttribute('material', 'src', '#m05');
+                }
+                window.matl6 = function () {
+                    var knot = document.getElementById("prt6");
+                    knot.setAttribute('material', 'src', '#m06');
+                }
+                window.matl7 = function () {
+                    var knot = document.getElementById("prt7");
+                    knot.setAttribute('material', 'src', '#m07');
+                }
+                window.matl8 = function () {
+                    var knot = document.getElementById("prt8");
+                    knot.setAttribute('material', 'src', '#m08');
+                }
+                window.matl9 = function () {
+                    var knot = document.getElementById("prt9");
+                    knot.setAttribute('material', 'src', '#m09');
+                }
+                window.matl10 = function () {
+                    var knot = document.getElementById("prt10");
+                    knot.setAttribute('material', 'src', '#m10');
+                }
+                window.matl11 = function () {
+                    var knot = document.getElementById("prt11");
+                    knot.setAttribute('material', 'src', '#m11');
+                }
+                window.matl12 = function () {
+                    var knot = document.getElementById("prt12");
+                    knot.setAttribute('material', 'src', '#m12');
+                }
+                window.matl13 = function () {
+                    var knot = document.getElementById("prt13");
+                    knot.setAttribute('material', 'src', '#m13');
+                }
+                window.matl14 = function () {
+                    var knot = document.getElementById("prt14");
+                    knot.setAttribute('material', 'src', '#m14');
+                }
+                window.matl15 = function () {
+                    var knot = document.getElementById("prt15");
+                    knot.setAttribute('material', 'src', '#m15');
+                }
+                window.matl16 = function () {
+                    var knot = document.getElementById("prt16");
+                    knot.setAttribute('material', 'src', '#m16');
+                }
+                window.matl17 = function () {
+                    var knot = document.getElementById("prt17");
+                    knot.setAttribute('material', 'src', '#m17');
+                }
+                window.matl18 = function () {
+                    var knot = document.getElementById("prt18");
+                    knot.setAttribute('material', 'src', '#m18');
+                };
+            </script>
+
+        </body>
+    </div>
+
 </html>

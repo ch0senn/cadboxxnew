@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>CADBOXX</title>
@@ -200,7 +200,7 @@
                             THREE.Math.randInt(-20, 20),
                             THREE.Math.randInt(-20, 20)
                         ),
-                                                                                                                                                                                                                /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                                                                                                                                                                                                            /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
                     );
                 });
 
@@ -266,7 +266,7 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 100px;
+            height: 24px;
             margin-top: 5px;
             margin-left: 5px;
             outline: 2px solid grey;
@@ -281,17 +281,8 @@
             display: flex;
             justify-content: center;
         }
-
-        #container {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-
-
     </style>
+
     <style>
         a-scene {
             height: 100%;
@@ -313,7 +304,7 @@
         }
     </style>
 
-    <!--style>
+    <style>
     </style>
     <style>
         body {
@@ -375,7 +366,7 @@
     </style>
     <style>
         .button:hover {
-            background-color: blue;
+            background-color: #fff;
             color: #e43b5e;
         }
 
@@ -403,7 +394,7 @@
             justify-content: center;
         }
     </style>
--->
+
     <style>
         #mySidenav a {
             position: absolute;
@@ -473,7 +464,7 @@
             border-radius: 0 5px 5px 0;
             z-index: 999;
         }
-        
+
         #mySidenav2 a {
             right: 0;
         }
@@ -498,122 +489,45 @@
     </style>
 </head>
 <body>
-    <!--div id="container" class="container-flex">
-        <center>
-            <div id="btnmenu" display="inline-block" visible="true">
-                <button class="clickable button1" onclick="menucreate()">CREATE</button>
-                <button class="clickable button2" onclick="menucontrol()">CONTROL</button>
-                <button class="clickable button3" onclick="menuedit()">EDIT</button>
-                <button class="clickable button4" onclick="menuassemble()">ASSEMBLE</button>
-                <button class="clickable button5" onclick="menumotion()">MOTION</button>
-                <button class="clickable button6" onclick="menutest()">TEST</button>
-            
-            </div>
-        </center>
+    <div id="container">
+        <button id="export-scene" class="button"><span>Export Scene</span></button>
+        <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
+        <button id="export-sphere" class="button"><span>Export Sphere</span></button>
+        <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
+        <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
     </div>
-    <div id="container2" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar2" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container3" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar3" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container4" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar4" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container5" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar5" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container6" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar5" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container6" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar6" display="inline-block">
-                <button id="export-scene" class="button"><span>Export Scene</span></button>
-                <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
-                <button id="export-sphere" class="button"><span>Export Sphere</span></button>
-                <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
-                <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
-            </div>
-        </center>
-</di0v-->
-0
+
     <div id="mySidenav" class="sidenav">
-        <a id="file" class="clickable" onclick="cmm1()">FILE</a>
-        <a id="create" class="clickable" onclick="cmm2()">CREATE</a>
-        <a id="assemble" class="clickable" onclick="cmm3()">ASSEMBLE</a>
-        <a id="arrange" class="clickable" onclick="cmm4()">ARRANGE</a>
-        <a id="motion" class="clickable" onclick="cmm5()">MOTION</a>
-        <a id="study" class="clickable" onclick="cmm6()">STUDY</a>
+        <a id="file" class="clickable" onclick="cmm1()" >FILE</a>
+        <a id="create" class="clickable" onclick="cmm2()" >CREATE</a>
+        <a id="assemble" class="clickable" onclick="cmm3()" >ASSEMBLE</a>
+        <a id="arrange" class="clickable" onclick="cmm4()" >ARRANGE</a>
+        <a id="motion" class="clickable" onclick="cmm5()" >MOTION</a>
+        <a id="study" class="clickable" onclick="cmm6()" >STUDY</a>
 
     </div>
-    <div id="mySidenav" class="sidenav">
+    <!--div id="mySidenav" class="sidenav">
         <a id="file" class="clickable" onclick="function()" >FILE</a>
         <a href="#" id="create">CREATE</a>
         <a href="#" id="assemble">ASSEMBLE</a>
         <a href="#" id="arrange">ARRANGE</a>
         <a href="#" id="motion">MOTION</a>
         <a href="#" id="study">STUDY</a>
-0
+
     </div-->
     <div id="mySidenav2" class="sidenav">
         <a href="https://github.com/" target="_blank" id="abcd">GitHub</a>
         <a href="https://sketchfab.com/fasteng" target="_blank" id="efgh">SketchFab</a>
         <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
 
-    </div><!--
+    </div>
     <div id="myNavh01" class="overlay">
         <div class="overlay-content">
             <center>
                 <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="newcube()">CUBE</button>
                     <button class="clickable" onclick="newsphere()">SPHERE</button>
-                    <button class="clickable" onclick="newcylinder()">CYL</button>
+                    <button class="clickable" onclick="newcylinder()">CYLINDER</button>
                     <button class="clickable" onclick="newtube()">TUBE</button>
                     <button class="clickable" onclick="newconetopoint()">CONE</button>
                     <button class="clickable" onclick="closeAllNav()">CLOSE</button>
@@ -795,13 +709,12 @@
                 </div>
             </center>
         </div>
-    </div>-->
+    </div>
 
+    <!--container-flex surrounding body-->
+    <div class="container-flex">
 
-    <body>
-        <!--container-flex surrounding body-->
-        <div class="container-flex">
-
+        <body>
             <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
                 <a-assets>
                     <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
@@ -1320,9 +1233,8 @@
 
             <script type="text/javascript">
                 var mybutton01 = document.querySelector('#mybutton01');
-                mybutton01.addEventListener('pressed', function newsphere() {
+                mybutton01.addEventListener('pressed', function () {
                     // do stuff here.
-                    
                 });
             </script>
 
@@ -2472,12 +2384,8 @@
                     knot.setAttribute('material', 'src', '#m18');
                 };
             </script>
-        </div>
-    </body>
+
+        </body>
+    </div>
 
 </html>
-
-
-
-
-

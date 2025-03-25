@@ -759,12 +759,12 @@
             <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
             <!--
-            <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-            <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-            <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                -->
+    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+        -->
 
             <a-mixin id="trigger-box" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
                      class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
@@ -805,6 +805,7 @@
             <a-asset-item id="prt7" src="#boxglbred"></a-asset-item>
             <a-asset-item id="prt8" src="#boxglbblue"></a-asset-item>
             <a-asset-item id="prt9" src="#boxglbgreen"></a-asset-item>
+            <a-asset-item id="prt0" src="#boxglb"></a-asset-item>
 
             <a-mixin id="trigger-box1" gltf-model="#cb1" scale="10 10 10"
                      class="clickable" constraint="type:hinge;target:#anchor;axis:0 0 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 1 0"
@@ -1153,9 +1154,7 @@
         <a-entity id="planeboxxx" position="0 0 0" scale="1 1 1">
             <a-entity id="planeboxx" position="0 0 0">
                 <a-entity id="planebox" position="0 0 0">
-                    <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body>
-
-                    </a-plane>
+                    <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body>                    </a-plane>
                     <a-plane side="double" color="green" position="0 20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
                     <a-plane side="double" color="blue" position="0 0 20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>
                     <a-plane side="double" color="blue" position="0 0 -20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>

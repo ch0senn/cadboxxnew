@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A-Frame River Bed Scene</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
+    <script>
+    AFRAME.registerComponent('spawn-spheres', {
+      init: function () {
+        this.sphereCount = 0;
+        this.spawnSphere();
+      },
+      tick: function () {
+        if (this.el.getAttribute('position').z > 15) {
+          this.el.parentNode.removeChild(this.el);
+        }
+      },
+      spawnSphere: function () {
+        const sceneEl = document.querySelector('a-scene');
+        const radius = Math.random() * 0.9 + 0.3;
+        const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        const sphereEl = document.createElement('a-sphere');
+
+        sphereEl.setAttribute('radius', radius);
+        sphereEl.setAttribute('color', color);
+        sphereEl.setAttribute('position', `${-7.5 + Math.random() * 15} ${radius} -10`);
+        sphereEl.setAttribute('dynamic-body', 'shape: sphere; mass: 1;');
+        sphereEl.setAttribute('spawn-spheres', ''); // Ensure it keeps spawning new spheres
+
+        sceneEl.appendChild(sphereEl);
+      }
+    });
+
+    AFRAME.registerComponent('waterfall', {
+      schema: {
+        interval: { type: 'int', default: 1000 }
+      },
+      init: function () {
+        this.timeToNextSphere = this.data.interval;
+      },
+      tick: function (time, timeDelta) {
+        this.timeToNextSphere -= timeDelta;
+        if (this.timeToNextSphere <= 0) {
+          this.el.components['spawn-spheres'].spawnSphere();
+          this.timeToNextSphere = this.data.interval;
+        }
+      }
+    });
+    </script>
+</head>
+<body>
+    <a-scene physics="gravity: -10" friction="0.1" restitution="0.6">
+        <!-- Ground element -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="50" color="#7BC8A4" static-body="friction: 0.1; restitution: 0.6;"></a-plane>
+
+        <!-- River bed walls -->
+        <a-box position="7.5 1 0" width="1" height="2" depth="50" color="#8B4513" static-body="friction: 0.1; restitution: 0.6;"></a-box>
+        <a-box position="-7.5 1 0" width="1" height="2" depth="50" color="#8B4513" static-body="friction: 0.1; restitution: 0.6;"></a-box>
+
+        <!-- Initial Spheres -->
+        <a-entity id="sphereContainer" waterfall="interval: 1000" dynamic-body ></a-entity>
+
+        <!-- Camera -->
+        <a-entity camera position="0 5 20" rotation="0 0 0" target="0 1 0" look-controls wasd-controls oculus-touch-controls ></a-entity>
+    </a-scene>
+</body>
+</html>

@@ -183,15 +183,15 @@
 
             <a-asset-item id="engine" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/planebox-x.glb?v=1686288365491"></a-asset-item>
             <!--<a-asset-item id="engine" src="engine-edges.glb"></a-asset-item>
-            <a-asset-item id="pp11" src="assets/p1.glb"></a-asset-item>
-            <a-asset-item id="crank" src="assets/Crankshaft_Pistons.glb"></a-asset-item>
-            <a-asset-item id="linear" src="assets/linear-screw-1000-assy.glb"></a-asset-item>
-            <a-asset-item id="assembly" src="assets/assembly.glb"></a-asset-item>
-            <a-asset-item id="hands" src="assets/hands44.obj"></a-asset-item>
-            <a-asset-item id="fv8" src="assets/ferrariv8.glb"></a-asset-item>
-            <a-asset-item id="g16" src="assets/gear16.glb"></a-asset-item>
-            <a-asset-item id="sshafts" src="assets/splitshafts.glb"></a-asset-item>
-                -->
+        <a-asset-item id="pp11" src="assets/p1.glb"></a-asset-item>
+        <a-asset-item id="crank" src="assets/Crankshaft_Pistons.glb"></a-asset-item>
+        <a-asset-item id="linear" src="assets/linear-screw-1000-assy.glb"></a-asset-item>
+        <a-asset-item id="assembly" src="assets/assembly.glb"></a-asset-item>
+        <a-asset-item id="hands" src="assets/hands44.obj"></a-asset-item>
+        <a-asset-item id="fv8" src="assets/ferrariv8.glb"></a-asset-item>
+        <a-asset-item id="g16" src="assets/gear16.glb"></a-asset-item>
+        <a-asset-item id="sshafts" src="assets/splitshafts.glb"></a-asset-item>
+            -->
             <a-mixin id="image" geometry="height: 2; width: 2"></a-mixin>
             <a-mixin id="delayVisible" event-set__loaded="visible: true" visible="false"></a-mixin>
             <audio id="blip1" src="audio/321103__nsstudios__blip1.wav"></audio>
@@ -201,20 +201,8 @@
             <img id="ring3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
             <img id="ring4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/screenshot-toolbar-menu-1664451802701.png?v=1664451899625">
             <img id="ring5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/model.png?v=1665597644170">
-            <!--img id="glow1" src="img/glow1.png">
             <img id="ring1" src="img/ring1.png">
             <img id="ring2" src="img/ring2.png">
-            <img id="ring3" src="img/ring3.png">
-            <img id="ring4" src="img/ring4.png">
-            <img id="ring5" src="img/ring5.png">
-            <img id="schematic1" src="img/schematic1.png">
-            <img id="schematic2" src="img/schematic2.png">
-            <img id="schematic3" src="img/schematic3.png">
-            <img id="schematic4" src="img/schematic4.png">
-            <img id="schematic5" src="img/schematic5.png">
-            <img id="text1" src="img/text1.png">
-            <img id="text2" src="img/text2.png">
-            <img id="text3" src="img/text3.png">-->
             <img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
             <a-asset-item id="cadboxx-floor" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/ground-plane_with_mesh.glb?v=1678034073866"></a-asset-item>
 
@@ -227,22 +215,88 @@
 
         </a-assets>
 
-        <!--sphorb-->
-        <a-entity id="yellowSphere" mixin="rot0" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter >
-            <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
-            <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+        <!--sphorb center-->
+        <a-entity id="yellowSphereCen" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
+            <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+            <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
                       animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
                     repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
-            <a-entity id="orb3" gltf-model="#bb04" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+            <a-entity id="orb3" gltf-model="#bb04" mixin="rotzz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
                       animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
                     repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
-            <a-entity id="orb4" gltf-model="#bb05" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+            <a-entity id="orb4" gltf-model="#bb05" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
                       animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
                     repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
 
         </a-entity>
         <!--sphorb-end-->
+        <!--2-->
+        <!--group-->
+        <a-entity id="orbit" mixin="rotzz" position="5 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
+            <!--sphorb-->
+            <a-entity id="yellowSphere" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
+                <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+                <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+                <a-entity id="orb3" gltf-model="#bb04" mixin="rotzz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
+                    repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+                <a-entity id="orb4" gltf-model="#bb05" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
 
+            </a-entity>
+            <!--sphorb-end-->
+            <!--3-->
+            <!--sphorb-->
+            <a-entity id="yellowSphere" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
+                <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+                <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+                <a-entity id="orb3" gltf-model="#bb04" mixin="rotzz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
+                    repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+                <a-entity id="orb4" gltf-model="#bb05" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+
+            </a-entity>
+            <!--sphorb-end-->
+            <!--4-->
+            <!--sphorb-->
+            <a-entity id="yellowSphere" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
+                <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+                <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+                <a-entity id="orb3" gltf-model="#bb04" mixin="rotzz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
+                    repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+                <a-entity id="orb4" gltf-model="#bb05" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+
+            </a-entity>
+            <!--sphorb-end-->
+            <!--5-->
+            <!--sphorb-->
+            <a-entity id="yellowSphere" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
+                <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+                <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+                <a-entity id="orb3" gltf-model="#bb04" mixin="rotzz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
+                    repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+                <a-entity id="orb4" gltf-model="#bb05" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                          animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+
+            </a-entity>
+            <!--sphorb5-end-->
+        </a-entity>
 
         <a-entity id="cam1" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 10; initialPosition: 0 5 7.5"></a-entity>
 

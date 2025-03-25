@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Texture Replacement</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+
+
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="userTexture" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/sqpic.png?v=1737169650823" />
+            <img id="cbpic" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/cad-boxx.png?v=1737168710280" />
+            <a-asset-item id="model" src="assets/p1.glb"></a-asset-item>
+            <a-asset-item id="beachball" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/beachball.glb?v=1736930614459" ></a-asset-item>
+            <a-asset-item id="#" src="#"  ></a-asset-item>
+        
+            <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+        </a-assets>
+
+        <!--a-entity text="text: What's up"></!--a-entity>
+        <a-entity text="text: Dog?; font: #optimerBoldFont"></a-entity>
+        -->
+
+        <a-entity id="myEntity" geometry="primitive: box" position="0 1 -5"></a-entity>
+        <a-entity gltf-model="#model" position="1 1 -5"></a-entity>
+
+        <a-entity camera look-controls position="0 1.6 0"></a-entity>
+    </a-scene>
+
+        <script>
+        const entity = document.querySelector('#myEntity');
+        const texture = new THREE.TextureLoader().load(document.getElementById('userTexture').src);
+
+        entity.removeAttribute('material');
+        entity.setAttribute('material', 'src', texture);
+        </script>
+
+    </body>
+</html>

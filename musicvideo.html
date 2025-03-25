@@ -1,8 +1,90 @@
-﻿<!DOCTYPE html >
-<html >
-<head >
-<title > CADBOXX</title >
-<script src="https://aframe.io/releases/1.2.0/aframe.min.js" > </script >
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset=”utf-8">
+<title>Breakout VR Tutorial</title>
+<meta name=”description” content=”Breakout VR Tutorial”>
+<script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.6.0/dist/aframe-cursor-teleport-component.min.js"></script>
+  <!--script src=”https://aframe.io/releases/1.2.0/aframe.min.js"></script-->
+
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script> 
+  <script src="https://unpkg.com/aframe-bring-to-front-component/dist/aframe-bring-to-front-component.min.js"></script> 
+
+
+
+</head>
+
+<body>
+	<a-scene>
+		<a-assets>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<img id="img01" src="" ></script>
+			<img id="img02" src="" ></script>
+			<img id="img03e" src="" ></script>
+			<img id="img04" src="" ></script>
+			<img id="img05" src="" ></script>
+			<img id="img06" src="" ></script>
+
+			<a-mixin id="mix01" src="" ></a-mixin>
+			<a-mixin id="mix02" src="" ></a-mixin>
+			<a-mixin id="mix03" src="" ></a-mixin>
+			<a-mixin id="mix04" src="" ></a-mixin>
+			<a-mixin id="mix05" src="" ></a-mixin>
+			<a-mixin id="mix06" src="" ></a-mixin>
+			<a-mixin id="mix07" src="" ></a-mixin>
+			<a-mixin id="mix08" src="" ></a-mixin>
+			<!--sphorb-->
+			
+			
+		</a-assets>
+		
+		
+		
+		
+		<a-sphere id="sp1" radius="5" position="0 5 0" rotation="0 0 0" scale="5 5 5" color="yellow" ></a-sphere>
+		<a-box id="bx1" position="" rotation="" scale="" ></a-box>
+		<a-cyl id="cyl1" radius="" height="" position="" rotation="" scale="" ></a-box>
+
+		<a-gltf-model id="gltf01" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf02" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf03" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf04" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf05" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf06" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf07" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf08" src="" position="" rotation="" scale="" ></a-gltf-model>
+
+		<a-sky id="skhigh" src="#img02" position="0 0 0" rotation="0 0 0" scale="1 1 1" ></a-sky>
+		<a-plane id="ground" src="#img01" position="0 0 0" rotation="-90 0 0" scale="1 1 1" static-body ></a-plane>
+		
+	<script>
+	    window.onload = function () {
+	        document.getElementById("my_audio").play();
+	    }
+	</script>
+	
+	<audio src="bg.mp3" id="my_audio" controls ></audio>
+
+
+<script src="https://unpkg.com/aframe-bring-to-front-component/dist/aframe-bring-to-front-component.min.js"></script> 
+
+
 <script src="https://unpkg.com/super-hands/dist/super-hands.min.js" > </script >
 <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js" > </script >
 <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js" > </script >
@@ -62,7 +144,7 @@
 <script src="js/aframe-drag-and-drop-component.min.js" > </script >
 <script src="js/aframe-crawling-cursor.min.js" > </script >
 <script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js" > </script >
-<!-- reaction components-- >
+<!-- reaction components-->
 <script src="reaction_components/clickable.js" > </script >
 <script src="reaction_components/draggable.js" > </script >
 <script src="reaction_components/drag-droppable.js" > </script >
@@ -243,7 +325,91 @@ AFRAME.registerComponent('cbprims', {
         })
 ;
 
-</script ><!-- <a-entity cbprims > </a-entity >-->
+</script >
+
+</head>
+
+<body>
+	<a-scene>
+		<a-assets>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<script id="" src="" ></script>
+			<img id="img01" src="" ></script>
+			<img id="img02" src="" ></script>
+			<img id="img03e" src="" ></script>
+			<img id="img04" src="" ></script>
+			<img id="img05" src="" ></script>
+			<img id="img06" src="" ></script>
+
+			<a-mixin id="mix01" src="" ></a-mixin>
+			<a-mixin id="mix02" src="" ></a-mixin>
+			<a-mixin id="mix03" src="" ></a-mixin>
+			<a-mixin id="mix04" src="" ></a-mixin>
+			<a-mixin id="mix05" src="" ></a-mixin>
+			<a-mixin id="mix06" src="" ></a-mixin>
+			<a-mixin id="mix07" src="" ></a-mixin>
+			<a-mixin id="mix08" src="" ></a-mixin>
+			<!--sphorb-->
+			
+			
+		</a-assets>
+		
+		
+		
+		
+		<a-sphere id="sp1" radius="5" position="0 5 0" rotation="0 0 0" scale="5 5 5" color="yellow" ></a-sphere>
+		<a-box id="bx1" position="" rotation="" scale="" ></a-box>
+		<a-cyl id="cyl1" radius="" height="" position="" rotation="" scale="" ></a-box>
+
+		<a-gltf-model id="gltf01" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf02" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf03" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf04" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf05" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf06" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf07" src="" position="" rotation="" scale="" ></a-gltf-model>
+		<a-gltf-model id="gltf08" src="" position="" rotation="" scale="" ></a-gltf-model>
+
+		<a-sky id="skhigh" src="#img02" position="0 0 0" rotation="0 0 0" scale="1 1 1" ></a-sky>
+		<a-plane id="ground" src="#img01" position="0 0 0" rotation="-90 0 0" scale="1 1 1" static-body ></a-plane>
+		
+	<script>
+	    window.onload = function () {
+	        document.getElementById("my_audio").play();
+	    }
+	</script>
+	
+	<audio src="bg.mp3" id="my_audio" controls ></audio>
+
+	
+	
+	
+	
+	</a-scene>
+
+
+</body>
+</html>
+
+
+
+
+
+!-- <a-entity cbprims > </a-entity >-->
 <style >
 a-scene {
     height: 100%;
@@ -1270,11 +1436,11 @@ dynamic-body click-impulse > </a-mixin >
 <a-asset-item id="part9" src="#prt09" > </a-asset-item >
 
 <a-mixin id="m01" src="#m01" > </a-mixin >
-<a-mixin id="m02" src="#m01" > </a-mixin >
-<a-mixin id="m03" src="#m01" > </a-mixin >
-<a-mixin id="m04" src="#m01" > </a-mixin >
-<a-mixin id="m05" src="#m01" > </a-mixin >
-<a-mixin id="m06" src="#m01" > </a-mixin >
+<a-mixin id="m02" src="#m02" > </a-mixin >
+<a-mixin id="m03" src="#m03" > </a-mixin >
+<a-mixin id="m04" src="#m04" > </a-mixin >
+<a-mixin id="m05" src="#m05" > </a-mixin >
+<a-mixin id="m06" src="#m06" > </a-mixin >
 
 
 <a-mixin id="rotxx" animation__rotation__xx="property: rotation; dir: forward; dur: 2000;

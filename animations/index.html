@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TIMELINE ANIM</title>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.1/dist/aframe-animation-timeline-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-timeline-component@1.6.0/dist/aframe-animation-timeline-component.min.js"></script>
+
+
+
+
+</head>
+<body>
+    <a-scene animation-timeline__1="timeline: #myTimeline; loop: true">
+        <a-assets timeout="10000">
+            <img id="cbimg" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/cad-boxx.png?v=1736855021743" />
+            <a-asset-item src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-asset-item>
+            <a-asset-item id="glm1" gltf-model="#"></a-asset-item>
+            <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+            <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+            <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
+            <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
+
+            <a-asset-item id="boxglbred" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxred.glb?v=1688019604745"></a-asset-item>
+            <a-asset-item id="boxglbblue" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxblue.glb?v=1688019583475"></a-asset-item>
+            <a-asset-item id="boxglbgreen" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxgreen.glb?v=1688019561769"></a-asset-item>
+
+            <a-asset-item id="glbsphere" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsphere-r1-p010.glb?v=1615396331056"></a-asset-item>
+            <a-asset-item id="glbdodd" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fdodd-rpt5.glb?v=1632901912292"></a-asset-item>
+            <a-asset-item id="glbtett" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
+            <a-asset-item id="glbcyll" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/glcyl.glb?v=1661360434803"></a-asset-item>
+
+            <a-gltf-model id="dodgem_car" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/dodgem-glb.glb?v=1736494085540"></a-gltf-model>
+            <a-gltf-model id="chair1" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/chai-rmustard-glb.glb?v=1736494099125"></a-gltf-model>
+            <a-gltf-model id="chair2" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/chair-glb.glb?v=1736494122138"></a-gltf-model>
+            <a-gltf-model id="chair3" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/chai-rgreen-glb.glb?v=1736494109546"></a-gltf-model>
+            <a-gltf-model id="chair4" src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/chai-redr-glb.glb?v=1736494130850"></a-gltf-model>
+
+
+            <a-timeline id="myTimeline">
+                <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
+                <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+                <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
+                <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
+                
+                <a-timeline-group>
+                    <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
+                    <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
+                    <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
+                </a-timeline-group>
+
+                <a-timeline-group>
+                    <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
+                    <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
+                    <a-timeline-animation select="#text2" name="textcolor"></a-timeline-animation>
+                </a-timeline-group>
+
+                <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
+                <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
+
+                <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
+                <a-timeline-group>
+                    <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
+                    <a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>
+                    <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation>
+                    <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
+                    <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
+                </a-timeline-group>
+
+                <a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
+                <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
+
+                <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
+
+                <a-timeline-group>
+                    <a-timeline-animation select="#sky" name="color"></a-timeline-animation>
+                    <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
+                </a-timeline-group>
+
+                <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
+            </a-timeline>
+
+
+            <a-mixin id="text"
+                     text="align: center; color: #333; width: 6; opacity: 0"
+                     animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
+                     animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
+                     animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+                     animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
+                     position="0 2 -3"
+                     visible="false"></a-mixin>
+
+            <a-mixin id="box"
+                     geometry="primitive: box"
+                     material="color: #AAA; opacity: 0"
+                     animation__fadein="property: material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
+                     animation__scale="property: scale; to: 2 20 2; dur: 2000; easing: easeInOutElastic; autoplay: false"
+                     animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
+                     animation__color="property: material.color; from: #AAA; to: #222; dur: 2500; autoplay: false"
+                     animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
+                     scale="0.0001 0.0001 0.0001"></a-mixin>
+
+            <a-mixin id="sphh"
+                     geometry="primitive: sphere"
+                     material="color: blue; opacity: 0"
+                     animation__fadein="property: material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
+                     animation__scale="property: scale; to: 5 5 5; dur: 2000; easing: easeInOutElastic; autoplay: false"
+                     animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
+                     animation__color="property: material.color; from: green; to: red; dur: 2500; autoplay: false"
+                     animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
+                     scale="0.0001 0.0001 0.0001"></a-mixin>
+            <a-mixin id="cb1dynamic" gltf-model="#cb1"
+                     position="0 0 0" rotation="0 0 0" scale="1 1 1"
+                     dynamic-body
+                     ></a-mixin>
+
+            <a-mixin id="plan" geometry="primitive: plane"
+                     material.src="#cbimg; opacity: 1"
+                     animation__fadein="property: material.opacity; dur: 2000; from: 0; to: 1; autoplay: false"
+                     animation__scale="property: scale; to: 2 2 2; dur: 2000; easing: easeInOutElastic; autoplay: false"
+                     animation__position="property: position; to: 0 30 -3; dur: 2000; autoplay: false"
+                     animation__color="property: material.color; from: #AAA; to: #222; dur: 2500; autoplay: false"
+                     animation__rotate="property: rotation; to: 0 360; dur: 1000; easing: easeInQuad; autoplay: false"
+                     scale="0.0001 0.0001 0.0001"></a-mixin>
+
+
+            <a-mixin id="model1" gltf-model="#cb1"></a-mixin>
+            <a-mixin id="model2" gltf-model="#boxglbblue"></a-mixin>
+            <a-mixin id="model3" gltf-model="#boxglbred"></a-mixin>
+            <a-mixin id="model4" gltf-model="#boxglbgreen"></a-mixin>
+
+
+
+            <!--a-asset-item id="model3" gltf-model=""></!--a-asset-item>
+            <a-asset-item id="model4" gltf-model=""></a-asset-item>
+            <a-asset-item id="model5" gltf-model=""></a-asset-item>
+            <a-asset-item id="model6" gltf-model=""></a-asset-item>
+            <a-asset-item id="model7" gltf-model=""></a-asset-item>
+            <a-asset-item id="model8" gltf-model=""></a-asset-item>
+            <a-asset-item id="model9" gltf-model=""></a-asset-item>
+            <a-asset-item id="model0" gltf-model=""></a-asset-item-->
+
+
+
+        </a-assets>
+        
+        <a-entity id="text1" mixin="plan" text="value: Welcome to the new world?"></a-entity>
+        <a-entity id="world1" mixin="model1"></a-entity>
+
+        <a-entity id="text2" mixin="plan" text="value: A place wev call Home?; opacity: 0"
+                  animation__textcolor="property: text.color; from: #FAFAFA; to: #8C200E; dur: 2500; autoplay: false"></a-entity>
+        <a-entity id="world2" mixin="model2"></a-entity>
+
+        <a-entity id="text3" mixin="plan" text="value: It's where we create magical moments'." position="0 -10 0"
+                  animation__positionin="property: position; to: 0 2 -3; dur: 2500; autoplay: false"
+                  animation__positionout="property: position; from: 0 2 -3; to: -10 2 -3; dur: 3500; autoplay: false"></a-entity>
+        <a-entity id="world3" mixin="model3"></a-entity>
+
+        <a-entity id="text4" mixin="plan" text="value: And WONDERFUL THINGS."></a-entity>
+        <a-entity id="world4" mixin="model4"></a-entity>
+        
+        <a-entity position="0 -0.5 -10">
+            <a-entity id="box1" mixin="box" position="-4 0 0"></a-entity>
+            <a-entity mixin="box"></a-entity>
+            <a-entity mixin="box" position="4 0 0"></a-entity>
+        </a-entity>
+
+        <a-sky id="sky" color="#FAFAFA" animation__color="property: material.color; from: lightblue; to: brown; dur: 2000; autoplay: false"></a-sky>
+    </a-scene>
+
+
+
+</body>
+</html>

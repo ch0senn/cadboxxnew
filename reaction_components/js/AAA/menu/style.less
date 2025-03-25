@@ -1,0 +1,132 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #aaa;
+
+
+	.wrapper {
+		margin: 0 auto;
+		width: 500px;
+		background-color: transparent;
+		/*--------------------------------------MENU----------------------------------------------*/
+		ul.dropdown > li {
+			border: 1px solid #ccc;
+			list-style: none;
+			display: inline-block;
+			position: relative;
+			width: 18%;
+			margin: 0 auto;
+		}
+
+		li {
+			background-color: transparent;
+
+			:hover {
+				background-color: transparent;
+			}
+
+			a {
+				line-height: 30px;
+				display: block;
+			}
+		}
+
+		.dropped:hover .dropdown-level-2 {
+			display: block;
+		}
+
+		.dropdown-level-2 {
+			display: none;
+			position: absolute;
+		}
+		/*--------------------------------------MENU----------------------------------------------*/
+		/*--------------------------------------TOOLTIP----------------------------------------------*/
+		div.popup {
+			margin-top: 100px;
+
+			.tiped {
+				position: relative;
+				color: blue;
+			}
+
+			.tiped:hover {
+				.tooltip {
+					display: block;
+					padding: 0.5rem;
+					top: -3rem;
+					left: 2rem;
+					border: 1px solid white;
+					border-radius: 10px;
+					background-color: grey;
+					text-align: center;
+				}
+
+				.tooltip:after {
+					content: '';
+					position: absolute;
+					border: 10px solid transparent;
+					border-top-color: grey;
+					top: 100%;
+					left: 0.5rem;
+				}
+			}
+		}
+
+		.tooltip {
+			display: none;
+			position: absolute;
+		}
+		/*--------------------------------------TOOLTIP----------------------------------------------*/
+		/*--------------------------------------MODAL----------------------------------------------*/
+		.modal {
+			display: none;
+			background-color: rgba(0,0,0,0.7);
+			width: 100vw;
+			height: 100vh;
+			position: fixed;
+			left: 0;
+			top: 0;
+
+			.window {
+				margin: 0 auto;
+				border: 3px solid darkgrey;
+				border-radius: 5px;
+				width: 30rem;
+				background-color: lightgrey;
+				padding-right: 1.2rem;
+				position: relative;
+				top: 40%;
+
+				h1 {
+					text-align: center;
+				}
+
+				p {
+					font-size: 130%;
+					padding: 1rem 0rem 2rem 1rem;
+				}
+
+				.image {
+					height: 1.25rem;
+					width: 1.25rem;
+					position: relative;
+					left: 100%;
+					cursor: pointer;
+					background-color: black;
+					border-radius: 3px;
+
+					:hover {
+						background-color: red;
+					}
+				}
+			}
+		}
+		/*--------------------------------------MODAL----------------------------------------------*/
+	}
+}
+
+
+

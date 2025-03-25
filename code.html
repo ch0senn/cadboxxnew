@@ -1,14 +1,18 @@
 <head>
     <title>My A-Frame Scene</title>
-    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    
     <!-- super-hands; not needed, but recommended -->
     <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
     <!-- The component -->
     <script src="https://unpkg.com/aframe-responsive-component@0.1.4/dist/aframe-responsive-component.min.js"></script>
+
+
+
 </head>
 
 <body>
-    <a-scene>
+    <a-scene  >
         <!-- progressive-controls, not needed but recommended -->
         <a-entity progressive-controls="objects:.obj" class="controller">
             <a-entity id="rhand"
@@ -61,7 +65,7 @@
     <a-mixin id="all-interactions"
              hoverable grabbable stretchable draggable droppable
              event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+    .         event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
              dynamic-body click-impulse></a-mixin>
 
     <a-mixin id="grab-move"

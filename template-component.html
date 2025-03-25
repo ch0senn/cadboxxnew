@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<head>
+    <title>My A-Frame Scene</title>
+    <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/ngokevin/aframe-template-component/dist/aframe-template-component.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <script id="fadeAnimations" type="text/html">
+                <a-animation></a-animation>
+                <a-animation></a-animation>
+            </script>
+        </a-assets>
+
+        <a-entity template="src: #fadeAnimations">
+            <a-entity template="src: #fadeAnimations"></a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+</html>

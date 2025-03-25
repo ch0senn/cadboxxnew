@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thunderstorm Videosphere</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/a-super-sky@1.1.1/super-sky.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/matthewbryancurtis/aframe-star-system-component@db4f1030/index.js"></script>
+
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="" src=""></a-asset-item>
+            <img id="" src=" " />
+            <a-mixin id="" src=""></a-mixin>
+            <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
+            <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
+            <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
+
+            <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+            <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+            <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
+            <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
+
+
+            <a-asset-item id="glbsphere" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsphere-r1-p010.glb?v=1615396331056"></a-asset-item>
+            <a-asset-item id="glbdodd" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fdodd-rpt5.glb?v=1632901912292"></a-asset-item>
+            <a-asset-item id="glbtett" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
+            <a-asset-item id="glbcyll" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/glcyl.glb?v=1661360434803"></a-asset-item>
+
+            <a-asset-item id="cranky" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cranky.glb?v=1674247987909"></a-asset-item>
+            <a-asset-item id="pistonplus" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/pistonplus.glb?v=1674335113584"></a-asset-item>
+
+            <a-asset-item id="waddler" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/waddler.glb?v=1668021723166"></a-asset-item>
+
+            <img id="galaxy" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/galaxy.jpg">
+            <img id="moon" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/moon_1024.jpg">
+            <img id="clouds" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_clouds_2048.png">
+            <img id="venus" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/5710820393_a36f3c730b_m.jpg">
+            <img id="pic1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/border-pic.jpg?v=1654934865728">
+            <img id="pic2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+            <img id="pic3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/skateboard1200x400bg-white.png?v=1659609701460">
+            <img id="pic4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
+            <img id="pic5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/roboxx.png?v=1659362885712">
+            <img id="pic6" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx.png?v=1659434696690">
+
+            <!--sphorb-->
+            <a-asset-item id="bb02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb1.glb?v=1655710163279"></a-asset-item>
+            <a-asset-item id="bb03" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb2.glb?v=1655710178528"></a-asset-item>
+            <a-asset-item id="bb04" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb3.glb?v=1655710192379"></a-asset-item>
+            <a-asset-item id="bb05" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb4.glb?v=1655710213868"></a-asset-item>
+
+
+            <a-asset-item id="chlink1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink1.glb?v=1606822463366"></a-asset-item>
+            <a-asset-item id="chlink2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fchink2.glb?v=1606822434718"></a-asset-item>
+
+
+
+
+            <a-asset-item id="engine" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/planebox-x.glb?v=1686288365491"></a-asset-item>
+            <!--<a-asset-item id="engine" src="engine-edges.glb"></a-asset-item>
+        <a-asset-item id="pp11" src="assets/p1.glb"></a-asset-item>
+        <a-asset-item id="crank" src="assets/Crankshaft_Pistons.glb"></a-asset-item>
+        <a-asset-item id="linear" src="assets/linear-screw-1000-assy.glb"></a-asset-item>
+        <a-asset-item id="assembly" src="assets/assembly.glb"></a-asset-item>
+        <a-asset-item id="hands" src="assets/hands44.obj"></a-asset-item>
+        <a-asset-item id="fv8" src="assets/ferrariv8.glb"></a-asset-item>
+        <a-asset-item id="g16" src="assets/gear16.glb"></a-asset-item>
+        <a-asset-item id="sshafts" src="assets/splitshafts.glb"></a-asset-item>
+            -->
+            <a-mixin id="image" geometry="height: 2; width: 2"></a-mixin>
+            <a-mixin id="delayVisible" event-set__loaded="visible: true" visible="false"></a-mixin>
+            <audio id="blip1" src="audio/321103__nsstudios__blip1.wav"></audio>
+            <audio id="blip2" src="audio/321104__nsstudios__blip2.wav"></audio>
+            <img id="ring1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cblogo-t.png?v=1648022923987">
+            <img id="ring2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+            <img id="ring3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
+            <img id="ring4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/screenshot-toolbar-menu-1664451802701.png?v=1664451899625">
+            <img id="ring5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/model.png?v=1665597644170">
+            <img id="ring1" src="img/ring1.png">
+            <img id="ring2" src="img/ring2.png">
+            <img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
+            <a-asset-item id="cadboxx-floor" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/ground-plane_with_mesh.glb?v=1678034073866"></a-asset-item>
+            <a-asset-item id="#" src="#" ></a-asset-item>
+            
+            <!--sphorb-->
+            <a-asset-item id="bb02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb1.glb?v=1655710163279"></a-asset-item>
+            <a-asset-item id="bb03" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb2.glb?v=1655710178528"></a-asset-item>
+            <a-asset-item id="bb04" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb3.glb?v=1655710192379"></a-asset-item>
+            <a-asset-item id="bb05" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb4.glb?v=1655710213868"></a-asset-item>
+
+        </a-assets>
+
+        <!--sphorb-->
+        <a-entity id="yellowSphere" mixin="rot0" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
+            <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+            <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+            repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+            <a-entity id="orb3" gltf-model="#bb04" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
+            repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+            <a-entity id="orb4" gltf-model="#bb05" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
+            repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+
+        </a-entity>
+        <!--sphorb-end-->
+
+
+        <!--a-entity id="cam1" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 10; initialPosition: 0 5 7.5"></!--a-entity>
+            -->
+
+
+        <a-entity id="seenmodel" gltf-model="#engine" position="0 0 0" scale="2 2 2" static-body></a-entity>
+
+        <a-videosphere src="https://cdn.glitch.global/d9e5a4a1-6ca6-4879-8fb5-0697f6d056d3/istockphoto-2070837460-640_adpp_is.mp4?v=1737302630371" position="0 0 0"></a-videosphere>
+        <a-entity camera look-controls position="0 1.6 20"></a-entity>
+    </a-scene>
+</body>
+</html>

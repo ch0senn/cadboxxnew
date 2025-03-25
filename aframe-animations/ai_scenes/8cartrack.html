@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Oval Racetrack</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <!-- Define the oval racetrack -->
+        <a-entity geometry="primitive: ring; radiusInner: 10; radiusOuter: 11"
+                  material="color: #444" rotation="-90 0 0" position="0 0 0"></a-entity>
+
+        <!-- Define the cars -->
+        <a-entity id="car0" geometry="primitive: box; width: 1; height: 1; depth: 2"
+                  material="color: red" position="10 0.5 0"
+                  animation="property: position; to: -10 0.5 0; loop: true; dur: 10000; easing: linear"></a-entity>
+        <a-entity id="car1" geometry="primitive: box; width: 1; height: 1; depth: 2"
+                  material="color: blue" position="8 0.5 0"
+                  animation="property: position; to: -8 0.5 0; loop: true; dur: 11000; easing: linear"></a-entity>
+        <a-entity id="car2" geometry="primitive: box; width: 1; height: 1; depth: 2"
+                  material="color: green" position="6 0.5 0"
+                  animation="property: position; to: -6 0.5 0; loop: true; dur: 12000; easing: linear"></a-entity>
+        <a-entity id="car3" geometry="primitive: box; width: 1; height: 1; depth: 2"
+                  material="color: yellow" position="4 0.5 0"
+                  animation="property: position; to: -4 0.5 0; loop: true; dur: 13000; easing: linear"></a-entity>
+        <a-entity id="car4" geometry="primitive: box; width: 1; height: 1; depth: 2"
+                  material="color: orange" position="2 0.5 0"
+                  animation="property: position; to: -2 0.5 0; loop: true; dur: 14000; easing: linear"></a-entity>
+        <a-entity id="car5" geometry="primitive: box; width: 1; height: 1; depth: 2"
+                  material="color: purple" position="0 0.5 0"
+                  animation="property: position; to: 0 0.5 10; loop: true; dur: 15000; easing: linear"></a-entity>
+        <a-entity id="car6" geometry="primitive: box; width: 1; height: 1; depth: 2"
+                  material="color: pink" position="-2 0.5 0"
+                  animation="property: position; to: 2 0.5 10; loop: true; dur: 16000; easing: linear"></a-entity>
+        <a-entity id="car7" geometry="primitive: box; width: 1; height: 1; depth: 2"
+                  material="color: cyan" position="-4 0.5 0"
+                  animation="property: position; to: 4 0.5 10; loop: true; dur: 17000; easing: linear"></a-entity>
+
+        <!-- Add a camera and lighting -->
+        <a-entity camera look-controls position="0 10 20"></a-entity>
+        <a-light type="ambient" color="#888"></a-light>
+        <a-light type="directional" intensity="0.5" position="1 1 1"></a-light>
+    </a-scene>
+</body>
+</html>

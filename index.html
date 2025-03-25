@@ -1144,7 +1144,33 @@
                     </a-entity>
                 </a-entity>
 
+<a-entity id="engineassy" rotation="0 0 0" scale="1 1 1" static-body >
+    <a-entity id="crankshaft"  >
+        <a-entity id="crankassy1" rotation="0 0 0" scale="1 1 1" static-body >
+            <a-entity id="main1" gltf-model="#ccylx" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body >
+                <a-entity id="journal1" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
 
+            </a-entity>
+        </a-entity>
+        <a-entity id="crankassy2" rotation="0 0 0" scale="1 1 1" static-body >
+            <a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="1 1 1" static-body >
+                <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
+
+            </a-entity>
+        </a-entity>
+        <!--a-entity id="crankassy2" rotation="0 0 0" scale="1 1 1" static-body >
+             <a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
+             <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
+         </a-entity-->
+        
+        <!--a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="1 1 1" static-body >
+            <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
+
+        </a-entity-->
+
+    
+    </a-entity><!--crankshaftassy-->
+</a-entity><!--engineassy-->
 
 
                 <!-- ground collider keeps objets from falling -->

@@ -1,0 +1,34 @@
+﻿<head>
+    <title>My A-Frame Scene</title>
+    <script type="importmap">
+        {
+          "imports": {
+            "aframe": "https://aframe.io/releases/1.7.0/aframe.module.min.js",
+            "three": "https://cdn.jsdelivr.net/gh/vincentfretin/three.js@super-r173-5-lut/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/gh/vincentfretin/three.js@super-r173-5-lut/examples/jsm/"
+          }
+        }
+    </script>
+    <script type="module">import AFRAME from 'aframe';</script>
+    <script defer src="https://cdn.jsdelivr.net/gh/c-frame/aframe-gltf-model-plus@1.2.0/dist/gltf-model-plus.min.js"></script>
+    <script>window.absoluteURLForAsset = (url) => {
+      if (!url) return "";
+
+      if (url.startsWith("https://uploads-prod.reticulum.io/files/")) {
+        return url.replace("https://uploads-prod.reticulum.io/files/", "./files/");
+      }
+
+      return url;
+    }</script>
+</head>
+<body>
+    <a-scene>
+        <a-assets timeout="30000">
+            <a-asset-item id="sceneGLB" src="./scene.glb"></a-asset-item>
+            <!--<a-asset-item id="objectsGLB" src="./objects.gltf"></a-asset-item>-->
+            <!-- put the files in a files directory next to objects.gltf and uncomment the second gltf-model-plus below -->
+        </a-assets>
+        <a-entity class="environment-settings" gltf-model-plus="#sceneGLB"></a-entity>
+        <!--<a-entity gltf-model-plus="#objectsGLB"></a-entity>-->
+    </a-scene>
+</body>

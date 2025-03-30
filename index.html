@@ -1,7 +1,6 @@
-﻿<!doctype html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
     <title>CADBOXX</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
@@ -201,7 +200,7 @@
                             THREE.Math.randInt(-20, 20),
                             THREE.Math.randInt(-20, 20)
                         ),
-                                                                                                                                                                                                                /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                                                                                                                                                                                                                                    /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
                     );
                 });
 
@@ -254,6 +253,8 @@
     <link rel="stylesheet" type="text/css" href="aframe.css">
 
     <style>
+        .
+        <style >
         .button:hover {
             background-color: #fff;
             color: blue;
@@ -296,14 +297,14 @@
 
 
         .button1 {
-            background-color: red;
+            background-color: deeppink;
             border-radius: 2px;
             border: none;
             color: black;
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 100px;
+            height: 50px;
             margin-top: 5px;
             margin-left: 5px;
             outline: 2px solid grey;
@@ -397,24 +398,73 @@
             z-index: 999;
         }
 
+        .button7 {
+            background-color: mediumpurple;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 5px;
+            outline: 2px solid grey;
+            position: relative;
+            width: 80px;
+            z-index: 999;
+        }
 
-        .container1 {
+        #container1 {
             position: absolute;
             width: 100%;
             display: flex;
             justify-content: center;
         }
 
-        #container {
+        #container2 {
+            position: absolute;
+            width: 80%;
+            display: flex center;
+            justify-content: center;
+        }
+
+        #container3 {
             position: absolute;
             width: 100%;
             display: flex;
             justify-content: center;
         }
 
+        #container4 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
+        #container5 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
+        #container6 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #container7 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
     </style>
+
 
     <style>
         a-scene {
@@ -423,17 +473,6 @@
             margin-bottom: 0;
             margin-top: 0;
             z-index: 888
-        }
-    </style>
-
-
-
-    <style>
-        #container {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
         }
     </style>
 
@@ -497,36 +536,6 @@
             }
         }
     </style>
-    <style>
-        .button:hover {
-            background-color: #fff;
-            color: #e43b5e;
-        }
-
-        .button {
-            background-color: whitesmoke;
-            border-radius: 8px;
-            border: none;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 12px;
-            height: 34px;
-            margin-top: 5px;
-            margin-left: 5px;
-            outline: none;
-            position: relative;
-            width: 100px;
-            z-index: 999;
-        }
-
-        #container {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
 
     <style>
         #mySidenav a {
@@ -546,26 +555,26 @@
                 left: 0;
             }
 
-        #file {
+        #models {
             top: 60px;
             margin-right: 50px;
             background-color: whitesmoke;
             text-justify: right;
         }
 
-        #create {
+        #control {
             top: 120px;
             margin-right: 50px;
             background-color: whitesmoke;
         }
 
-        #assemble {
+        #edit {
             top: 180px;
             margin-right: 50px;
             background-color: whitesmoke;
         }
 
-        #arrange {
+        #assemble {
             top: 240px;
             margin-right: 50px;
             background-color: whitesmoke;
@@ -578,7 +587,7 @@
             font-display: auto;
         }
 
-        #study {
+        #studio {
             top: 360px;
             margin-right: 50px;
             background-color: whitesmoke;
@@ -621,101 +630,94 @@
         }
     </style>
 </head>
+
 <body>
-    <div id="container" class="container-flex">
-        <center>
-            <div id="btnmenu" display="inline-block" visible="true">
-                <button class="clickable button" color="red" onclick="menucreate()">CREATE</button>
-                <button class="clickable button" color="red" onclick="menucontrol()">CONTROL</button>
-                <button class="clickable button" color="red" onclick="menuedit()">EDIT</button>
-                <button class="clickable button" color="red" onclick="menuassemble()">ASSEMBLE</button>
-                <button class="clickable button" color="red" onclick="menumotion()">MOTION</button>
-                <button class="clickable button" color="red" onclick="menutest()">TEST</button>
-            
-            </div>
-        </center>
-    </div>
-    <div id="container2" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar2" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container3" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar3" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container4" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar4" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container5" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar5" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container6" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar5" display="inline-block">
-                <button class="clickable" onclick="newcube()">CUBE</button>
-                <button class="clickable" onclick="newsphere()">SPHERE</button>
-                <button class="clickable" onclick="newcylinder()">CYL</button>
-                <button class="clickable" onclick="newtube()">TUBE</button>
-                <button class="clickable" onclick="newconetopoint()">CONE</button>
-                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-            </div>
-        </center>
-    </div>
-    <div id="container6" class="container-flex" visible="false">
-        <center>
-            <div id="btnnbar6" display="inline-block">
-                <button id="export-scene" class="button"><span>Export Scene</span></button>
-                <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
-                <button id="export-sphere" class="button"><span>Export Sphere</span></button>
-                <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
-                <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
-            </div>
-        </center>
-    </div>
+    <center>
+        <div id="container1">
+            <button id="mybutton01" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton02" class="button2" onclick="showcontainer2()">MODELS<span>Export Scene</span></button>
+            <button id="mybutton03" class="button3" onclick="showcontainer3()">CONTROL<span>Export Scene Binary</span></button>
+            <button id="mybutton04" class="button4" onclick="showcontainer4()">EDIT<span>Export Sphere</span></button>
+            <button id="mybutton05" class="button5" onclick="showcontainer5()">ASSEMBLLE<span>Export Sphere and Box (Array)</span></button>
+            <button id="mybutton06" class="button6" onclick="showcontainer6()">MOTION<span>Export boxes (Selector)</span></button>
+            <button id="mybutton07" class="button7" onclick="showconatiner7()">STUDIO<span>Export boxes (Selector)</span></button>
+
+        </div>
+    </center>
+    <center>
+        <div id="container2">
+            <button id="mybutton08" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton09" class="button2" onclick="command01()"><span>LOAD</span></button>
+            <button id="mybutton10" class="button2" onclick="command02()"><span>EDIT</span></button>
+            <button id="mybutton11" class="button2" onclick="command03()"><span>TEXTURE</span></button>
+            <button id="mybutton12" class="button2" onclick="command04()"><span>EXTRUDE</span></button>
+            <button id="mybutton13" class="button2" onclick="command05() "><span>VOXEL</span></button>
+            <button id="mybutton14" class="button2" onclick="command06() "><span>FIXED</span></button>
+
+        </div>
+    </center>
+    <center>
+        <div id="container3">
+            <button id="mybutton15" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton16" class="button3" onclick="command01()"><span>MOUSE</span></button>
+            <button id="mybutton17" class="button3" onclick="command02()"><span>GAMEPAD</span></button>
+            <button id="mybutton18" class="button3" onclick="command03()"><span>TOUCH</span></button>
+            <button id="mybutton19" class="button3" onclick="command04()"><span>HANDS</span></button>
+            <button id="mybutton20" class="button3" onclick="command05() "><span>VR</span></button>
+            <button id="mybutton21" class="button3" onclick="command06() "><span>HEADSET</span></button>
+
+        </div>
+    </center>
+
+    <center>
+        <div id="container4">
+            <button id="mybutton01" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="export-scene" class="button4"><span>Scene</span></button>
+            <button id="export-scene-bin" class="button4"><span>Scene Binary</span></button>
+            <button id="export-sphere" class="button4"><span>Export Sphere</span></button>
+            <button id="export-two" class="button4"><span>Export Sphere</span></button>
+            <button id="export-selector" class="button4"><span>Export boxes</span></button>
+
+        </div>
+    </center>
+
+    <center>
+        <div id="container5">
+            <button id="mybutton21" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton22" class="button5" onclick="command01()"><span>MOUSE</span></button>
+            <button id="mybutton23" class="button5" onclick="command02()"><span>GAMEPAD</span></button>
+            <button id="mybutton24" class="button5" onclick="command03()"><span>TOUCH</span></button>
+            <button id="mybutton25" class="button5" onclick="command04()"><span>HANDS</span></button>
+            <button id="mybutton26" class="button5" onclick="command05() "><span>VR</span></button>
+            <button id="mybutton27" class="button5" onclick="command06() "><span>HEADSET</span></button>
+
+        </div>
+    </center>
+
+    <center>
+        <div id="container6">
+            <button id="mybutton28" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton29" class="button6" onclick="command01()"><span>MOUSE</span></button>
+            <button id="mybutton30" class="button6" onclick="command02()"><span>GAMEPAD</span></button>
+            <button id="mybutton31" class="button6" onclick="command03()"><span>TOUCH</span></button>
+            <button id="mybutton32" class="button6" onclick="command04()"><span>HANDS</span></button>
+            <button id="mybutton33" class="button6" onclick="command05() "><span>VR</span></button>
+            <button id="mybutton34" class="button6" onclick="command06() "><span>HEADSET</span></button>
+
+        </div>
+    </center>
 
     <div id="mySidenav" class="sidenav">
-        <a id="file" class="clickable" onclick="cmm1()">FILE</a>
-        <a id="create" class="clickable" onclick="cmm2()">CREATE</a>
-        <a id="assemble" class="clickable" onclick="cmm3()">ASSEMBLE</a>
-        <a id="arrange" class="clickable" onclick="cmm4()">ARRANGE</a>
-        <a id="motion" class="clickable" onclick="cmm5()">MOTION</a>
-        <a id="study" class="clickable" onclick="cmm6()">STUDY</a>
+        <a id="models" class="button clickable" onclick="showcontainer1()">MODELS</a>
+        <a id="control" class="button clickable" onclick="showcontainer2()">CONTROL</a>
+        <a id="edit" class="button clickable" onclick="showcontainer3()">EDIT</a>
+        <a id="assemble" class="button clickable" onclick="showcontainer4()">ASSEMBLE</a>
+        <a id="motion" class="button clickable" onclick="showcontainer5()">MOTION</a>
+        <a id="studio" class="button clickable" onclick="showcontainer6()">STUDIO</a>
 
     </div>
+
+
     <!--div id="mySidenav" class="sidenav">
         <a id="file" class="clickable" onclick="function()" >FILE</a>
         <a href="#" id="create">CREATE</a>
@@ -730,240 +732,53 @@
         <a href="https://sketchfab.com/fasteng" target="_blank" id="efgh">SketchFab</a>
         <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
 
-    </div><!--
-    <div id="myNavh01" class="overlay">
-        <div class="overlay-content">
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="newcube()">CUBE</button>
-                    <button class="clickable" onclick="newsphere()">SPHERE</button>
-                    <button class="clickable" onclick="newcylinder()">CYLINDER</button>
-                    <button class="clickable" onclick="newtube()">TUBE</button>
-                    <button class="clickable" onclick="newconetopoint()">CONE</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-                </div>
-            </center>
-            <div style="height:15px"></div>
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-                </div>
-            </center>
-            <center>
-                <h4>GETTING STARTED : CREATING GEOMETRY</h4>
-                <h4>USE THE CREATE MENU TO PLACE PRIMITIVE SHAPES</h4>
-                <h4>SELECT THE SHAPE TO MODIFY AND SET POSITION, ROTATION AND SCALE.</h4>
-                <h4>ADD OTHER SHAPES TO CREATE THE DESIRED COMPONENT BODY.</h4>
-                <h4>ADD TEXTURES TO THE INDIVIDUAL BODIES AS REQUIRED.</h4>
-                <h4>ADD ANCHOR PLANE AND CONNECTOR PLANE(S).</h4>
-                <h4>EXPORT THE MODEL FROM THE HOME MENU</h4>
-                <h4>THE TEXTURE WILL BE EMBEDDED IN THE NEW MODEL</h4>
-                <h4>UPLOAD TO SKETCHFAB AND INCLUDE IN YOUR SCENES</h4>
-            </center>
-        </div>
     </div>
-    <div id="myNavh02" class="overlay">
-        <div class="overlay-content">
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()"> HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-                </div>
-            </center>
-            <center>
-                <h4>GETTING STARTED : MODEL ASSEMBLY</h4>
-                <h4>EVERY ASSEMBLY IN CADBOXX HAS AN ANCHOR PART.</h4>
-                <h4>THE ANCHOR IS THE CHASSIS OF THE ASSEMBLY.</h4>
-                <h4>ALL OTHER PARTS ARE CHILDREN OF THE ANCHOR.</h4>
-                <h4>THEY ARE FIXED TO IT OR CONNECTED BY MOVING JOINTS.</h4>
-                <h4>POSITION CONNECTOR PLANES AT THE JOINT LOCATIONS.</h4>
-                <h4>THEN ASSEMBLE THE PART BASE-PLANE WITH THESE PLANES.</h4>
-                <h4>SET THE MOVEMENT CONSTRAINTS BETWEEN THE TWO PLANES.</h4>
-            </center>
-        </div>
-    </div>
-    <div id="myNavh03" class="overlay">
-        <div class="overlay-content">
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-
-                </div>
-            </center>
-            <center>
-                <h4>POSITION AND CONSTRAINING</h4>
-                <h4>IF YOUR JOINT IS THE SAME AS ONE OF OUR TEMPLATES </h4>
-                <h4>THEN WE RECCOMEND USING A TEMPLATE.</h4>
-                <h4>SIMPLY OVER-WRITE THE URL OF THE PLANE WITH THE TEMPLATE URL.</h4>
-                <h4>SET THE BODY NAMES TO SUIT THE CONSTRAINT MIXINS.</h4>
-                <h4>WHEN ALL THE JOINTS AND PARTS ARE IN PLACE HIT CTRL-ALT-I</h4>
-                <h4>STUDY THE MOTION OF THE ASSEMBLY AND ADJUST JOINT PROPERTIES.</h4>
-                <h4>EXPORT THE ASSEMBLY AS A GLB FILE.</h4>
-                <h4></h4>
-            </center>
-        </div>
-    </div>
-    <div id="myNavh04" class="overlay">
-        <div class="overlay-content">
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-
-                </div>
-            </center>
-            <center>
-                <h4>ANIMATE AND SIMULATE</h4>
-                <h4>YOUR SCENE IS NOW LIVE AND THE USER CAN INTERACT WITH THE MODELS.</h4>
-                <h4>PUSH, PULL, KICK AND THROW YOUR COMPONENTS LIKE YOU WOULD IN REALITY.</h4>
-                <h4>TEST THE MOTION AND PERFORMANCEOF YOUR ASSEMBLY LIVE ON SCREEN.</h4>
-                <h4>ADJUST THE STIFFNESS AND DAMPING OF THE JOINTS TO OPTIMIZE.</h4>
-                <h4>RECORD VIDEOS OF THE ASSEMBLY AS IT MOVES IN VIRTUAL REALITY.</h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </center>
-        </div>
-    </div>
-    <div id="myNavh05" class="overlay">
-        <div class="overlay-content">
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-
-                </div>
-            </center>
-            <center>
-                <h4>EXPORT YOUR MODELS</h4>
-                <h4>EXPORT THE MODEL ASSEMBLY IN DIFFERENT SNAPSHOT POSITION</h4>
-                <h4>CREATE SNAPSHOTS OF THE MOVING ASSEMBLY IN DIFFERENT POSITIONS.</h4>
-                <h4>RUN ANIMATIONS TOGETHER WITH PHYSICS SIMULATIONS.</h4>
-                <h4>OBSERVE PARTS COLLIDING AS THEY WOULD NORMALLY.</h4>
-                <h4>ADJUST THE DESIGN TO CHANGE PERFORMANCE.</h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </center>
-        </div>
-    </div>
-    <div id="myNavh06" class="overlay">
-        <div class="overlay-content">
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-
-                </div>
-            </center>
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
-
-                </div>
-            </center>
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="closeAllNav()">CLOSE</button>
-
-                </div>
-            </center>
-            <center>
-                <div id="btnnbar" display="inline-block">
-                    <button class="clickable" onclick="myNavh1()">HELP 1</button>
-                    <button class="clickable" onclick="myNavh2()">HELP 2</button>
-                    <button class="clickable" onclick="myNavh3()">HELP 3</button>
-                    <button class="clickable" onclick="myNavh4()"> HELP 4</button>
-                    <button class="clickable" onclick="myNavh5()">HELP 5</button>
-                    <button class="clickable" onclick="myNavh6()">HELP 6</button>
-
-                </div>
-            </center>
-        </div>
-    </div>-->
 
 
     <!--container-flex surrounding body-->
     <div class="container-flex">
 
-            <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
-                <a-assets>
-                    <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
-                             hoverable grabbable stretchable draggable droppable
-                             event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-                             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-                             body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
-                    <a-mixin id="gltfmodel" gltf-model="#cbb1"
-                             hoverable grabbable stretchable draggable droppable clickable
-                             event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-                             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-                             body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
-                    <a-mixin id="beveled-square" geometry="primitive: cone; radiusTop: 0.15; radiusBottom: 0.19; height: 0.02; segmentsRadial: 4; segmentsHeight: 1" rotation="0 45 0"></a-mixin>
-                    <a-mixin id="square" geometry="primitive: box; width: 0.18; height: 0.025; depth: 0.18;" position="0 0.02 0"></a-mixin>
-                    <a-mixin id="blue" material="color: #1E2768;"></a-mixin>
-                    <a-mixin id="darkgreen" material="color: #22FF90;"></a-mixin>
-                    <a-mixin id="yellow" material="color: #FFF88E;"></a-mixin>
-                    <a-mixin id="offset" position="0 0.01 0"></a-mixin>
-                    <img id="m01" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-dlkr-5676470%20(1).jpg?v=1671179886918" />
-                    <img id="m02" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-eva-bronzini-6485438.jpg?v=1671179938437" />
-                    <img id="m03" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978462.jpg?v=1671180017611" />
-                    <img id="m04" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978503.jpg?v=1671180039120" />
-                    <img id="m05" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-milo-textures-2768398.jpg?v=1671180129644" />
-                    <img id="m06" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-207300.jpg?v=1671180185041" />
-                    <img id="m07" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-268415.jpg?v=1671180285873" />
-                    <img id="m08" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-piyapong-sayduang-4541011.jpg?v=1671180304280" />
-                    <img id="m09" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-235985.jpg?v=1671180256508" />
-                    <img id="m10" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-steve-johnson-6353321.jpg?v=1671180659869" />
-                    <img id="m11" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_01.jpg?v=1671449502907" />
-                    <img id="m12" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_02.jpg?v=1671449528541" />
-                    <img id="m13" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_03.jpg?v=1671449535258" />
-                    <img id="m14" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_05.jpg?v=1671449549312" />
-                    <img id="m15" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_07.jpg?v=1671449555859" />
-                    <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
-                    <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
-                    <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
+
+        <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
+            <a-assets>
+
+                <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
+                         hoverable grabbable stretchable draggable droppable
+                         event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                         event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                         body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+                <a-mixin id="gltfmodel" gltf-model="#cbb1"
+                         hoverable grabbable stretchable draggable droppable clickable
+                         event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                         event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                         body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+                <a-mixin id="beveled-square" geometry="primitive: cone; radiusTop: 0.15; radiusBottom: 0.19; height: 0.02; segmentsRadial: 4; segmentsHeight: 1" rotation="0 45 0"></a-mixin>
+                <a-mixin id="square" geometry="primitive: box; width: 0.18; height: 0.025; depth: 0.18;" position="0 0.02 0"></a-mixin>
+                <a-mixin id="blue" material="color: #1E2768;"></a-mixin>
+                <a-mixin id="darkgreen" material="color: #22FF90;"></a-mixin>
+                <a-mixin id="yellow" material="color: #FFF88E;"></a-mixin>
+                <a-mixin id="offset" position="0 0.01 0"></a-mixin>
+                <img id="m01" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-dlkr-5676470%20(1).jpg?v=1671179886918" />
+                <img id="m02" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-eva-bronzini-6485438.jpg?v=1671179938437" />
+                <img id="m03" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978462.jpg?v=1671180017611" />
+                <img id="m04" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978503.jpg?v=1671180039120" />
+                <img id="m05" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-milo-textures-2768398.jpg?v=1671180129644" />
+                <img id="m06" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-207300.jpg?v=1671180185041" />
+                <img id="m07" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-268415.jpg?v=1671180285873" />
+                <img id="m08" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-piyapong-sayduang-4541011.jpg?v=1671180304280" />
+                <img id="m09" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-235985.jpg?v=1671180256508" />
+                <img id="m10" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-steve-johnson-6353321.jpg?v=1671180659869" />
+                <img id="m11" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_01.jpg?v=1671449502907" />
+                <img id="m12" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_02.jpg?v=1671449528541" />
+                <img id="m13" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_03.jpg?v=1671449535258" />
+                <img id="m14" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_05.jpg?v=1671449549312" />
+                <img id="m15" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_07.jpg?v=1671449555859" />
+                <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
+                <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
+                <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
 
                 <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
-                <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=16728614127"></a-asset-item>
+                <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
                 <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
                 <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
 
@@ -1236,27 +1051,19 @@
 
 
                 <a-mixin id="rotxx" animation__rotation__xx="property: rotation; dir: forward; dur: 2000;
-                repeat: indefinite; easing: linear; loop: true; to: 360 0 0"></a-mixin>
+      repeat: indefinite; easing: linear; loop: true; to: 360 0 0"></a-mixin>
                 <a-mixin id="rotyy" animation__rotation__yy="property: rotation; dir: forward; dur: 4000;
-                repeat: indefinite; easing: linear; loop: true; to: 0 360 0"></a-mixin>
+      repeat: indefinite; easing: linear; loop: true; to: 0 360 0"></a-mixin>
                 <a-mixin id="rotzz" animation__rotation__zz="property: rotation; dir: forward; dur: 3000;
-                repeat: indefinite; easing: linear; loop: true; to: 0 0 360"></a-mixin>
+      repeat: indefinite; easing: linear; loop: true; to: 0 0 360"></a-mixin>
                 <a-mixin id="rotxyz" animation__rotation__xyz="property: rotation; dir: forward; dur: 3000;
-                repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
+      repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
+
 
                 <a-asset-item id="crank4cyl" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
                 <a-asset-item id="crank4cyl-we" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
 
             </a-assets>
-
-            <!--
-            <a-entity id="prt1" mixin="cube red" position="0 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-            <a-entity id="prt2" mixin="cube blue" position="5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-            <a-entity id="prt3" mixin="cube brown" position="-5 5 5" rotation="0 0 0" scale="5 5 5"></a-entity>
-            <a-entity id="prt4" mixin="cube green" position="5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-            <a-entity id="prt5" mixin="cube orange" position="-5 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-            <a-entity id="prt6" mixin="cube yellow" position="0 5 -5" rotation="0 0 0" scale="5 5 5"></a-entity>
-                -->
 
 
             <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>
@@ -1400,133 +1207,113 @@
             <a-camera id="cam6" position="12 6 0" look-controls active="false">
 
             </a-camera>
-            <!--camera id="cam7" position="-12 6 0" look-controls active="false">
 
-            </!--a-camera>
-            <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
-
-            </a-camera>
-            <a-camera id="cam9" position="12 6 0" look-controls active="false">
-
-            </a-camera>
-
-            <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
-                <a-cursor></a-cursor>
-            </a-entity-->
 
             <a-sky radius="50" color="lightblue"></a-sky>
 
         </a-scene>
+        <!--javascript section-->
+        <script src="js/aframe-physics-system.min.js"></script>
         <script src="js/aframe-physics-system.min.js"></script>
         <script>
-            document.querySelector('a-scene').addEventListener('loaded', function ("showmainmenu()") {
-                //document.getElementById("mainmenu").style.display = "block";
-                function showmainmenu();
-
+            document.querySelector('a-scene').addEventListener('loaded', function () {
+                document.getElementById("container1").style.display = "block";
             })
 
         </script>
 
+        <!--turn menu sections on and off-->
         <script>
-            function showmainmenu() {
-                document.getElementById("mainmenu").style.display = "none";
-                document.getElementById("createmenu").style.display = "block";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("constrainmenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
-                document.getElementById("testmenu").style.display = "none";
+            function showcontainer1() {
+                document.getElementById("container1").style.display = "block";
+                document.getElementById("container2").style.display = "none";
+                document.getEbementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
-            function showcreatemenu() {
+            function showcontainer2() {
 
-                document.getElementById("mainmenu").style.display = "none";
-                document.getElementById("createmenu").style.display = "block";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("constrainmenu").style.display = "none";
-                document.getElementById("animatemenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
-
-
-
-
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "block";
+                document.getElementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
-            function showcontrolmenu() {
+            function showcontainer3() {
 
-                document.getElementById("mainmenu").style.display = "none";
-                document.getElementById("createmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "block";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("constrainmenu").style.display = "none";
-                document.getElementById("animatemenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
-
-
-
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getEbementById("container3").style.display = "block";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
-            function showeditmenu() {
+            function showcontainer4() {
 
-                document.getElementById("mainmenu").style.display = "none";
-                document.getElementById("createmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "block";
-                document.getElementById("constrainmenu").style.display = "none";
-                document.getElementById("animatemenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
-
-
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getEbementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "block";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
-            function showconstrainmenu() {
+            function showcontainer5() {
 
-                document.getElementById("mainmenu").style.display = "none";
-                document.getElementById("createmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("constrainmenu").style.display = "none";
-                document.getElementById("animatemenu").style.display = "block";
-                document.getElementById("motionmenu").style.display = "none";
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getEbementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "block";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
 
-            function showanimatemenu() {
+            function showcontainer6() {
 
-                document.getElementById("mainmenu").style.display = "none";
-                document.getElementById("createmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("constrainmenu").style.display = "block";
-                document.getElementById("animatemenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getEbementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "block";
+                document.getElementById("container7").style.display = "none";
 
             }
-        </script>
 
-        <script>
-            function newassemblytemplate() {
-                const bodie = document.querySelector("#part0");
-                const connector1 = document.querySelector("#conn1")
-                const limb = document.createElement("a-sphere");
-                sphere.setAttribute("color", "#crimson");
-                sphere.setAttribute("radius", "0.5");
-                sphere.setAttribute("position", "-3 2 0");
-                bodie.appendChild(limb);
+            function showcontainer7() {
 
-                render();
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getEbementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "block";
+
             }
 
         </script>
 
-            <script type="text/javascript">
-                var mybutton01 = document.querySelector('#mybutton01');
-                mybutton01.addEventListener('pressed', function newsphere() {
-                    // do stuff here.
-                    
-                });
-            </script>
+
+
+        <!--command buttons-->
+        <script type="text/javascript">
+            var mybutton01 = document.querySelector('#mybutton01');
+            mybutton01.addEventListener('pressed', function () {
+                // do stuff here.
+            });
+        </script>
 
         <script type="text/javascript">
             var mybutton02 = document.querySelector('#mybutton02');
@@ -1767,9 +1554,7 @@
 
         </script>
 
-
-
-
+        <!--newshapes-->
         <script>
             function newsphere() {
                 const scene = document.querySelector("a-scene");
@@ -1851,7 +1636,7 @@
             }
 
         </script>
-
+        <!--exporter-->
         <script>
             function exportGLTF(input, options) {
                 AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
@@ -1890,78 +1675,97 @@
             });
 
         </script>
+        <!--opennav-->
         <script>
             function openNav() {
                 document.getElementById("myNav").style.display = "block";
             }
 
             function closeAllNav() {
-                document.getElementById("createmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("assemblymenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
-                document.getElementById("testmenu").style.display = "none";
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getElementById("contaimer3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
         </script>
         <script>
-            function createmenu() {
-                document.getElementById("createnmenu").style.display = "block";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("assemblymenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
-                document.getElementById("testmenu").style.display = "none";
+            function showcontainer1() {
+                document.getElementById("container1").style.display = "block";
+                document.getElementById("container2").style.display = "none";
+                document.getElementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
-            function controlmenu() {
-                document.getElementById("createnmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "block";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("assemblymenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
-                document.getElementById("testmenu").style.display = "none";
+            function showcontainer2() {
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "block";
+                document.getElementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
-            function editmenu() {
-                document.getElementById("extrude").style.display = "none";
-                document.getElementById("add_to").style.display = "none";
-                document.getElementById("take_from").style.display = "block";
-                document.getElementById("scale_about").style.display = "none";
-                document.getElementById("soften").style.display = "none";
-                document.getElementById("re_texture").style.display = "none";
+            function showcontainer3() {
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getElementById("container3").style.display = "block";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
-            function assemblymenu() {
-                document.getElementById("createnmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("assemblymenu").style.display = "block";
-                document.getElementById("motionmenu").style.display = "none";
-                document.getElementById("testmenu").style.display = "none";
+            function showcontainer4() {
+                document.getElementById("container1").style.display = "none";
+
+                document.getElementById("container2").style.display = "none";
+                document.getElementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "block";
+                document.getElementById("container5").style.display = "none";
+
+                document.getElementById("container6").style.display = "none";
+
+                document.getElementById("container7").style.display = "none";
 
             }
-            function motionmenu() {
-                ocument.getElementById("createnmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("assemblymenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "block";
-                document.getElementById("testmenu").style.display = "none";
+            function showcontainer5() {
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getElementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "block";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "none";
 
             }
-            function testmenu() {
-                document.getElementById("createnmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("assemblymenu").style.display = "none";
-                document.getElementById("motionmenu").style.display = "none";
-                document.getElementById("testmenu").style.display = "block";
+            function showcontainer6() {
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getElementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "block";
+                document.getElementById("container7").style.display = "none";
 
             }
+            function showcontainer7() {
+                document.getElementById("container1").style.display = "none";
+                document.getElementById("container2").style.display = "none";
+                document.getElementById("container3").style.display = "none";
+                document.getElementById("container4").style.display = "none";
+                document.getElementById("container5").style.display = "none";
+                document.getElementById("container6").style.display = "none";
+                document.getElementById("container7").style.display = "block";
 
-
+            }
         </script>
 
         <script>
@@ -2322,7 +2126,19 @@
             function xxzz() {
 
             };
+
+
+
         </script>
+
+
+
+
+
+
+
+
+
 
         <script>
             // Update individual nodes
@@ -2330,17 +2146,6 @@
                 document.getElementById("myNav").style.display = "block";
             })
 
-        </script>
-
-        <script>
-            function openMainmenu() {
-                document.getElementById("mainmenu").style.display = "block";
-                document.getElementById("createmenu").style.display = "none";
-                document.getElementById("controlmenu").style.display = "none";
-                document.getElementById("editmenu").style.display = "none";
-                document.getElementById("arrangemenu").style.display = "none";
-
-            }
         </script>
 
         <script>
@@ -2604,81 +2409,82 @@
         </script>
 
 
-            <script>
-                function matl01() {
-                    var knot = document.getElementById("prt1");
-                    knot.setAttribute('material', 'src', '#m01');
-                }
-                function matl02() {
-                    var knot = document.getElementById("prt2");
-                    knot.setAttribute('material', 'src', '#m02');
-                }
-                function matl03() {
-                    var knot = document.getElementBySelection("cursor");
-                    knot.setAttribute('material', 'src', '#m03');
-                }
-                window.matl4 = function () {
-                    var knot = document.getElementById("prt4");
-                    knot.setAttribute('material', 'src', '#m04');
-                }
-                window.matl5 = function () {
-                    var knot = document.getElementById("prt5");
-                    knot.setAttribute('material', 'src', '#m05');
-                }
-                window.matl6 = function () {
-                    var knot = document.getElementById("prt6");
-                    knot.setAttribute('material', 'src', '#m06');
-                }
-                window.matl7 = function () {
-                    var knot = document.getElementById("prt7");
-                    knot.setAttribute('material', 'src', '#m07');
-                }
-                window.matl8 = function () {
-                    var knot = document.getElementById("prt8");
-                    knot.setAttribute('material', 'src', '#m08');
-                }
-                window.matl9 = function () {
-                    var knot = document.getElementById("prt9");
-                    knot.setAttribute('material', 'src', '#m09');
-                }
-                window.matl10 = function () {
-                    var knot = document.getElementById("prt10");
-                    knot.setAttribute('material', 'src', '#m10');
-                }
-                window.matl11 = function () {
-                    var knot = document.getElementById("prt11");
-                    knot.setAttribute('material', 'src', '#m11');
-                }
-                window.matl12 = function () {
-                    var knot = document.getElementById("prt12");
-                    knot.setAttribute('material', 'src', '#m12');
-                }
-                window.matl13 = function () {
-                    var knot = document.getElementById("prt13");
-                    knot.setAttribute('material', 'src', '#m13');
-                }
-                window.matl14 = function () {
-                    var knot = document.getElementById("prt14");
-                    knot.setAttribute('material', 'src', '#m14');
-                }
-                window.matl15 = function () {
-                    var knot = document.getElementById("prt15");
-                    knot.setAttribute('material', 'src', '#m15');
-                }
-                window.matl16 = function () {
-                    var knot = document.getElementById("prt16");
-                    knot.setAttribute('material', 'src', '#m16');
-                }
-                window.matl17 = function () {
-                    var knot = document.getElementById("prt17");
-                    knot.setAttribute('material', 'src', '#m17');
-                }
-                window.matl18 = function () {
-                    var knot = document.getElementById("prt18");
-                    knot.setAttribute('material', 'src', '#m18');
-                };
-            </script>
-        </div>
-    </body>
+        <script>
+            function matl01() {
+                var knot = document.getElementById("prt1");
+                knot.setAttribute('material', 'src', '#m01');
+            }
+            function matl02() {
+                var knot = document.getElementById("prt2");
+                knot.setAttribute('material', 'src', '#m02');
+            }
+            function matl03() {
+                var knot = document.getElementBySelection("cursor");
+                knot.setAttribute('material', 'src', '#m03');
+            }
+            window.matl4 = function () {
+                var knot = document.getElementById("prt4");
+                knot.setAttribute('material', 'src', '#m04');
+            }
+            window.matl5 = function () {
+                var knot = document.getElementById("prt5");
+                knot.setAttribute('material', 'src', '#m05');
+            }
+            window.matl6 = function () {
+                var knot = document.getElementById("prt6");
+                knot.setAttribute('material', 'src', '#m06');
+            }
+            window.matl7 = function () {
+                var knot = document.getElementById("prt7");
+                knot.setAttribute('material', 'src', '#m07');
+            }
+            window.matl8 = function () {
+                var knot = document.getElementById("prt8");
+                knot.setAttribute('material', 'src', '#m08');
+            }
+            window.matl9 = function () {
+                var knot = document.getElementById("prt9");
+                knot.setAttribute('material', 'src', '#m09');
+            }
+            window.matl10 = function () {
+                var knot = document.getElementById("prt10");
+                knot.setAttribute('material', 'src', '#m10');
+            }
+            window.matl11 = function () {
+                var knot = document.getElementById("prt11");
+                knot.setAttribute('material', 'src', '#m11');
+            }
+            window.matl12 = function () {
+                var knot = document.getElementById("prt12");
+                knot.setAttribute('material', 'src', '#m12');
+            }
+            window.matl13 = function () {
+                var knot = document.getElementById("prt13");
+                knot.setAttribute('material', 'src', '#m13');
+            }
+            window.matl14 = function () {
+                var knot = document.getElementById("prt14");
+                knot.setAttribute('material', 'src', '#m14');
+            }
+            window.matl15 = function () {
+                var knot = document.getElementById("prt15");
+                knot.setAttribute('material', 'src', '#m15');
+            }
+            window.matl16 = function () {
+                var knot = document.getElementById("prt16");
+                knot.setAttribute('material', 'src', '#m16');
+            }
+            window.matl17 = function () {
+                var knot = document.getElementById("prt17");
+                knot.setAttribute('material', 'src', '#m17');
+            }
+            window.matl18 = function () {
+                var knot = document.getElementById("prt18");
+                knot.setAttribute('material', 'src', '#m18');
+            };
+        </script>
+
+</body>
+    </div>
 
 </html>

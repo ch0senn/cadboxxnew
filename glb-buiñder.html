@@ -302,15 +302,15 @@
                      dynamic-body shadow>
             </a-mixin>
             <!--
-            <a-mixin id="voxel"
-                     gltf-model="#groundfloorsq"
-                     intersection-spawn="event: click; mixin: voxel"
-                     snap="offset: 0 0.4 0; snap: 1 1 1"
-                     event-set__mouseenter="material.opacity: 0.7"
-                     event-set__mouseleave="material.opacity: 1.0"
-                     event-set__dragover-start="material.wireframe: true"
-                     event-set__dragover-end="material.wireframe: false"></a-mixin>
-                          -->
+        <a-mixin id="voxel"
+                 gltf-model="#groundfloorsq"
+                 intersection-spawn="event: click; mixin: voxel"
+                 snap="offset: 0 0.4 0; snap: 1 1 1"
+                 event-set__mouseenter="material.opacity: 0.7"
+                 event-set__mouseleave="material.opacity: 1.0"
+                 event-set__dragover-start="material.wireframe: true"
+                 event-set__dragover-end="material.wireframe: false"></a-mixin>
+                      -->
             <a-mixin id="wire-ball"
                      gltf-model="#cb1"
                      intersection-spawn="event: click; mixin: voxel"
@@ -367,12 +367,12 @@
             <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
             <!--
-            <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+        <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-            <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+        <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-            <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-                -->
+        <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+            -->
 
             <a-mixin id="trigger-box" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
                      class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"
@@ -470,9 +470,18 @@
                       position="0 1.5 0" rotation="-90 0 0" scale="1 1 1"></a-entity>
 
             <!--<a-asset-item id="single-floor" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/single-floor.glb?v=1699903743116"></a-asset-item>
-            -->
+        -->
 
         </a-entity>
+
+
+        <a-entity id="main1" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777" position="0 2 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+        <a-entity id="main2" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777" position="3 -2 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+        <a-entity id="main3" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777" position="6 -2 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+        <a-entity id="main4" gltf-model="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777" position="9 2 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+
+
+
 
         <a-light type="point" color="#94c6ff" distance="15" position="0 0 -12" intensity="2" animation="property: light.intensity; from: 0; to: 2; delay: 750; dur: 500" light="intensity: 2" visible=""></a-light>
         <a-light type="point" color="#94c6ff" distance="17" position="0 0 -6" intensity="2" animation="property: light.intensity; from: 0; to: 1; delay: 500; dur: 500" light="intensity: 1"></a-light>
@@ -491,14 +500,14 @@
             <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
         </a-camera>
         <!--<a-entity camera id="cam1" active="true" look-controls wasd-controls position="0 5 15"
-                  capture-mouse
-                  raycaster cursor="rayOrigin:mouse"
-                  body="type: static; shape: sphere; sphereRadius: 0.001"
-                  super-hands="colliderEvent: raycaster-intersection;
-                             colliderEventProperty: els;
-                             colliderEndEvent:raycaster-intersection-cleared;
-                             colliderEndEventProperty: clearedEls;">
-        </a-entity>-->
+              capture-mouse
+              raycaster cursor="rayOrigin:mouse"
+              body="type: static; shape: sphere; sphereRadius: 0.001"
+              super-hands="colliderEvent: raycaster-intersection;
+                         colliderEventProperty: els;
+                         colliderEndEvent:raycaster-intersection-cleared;
+                         colliderEndEventProperty: clearedEls;">
+    </a-entity>-->
 
         <a-camera id="cam2" position="0 6 10" look-controls active="false">
             <a-cursor intersection-spawn="event: click; mixin: voxelcb1"></a-cursor>

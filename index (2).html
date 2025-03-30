@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>CADBOXX</title>
@@ -201,7 +200,7 @@
                             THREE.Math.randInt(-20, 20),
                             THREE.Math.randInt(-20, 20)
                         ),
-                                                                                                                                                                                                                /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                                                                                                                                                                                                                        /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
                     );
                 });
 
@@ -276,13 +275,56 @@
             z-index: 999;
         }
 
-        #container {
+        #container1 {
             position: absolute;
             width: 100%;
             display: flex;
             justify-content: center;
         }
+
+        #container2 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        #container3 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #container4 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        #container5 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #container6 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #container7 {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+
     </style>
+    
 
     <style>
         a-scene {
@@ -294,18 +336,8 @@
         }
     </style>
 
-
-
     <style>
-        #container {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
 
-    <style>
     </style>
     <style>
         body {
@@ -414,26 +446,26 @@
                 left: 0;
             }
 
-        #file {
+        #models {
             top: 60px;
             margin-right: 50px;
             background-color: whitesmoke;
             text-justify: right;
         }
 
-        #create {
+        #control {
             top: 120px;
             margin-right: 50px;
             background-color: whitesmoke;
         }
 
-        #assemble {
+        #edit {
             top: 180px;
             margin-right: 50px;
             background-color: whitesmoke;
         }
 
-        #arrange {
+        #assemble {
             top: 240px;
             margin-right: 50px;
             background-color: whitesmoke;
@@ -446,7 +478,7 @@
             font-display: auto;
         }
 
-        #study {
+        #studio {
             top: 360px;
             margin-right: 50px;
             background-color: whitesmoke;
@@ -489,9 +521,9 @@
         }
     </style>
 </head>
-<body>
-    <div id="container">
-        <button class="button" target="_blank" href="model.html"></button>
+<body>                          
+    <div id="container1">
+        <button class="button" onclick=""></button>
         <button id="export-scene" class="button"><span>Export Scene</span></button>
         <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
         <button id="export-sphere" class="button"><span>Export Sphere</span></button>
@@ -499,14 +531,23 @@
         <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
     </div>
 
+    <div id="container4">
+        <but ton class="button1" onclick="showcontainer2()"></button>
+        <button id="export-scene" class="button2"><span>Export Scene</span></button>
+        <button id="export-scene-bin" class="button3"><span>Export Scene Binary</span></button>
+        <button id="export-sphere" class="button4"><span>Export Sphere</span></button>
+        <button id="export-two" class="button5"><span>Export Sphere and Box (Array)</span></button>
+        <button id="export-selector" class="button6"><span>Export boxes (Selector)</span></button>
+    </div>
+                                                                                                                                                                                                                                                                                        
     <div id="mySidenav" class="sidenav">
-        <a id="file" class="clickable" onclick="cmm1()">FILE</a>
-        <a id="create" class="clickable" onclick="cmm2()">CREATE</a>
-        <a id="assemble" class="clickable" onclick="cmm3()">ASSEMBLE</a>
-        <a id="arrange" class="clickable" onclick="cmm4()">ARRANGE</a>
-        <a id="motion" class="clickable" onclick="cmm5()">MOTION</a>
-        <a id="study" class="clickable" onclick="cmm6()">STUDY</a>
-
+        <a id="models" class="button clickable" onclick="showcontainer1()">MODELS</a>
+        <a id="control" class="button clickable" onclick="showcontainer2()">CONTROL</a>
+        <a id="edit" class="button clickable" onclick="showcontainer3()">EDIT</a>
+        <a id="assemble" class="button clickable" onclick="showcontainer4()">ASSEMBLE</a>
+        <a id="motion" class="button clickable" onclick="showcontainer5()">MOTION</a>
+        <a id="studio" class="button clickable" onclick="showcontainer6(        )">STUDIO</a>
+                                                                        
     </div>
     <!--div id="mySidenav" class="sidenav">
         <a id="file" class="clickable" onclick="function()" >FILE</a>
@@ -523,7 +564,7 @@
         <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
 
     </div>
-    <div id="myNavh01" class="overlay">
+    <!--div id="myNavh01" class="overlay">
         <div class="overlay-content">
             <center>
                 <div id="btnnbar" display="inline-block">
@@ -558,7 +599,7 @@
                 <h4>UPLOAD TO SKETCHFAB AND INCLUDE IN YOUR SCENES</h4>
             </center>
         </div>
-    </div>
+    </!--div>
     <div id="myNavh02" class="overlay">
         <div class="overlay-content">
             <center>
@@ -716,7 +757,7 @@
     <!--container-flex surrounding body-->
     <div class="container-flex">
 
-        <body>
+      
             <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
                 <a-assets>
                     <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
@@ -1213,23 +1254,8 @@
             <script src="js/aframe-physics-system.min.js"></script>
             <script>
                 document.querySelector('a-scene').addEventListener('loaded', function () {
-                    document.getElementById("myNavh01").style.display = "block";
+                    document.getElementById("container1").style.display = "block";
                 })
-
-            </script>
-
-            <script>
-                function newassemblytemplate() {
-                    const bodie = document.querySelector("#part0");
-                    const connector1 = document.querySelector("#conn1")
-                    const limb = document.createElement("a-sphere");
-                    sphere.setAttribute("color", "#crimson");
-                    sphere.setAttribute("radius", "0.5");
-                    sphere.setAttribute("position", "-3 2 0");
-                    bodie.appendChild(limb);
-
-                    render();
-                }
 
             </script>
 
@@ -1608,34 +1634,37 @@
                 }
 
                 function closeAllNav() {
-                    document.getElementById("myNavh01").style.display = "none";
-                    document.getElementById("myNavh02").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh05").style.display = "none";
-                    document.getElementById("myNavh06").style.display = "none";
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("contaimer3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
 
                 }
             </script>
             <script>
-                function myNavh1() {
-                    document.getElementById("myNavh01").style.display = "block";
-                    document.getElementById("myNavh02").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh05").style.display = "none";
+                function showcontainer1() {
+                    document.getElementById("container1").style.display = "block";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
 
                 }
-                function myNavh2() {
-                    document.getElementById("myNavh02").style.display = "block";
-                    document.getElementById("myNavh01").style.display = "none";
-                    document.getElementById("myNavh03").style.display = "none";
-                    document.getElementById("myNavh04").style.display = "none";
-                    document.getElementById("myNavh05").style.display = "none";
+                function showcontainer2() {
+                    document.getElementById("container2").style.display = "block";
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
 
                 }
-                function myNavh3() {
-                    document.getElementById("myNavh03").style.display = "block";
+                function showcontainer3() {
+                    document.getElementById("container3").style.display = "block";
                     document.getElementById("myNavh02").style.display = "none";
                     document.getElementById("myNavh01").style.display = "none";
                     document.getElementById("myNavh04").style.display = "none";

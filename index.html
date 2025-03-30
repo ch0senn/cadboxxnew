@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -201,7 +201,7 @@
                             THREE.Math.randInt(-20, 20),
                             THREE.Math.randInt(-20, 20)
                         ),
-                                                                                                                                                                                                                    /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                                                                                                                                                                                                                /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
                     );
                 });
 
@@ -303,7 +303,7 @@
             cursor: pointer;
             display: inline-block;
             font-size: 12px;
-            height: 50px;
+            height: 100px;
             margin-top: 5px;
             margin-left: 5px;
             outline: 2px solid grey;
@@ -405,41 +405,17 @@
             justify-content: center;
         }
 
-        .container2 {
+        #container {
             position: absolute;
             width: 100%;
             display: flex;
             justify-content: center;
         }
 
-        .container3 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
 
-        .container4 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
 
-        .container5 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container6 {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
     </style>
+
     <style>
         a-scene {
             height: 100%;
@@ -646,100 +622,98 @@
     </style>
 </head>
 <body>
-    <div id="mainmenu" class="container1" visible="false">
+    <div id="container" class="container-flex">
         <center>
-            <div id="btnbar" display="inline-block">
-                <button id="bcreate" class="clickable button1" onclick="showcreatemenu()">CREATE</button>
-                <button id="bcontrol" class="clickable button2" onclick="showcontrolmenu()">CONTROL</button>
-                <button id="bedit" class="clickable button3" onclick="showeditmenu()">EDIT</button>
-                <button id="bassemble" class="clickable button4" onclick="showassemblymenu()">ASSEMBLE</button>
-                <button id="bmotion" class="clickable button5" onclick="showmotionmenu()">MOTION</button>
-                <button id="btest" class="clickable button6" onclick="showrecordmenu()">Record</button>
-
+            <div id="btnmenu" display="inline-block" visible="true">
+                <button class="clickable button" color="red" onclick="menucreate()">CREATE</button>
+                <button class="clickable button" color="red" onclick="menucontrol()">CONTROL</button>
+                <button class="clickable button" color="red" onclick="menuedit()">EDIT</button>
+                <button class="clickable button" color="red" onclick="menuassemble()">ASSEMBLE</button>
+                <button class="clickable button" color="red" onclick="menumotion()">MOTION</button>
+                <button class="clickable button" color="red" onclick="menutest()">TEST</button>
+            
             </div>
         </center>
     </div>
-    <div id="createmenu" class="container2" visible="true">
+    <div id="container2" class="container-flex" visible="false">
         <center>
             <div id="btnnbar2" display="inline-block">
-                <button id="bcube" class="clickable button1" onclick="newcube()">CUBE</button>
-                <button id="bsphere" class="clickable button1" onclick="newsphere()">SPHERE</button>
-                <button id="bcyl" class="clickable button1" onclick="newcylinder()">CYL</button>
-                <button id="btube" class="clickable button1" onclick="newtube()">TUBE</button>
-                <button id="bcone" class="clickable button1" onclick="newconetopoint()">CONE</button>
-                <button id="bmainmenu" class="clickable button1" onclick="mainmenu0()">HOME</button>
+                <button class="clickable" onclick="newcube()">CUBE</button>
+                <button class="clickable" onclick="newsphere()">SPHERE</button>
+                <button class="clickable" onclick="newcylinder()">CYL</button>
+                <button class="clickable" onclick="newtube()">TUBE</button>
+                <button class="clickable" onclick="newconetopoint()">CONE</button>
+                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
             </div>
         </center>
     </div>
-    <div id="controlmenu" class="container3" visible="false">
+    <div id="container3" class="container-flex" visible="false">
         <center>
-            <div id="controlmenu" display="inline-block">
-                <button id="bview" class="clickable button2 " onclick="()">VIEWS</button>
-                <button id="bcoords" class="clickable button2 " onclick="newcam()">Coords</button>
-                <button id="bcameras" class="clickable button2 " onclick="newcam()">CAMS</button>
-                <button id="bcontrollers" class="clickable button2 " onclick="newtube()">Control</button>
-                <button id="bhmd" class="clickable button2 " onclick="hmdset()">HMD</button>
-                <button id="bhomemenu" class="clickable button2" onclick="mainmenu()">HOME</button>
+            <div id="btnnbar3" display="inline-block">
+                <button class="clickable" onclick="newcube()">CUBE</button>
+                <button class="clickable" onclick="newsphere()">SPHERE</button>
+                <button class="clickable" onclick="newcylinder()">CYL</button>
+                <button class="clickable" onclick="newtube()">TUBE</button>
+                <button class="clickable" onclick="newconetopoint()">CONE</button>
+                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
             </div>
         </center>
     </div>
-    <div id="editmenu" class="container4" visible="false">
+    <div id="container4" class="container-flex" visible="false">
         <center>
             <div id="btnnbar4" display="inline-block">
-                <button id="baddition" class="clickable button3 " onclick="addition()">ADDITION</button>
-                <button id="bextrude" class="clickable button3 " onclick="extrUde()">EXTRUDE</button>
-                <button id="bmerge" class="clickable button3" onclick="merge()">MERGE</button>
-                <button id="brevolve" class="clickable button3" onclick="revolve()">REVOLVE</button>
-                <button id="bnewtexturte" class="clickable button3" onclick="newtexture()">TEXTURE</button>
-                <button id="bmainmenu" class="clickable button3" onclick="mainmenu()">HOME</button>
+                <button class="clickable" onclick="newcube()">CUBE</button>
+                <button class="clickable" onclick="newsphere()">SPHERE</button>
+                <button class="clickable" onclick="newcylinder()">CYL</button>
+                <button class="clickable" onclick="newtube()">TUBE</button>
+                <button class="clickable" onclick="newconetopoint()">CONE</button>
+                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
             </div>
         </center>
     </div>
-    <div id="assemblymenu" class="container5" visible="false">
+    <div id="container5" class="container-flex" visible="false">
         <center>
             <div id="btnnbar5" display="inline-block">
-                <button id="fix" class="clickable button4" onclick="setviews()">FIX</button>
-                <button id="group" class="clickable button4" onclick="creategroup()">GROUP</button>
-                <button id="combine" class="clickable button4 " onclick="combinebodies()">COMBINE</button>
-                <button id="center" class="clickable button4 " onclick="centerbodies()">CENTER</button>
-                <button id="constrain" class="clickable button4 " onclick="constrain()">CONSTRAIN</button>
-                <button id="bmainmenu" class="clickable button4" onclick="mainmenu()">HOME</button>
-        </center>
-    </div>
-    <div id="motionmenu" class="container6" visible="false">
-        <center>
-            <div id="btnnbar6" display="inline-block">
-                <button id="physics" class="clickable button5" onclick="physicsonoff()">PHYSICS</button>
-                <button id="animate" class="clickable button5 " onclick="animatecomponent()">ANIMATE</button>
-                <button id="cameras" class="clickable button5  " onclick="camlist()">CAMS</button>
-                <button id="recorder" class="clickable button5 " onclick="recorder()">RECORDER</button>
-                <button id="HMD" class="clickable button5 " onclick="hmdview()">HMD</button>
-                <button id="bmainmenu" class="clickable button5 " onclick="mainmenu()">HOME</button>
-
+                <button class="clickable" onclick="newcube()">CUBE</button>
+                <button class="clickable" onclick="newsphere()">SPHERE</button>
+                <button class="clickable" onclick="newcylinder()">CYL</button>
+                <button class="clickable" onclick="newtube()">TUBE</button>
+                <button class="clickable" onclick="newconetopoint()">CONE</button>
+                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
             </div>
         </center>
     </div>
-    <div id="exportmenu" class="container7" visible="false">
+    <div id="container6" class="container-flex" visible="false">
         <center>
-            <div id="btnnbar7" display="inline-block">
-                <button id="export-scene" class="clickable button6"><span>GLTF Scene</span></button>
-                <button id="export-scene-bin" class="clickable button6"><span>GLB Scene</span></button>
-                <button id="export-bxx" class="clickable button6"><span>Export bxx</span></button>
-                <button id="export-byy" class="clickable button6"><span>Export byy</span></button>
-                <button id="export-bzz" class="clickable button6"><span>Export</span></button>
-                <button id="bmainmenu" class="clickable button6" onclick="mainmenu()">HOME</button>
-
+            <div id="btnnbar5" display="inline-block">
+                <button class="clickable" onclick="newcube()">CUBE</button>
+                <button class="clickable" onclick="newsphere()">SPHERE</button>
+                <button class="clickable" onclick="newcylinder()">CYL</button>
+                <button class="clickable" onclick="newtube()">TUBE</button>
+                <button class="clickable" onclick="newconetopoint()">CONE</button>
+                <button class="clickable" onclick="closeAllNav()">CLOSE</button>
+            </div>
+        </center>
+    </div>
+    <div id="container6" class="container-flex" visible="false">
+        <center>
+            <div id="btnnbar6" display="inline-block">
+                <button id="export-scene" class="button"><span>Export Scene</span></button>
+                <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
+                <button id="export-sphere" class="button"><span>Export Sphere</span></button>
+                <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
+                <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
             </div>
         </center>
     </div>
 
     <div id="mySidenav" class="sidenav">
-        <a id="mainmenu" class="clickable button" onclick="showmainmenu()">MAIN</a>
-        <a id="createmenu" class="clickable button" onclick="showcreatemenu()">CREATE</a>
-        <a id="assembly" class="clickable button" onclick="showassemblymenu()">ASSEMBLY</a>
-        <a id="arrange" class="clickable button" onclick="showarrangemenu()">ARRANGE</a>
-        <a id="motion" class="clickable button" onclick="showmotionmenu()">MOTION</a>
-        <a id="study" class="clickable button" onclick="showexportmenu()">STUDY</a>
+        <a id="file" class="clickable" onclick="cmm1()">FILE</a>
+        <a id="create" class="clickable" onclick="cmm2()">CREATE</a>
+        <a id="assemble" class="clickable" onclick="cmm3()">ASSEMBLE</a>
+        <a id="arrange" class="clickable" onclick="cmm4()">ARRANGE</a>
+        <a id="motion" class="clickable" onclick="cmm5()">MOTION</a>
+        <a id="study" class="clickable" onclick="cmm6()">STUDY</a>
 
     </div>
     <!--div id="mySidenav" class="sidenav">
@@ -756,14 +730,14 @@
         <a href="https://sketchfab.com/fasteng" target="_blank" id="efgh">SketchFab</a>
         <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
 
-    </div>
-    <div id="menucreate" class="overlay">
-        <<div class="overlay-content">
+    </div><!--
+    <div id="myNavh01" class="overlay">
+        <div class="overlay-content">
             <center>
                 <div id="btnnbar" display="inline-block">
                     <button class="clickable" onclick="newcube()">CUBE</button>
                     <button class="clickable" onclick="newsphere()">SPHERE</button>
-                    <button class="clickable" onclick="newcylinder()">CYL</button>
+                    <button class="clickable" onclick="newcylinder()">CYLINDER</button>
                     <button class="clickable" onclick="newtube()">TUBE</button>
                     <button class="clickable" onclick="newconetopoint()">CONE</button>
                     <button class="clickable" onclick="closeAllNav()">CLOSE</button>
@@ -945,49 +919,48 @@
                 </div>
             </center>
         </div>
-    </div>
-
+    </div>-->
 
 
     <!--container-flex surrounding body-->
     <div class="container-flex">
 
-        <a-scene onload="showmainmenu()" gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" ; onload="(" showmainmenu()")">
-            <a-assets>
-                <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
-                         hoverable grabbable stretchable draggable droppable
-                         event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-                         event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-                         body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
-                <a-mixin id="gltfmodel" gltf-model="#cbb1"
-                         hoverable grabbable stretchable draggable droppable clickable
-                         event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-                         event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-                         body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
-                <a-mixin id="beveled-square" geometry="primitive: cone; radiusTop: 0.15; radiusBottom: 0.19; height: 0.02; segmentsRadial: 4; segmentsHeight: 1" rotation="0 45 0"></a-mixin>
-                <a-mixin id="square" geometry="primitive: box; width: 0.18; height: 0.025; depth: 0.18;" position="0 0.02 0"></a-mixin>
-                <a-mixin id="blue" material="color: #1E2768;"></a-mixin>
-                <a-mixin id="darkgreen" material="color: #22FF90;"></a-mixin>
-                <a-mixin id="yellow" material="color: #FFF88E;"></a-mixin>
-                <a-mixin id="offset" position="0 0.01 0"></a-mixin>
-                <img id="m01" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-dlkr-5676470%20(1).jpg?v=1671179886918" />
-                <img id="m02" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-eva-bronzini-6485438.jpg?v=1671179938437" />
-                <img id="m03" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978462.jpg?v=1671180017611" />
-                <img id="m04" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978503.jpg?v=1671180039120" />
-                <img id="m05" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-milo-textures-2768398.jpg?v=1671180129644" />
-                <img id="m06" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-207300.jpg?v=1671180185041" />
-                <img id="m07" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-268415.jpg?v=1671180285873" />
-                <img id="m08" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-piyapong-sayduang-4541011.jpg?v=1671180304280" />
-                <img id="m09" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-235985.jpg?v=1671180256508" />
-                <img id="m10" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-steve-johnson-6353321.jpg?v=1671180659869" />
-                <img id="m11" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_01.jpg?v=1671449502907" />
-                <img id="m12" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_02.jpg?v=1671449528541" />
-                <img id="m13" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_03.jpg?v=1671449535258" />
-                <img id="m14" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_05.jpg?v=1671449549312" />
-                <img id="m15" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_07.jpg?v=1671449555859" />
-                <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
-                <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
-                <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
+            <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
+                <a-assets>
+                    <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
+                             hoverable grabbable stretchable draggable droppable
+                             event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                             body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+                    <a-mixin id="gltfmodel" gltf-model="#cbb1"
+                             hoverable grabbable stretchable draggable droppable clickable
+                             event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                             event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                             body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+                    <a-mixin id="beveled-square" geometry="primitive: cone; radiusTop: 0.15; radiusBottom: 0.19; height: 0.02; segmentsRadial: 4; segmentsHeight: 1" rotation="0 45 0"></a-mixin>
+                    <a-mixin id="square" geometry="primitive: box; width: 0.18; height: 0.025; depth: 0.18;" position="0 0.02 0"></a-mixin>
+                    <a-mixin id="blue" material="color: #1E2768;"></a-mixin>
+                    <a-mixin id="darkgreen" material="color: #22FF90;"></a-mixin>
+                    <a-mixin id="yellow" material="color: #FFF88E;"></a-mixin>
+                    <a-mixin id="offset" position="0 0.01 0"></a-mixin>
+                    <img id="m01" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-dlkr-5676470%20(1).jpg?v=1671179886918" />
+                    <img id="m02" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-eva-bronzini-6485438.jpg?v=1671179938437" />
+                    <img id="m03" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978462.jpg?v=1671180017611" />
+                    <img id="m04" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-hoang-le-978503.jpg?v=1671180039120" />
+                    <img id="m05" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-milo-textures-2768398.jpg?v=1671180129644" />
+                    <img id="m06" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-207300.jpg?v=1671180185041" />
+                    <img id="m07" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-268415.jpg?v=1671180285873" />
+                    <img id="m08" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-piyapong-sayduang-4541011.jpg?v=1671180304280" />
+                    <img id="m09" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-pixabay-235985.jpg?v=1671180256508" />
+                    <img id="m10" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/pexels-steve-johnson-6353321.jpg?v=1671180659869" />
+                    <img id="m11" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_01.jpg?v=1671449502907" />
+                    <img id="m12" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_02.jpg?v=1671449528541" />
+                    <img id="m13" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_03.jpg?v=1671449535258" />
+                    <img id="m14" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_05.jpg?v=1671449549312" />
+                    <img id="m15" src="https://cdn.glitch.global/9b88d7be-d0c9-485f-a6f9-677367608e30/free_metal_texture_07.jpg?v=1671449555859" />
+                    <img id="metal" src="textures/metal/TexturesCom_MetalBare0043_M.jpg">
+                    <img id="metal2" src="textures/metal/TexturesCom_MetalBare0086_1_M.jpg">
+                    <img id="metal3" src="textures/metal/TexturesCom_MetalBare0104_1_M.jpg">
 
                 <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
                 <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=16728614127"></a-asset-item>
@@ -1547,17 +1520,13 @@
 
         </script>
 
-
-
-        <!--menucreate menucontrol menuedit menuassemble menumotion menutest -->
-
-        <script type="text/javascript">
-            var mybutton01 = document.querySelector('#mybutton01');
-            mybutton01.addEventListener('pressed', function showcreatemenu() {
-                // do stuff here.
-
-            });
-        </script>
+            <script type="text/javascript">
+                var mybutton01 = document.querySelector('#mybutton01');
+                mybutton01.addEventListener('pressed', function newsphere() {
+                    // do stuff here.
+                    
+                });
+            </script>
 
         <script type="text/javascript">
             var mybutton02 = document.querySelector('#mybutton02');
@@ -2635,89 +2604,81 @@
         </script>
 
 
-        <script>
-            function matl01() {
-                var knot = document.getElementById("prt1");
-                knot.setAttribute('material', 'src', '#m01');
-            }
-            function matl02() {
-                var knot = document.getElementById("prt2");
-                knot.setAttribute('material', 'src', '#m02');
-            }
-            function matl03() {
-                var knot = document.getElementBySelection("cursor");
-                knot.setAttribute('material', 'src', '#m03');
-            }
-            window.matl4 = function () {
-                var knot = document.getElementById("prt4");
-                knot.setAttribute('material', 'src', '#m04');
-            }
-            window.matl5 = function () {
-                var knot = document.getElementById("prt5");
-                knot.setAttribute('material', 'src', '#m05');
-            }
-            window.matl6 = function () {
-                var knot = document.getElementById("prt6");
-                knot.setAttribute('material', 'src', '#m06');
-            }
-            window.matl7 = function () {
-                var knot = document.getElementById("prt7");
-                knot.setAttribute('material', 'src', '#m07');
-            }
-            window.matl8 = function () {
-                var knot = document.getElementById("prt8");
-                knot.setAttribute('material', 'src', '#m08');
-            }
-            window.matl9 = function () {
-                var knot = document.getElementById("prt9");
-                knot.setAttribute('material', 'src', '#m09');
-            }
-            window.matl10 = function () {
-                var knot = document.getElementById("prt10");
-                knot.setAttribute('material', 'src', '#m10');
-            }
-            window.matl11 = function () {
-                var knot = document.getElementById("prt11");
-                knot.setAttribute('material', 'src', '#m11');
-            }
-            window.matl12 = function () {
-                var knot = document.getElementById("prt12");
-                knot.setAttribute('material', 'src', '#m12');
-            }
-            window.matl13 = function () {
-                var knot = document.getElementById("prt13");
-                knot.setAttribute('material', 'src', '#m13');
-            }
-            window.matl14 = function () {
-                var knot = document.getElementById("prt14");
-                knot.setAttribute('material', 'src', '#m14');
-            }
-            window.matl15 = function () {
-                var knot = document.getElementById("prt15");
-                knot.setAttribute('material', 'src', '#m15');
-            }
-            window.matl16 = function () {
-                var knot = document.getElementById("prt16");
-                knot.setAttribute('material', 'src', '#m16');
-            }
-            window.matl17 = function () {
-                var knot = document.getElementById("prt17");
-                knot.setAttribute('material', 'src', '#m17');
-            }
-            window.matl18 = function () {
-                var knot = document.getElementById("prt18");
-                knot.setAttribute('material', 'src', '#m18');
-            };
-        </script>
-    </div>
-    </div>
+            <script>
+                function matl01() {
+                    var knot = document.getElementById("prt1");
+                    knot.setAttribute('material', 'src', '#m01');
+                }
+                function matl02() {
+                    var knot = document.getElementById("prt2");
+                    knot.setAttribute('material', 'src', '#m02');
+                }
+                function matl03() {
+                    var knot = document.getElementBySelection("cursor");
+                    knot.setAttribute('material', 'src', '#m03');
+                }
+                window.matl4 = function () {
+                    var knot = document.getElementById("prt4");
+                    knot.setAttribute('material', 'src', '#m04');
+                }
+                window.matl5 = function () {
+                    var knot = document.getElementById("prt5");
+                    knot.setAttribute('material', 'src', '#m05');
+                }
+                window.matl6 = function () {
+                    var knot = document.getElementById("prt6");
+                    knot.setAttribute('material', 'src', '#m06');
+                }
+                window.matl7 = function () {
+                    var knot = document.getElementById("prt7");
+                    knot.setAttribute('material', 'src', '#m07');
+                }
+                window.matl8 = function () {
+                    var knot = document.getElementById("prt8");
+                    knot.setAttribute('material', 'src', '#m08');
+                }
+                window.matl9 = function () {
+                    var knot = document.getElementById("prt9");
+                    knot.setAttribute('material', 'src', '#m09');
+                }
+                window.matl10 = function () {
+                    var knot = document.getElementById("prt10");
+                    knot.setAttribute('material', 'src', '#m10');
+                }
+                window.matl11 = function () {
+                    var knot = document.getElementById("prt11");
+                    knot.setAttribute('material', 'src', '#m11');
+                }
+                window.matl12 = function () {
+                    var knot = document.getElementById("prt12");
+                    knot.setAttribute('material', 'src', '#m12');
+                }
+                window.matl13 = function () {
+                    var knot = document.getElementById("prt13");
+                    knot.setAttribute('material', 'src', '#m13');
+                }
+                window.matl14 = function () {
+                    var knot = document.getElementById("prt14");
+                    knot.setAttribute('material', 'src', '#m14');
+                }
+                window.matl15 = function () {
+                    var knot = document.getElementById("prt15");
+                    knot.setAttribute('material', 'src', '#m15');
+                }
+                window.matl16 = function () {
+                    var knot = document.getElementById("prt16");
+                    knot.setAttribute('material', 'src', '#m16');
+                }
+                window.matl17 = function () {
+                    var knot = document.getElementById("prt17");
+                    knot.setAttribute('material', 'src', '#m17');
+                }
+                window.matl18 = function () {
+                    var knot = document.getElementById("prt18");
+                    knot.setAttribute('material', 'src', '#m18');
+                };
+            </script>
+        </div>
+    </body>
 
-
-
-</body>
 </html>
-
-
-
-
-

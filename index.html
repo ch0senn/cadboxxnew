@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>CADBOXX</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
@@ -200,7 +201,7 @@
                             THREE.Math.randInt(-20, 20),
                             THREE.Math.randInt(-20, 20)
                         ),
-                                                                                                                                                                                                                                    /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
+                                                                                                                                                                                                                                                /* world position */ new CANNON.Vec3().copy(el.getDOMAttribute('position'))
                     );
                 });
 
@@ -253,8 +254,6 @@
     <link rel="stylesheet" type="text/css" href="aframe.css">
 
     <style>
-        .
-        <style >
         .button:hover {
             background-color: #fff;
             color: blue;
@@ -633,7 +632,7 @@
 
 <body>
     <center>
-        <div id="container1">
+        <div id="container1" display="inline-block">
             <button id="mybutton01" class="button1" onclick="showcontainer1()">HOME</button>
             <button id="mybutton02" class="button2" onclick="showcontainer2()">MODELS<span>Export Scene</span></button>
             <button id="mybutton03" class="button3" onclick="showcontainer3()">CONTROL<span>Export Scene Binary</span></button>
@@ -645,7 +644,7 @@
         </div>
     </center>
     <center>
-        <div id="container2">
+        <div id="container2" display="inline-block">
             <button id="mybutton08" class="button1" onclick="showcontainer1()">HOME</button>
             <button id="mybutton09" class="button2" onclick="command01()"><span>LOAD</span></button>
             <button id="mybutton10" class="button2" onclick="command02()"><span>EDIT</span></button>
@@ -656,53 +655,84 @@
 
         </div>
     </center>
+    <script>
+        function name{
+            document.getElementBySelection()
+        }
+    </script>
     <center>
-        <div id="container3">
+        <div id="container3" display="inline-block">
+            <!--new-shapes-->
             <button id="mybutton15" class="button1" onclick="showcontainer1()">HOME</button>
-            <button id="mybutton16" class="button3" onclick="command01()"><span>MOUSE</span></button>
-            <button id="mybutton17" class="button3" onclick="command02()"><span>GAMEPAD</span></button>
-            <button id="mybutton18" class="button3" onclick="command03()"><span>TOUCH</span></button>
-            <button id="mybutton19" class="button3" onclick="command04()"><span>HANDS</span></button>
-            <button id="mybutton20" class="button3" onclick="command05() "><span>VR</span></button>
-            <button id="mybutton21" class="button3" onclick="command06() "><span>HEADSET</span></button>
+            <button id="mybutton16" class="button3" onclick="newglbcube()"><span>MOUSE</span></button>
+            <button id="mybutton17" class="button3" onclick="newglbcyl()"><span>GAMEPAD</span></button>
+            <button id="mybutton18" class="button3" onclick="newglbsphere()"><span>TOUCH</span></button>
+            <button id="mybutton19" class="button3" onclick="newglbplane()"><span>HANDS</span></button>
+            <button id="mybutton20" class="button3" onclick="newglbconetp()"><span>VR</span></button>
+            <button id="mybutton21" class="button3" onclick="gltfmerge()"><span>HEADSET</span></button>
 
         </div>
     </center>
 
     <center>
-        <div id="container4">
+        <div id="container4" display="inline-block">
+            <!--export-->
             <button id="mybutton01" class="button1" onclick="showcontainer1()">HOME</button>
             <button id="export-scene" class="button4"><span>Scene</span></button>
-            <button id="export-scene-bin" class="button4"><span>Scene Binary</span></button>
-            <button id="export-sphere" class="button4"><span>Export Sphere</span></button>
+            <button id="export-scene-bin" class="button4"><span>Sry</span></button>
+            <button id="export-sphere" class="button4"><span>Expo</span></button>
             <button id="export-two" class="button4"><span>Export Sphere</span></button>
-            <button id="export-selector" class="button4"><span>Export boxes</span></button>
+            <button id="export-selector" class="button4"><span>Exes</span></button>
 
         </div>
     </center>
 
     <center>
-        <div id="container5">
-            <button id="mybutton21" class="button1" onclick="showcontainer1()">HOME</button>
-            <button id="mybutton22" class="button5" onclick="command01()"><span>MOUSE</span></button>
-            <button id="mybutton23" class="button5" onclick="command02()"><span>GAMEPAD</span></button>
-            <button id="mybutton24" class="button5" onclick="command03()"><span>TOUCH</span></button>
-            <button id="mybutton25" class="button5" onclick="command04()"><span>HANDS</span></button>
-            <button id="mybutton26" class="button5" onclick="command05() "><span>VR</span></button>
-            <button id="mybutton27" class="button5" onclick="command06() "><span>HEADSET</span></button>
+        <div id="container5" display="inline-block">
+            <button id="mybutton22" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton23" class="button5" onclick="command01()"><span>MOUSE</span></button>
+            <button id="mybutton24" class="button5" onclick="command02()"><span>GAMEPAD</span></button>
+            <button id="mybutton25" class="button5" onclick="command03()"><span>TOUCH</span></button>
+            <button id="mybutton26" class="button5" onclick="command04()"><span>HANDS</span></button>
+            <button id="mybutton27" class="button5" onclick="command05() "><span>VR</span></button>
+            <button id="mybutton28" class="button5" onclick="command06() "><span>HEADSET</span></button>
 
         </div>
     </center>
 
     <center>
-        <div id="container6">
-            <button id="mybutton28" class="button1" onclick="showcontainer1()">HOME</button>
-            <button id="mybutton29" class="button6" onclick="command01()"><span>MOUSE</span></button>
-            <button id="mybutton30" class="button6" onclick="command02()"><span>GAMEPAD</span></button>
-            <button id="mybutton31" class="button6" onclick="command03()"><span>TOUCH</span></button>
-            <button id="mybutton32" class="button6" onclick="command04()"><span>HANDS</span></button>
-            <button id="mybutton33" class="button6" onclick="command05() "><span>VR</span></button>
-            <button id="mybutton34" class="button6" onclick="command06() "><span>HEADSET</span></button>
+        <div id="container6" display="inline-block">
+            <button id="mybutton29" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton30" class="button6" onclick="command01()"><span>MOUSE</span></button>
+            <button id="mybutton31" class="button6" onclick="command02()"><span>GAMEPAD</span></button>
+            <button id="mybutton32" class="button6" onclick="command03()"><span>TOUCH</span></button>
+            <button id="mybutton33" class="button6" onclick="command04()"><span>HANDS</span></button>
+            <button id="mybutton34" class="button6" onclick="command05() "><span>VR</span></button>
+            <button id="mybutton35" class="button6" onclick="command06() "><span>HEADSET</span></button>
+
+        </div>
+    </center>
+    <center>
+        <div id="container6" display="inline-block">
+            <button id="mybutton36" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton37" class="button6" onclick="command01()"><span>MOUSE</span></button>
+            <button id="mybutton38" class="button6" onclick="command02()"><span>GAMEPAD</span></button>
+            <button id="mybutton39" class="button6" onclick="command03()"><span>TOUCH</span></button>
+            <button id="mybutton40" class="button6" onclick="command04()"><span>HANDS</span></button>
+            <button id="mybutton41" class="button6" onclick="command05() "><span>VR</span></button>
+            <button id="mybutton42" class="button6" onclick="command06() "><span>HEADSET</span></button>
+
+        </div>
+    </center>
+    <center>
+        <div id="container7" display="inline-block">
+            <button id="mybutton43" class="button1" onclick="showcontainer1()">HOME</button>
+            <button id="mybutton44" class="button6" onclick="command01()"><span>MOUSE</span></button>
+            <button id="mybutton45" class="button6" onclick="command02()"><span>GAMEPAD</span></button>
+            <button id="mybutton46" class="button6" onclick="command03()"><span>TOUCH</span></button>
+            <button id="mybutton47" class="button6" onclick="command04()"><span>HANDS</span></button>
+            <button id="mybutton48" class="button6" onclick="command05() "><span>VR</span></button>
+            <button id="mybutton49" class="button6" onclick="command06() "><span>HEADSET</span></button>
 
         </div>
     </center>
@@ -716,8 +746,28 @@
         <a id="studio" class="button clickable" onclick="showcontainer6()">STUDIO</a>
 
     </div>
+    <!-- function to prepare an object for selection
+    <script>
+      AFRAME.registerComponent("click-listener", {
+        init: function() {
+          this.el.addEventListener("click", function(e) {
+            console.log(e.target)
+            e.target.setAttribute('scale', {x: 2, y: 2, z: 2});
+            });
+          this.el.addEventListener("mouseenter", function(e) {
+            console.log(e.target)
+            e.target.setAttribute('scale', {x: 1.5, y: 1.5, z: 1.5});
+            });
+          this.el.addEventListener("mouseleave", function(e) {
+            console.log(e.target)
+            e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
+            });
+          }
+      });
+    </script>
 
 
+        -->
     <!--div id="mySidenav" class="sidenav">
         <a id="file" class="clickable" onclick="function()" >FILE</a>
         <a href="#" id="create">CREATE</a>
@@ -739,8 +789,12 @@
     <div class="container-flex">
 
 
-        <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
+        <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2"
+                 onload="showcontainer1()">
             <a-assets>
+                <a-asset-item id="boxglbred" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxred.glb?v=1688019604745"></a-asset-item>
+                <a-asset-item id="boxglbblue" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxblue.glb?v=1688019583475"></a-asset-item>
+                <a-asset-item id="boxglbgreen" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxgreen.glb?v=1688019561769"></a-asset-item>
 
                 <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                          hoverable grabbable stretchable draggable droppable
@@ -914,8 +968,8 @@
                          material="side: double" hoverable grabbable stretchable draggable droppable clickable
                          dynamic-body shadow>
                 </a-mixin>
-                <a-mixin id="cone" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.25"
-                         hoverable grabbable stretchable draggable droppable clickable
+                <a-mixin id="cone" geometry="primitivstretchablee: cone; radiusBottom: 0.5; radiusTop: 0.25"
+                         hoverable grabbable draggable droppable clickable
                          dynamic-body shadow>
                 </a-mixin>
                 <a-mixin id="voxel"
@@ -1055,7 +1109,7 @@
                 <a-mixin id="rotyy" animation__rotation__yy="property: rotation; dir: forward; dur: 4000;
       repeat: indefinite; easing: linear; loop: true; to: 0 360 0"></a-mixin>
                 <a-mixin id="rotzz" animation__rotation__zz="property: rotation; dir: forward; dur: 3000;
-      repeat: indefinite; easing: linear; loop: true; to: 0 0 360"></a-mixin>
+      repeat: indefinite; easing: linear; loop: tre; to: 0 0 360"></a-mixin>
                 <a-mixin id="rotxyz" animation__rotation__xyz="property: rotation; dir: forward; dur: 3000;
       repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-mixin>
 
@@ -1063,8 +1117,118 @@
                 <a-asset-item id="crank4cyl" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
                 <a-asset-item id="crank4cyl-we" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/crankwtextures.glb?v=1674211472071"></a-asset-item>
 
+                <a-mixin id="staticb" src="static-body"></a-mixin>
+                <a-mixin id="pulleyscale" gltf-model="#pulley" target="#" position="0 0 0" rotatioin="0 0 0" scale="1 1 1" mixin="staticb">
+
+                    <a-mixin id="websided1" position="0 0.5 0" rotation="0 0 0" scale="1 0.25 1"></a-mixin>
+                    <a-mixin id="websided2" position="-3 0.5 0" rotation="0 0 0" scale="1 0.25 1"></a-mixin>
+                    <a-mixin id="websided3" position="3 0.5 0" rotation="0 0 0" scale="1 0.25 1"></a-mixin>
+                    <a-mixin id="rearmain" position="0 12.5 0" static-body></a-mixin>
+                    <a-mixin id="cylcen" position="-15 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-mixin>
+
             </a-assets>
 
+            <a-entity id="cylindercenter" gltf-model="#ccylx" target="#mianbrg" mixin="cylcen">
+                <a-entity id="leftover" mixin="position-center"><&a-entity</&a-entity>                                   1="ccyly" target="#cylenders" mixin="#"></a-entity>
+            </a-entity>
+
+
+
+
+            <a-entity id="flywheel" gltf-model="#flywheel" target="#" mixin="fixedtoparent"></a-entity>
+
+            <a-entity id="#rearmain" gltf-model="#ccyly" target="#web5" mixin="#"></a-entity>
+
+
+
+
+
+            <a-entity id="journal" gltf-model="#ccyly" target="0 0 0" mixin="#">
+                <a-entity id="web1" gltf-model="#boxglbblue" target="#journal" mmixin="web-sided1"></a-entity>
+                <a-entity id="web2" gltf-model="#boxglbblue" target="#journal" mixin="web-sided2"></a-entity>
+                <a-entity id="web3" gltf-model="#boxglbblue" target="#journal" mixin="web-sided3"></a-entity>
+
+            </a-entity>
+
+
+            <a-entity id="mainbrg" gltf-model="#ccyly" target="0 0 0" mixin="#">
+                <a-entity id="pulley" gltf-model="#ccyly" target="#mainbrg" mixin="pulleyscale"></a-entity>
+            </a-entity>
+
+            <a-entity id="crank-center" gltf-model="ccyly" target="0 -2 0" mixin="staticb">
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+            </a-entity>
+
+            <!--end--
+
+            <a-entity id="pistonassy" gltf-model="#" target="#" mixin="#">
+
+
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+
+
+            </a-entity>
+
+            <a-entity id="#" gltf-model="#" target="#" mixin="#">
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+            </a-entity>
+
+            <a-entity id="#" gltf-model="#" target="#" mixin="#">
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+            </a-entity>
+
+            <a-entity id="#" gltf-model="#" target="#" mixin="#">
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+            </a-entity>
+
+            <a-entity id="cylindercenter" gltf-model="#ccylx" target="#" mixin="cylcen">
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+            </a-entity>
+
+            <a-mixin id="cylcen" position="-15 3 0" rotation="0 0 0" scale="1 1 1"
+                     static-body></a-mixin>
+
+
+
+            <mixin id="pulleyposition" position="0 -1.0 0" scale="1 1 1"></mixin>
+
+            <a-entity id="#" gltf-model="#" target="#" mixin="#">
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+            </a-entity>
+
+            <a-entity id="#rearmain" gltf-model="#ccyly" target="#web5" mixin="rearmain">
+                <a-entity id="flywheel" gltf-model="#flywheel" target="#" mixin="fixedtoparent"></a-entity>
+            </a-entity>
+
+            <a-mixin id="rearmain" position="0 12.5 0" static-body></a-mixin>
+
+            <a-entity id="piston" gltf-model="#piston" target="#pistoncenter" mixin="dymamic">
+                <a-epintity id="#" gltf-model="#" target="#" mixin="piston-gudgeon"></a-epintity>
+            </a-entity>
+
+            <a-entity id="bigendcap" gltf-model="#" target="#" mixin="#">
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+            </a-entity>
+
+            <a-entity id="gudgeonpin" gltf-model="#ccyly" target="#conrod" mixin="#gudgeon">
+                <a-entity id="#" gltf-model="#" target="#" mixin="#"></a-entity>
+            </a-entity>
+
+            <a-entity id="journal" gltf-model="#ccyly" target="0 0 0" mixin="journal">
+                <a-entity id="web1" gltf-model="#boxglbblue" target="#journal" mmixin="#web-sided1"></a-entity>
+                <a-entity id="web2" gltf-model="#boxglbblue" target="#journal" mixin="#web-sided2"></a-entity>
+                <a-entity id="web3" gltf-model="#boxglbblue" target="#journal" mixin="#web-sided3"></a-entity>
+
+            </a-entity>
+
+            <mixin id="web1" position="0 0.5 0" rotation="0 0 0" scale="1 0.25 1"></mixin>
+            <mixin id="web2" position="-3 0.5 0" rotation="0 0 0" scale="1 0.25 1"></mixin>
+            <mixin id="web3" position="3 0.5 0" rotation="0 0 0" scale="1 0.25 1"></mixin>
+
+
+
+            <mixin id="journal" position="0 2.5 0" rotation="0 0 0" scale="1 1 1"></mixin>
+            -->
 
             <a-gltf-model id="ground" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/coloredfloor.glb?v=1683611162825" static-body></a-gltf-model>
 
@@ -1105,7 +1269,46 @@
 
                     </a-box>
 
-                    <a-box position="-20 0 0" rotation="0 90 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                    <a-box position="0 0 -20" rotation="0 0 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                        <a-entity id="cmnd1" mixin="trigger-box4" position="-10 0 0" rotation="0 0 0" onclick="cmm1()" static-body><a-sphere id="cmcdsph1" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd2" mixin="trigger-box4" position="-10 5 0" rotation="0 0 0" onclick="cmm2()" static-body><a-sphere id="cmcdsph2" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd3" mixin="trigger-box4" position="-10 -5 0" rotation="0 0 0" onclick="cmm3()" static-body><a-sphere id="cmcdsph3" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd4" mixin="trigger-box4" position="-5 0 0" rotation="0 0 0" onclick="cmm4()" static-body><a-sphere id="cmcdsph4" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd5" mixin="trigger-box4" position="-5 5 0" rotation="0 0 0" onclick="cmm5()" static-body><a-sphere id="cmcdsph5" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd6" mixin="trigger-box4" position="-5 -5 0" rotation="0 0 0" onclick="cmm6()" static-body><a-sphere id="cmcdsph6" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd7" mixin="trigger-box4" position="0 0 0" rotation="0 0 0" onclick="cmm7()" static-body><a-sphere id="cmcdsph7" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd8" mixin="trigger-box4" position="0 5 0" rotation="0 0 0" onclick="cmm8()" static-body><a-sphere id="cmcdsph8" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd9" mixin="trigger-box4" position="0 -5 0" rotation="0 0 0" onclick="cmm9()" static-body><a-sphere id="cmcdsph9" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd10" mixin="trigger-box4" position="5 0 0" rotation="0 0 0" onclick="cmm10()" static-body><a-sphere id="cmcdsph10" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd11" mixin="trigger-box4" position="5 5 0" rotation="0 0 0" onclick="cmm11()" static-body><a-sphere id="cmcdsph11" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd12" mixin="trigger-box4" position="5 -5 0" rotation="0 0 0" onclick="cmm12()" static-body><a-sphere id="cmcdsph12" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd13" mixin="trigger-box4" position="10 0 0" rotation="0 0 0" onclick="cmm13()" static-body><a-sphere id="cmcdsph13" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd14" mixin="trigger-box4" position="10 5 0" rotation="0 0 0" onclick="cmm14()" static-body><a-sphere id="cmcdsph14" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd15" mixin="trigger-box4" position="10 -5 0" rotation="0 0 0" onclick="cmm15()" static-body><a-sphere id="cmcdsph15" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+
+                    </a-box>
+
+
+                    <a-box position="-20 0 0" rotation="0 0 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
+                        <a-entity id="cmnd1" mixin="trigger-box4" position="-10 0 0" rotation="0 0 0" onclick="cmm1()" static-body><a-sphere id="cmcdsph1" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd2" mixin="trigger-box4" position="-10 5 0" rotation="0 0 0" onclick="cmm2()" static-body><a-sphere id="cmcdsph2" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd3" mixin="trigger-box4" position="-10 -5 0" rotation="0 0 0" onclick="cmm3()" static-body><a-sphere id="cmcdsph3" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd4" mixin="trigger-box4" position="-5 0 0" rotation="0 0 0" onclick="cmm4()" static-body><a-sphere id="cmcdsph4" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd5" mixin="trigger-box4" position="-5 5 0" rotation="0 0 0" onclick="cmm5()" static-body><a-sphere id="cmcdsph5" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd6" mixin="trigger-box4" position="-5 -5 0" rotation="0 0 0" onclick="cmm6()" static-body><a-sphere id="cmcdsph6" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd7" mixin="trigger-box4" position="0 0 0" rotation="0 0 0" onclick="cmm7()" static-body><a-sphere id="cmcdsph7" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd8" mixin="trigger-box4" position="0 5 0" rotation="0 0 0" onclick="cmm8()" static-body><a-sphere id="cmcdsph8" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd9" mixin="trigger-box4" position="0 -5 0" rotation="0 0 0" onclick="cmm9()" static-body><a-sphere id="cmcdsph9" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd10" mixin="trigger-box4" position="5 0 0" rotation="0 0 0" onclick="cmm10()" static-body><a-sphere id="cmcdsph10" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd11" mixin="trigger-box4" position="5 5 0" rotation="0 0 0" onclick="cmm11()" static-body><a-sphere id="cmcdsph11" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd12" mixin="trigger-box4" position="5 -5 0" rotation="0 0 0" onclick="cmm12()" static-body><a-sphere id="cmcdsph12" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd13" mixin="trigger-box4" position="10 0 0" rotation="0 0 0" onclick="cmm13()" static-body><a-sphere id="cmcdsph13" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd14" mixin="trigger-box4" position="10 5 0" rotation="0 0 0" onclick="cmm14()" static-body><a-sphere id="cmcdsph14" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+                        <a-entity id="cmnd15" mixin="trigger-box4" position="10 -5 0" rotation="0 0 0" onclick="cmm15()" static-body><a-sphere id="cmcdsph15" radius=".1" material="color:black;wiremesh:true"></a-sphere></a-entity>
+
+                    </a-box>
+
+                    <a-box position="20 0 0" rotation="0 90 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
                         <a-entity id="cmnd21" mixin="trigger-box2" position="-10 0 0" rotation="0 90 0" onclick="cmm21()" static-body></a-entity>
                         <a-entity id="cmnd22" mixin="trigger-box2" position="-10 5 0" rotation="0 90 0" onclick="cmm22()" static-body></a-entity>
                         <a-entity id="cmnd23" mixin="trigger-box2" position="-10 -5 0" rotation="0 90 0" onclick="cmm23()" static-body></a-entity>
@@ -1123,6 +1326,7 @@
                         <a-entity id="cmnd215" mixin="trigger-box2" position="10 -5 0" rotation="0 90 0" onclick="cmm215()" static-body></a-entity>
 
                     </a-box>
+
                     <a-box position="0 -20 0" rotation="0 0 0" width="40" depth="40" height="0.5" color="lightblue" opacity=".1" static-body>
                         <a-entity id="cmnd31" mixin="trigger-box3" position="-10 0 0" rotation="0 90 0" onclick="cmm21()" static-body></a-entity>
                         <a-entity id="cmnd32" mixin="trigger-box3" position="-10 0 5" rotation="0 90 0" onclick="cmm22()" static-body></a-entity>
@@ -1145,52 +1349,46 @@
                         <a-entity id="cmnd319" mixin="trigger-box3" position="-5 0 0" rotation="0 90 0" onclick="cmm219()" static-body></a-entity>
                         <a-entity id="cmnd320" mixin="trigger-box3" position="-5 0 -5" rotation="0 90 0" onclick="cmm220()" static-body></a-entity>
                         <a-entity id="cmnd321" mixin="trigger-box3" position="-5 0 -10" rotation="0 90 0" onclick="cmm221()" static-body></a-entity>
-                        <a-entity id="cmnd322" mixin="trigger-box3" position="0 0 0" rotation="0 90 0" onclick="cmm222()" static-body></a-entity>
+                        <!--a-entity id="cmnd322" mixin="trigger-box3" position="0 0 0" rotation="0 90 0" onclick="cmm222()" static-body></!--a-entity>
                         <a-entity id="cmnd323" mixin="trigger-box3" position="0 0 -5" rotation="0 90 0" onclick="cmm223()" static-body></a-entity>
                         <a-entity id="cmnd324" mixin="trigger-box3" position="0 0 -10" rotation="0 90 0" onclick="cmm224()" static-body></a-entity>
-                        <a-entity id="cmnd325" mixin="trigger-box3" position="5 0 0" rotation="0 90 0" onclick="cmm225()" static-body></a-entity>
-                        <a-entity id="cmnd326" mixin="trigger-box3" position="5 0 -5" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
-                        <a-entity id="cmnd327" mixin="trigger-box3" position="5 0 -10" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
-                        <a-entity id="cmnd328" mixin="trigger-box3" position="10 0 0" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
-                        <a-entity id="cmnd329" mixin="trigger-box3" position="10 0 -5" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
-                        <a-entity id="cmnd330" mixin="trigger-box3" position="10 0 -10" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                        <a-entity id="cmnd325" mixin="trigger-box3" position="5 0 0" rotation="0 90 0" onclick="cmm225()" static-body></a-entity-->
+                        <a-entity id="cmnd322" mixin="trigger-box3" position="5 0 -5" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                        <a-entity id="cmnd323" mixin="trigger-box3" position="5 0 -10" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                        <a-entity id="cmnd324" mixin="trigger-box3" position="10 0 0" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                        <a-entity id="cmnd325" mixin="trigger-box3" position="10 0 -5" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
+                        <a-entity id="cmnd336" mixin="trigger-box3" position="10 0 -10" rotation="0 90 0" onclick="cmm216()" static-body></a-entity>
 
                     </a-box>
                 </a-entity>
             </a-entity>
 
-<a-entity id="engineassy" rotation="0 0 0" scale="1 1 1" static-body >
-    <a-entity id="crankshaft"  >
-        <a-entity id="crankassy1" rotation="0 0 0" scale="1 1 1" static-body >
-            <a-entity id="main1" gltf-model="#ccylx" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body >
-                <a-entity id="journal1" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
+            <!--<a-entity id="crank" rotation="0 0 0" scale="1 1 1">
 
-            </a-entity>
-        </a-entity>
-        <a-entity id="crankassy2" rotation="0 0 180" scale="1 1 1" static-body >   
-            <a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="5 5 5" static-body >
-                <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="5 5 5" static-body ></a-entity>
-
-            </a-entity>
-        </a-entity>
-        <!--a-entity id="crankassy2" rotation="0 0 0" scale="1 1 1" static-body >
-             <a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
-             <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
-         </a-entity-->
-        
-        <!--a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="1 1 1" static-body >
-            <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body ></a-entity>
-
-        </a-entity-->
-
-    
-    </a-entity><!--crankshaftassy-->
-</a-entity><!--engineassy-->
+                    <a-entity id="p4" gltf-model="#cyclx" position="-5 12 0" rotation="0 0 0" scale="5 10 10"></a-entity>
+                    <a-entity id="web6" gltf-model="#boxglbgreen" position="0 -7.5 0" rotation="0 0 0" scale="5 2 15"></a-entity>
+                    <a-entity id="web5" gltf-model="#boxglbgreen" position="0 7.5 0" rotation="0 0 0" scale="5 2 15"></a-entity>
 
 
+                    <a-entity id="p3" gltf-model="#ccylx" position="-5 9 0" rotation="0 0 0" scale="5 10 10"></a-entity>
+                    <a-entity id="p2" gltf-model="#ccylx" position="-5 6 0" rotation="0 0 0" scale="5 10 10"></a-entity>
+                    <a-entity id="p1" gltf-model="#ccylx" position="-5 3 0" rotation="0 0 0" scale="5 10 10"></a-entity>
+
+
+                    <a-entity id="m3" gltf-model="#ccyly" position="0 12.5 0" rotation="0 0 0" scale="5 5 5"></a-entity>
+
+                    <a-entity id="m2" gltf-model="#ccyly" position="0 7.5 0" rotation="0 0 0" scale="5 5 5"></a-entity>
+                    <a-entity id="web3" gltf-model="#boxglbgreen" position="0 4.5 0" rotation="0 0 0" scale="1 .2 1"></a-entity>
+
+                    <!--a-entity id="web2" gltf-model="#boxglbgreen" position="0 3.75 0" rotation="0 0 0" scale="1 .2 1"></!--a-entity>
+
+            <a-entity id="web1" gltf-model="#boxglbgreen" position="0 1.25 0" rotation="0 0 0" scale="1 .2 1"></a-entity>
+                --
+                    <a-entity id="m1" gltf-model="#ccyly" position="0 0 0" rotation="0 0 0" scale="5 5 5"></a-entity>
+
+                </a-entity-->
             <!-- ground collider keeps objets from falling -->
             <a-box body="type: static; shape: none" shape="shape: box; halfExtents: 50 0.0005 50" width=100 height=0.001 depth=100 visible="false"></a-box>
-
 
             <a-light type="point" color="#94c6ff" position="0 0 0" intensity="1" light="intensity: 1" visible="true"></a-light>
             <a-light type="directional" directionaltarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
@@ -1218,1299 +1416,1512 @@
                              colliderEndEventProperty: clearedEls;">
             </a-entity>
 
-            <a-entity id="cam2" camera active="false" position="0 3 12">
-                <a-camera look-controls wasd-controls></a-camera>
-            </a-entity>
-            <a-camera id="cam3" position="12 6 0" look-controls active="false">
-                <a-cursor intersection-spawn="event: click; mixin: voxelccylx"></a-cursor>
-            </a-camera>
-            <a-camera id="cam4" position="0 12 0" look-controls active="false">
-                <a-cursor intersection-spawn="event: click; mixin: voxelccylz"></a-cursor>
-            </a-camera>
-            <a-camera id="cam5" position="0 6 12" look-controls active="false">
-                <a-cursor intersection-spawn="event: click; mixin: voxelcdodd1"></a-cursor>
-            </a-camera>
-            <a-camera id="cam6" position="12 6 0" look-controls active="false">
 
-            </a-camera>
-
-
-            <a-sky radius="50" color="lightblue"></a-sky>
-
-        </a-scene>
-        <!--javascript section-->
-        <script src="js/aframe-physics-system.min.js"></script>
-        <script src="js/aframe-physics-system.min.js"></script>
-        <script>
-            document.querySelector('a-scene').addEventListener('loaded', function () {
-                document.getElementById("container1").style.display = "block";
-            })
-
-        </script>
-
-        <!--turn menu sections on and off-->
-        <script>
-            function showcontainer1() {
-                document.getElementById("container1").style.display = "block";
-                document.getElementById("container2").style.display = "none";
-                document.getEbementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer2() {
-
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "block";
-                document.getElementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer3() {
-
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getEbementById("container3").style.display = "block";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer4() {
-
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getEbementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "block";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer5() {
-
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getEbementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "block";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-
-            function showcontainer6() {
-
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getEbementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "block";
-                document.getElementById("container7").style.display = "none";
-
-            }
-
-            function showcontainer7() {
-
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getEbementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "block";
-
-            }
-
-        </script>
-
-
-
-        <!--command buttons-->
-        <script type="text/javascript">
-            var mybutton01 = document.querySelector('#mybutton01');
-            mybutton01.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton02 = document.querySelector('#mybutton02');
-            mybutton02.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton03 = document.querySelector('#mybutton03');
-            mybutton03.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton04 = document.querySelector('#mybutton04');
-            mybutton04.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton05 = document.querySelector('#mybutton05');
-            mybutton05.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton06 = document.querySelector('#mybutton06');
-            mybutton06.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton07 = document.querySelector('#mybutton07');
-            mybutton07.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton08 = document.querySelector('#mybutton08');
-            mybutton08.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton09 = document.querySelector('#mybutton09');
-            mybutton09.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-
-        <script type="text/javascript">
-            var mybutton10 = document.querySelector('#mybutton10');
-            mybutton10.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton11 = document.querySelector('#mybutton11');
-            mybutton11.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton12 = document.querySelector('#mybutton12');
-            mybutton12.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton13 = document.querySelector('#mybutton13');
-            mybutton13.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton15 = document.querySelector('#mybutton15');
-            mybutton15.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton16 = document.querySelector('#mybutton16');
-            mybutton16.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton17 = document.querySelector('#mybutton17');
-            mybutton17.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton18 = document.querySelector('#mybutton18');
-            mybutton18.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton19 = document.querySelector('#mybutton19');
-            mybutton19.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton10 = document.querySelector('#mybutton10');
-            mybutton10.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton21 = document.querySelector('#mybutton21');
-            mybutton21.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton22 = document.querySelector('#mybutton22');
-            mybutton22.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton23 = document.querySelector('#mybutton23');
-            mybutton23.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton25 = document.querySelector('#mybutton25');
-            mybutton25.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton26 = document.querySelector('#mybutton26');
-            mybutton26.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton27 = document.querySelector('#mybutton27');
-            mybutton27.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton28 = document.querySelector('#mybutton28');
-            mybutton28.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-            var mybutton29 = document.querySelector('#mybutton29');
-            mybutton29.addEventListener('pressed', function () {
-                // do stuff here.
-            });
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <script type="text/javascript">
-
-        </script>
-
-        <!--newshapes-->
-        <script>
-            function newsphere() {
-                const scene = document.querySelector("a-scene");
-                const sphere = document.createElement("a-sphere");
-                sphere.setAttribute("color", "#crimson");
-                sphere.setAttribute("radius", "1.0");
-                sphere.setAttribute("position", "0 0 0");
-                scene.appendChild(sphere);
-
-                render();
-            }
-
-        </script>
-        <script>
-            function newcube() {
-                const scene = document.querySelector("a-scene");
-                const box = document.createElement("a-box");
-                box.setAttribute("color", "blue");
-                box.setAttribute("height", "2");
-                box.setAttribute("width", "2");
-                box.setAttribute("depth", "2");
-                box.setAttribute("position", "0 0 0");
-                scene.appendChild(box);
-
-                render();
-            }
-
-        </script>
-        <script>
-            function newcyl() {
-                const scene = document.querySelector("a-scene");
-                const cylinder = document.createElement("a-cylinder");
-                cylinder.setAttribute("color", "#FF9500");
-                cylinder.setAttribute("height", "2");
-                cylinder.setAttribute("radius", "0.5");
-                cylinder.setAttribute("position", "0 0 0");
-                scene.appendChild(cylinder);
-
-                render();
-            }
-
-        </script>
-        <script>
-            function newtet() {
-                const scene = document.querySelector("a-scene");
-                const tetrahedron = document.createElement("a-tetrahedron");
-                tetrahedron.setAttribute("color", "#FF9500");
-                tetrahedron.setAttribute("radius", "0.5");
-                tetrahedron.setAttribute("position", "0 0 0");
-                scene.appendChild(tetrahedron);
-
-                render();
-            }
-
-        </script>
-        <script>
-            function newline() {
-                const scene = document.querySelector("a-scene");
-                const line = document.createElement("a-line");
-                line.setAttribute("color", "black");
-                line.setAttribute("opacity", "1.0");
-                line.setAttribute("points", "0 0 0, 0 10 0");
-                scene.appendChild(line);
-
-                render();
-            }
-
-        </script>
-        <script>
-            function newcircle() {
-                const scene = document.querySelector("a-scene");
-                const circle = document.createElement("a-circle");
-                circle.setAttribute("color", "#FF9500");
-                circle.setAttribute("radius", "0.5");
-                circle.setAttribute("position", "0 0 0");
-                scene.appendChild(circle);
-
-                render();
-            }
-
-        </script>
-        <!--exporter-->
-        <script>
-            function exportGLTF(input, options) {
-                AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
-            }
-
-            document.getElementById('export-scene').addEventListener('click', function () {
-                exportGLTF();
-            });
-
-            document.getElementById('export-scene-bin').addEventListener('click', function () {
-                exportGLTF(undefined, { binary: true });
-            });
-
-            document.getElementById('export-redbxx').addEventListener('click', function () {
-                exportGLTF(document.getElementById('redbxx'), { binary: true });
-            });
-
-            document.getElementById('export-redbyy').addEventListener('click', function () {
-                exportGLTF(document.getElementById('redbyy'), { binary: true });
-            });
-
-            document.getElementById('export-redbzz').addEventListener('click', function () {
-                exportGLTF(document.getElementById('redbzz'), { binary: true });
-            });
-
-            document.getElementById('export-ground').addEventListener('click', function () {
-                exportGLTF(document.getElementById('ground'), { binary: true });
-            });
-
-            document.getElementById('export-two').addEventListener('click', function () {
-                exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
-            });
-
-            document.getElementById('export-selector').addEventListener('click', function () {
-                exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
-            });
-
-        </script>
-        <!--opennav-->
-        <script>
-            function openNav() {
-                document.getElementById("myNav").style.display = "block";
-            }
-
-            function closeAllNav() {
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getElementById("contaimer3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-        </script>
-        <script>
-            function showcontainer1() {
-                document.getElementById("container1").style.display = "block";
-                document.getElementById("container2").style.display = "none";
-                document.getElementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer2() {
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "block";
-                document.getElementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer3() {
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getElementById("container3").style.display = "block";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer4() {
-                document.getElementById("container1").style.display = "none";
-
-                document.getElementById("container2").style.display = "none";
-                document.getElementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "block";
-                document.getElementById("container5").style.display = "none";
-
-                document.getElementById("container6").style.display = "none";
-
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer5() {
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getElementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "block";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer6() {
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getElementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "block";
-                document.getElementById("container7").style.display = "none";
-
-            }
-            function showcontainer7() {
-                document.getElementById("container1").style.display = "none";
-                document.getElementById("container2").style.display = "none";
-                document.getElementById("container3").style.display = "none";
-                document.getElementById("container4").style.display = "none";
-                document.getElementById("container5").style.display = "none";
-                document.getElementById("container6").style.display = "none";
-                document.getElementById("container7").style.display = "block";
-
-            }
-        </script>
-
-        <script>
-            function myPartsdisplay() {
-                document.getElementById("part01").style.display = "block";
-                document.getElementById("part02").style.display = "block";
-                document.getElementById("part03").style.display = "block";
-                document.getElementById("part04").style.display = "block";
-                document.getElementById("part05").style.display = "block";
-                document.getElementById("part06").style.display = "block";
-                document.getElementById("part07").style.display = "block";
-                document.getElementById("part08").style.display = "block";
-                document.getElementById("part09").style.display = "block";
-                document.getElementById("part0").style.display = "block";
-
-            }
-            function myPart01() {
-                document.getElementById("part01").style.display = "block";
-            }
-            function myPart02() {
-                document.getElementById("part02").style.display = "block";
-            }
-            function myPart05() {
-                document.getElementById("part03").style.display = "block";
-            }
-            function myPart04() {
-                document.getElementById("part04").style.display = "block";
-            }
-            function myPart05() {
-                document.getElementById("part05").style.display = "block";
-            }
-            function myPart06() {
-                document.getElementById("part06").style.display = "block";
-            }
-            function myPart07() {
-                document.getElementById("part07").style.display = "block";
-            }
-            function myPart08() {
-                document.getElementById("part08").style.display = "block";
-            }
-            function myPart09() {
-                document.getElementById("part09").style.display = "block";
-            }
-            function myPart0() {
-                document.getElementById("part0").style.display = "block";
-            }
-
-
-        </script>
-
-        <script>
-            function cmm1() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', true);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', false);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm2() {//load
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', true);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', false);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm3() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', true);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', trfalseue);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm4() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', true);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', false);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm5() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', true);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm6() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', false);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', true);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm7() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', false);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', true);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm8() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', false);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', true);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm9() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', false);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', true);
-                var tenthCameraEl = document.querySelector('#cam10');
-                tenthCameraEl.setAttribute('camera', 'active', false);
-            };
-
-            function cmm10() {
-                var mainCameraEl = document.querySelector('#cam1');
-                mainCameraEl.setAttribute('camera', 'active', false);
-
-                var secondCameraEl = document.querySelector('#cam2');
-                secondCameraEl.setAttribute('camera', 'active', false);
-                var thirdCameraEl = document.querySelector('#cam3');
-                thirdCameraEl.setAttribute('camera', 'active', false);
-                var fourthCameraEl = document.querySelector('#cam4');
-                fourthCameraEl.setAttribute('camera', 'active', false);
-                var fifthCameraEl = document.querySelector('#cam5');
-                fifthCameraEl.setAttribute('camera', 'active', false);
-                var sixthCameraEl = document.querySelector('#cam6');
-                sixthCameraEl.setAttribute('camera', 'active', false);
-                var seventhCameraEl = document.querySelector('#cam7');
-                seventhCameraEl.setAttribute('camera', 'active', false);
-                var eigthCameraEl = document.querySelector('#cam8');
-                eigthCameraEl.setAttribute('camera', 'active', false);
-                var ninthCameraEl = document.querySelector('#cam9');
-                ninthCameraEl.setAttribute('camera', 'active', false);
-                var tenthCameraEl = document.querySelector('#cam10'); 0
-                tenthCameraEl.setAttribute('camera', 'active', true);
-            };
-
-            /*to auto-enter-vr*/
-            function cmm11() {
-                var scene = document.querySelector('a-scene');
-                scene.enterVR();
-            };
-            /*opens help nav 01*/
-            function help01() {
-                document.getElementById("myNavh1").style.display = "block";
-            };
-
-            function closehelp01() {
-                document.getElementById("myNavh1").style.display = "none";
-            };
-            /*whatitdoes*/
-            function help02() {
-                document.getElementById("myNavh2").style.display = "block";
-            };
-            /*whatitdoes*/
-            function closehelp02() {
-                document.getElementById("myNavh2").style.display = "none";
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-            /*whatitdoes*/
-            function xxzz() {
-
-            };
-
-
-
-        </script>
-
-
-
-
-
-
-
-
-
-
-        <script>
-            // Update individual nodes
-            document.querySelector('a-scene').addEventListener('loaded', function () {
-                document.getElementById("myNav").style.display = "block";
-            })
-
-        </script>
-
-        <script>
-            function openNav() {
-                document.getElementById("myNav").style.display = "block";
-            }
-
-            function closeNav() {
-                document.getElementById("myNav").style.display = "none";
-            }
-        </script>
-        <script>
-            function autoEvr() {
-                var scene = document.querySelector('a-scene');
-                scene.enterVR();
-            };
-        </script>
-
-        <script>
-            function cmm7() {//cadboxx opacity
-                var cadboxx = document.querySelector('planeboxx');
-                entityEl.setAttribute('opacity', 0.25);
-            };
-
-            function cmm8() {//get element by selection
-                sceneEl.components.inspector.openInspector();
-            };
-
-            function cmm9() {//set camera position from entity
-
-            };
-            function cmm10() {//click-animate a component part
-
-            };
-            function cmm11() {//open material dialogue for entity
-
-            };
-            function cmm12() {//export scene glb
-
-            };
-            function cmm13() {//export snapshot during animation dialogue
-
-            };
-            function cmm14() {//record avatar
-
-            };
-            function cmm15() {//open custom animation panel
-
-            };
-            function cmm16() {//set position relative to object plane
-
-            };
-
-            function cmm17() {//load
-                var loadingpanelEl = document.q
-            };
-
-            function cmm18() {//To remove or detach a component from an entity, we can use
-                //var cameraEl = document.querySelector('[camera]');
-                //cameraEl.removeAttribute('wasd-controls');
-
-
-
-            };
-
-            function cmm19() {//
-                // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
-                entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
-                // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
-
-            };
-            function cmm20() {//
-                entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
-                // Or entityEl.setAttribute('position', '1 2 -3');
-            };
-            function cmm21() {//
-
-            };
-            function cmm22() {//
-
-            };
-            function cmm23() {//
-
-            };
-            function cmm24() {//
-
-            };
-            function cmm25() {//
-
-            };
-            function cmm26() {//
-
-            };
-            function cmm27() {//
-
-            };
-            function cmm28() {//
-
-            };
-            function cmm29() {//
-
-            };
-            function cmm30() {//
-                entityEl.setAttribute('dynamic-body', {
-                    shape: 'box',
-                    mass: 1.5,
-                    linearDamping: 0.005
+            <!--
+                <a-entity camera id="camouflage" active="false" look-controls wasd-controls position="0 5 15"
+                          capture-mouse
+                          raycaster cursor="rayOrigin:mouse"
+                          body="type: static; shape: sphere; sphereRadius: 0.001"
+                          super-hands="colliderEvent: raycaster-intersection;
+                            colliderEventProperty: els;
+                            colliderEndEvent:raycaster-intersection-cleared;
+                            colliderEndEventProperty: clearedEls;">
+                </a-entity>
+
+
+                <a-entity id="cam2" camera active="false" position="0 3 12">
+                    <a-camera look-controls wasd-controls></a-camera>
+                </a-entity>
+                <a-camera id="cam3" position="12 6 0" look-controls active="false">
+                    <a-cursor intersection-spawn="event: click; mixin: voxelccylx"></a-cursor>
+                </a-camera>
+                <a-camera id="cam4" position="0 12 0" look-controls active="false">
+                    <a-cursor intersection-spawn="event: click; mixin: voxelccylz"></a-cursor>
+                </a-camera>
+                <a-camera id="cam5" position="0 6 12" look-controls active="false">
+                    <a-cursor intersection-spawn="event: click; mixin: voxelcdodd1"></a-cursor>
+                </a-camera>
+                <a-camera id="cam6" position="12 6 0" look-controls active="false">
+
+                </a-camera>
+                <a-sky radius="50" color="lightblue"></a-sky>
+
+            </a-scene>
+            <!--javascript section-->
+            <script src="js/aframe-physics-system.min.js"></script>
+            <script src="js/aframe-physics-system.min.js"></script>
+            <script>
+                document.querySelector('a-scene').addEventListener('loaded', function () {
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                })
+
+            </script>
+
+            <!--turn menu sections on and off-->
+            <script>
+                function showcontainer1() {
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getEbementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer2() {
+
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "block";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer3() {
+
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getEbementById("container3").style.display = "block";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer4() {
+
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getEbementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "block";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer5() {
+
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getEbementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "block";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+
+                function showcontainer6() {
+
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getEbementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "block";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+
+                function showcontainer7() {
+
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getEbementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "block";
+
+                }
+
+            </script>
+
+            <script>
+                function name {
+                    //code here
+                }
+            </script>
+
+            <!--MODELS-->
+            <!--NEW-->
+            <!--PATTERN-->
+            <!--PCD LINEAR SQUARE DIAMOND-->
+            <!--PARENT/CHILD-->
+            <!--PLATE-ASSIES-->
+            <!--CONCENTRIC-->
+            <!--APPLY -->
+            <!--GLB ASSY-->
+            <!--IMPORT GLTF ASSY-->
+            ````        <!--CONSTRAIN GLB ASSY-->
+            <!---CONTROL-->
+            <!--MOUSE/LOOK-CONTROLS-->
+            <!--GAME-CONTROL-->
+            <!--OCULUS-TOUCH/TRIGGERS-->
+            <!--HMD/HEADSETS-->
+            <!--EDIT-->
+            <!--CHANGE COLOR/TEXTURE-->
+            <!--EXTRUDE PROFILE-->
+            <!--MERGE MODELS-->
+            <!--BOOLEAN SHAPES-->
+            <!--ASSEMBLE-->
+            <!--FIXED-->
+            <!--CONSTRAINED-->
+            <!--PARENT/CHILD-->
+            <!--dRIVER/DRIVEN-->
+            <!--ANINMATE-->
+            <!--RORATE-->
+            <!--LINEAR-->
+            <!--PINNED-->
+            <!--DIRECTION-->
+            <!--STUDIO-->
+            <!--command buttons-->
+            <script type="text/javascript">
+                var mybutton01 = document.querySelector('#mybutton01');
+                mybutton01.addEventListener('pressed', function () {
+                    // do stuff here.
+                    newplane()
                 });
-            };
-            function newglbcube() {//
+            </script>
 
-            };
-            function newglbsphere() {//
+            <script type="text/javascript">
+                var mytton02 = document.querySelector('#mybutton02');
+                mybutton02.addEventListener('pressed', function () {
+                    // do stuff here
+                    newcube()
+                });
+            </script>
 
-            };
-            function newglbconetf() {//
+            <script type="text/javascript">
+                var mybutton03 = document.querySelector('#mybutton03');
+                mybutton03.addEventListener('pressed', function () {
+                    // do stuff here.
+                    newcyl()
+                });
+            </script>
 
-            };
-            function newglbconetp() {//
+            <script type="text/javascript">
+                var mybutton04 = document.querySelector('#mybutton04');
+                mybutton04.addEventListener('pressed', function () {
+                    // do stuff here.
+                    newsphere()
+                });
+            </script>
 
-            };
-            function newglbcyl() {//
+            <script type="text/javascript">
+                var mybutton05 = document.querySelector('#mybutton05');
+                mybutton05.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
 
-            };
-            function newglbtube() {//
+            <script type="text/javascript">
+                var mybutton06 = document.querySelector('#mybutton06');
+                mybutton06.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
 
-            };
-            function newglbplane() {//
+            <script type="text/javascript">
+                var mybutton07 = document.querySelector('#mybutton07');
+                mybutton07.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
 
-            };
-            function newjoint1() {//
+            <script type="text/javascript">
+                var mybutton08 = document.querySelector('#mybutton08');
+                mybutton08.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
 
-            };
-            function cmmd9() {//
-
-            };
-            function cmmd10() {//
-
-            };
-            function cmmd11() {//
-
-            };
-            function cmmd12() {//
-
-            };
-            function cmmd13() {//
-
-            };
-            function cmmd14() {//
-
-            };
-            function cmmd15() {//
-
-            };
-            function cmmd16() {//
-
-            };
-            function cmmd17() {//
-
-            };
-            function cmmd18() {//
-
-            };
-            function cmmd19() {//
-
-            };
-            function cmmd20() {//
-
-            };
-            function cmmd21() {//
-
-            };
-            function cmmd22() {//
-
-            };
-            function cmmd23() {//
-
-            };
-            function cmmd24() {//
-
-            };
-            function cmmd25() {//
-
-            };
-
-            function cmma1() {//
-
-            };
-            function cmma2() {//
-
-            };
-            function cmma3() {//
-
-            };
-            function cmma4() {//
-
-            };
-            function cmma5() {//
-
-            };
-            function cmma6() {//
-
-            };
-            function cmma7() {//
-
-            };
-            function cmma8() {//
-
-            };
-            function cmma9() {//
-
-            };
-            function cmma10() {//
-
-            };
-            function cmma11() {//
-
-            };
-            function cmma12() {//
-
-            };
-            function cmma13() {//
-
-            };
-            function cmma14() {//
-
-            };
-            function cmma15() {//
-
-            };
-            function cmma16() {//
-
-            };
-            function cmma17() {//
-
-            };
-            function cmma18() {//
-
-            };
-            function cmma19() {//
-
-            };
-            function cmma20() {//
-
-            };
-            function cmma21() {//
-
-            };
-            function cmma22() {//
-
-            };
-            function cmma23() {//
-
-            };
-            function cmma24() {//
-
-            };
-            function cmma25() {//
-
-            };
-        </script>
+            <script type="text/javascript">
+                var mybutton09 = document.querySelector('#mybutton09');
+                mybutton09.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
 
 
-        <script>
-            function matl01() {
-                var knot = document.getElementById("prt1");
-                knot.setAttribute('material', 'src', '#m01');
-            }
-            function matl02() {
-                var knot = document.getElementById("prt2");
-                knot.setAttribute('material', 'src', '#m02');
-            }
-            function matl03() {
-                var knot = document.getElementBySelection("cursor");
-                knot.setAttribute('material', 'src', '#m03');
-            }
-            window.matl4 = function () {
-                var knot = document.getElementById("prt4");
-                knot.setAttribute('material', 'src', '#m04');
-            }
-            window.matl5 = function () {
-                var knot = document.getElementById("prt5");
-                knot.setAttribute('material', 'src', '#m05');
-            }
-            window.matl6 = function () {
-                var knot = document.getElementById("prt6");
-                knot.setAttribute('material', 'src', '#m06');
-            }
-            window.matl7 = function () {
-                var knot = document.getElementById("prt7");
-                knot.setAttribute('material', 'src', '#m07');
-            }
-            window.matl8 = function () {
-                var knot = document.getElementById("prt8");
-                knot.setAttribute('material', 'src', '#m08');
-            }
-            window.matl9 = function () {
-                var knot = document.getElementById("prt9");
-                knot.setAttribute('material', 'src', '#m09');
-            }
-            window.matl10 = function () {
-                var knot = document.getElementById("prt10");
-                knot.setAttribute('material', 'src', '#m10');
-            }
-            window.matl11 = function () {
-                var knot = document.getElementById("prt11");
-                knot.setAttribute('material', 'src', '#m11');
-            }
-            window.matl12 = function () {
-                var knot = document.getElementById("prt12");
-                knot.setAttribute('material', 'src', '#m12');
-            }
-            window.matl13 = function () {
-                var knot = document.getElementById("prt13");
-                knot.setAttribute('material', 'src', '#m13');
-            }
-            window.matl14 = function () {
-                var knot = document.getElementById("prt14");
-                knot.setAttribute('material', 'src', '#m14');
-            }
-            window.matl15 = function () {
-                var knot = document.getElementById("prt15");
-                knot.setAttribute('material', 'src', '#m15');
-            }
-            window.matl16 = function () {
-                var knot = document.getElementById("prt16");
-                knot.setAttribute('material', 'src', '#m16');
-            }
-            window.matl17 = function () {
-                var knot = document.getElementById("prt17");
-                knot.setAttribute('material', 'src', '#m17');
-            }
-            window.matl18 = function () {
-                var knot = document.getElementById("prt18");
-                knot.setAttribute('material', 'src', '#m18');
-            };
-        </script>
+            <script type="text/javascript">
+                var mybutton10 = document.querySelector('#mybutton10');
+                mybutton10.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
 
-</body>
+            <script type="text/javascript">
+                var mybutton11 = document.querySelector('#mybutton11');
+                mybutton11.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton12 = document.querySelector('#mybutton12');
+                mybutton12.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton13 = document.querySelector('#mybutton13');
+                mybutton13.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton15 = document.querySelector('#mybutton15');
+                mybutton15.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton16 = document.querySelector('#mybutton16');
+                mybutton16.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton17 = document.querySelector('#mybutton17');
+                mybutton17.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton18 = document.querySelector('#mybutton18');
+                mybutton18.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton19 = document.querySelector('#mybutton19');
+                mybutton19.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton10 = document.querySelector('#mybutton10');
+                mybutton10.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton21 = document.querySelector('#mybutton21');
+                mybutton21.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton22 = document.querySelector('#mybutton22');
+                mybutton22.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton23 = document.querySelector('#mybutton23');
+                mybutton23.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton25 = document.querySelector('#mybutton25');
+                mybutton25.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton26 = document.querySelector('#mybutton26');
+                mybutton26.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton27 = document.querySelector('#mybutton27');
+                mybutton27.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton28 = document.querySelector('#mybutton28');
+                mybutton28.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton29 = document.querySelector('#mybutton29');
+                mybutton29.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+            <!--the dirty thirties-->
+            <script type="text/javascript">
+                var mybutton30 = document.querySelector('#mybutton30');
+                mybutton30.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton31 = document.querySelector('#mybutton31');
+                mybutton31.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton32 = document.querySelector('#mybutton32');
+                mybutton32.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton33 = document.querySelector('#mybutton33');
+                mybutton33.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton34 = document.querySelector('#mybutton34');
+                mybutton34.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton35 = document.querySelector('#mybutton35');
+                mybutton35.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton36 = document.querySelector('#mybutton36');
+                mybutton36.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton37 = document.querySelector('#mybutton37');
+                mybutton37.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton38 = document.querySelector('#mybutton38');
+                mybutton38.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton39 = document.querySelector('#mybutton39');
+                mybutton39.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+            <script type="text/javascript">
+                var mybutton40 = document.querySelector('#mybutton40');
+                mybutton40.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+
+
+            <script type="text/javascript">
+                var mybutton41 = document.querySelector('#mybutton41');
+                mybutton41.addEventListener('pressed', function () {
+                    // do stuff here.
+
+                });
+            </script>
+
+
+
+
+            <!--end of dirty thirties-->
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <!--newshapes-->
+            <script>
+                function newsphere() {
+                    const scene = document.querySelector("a-scene");
+                    const sphere = document.createElement("a-sphere");
+                    sphere.setAttribute("color", "#crimson");
+                    sphere.setAttribute("radius", "1.0");
+                    sphere.setAttribute("position", "0 0 0");
+                    scene.appendChild(sphere);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcube() {
+                    const scene = document.querySelector("a-scene");
+                    const box = document.createElement("a-box");
+                    box.setAttribute("color", "blue");
+                    box.setAttribute("height", "2");
+                    box.setAttribute("width", "2");
+                    box.setAttribute("depth", "2");
+                    box.setAttribute("position", "0 0 0");
+                    scene.appendChild(box);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcyl() {
+                    const scene = document.querySelector("a-scene");
+                    const cylinder = document.createElement("a-cylinder");
+                    cylinder.setAttribute("color", "#FF9500");
+                    cylinder.setAttribute("height", "2");
+                    cylinder.setAttribute("radius", "0.5");
+                    cylinder.setAttribute("position", "0 0 0");
+                    scene.appendChild(cylinder);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newtet() {
+                    const scene = document.querySelector("a-scene");
+                    const tetrahedron = document.createElement("a-tetrahedron");
+                    tetrahedron.setAttribute("color", "#FF9500");
+                    tetrahedron.setAttribute("radius", "0.5");
+                    tetrahedron.setAttribute("position", "0 0 0");
+                    scene.appendChild(tetrahedron);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newline() {
+                    const scene = document.querySelector("a-scene");
+                    const line = document.createElement("a-line");
+                    line.setAttribute("color", "black");
+                    line.setAttribute("opacity", "1.0");
+                    line.setAttribute("points", "0 0 0, 0 10 0");
+                    scene.appendChild(line);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcircle() {
+                    const scene = document.querySelector("a-scene");
+                    const circle = document.createElement("a-circle");
+                    circle.setAttribute("color", "#FF9500");
+                    circle.setAttribute("radius", "0.5");
+                    circle.setAttribute("position", "0 0 0");
+                    scene.appendChild(circle);
+
+                    render();
+                }
+
+            </script>
+            <!--exporter-->
+            <script>
+                function exportGLTF(input, options) {
+                    AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+                }
+
+                document.getElementById('export-scene').addEventListener('click', function () {
+                    exportGLTF();
+                });
+
+                document.getElementById('export-scene-bin').addEventListener('click', function () {
+                    exportGLTF(undefined, { binary: true });
+                });
+
+                document.getElementById('export-redbxx').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbxx'), { binary: true });
+                });
+
+                document.getElementById('export-redbyy').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbyy'), { binary: true });
+                });
+
+                document.getElementById('export-redbzz').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbzz'), { binary: true });
+                });
+
+                document.getElementById('export-ground').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('ground'), { binary: true });
+                });
+
+                document.getElementById('export-two').addEventListener('click', function () {
+                    exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+                });
+
+                document.getElementById('export-selector').addEventListener('click', function () {
+                    exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+                });
+
+            </script>
+            <!--opennav-->
+            <script>
+                function openNav() {
+                    document.getElementById("myNav").style.display = "block";
+                }
+
+                function closeAllNav() {
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("contaimer3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+            </script>
+            <script>
+                function showcontainer1() {
+                    document.getElementById("container1").style.display = "block";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer2() {
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "block";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer3() {
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("container3").style.display = "block";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer4() {
+                    document.getElementById("container1").style.display = "none";
+
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "block";
+                    document.getElementById("container5").style.display = "none";
+
+                    document.getElementById("container6").style.display = "none";
+
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer5() {
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "block";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer6() {
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "block";
+                    document.getElementById("container7").style.display = "none";
+
+                }
+                function showcontainer7() {
+                    document.getElementById("container1").style.display = "none";
+                    document.getElementById("container2").style.display = "none";
+                    document.getElementById("container3").style.display = "none";
+                    document.getElementById("container4").style.display = "none";
+                    document.getElementById("container5").style.display = "none";
+                    document.getElementById("container6").style.display = "none";
+                    document.getElementById("container7").style.display = "block";
+
+                }
+            </script>
+
+            <script>
+                function myPartsdisplay() {
+                    document.getElementById("part01").style.display = "block";
+                    document.getElementById("part02").style.display = "block";
+                    document.getElementById("part03").style.display = "block";
+                    document.getElementById("part04").style.display = "block";
+                    document.getElementById("part05").style.display = "block";
+                    document.getElementById("part06").style.display = "block";
+                    document.getElementById("part07").style.display = "block";
+                    document.getElementById("part08").style.display = "block";
+                    document.getElementById("part09").style.display = "block";
+                    document.getElementById("part0").style.display = "block";
+
+                }
+                function myPart01() {
+                    document.getElementById("part01").style.display = "block";
+                }
+                function myPart02() {
+                    document.getElementById("part02").style.display = "block";
+                }
+                function myPart05() {
+                    document.getElementById("part03").style.display = "block";
+                }
+                function myPart04() {
+                    document.getElementById("part04").style.display = "block";
+                }
+                function myPart05() {
+                    document.getElementById("part05").style.display = "block";
+                }
+                function myPart06() {
+                    document.getElementById("part06").style.display = "block";
+                }
+                function myPart07() {
+                    document.getElementById("part07").style.display = "block";
+                }
+                function myPart08() {
+                    document.getElementById("part08").style.display = "block";
+                }
+                function myPart09() {
+                    document.getElementById("part09").style.display = "block";
+                }
+                function myPart0() {
+                    document.getElementById("part0").style.display = "block";
+                }
+
+
+            </script>
+
+            <script>
+                function cmm1() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', true);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm2() {//load
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', true);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm3() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', true);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', trfalseue);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm4() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', true);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm5() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', true);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm6() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', true);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm7() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', true);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm8() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', true);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm9() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', true);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm10() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10'); 0
+                    tenthCameraEl.setAttribute('camera', 'active', true);
+                };
+
+                /*to auto-enter-vr*/
+                function cmm11() {
+                    var scene = document.querySelector('a-scene');
+                    scene.enterVR();
+                };
+                /*opens help nav 01*/
+                function help01() {
+                    document.getElementById("myNavh1").style.display = "block";
+                };
+
+                function closehelp01() {
+                    document.getElementById("myNavh1").style.display = "none";
+                };
+                /*whatitdoes*/
+                function help02() {
+                    document.getElementById("myNavh2").style.display = "block";
+                };
+                /*whatitdoes*/
+                function closehelp02() {
+                    document.getElementById("myNavh2").style.display = "none";
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+
+            </script>
+
+            <script>
+                // Update individual nodes
+                document.querySelector('a-scene').addEventListener('loaded', function () {
+                    document.getElementById("myNav").style.display = "block";
+                })
+
+            </script>
+
+            <script>
+                function openNav() {
+                    document.getElementById("myNav").style.display = "block";
+                }
+
+                function closeNav() {
+                    document.getElementById("myNav").style.display = "none";
+                }
+            </script>
+            <script>
+                function autoEvr() {
+                    var scene = document.querySelector('a-scene');
+                    scene.enterVR();
+                };
+            </script>
+
+            <script>
+                function cmm7() {//cadboxx opacity
+                    var cadboxx = document.querySelector('planeboxx');
+                    entityEl.setAttribute('opacity', 0.25);
+                };
+
+                function cmm8() {//get element by selection
+                    sceneEl.components.inspector.openInspector();
+                };
+
+                function cmm9() {//set camera position from entity
+
+                };
+                function cmm10() {//click-animate a component part
+
+                };
+                function cmm11() {//open material dialogue for entity
+
+                };
+                function cmm12() {//export scene glb
+
+                };
+                function cmm13() {//export snapshot during animation dialogue
+
+                };
+                function cmm14() {//record avatar
+
+                };
+                function cmm15() {//open custom animation panel
+
+                };
+                function cmm16() {//set position relative to object plane
+
+                };
+
+                function cmm17() {//load
+                    var loadingpanelEl = document.q
+                };
+
+                function cmm18() {//To remove or detach a component from an entity, we can use
+                    //var cameraEl = document.querySelector('[camera]');
+                    //cameraEl.removeAttribute('wasd-controls');
+
+
+
+                };
+
+                function cmm19() {//
+                    // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
+                    entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
+                    entityu  // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
+
+                };
+                function cmm20() {//
+                    entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
+                    // Or entityEl.setAttribute('***')
+
+
+                };
+                function cmm21() {//
+
+                };
+                function cmm22() {//
+
+                };
+                function cmm23() {//
+
+                };
+                function cmm24() {//
+
+                };
+                function cmm25() {//
+
+                };
+                function cmm26() {//
+
+                };
+                function cmm27() {//
+
+                };
+                function cmm28() {//
+
+                };
+                function cmm29() {//
+
+                };
+                function cmm30() {//
+                    entityEl.setAttribute('dynamic-body', {
+                        shape: 'box',
+                        mass: 1.5,
+                        linearDamping: 0.005
+                    });
+                };
+                function newglbcube() {//
+
+                };
+                function newglbsphere() {//
+
+                };
+                function newglbconetf() {//
+
+                };
+                function newglbconetp() {//
+
+                };
+                function newglbcyl() {//
+
+                };
+                function newglbtube() {//
+
+                };
+                function newglbplane() {//
+
+                };
+                function newjoint1() {//
+
+                };
+                function cmmd9() {//
+
+                };
+                function cmmd10() {//
+
+                };
+                function cmmd11() {//
+
+                };
+                function cmmd12() {//
+
+                };
+                function cmmd13() {//
+
+                };
+                function cmmd14() {//
+
+                };
+                function cmmd15() {//
+
+                };
+                function cmmd16() {//
+
+                };
+                function cmmd17() {//
+
+                };
+                function cmmd18() {//
+
+                };
+                function cmmd19() {//
+
+                };
+                function cmmd20() {//
+
+                };
+                function cmmd21() {//
+
+                };
+                function cmmd22() {//
+
+                };
+                function cmmd23() {//
+
+                };
+                function cmmd24() {//
+
+                };
+                function cmmd25() {//
+
+                };
+
+                function cmma1() {//
+
+                };
+                function cmma2() {//
+
+                };
+                function cmma3() {//
+
+                };
+                function cmma4() {//
+
+                };
+                function cmma5() {//
+
+                };
+                function cmma6() {//
+
+                };
+                function cmma7() {//
+
+                };
+                function cmma8() {//
+
+                };
+                function cmma9() {//
+
+                };
+                function cmma10() {//
+
+                };
+                function cmma11() {//
+
+                };
+                function cmma12() {//
+
+                };
+                function cmma13() {//
+
+                };
+                function cmma14() {//
+
+                };
+                function cmma15() {//
+
+                };
+                function cmma16() {//
+
+                };
+                function cmma17() {//
+
+                };
+                function cmma18() {//
+
+                };
+                function cmma19() {//
+
+                };
+                function cmma20() {//
+
+                };
+                function cmma21() {//
+
+                };
+                function cmma22() {//
+
+                };
+                function cmma23() {//
+
+                };
+                function cmma24() {//
+
+                };
+                function cmma25() {//
+
+                };
+            </script>
+
+
+            <script>
+                function matl01() {
+                    var knot = document.getElementById("prt1");
+                    knot.setAttribute('material', 'src', '#m01');
+                }
+                function matl02() {
+                    var knot = document.getElementById("prt2");
+                    knot.setAttribute('material', 'src', '#m02');
+                }
+                function matl03() {
+                    var knot = document.getElementBySelection("cursor");
+                    knot.setAttribute('material', 'src', '#m03');
+                }
+                window.matl4 = function () {
+                    var knot = document.getElementById("prt4");
+                    knot.setAttribute('material', 'src', '#m04');
+                }
+                window.matl5 = function () {
+                    var knot = document.getElementById("prt5");
+                    knot.setAttribute('material', 'src', '#m05');
+                }
+                window.matl6 = function () {
+                    var knot = document.getElementById("prt6");
+                    knot.setAttribute('material', 'src', '#m06');
+                }
+                window.matl7 = function () {
+                    var knot = document.getElementById("prt7");
+                    knot.setAttribute('material', 'src', '#m07');
+                }
+                window.matl8 = function () {
+                    var knot = document.getElementById("prt8");
+                    knot.setAttribute('material', 'src', '#m08');
+                }
+                window.matl9 = function () {
+                    var knot = document.getElementById("prt9");
+                    knot.setAttribute('material', 'src', '#m09');
+                }
+                window.matl10 = function () {
+                    var knot = document.getElementById("prt10");
+                    knot.setAttribute('material', 'src', '#m10');
+                }
+                window.matl11 = function () {
+                    var knot = document.getElementById("prt11");
+                    knot.setAttribute('material', 'src', '#m11');
+                }
+                window.matl12 = function () {
+                    var knot = document.getElementById("prt12");
+                    knot.setAttribute('material', 'src', '#m12');
+                }
+                window.matl13 = function () {
+                    var knot = document.getElementById("prt13");
+                    knot.setAttribute('material', 'src', '#m13');
+                }
+                window.matl14 = function () {
+                    var knot = document.getElementById("prt14");
+                    knot.setAttribute('material', 'src', '#m14');
+                }
+                window.matl15 = function () {
+                    var knot = document.getElementById("prt15");
+                    knot.setAttribute('material', 'src', '#m15');
+                }
+                window.matl16 = function () {
+                    var knot = document.getElementById("prt16");
+                    knot.setAttribute('material', 'src', '#m16');
+                }
+                window.matl17 = function () {
+                    var knot = document.getElementById("prt17");
+                    knot.setAttribute('material', 'src', '#m17');
+                }
+                window.matl18 = function () {
+                    var knot = document.getElementById("prt18");
+                    knot.setAttribute('material', 'src', '#m18');
+                };
+            </script>
     </div>
 
+
+</body>
+
 </html>
+
+<!--
+<a-entity id="engineassy" rotation="0 0 0" scale="1 1 1" static-body>
+
+    <a-entity id="main2" gltf-model="#ccylY" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="journal4" gltf-model="#ccylY" position="2.0 1.5 0" rotation="0 0 0" scale="1 1 1" static-body>
+            <a-entity id="conrod-be" gltf-model="#pistonbe" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+
+            </a-entity>
+        </a-entity>
+
+    </a-entity>
+    <a-entity id="journal1" gltf-model="#ccyly" position="1.5 2.5 0" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="conrod-be" gltf-model="#ccylyy" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+            <a-entity id="conrod-le" gltf-model="#ccyly" position="0 3 0" rotation="0 0 0" scale="1 1 1" static-body>
+                <a-entity id="gudgeon-pin1" gltf-model="#ccylz" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+
+                </a-entity>
+
+            </a-entity>
+    <a-entity id="journal63" gltf-model="#ccylY" position="-2 7.5 0" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="conrod-be" gltf-model="#pistonbe" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+
+        </a-entity>
+    </a-entity>
+    <a-entity id="journal2" gltf-model="#ccylY" position="-2.0 1.5 0" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="conrod-be" gltf-model="#pistonbe" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+
+        </a-entity>
+    </a-entity>
+    <a-entity id="journal1" gltf-model="#ccylY" position="2.0 2.5 0" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="conrod-be" gltf-model="#pistonbe" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+
+        </a-entity>
+    </a-entity>
+
+
+
+    <a-entity id="main1" gltf-model="#ccylY" position="0 12.5 0" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="journal1" gltf-model="#ccyly" position="2.0 -1.5 0" rotation="0 0 0" scale="1 1 1" static-body>
+            <a-entity id="conrod-be" gltf-model="#pistonbe" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+
+            </a-entity>
+        </a-entity>
+
+    </a-entity>
+
+</a-entity>
+
+<a-entity id="crankshaft">
+    <a-entity id="crankassy1" rotation="0 0 0" scale="1 1 1" static-body>
+
+    </a-entity>
+    <a-entity id="crankassy2" rotation="0 0 180" scale="1 1 1" static-body>
+        <a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="5 5 5" static-body>
+            <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="5 5 5" static-body></a-entity>
+
+        </a-entity>
+    </a-entity>
+    <a-entity id="crankassy2" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+        <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+    </a-entity>
+    <a-entity id="main2" gltf-model="#ccylx" position="3.0 0 0" rotation="0 0 0" scale="1 1 1" static-body>
+        <a-entity id="journal2" gltf-model="#ccylx" position="1.5 2.0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
+
+    </a-entity>
+
+
+</a-entity><!--crankshaftassy-->

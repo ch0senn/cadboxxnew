@@ -4,10 +4,61 @@
     <title>Arms</title>
     <meta name="description" content="Arms - A-Frame">
     <script src="https://cdn.jsdelivr.net/npm/aframe@1.6.0/dist/aframe-master.min.js"></script>
+
+
+
+
 </head>
 <body>
     <a-scene>
         <a-assets>
+            <a-mixin id="cube" geometry="primitive: box; width: 2.0; height: 2.0; depth: 2.0"
+                     hoverable grabbable stretchable draggable droppable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     body="shape: none" shape="shape: box; halfExtents: 1 1 1" shadow></a-mixin>
+            <a-mixin id="gltfmodel" gltf-model="#cbb1"
+                     hoverable grabbable stretchable draggable droppable clickable
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
+                     body="shape: none" shape="shape: box; halfExtents: 0.5 0.5 0.5" shadow></a-mixin>
+
+            <a-mixin id="voxel"
+                     geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5"
+                     material="shader: standard"
+                     random-color
+                     snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
+            <a-mixin id="voxelcb1"
+                     gltf-model="#cb1"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+            <a-mixin id="voxelccyly"
+                     gltf-model="#ccyly"
+                     snap="offset: 0 0.5 0; snap: 1 1 1"></a-mixin>
+            <a-mixin id="voxelccylx"
+                     gltf-model="#ccylx"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+            <a-mixin id="voxelccylz"
+                     gltf-model="#ccylz"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+            <a-mixin id="voxeldodd1"
+                     gltf-model="#glbdodd"
+                     snap="offset: 0.5 0.5 0.5; snap: 1 1 1"></a-mixin>
+
+            <!--glb models-->
+            <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+            <a-asset-item id="ccylx" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerx.glb?v=1672861412777"></a-asset-item>
+            <a-asset-item id="ccyly" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centery.glb?v=1672861445115"></a-asset-item>
+            <a-asset-item id="ccylz" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/centerz.glb?v=1672861498630"></a-asset-item>
+
+            <a-asset-item id="boxglbred" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxred.glb?v=1688019604745"></a-asset-item>
+            <a-asset-item id="boxglbblue" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxblue.glb?v=1688019583475"></a-asset-item>
+            <a-asset-item id="boxglbgreen" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxgreen.glb?v=1688019561769"></a-asset-item>
+
+            <a-asset-item id="glbsphere" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsphere-r1-p010.glb?v=1615396331056"></a-asset-item>
+            <a-asset-item id="glbdodd" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fdodd-rpt5.glb?v=1632901912292"></a-asset-item>
+            <a-asset-item id="glbtett" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Ftet-block-rad1-p000.glb?v=1631529314495"></a-asset-item>
+            <a-asset-item id="glbcyll" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/glcyl.glb?v=1661360434803"></a-asset-item>
+
             <img id="background" src="black-grid.png">
         </a-assets>
 

@@ -20,7 +20,7 @@
 
             <a-mixin id="box" geometry="primitive: box"></a-mixin>
             <a-mixin id="tall" geometry="height: 10"></a-mixin>
-            <a-mixin id="wide" geometry="width: 10"></a-mixin>
+            <a-mixin id="wide" geometry="scale: 10 5 10"></a-mixin>
 
             <a-mixin id="egg" geometry="primitive: sphere"></a-mixin>
             <a-mixin id="high" geometry="radius: 10"></a-mixin>
@@ -36,11 +36,11 @@
 
 
 
-        <!--a-entity id="morphedentity"
-                  geometry="#model1"
+        <a-entity id="morphedentity"
+                  model1="target: #model2; duration: 2000"
                   position="0 0 0"
                   morph="target: #model2; duration: 2000">
-        </a-entity-->
+        </a-entity>
 
 
         <a-camera position="0 1.6 10" target="0 0 0" wasd-controls look-controls></a-camera>

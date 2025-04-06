@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Building Animations</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="cb1" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-one.glb?v=1659721895630"></a-asset-item>
+            <a-asset-item id="#" src=""></a-asset-item>
+            <a-asset-item id="#" src=""></a-asset-item>
+            <a-asset-item id="boxglbgreen" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/boxgreen.glb?v=1688019561769"></a-asset-item>
+
+
+        </a-assets>
+        <!-- Adding a box entity with an animation -->
+        <a-gltf-model src="#cb1" position="0 1.5 0"
+                      rotation="0 0 0"
+                      color="#4CC3D9"
+                      animation="property: rotation; to: 0 0 360; loop: true; dur: 5000"></a-gltf-model>
+
+        <!-- Adding a basic environment -->
+        <a-sky color="black"></a-sky>
+    </a-scene>
+
+    <script>
+        document.querySelector("#animationPlayer").addEventListener('animation-finished', function () {
+            document.querySelector("#play_again").setAttribute('visible', 'true')
+        });
+    </script>
+</body>
+</html>

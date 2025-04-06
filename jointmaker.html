@@ -146,6 +146,23 @@
 <body>
     <a-scene physics="gravity:0 -9.81 0">
         <a-assets>
+            <!--index laydown-->
+        <div>
+
+        </div>
+    <!--end-->
+            <!--index constrain-->
+            <div>
+
+            </div>
+            <!--end-->
+            <!--index test-->
+            <div>
+
+            </div>
+            <!--end-->
+            <!--index motion-->
+            <!--end-->
             <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                      hoverable grabbable stretchable draggable droppable
                      event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
@@ -369,12 +386,12 @@
             <a-mixin id="yellow" material="color: yellow"></a-mixin>
 
             <!--
-        <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
+    <a-mixin id="" geometry="gltf-model: model;" src="#prt1"></a-mixin>
 
-        <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
+    <a-mixin id="" geometry="gltf-model: model;src:#prt0"></a-mixin>
 
-        <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-            -->
+    <a-mixin id="" constraint="type: hinge;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+        -->
 
             <a-mixin id="trigger-box" geometry="primitive:box;width:4; depth:4; height:4; color:green; opacity:1"
                      class="clickable" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9"

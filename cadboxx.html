@@ -200,7 +200,9 @@
             <img id="ring2" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
             <img id="ring3" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cadboxx-border.png?v=1659362950670">
             <img id="ring4" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/screenshot-toolbar-menu-1664451802701.png?v=1664451899625">
-            <img id="ring5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/model.png?v=1665597644170">
+            <img id="ring5" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/mo
+                
+                del.png?v=1665597644170">
             <img id="ring1" src="img/ring1.png">
             <img id="ring2" src="img/ring2.png">
             <img id="imm1" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsclight.png?v=1618928375551">
@@ -215,7 +217,21 @@
 
         </a-assets>
 
-        <!--sphorb center-->
+        
+        
+		<a-entity id="shell" position="0 0 0" rotation="0 0 0" scale="3 3 3" mixin="#" >
+
+			  <a-plane id="pln1" src="https://cdn.glitch.global/54999d60-8327-4547-bdb2-3ec368f60a9d/starry.png?v=1747166367991" side="double" scale="200 200 200" position="0 0 -100" rotation="0 0 0" ></a-plane>
+			  <a-plane id="pln2" src="https://cdn.glitch.global/54999d60-8327-4547-bdb2-3ec368f60a9d/starry.png?v=1747166367991" side="double" scale="200 200 200" position="0 0 100" rotation="0 0 0" ></a-plane>
+ 			  <a-plane id="pln3" src="https://cdn.glitch.global/54999d60-8327-4547-bdb2-3ec368f60a9d/starry.png?v=1747166367991" side="double" scale="200 200 200" position0="0 -100 0" rotation="90 0 0" ></a-plane>
+			  <a-plane id="pln4" src="https://cdn.glitch.global/54999d60-8327-4547-bdb2-3ec368f60a9d/starry.png?v=1747166367991" side="double" scale="200 200 200" position="0 100 0" rotation="90 0 0" ></a-plane>
+ 			  <a-plane id="pln5" src="https://cdn.glitch.global/54999d60-8327-4547-bdb2-3ec368f60a9d/starry.png?v=1747166367991" side="double" scale="200 200 200" position="-100 0 0" rotation="0 90 0" ></a-plane>
+			  <a-plane id="pln6" src="https://cdn.glitch.global/54999d60-8327-4547-bdb2-3ec368f60a9d/starry.png?v=1747166367991" side="double" scale="200 200 200" position="100 0 0" rotation="0 90 0" ></a-plane>
+
+		</a-entity>
+        
+
+        <!--sphorb center--
         <a-entity id="yellowSphereCen" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
             <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
             <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
@@ -231,9 +247,9 @@
         </a-entity>
         <!--sphorb-end-->
         <!--2-->
-        <!--group-->
+        <!--group--
         <a-entity id="orbit" mixin="rotzz" position="5 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
-            <!--sphorb-->
+            <!--sphorb--
             <a-entity id="yellowSphere" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
                 <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
                 <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
@@ -249,7 +265,7 @@
             </a-entity>
             <!--sphorb-end-->
             <!--3-->
-            <!--sphorb-->
+            <!--sphorb--
             <a-entity id="yellowSphere" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
                 <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
                 <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
@@ -265,7 +281,7 @@
             </a-entity>
             <!--sphorb-end-->
             <!--4-->
-            <!--sphorb-->
+            <!--sphorb--
             <a-entity id="yellowSphere" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
                 <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
                 <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
@@ -281,11 +297,11 @@
             </a-entity>
             <!--sphorb-end-->
             <!--5-->
-            <!--sphorb-->
+            <!--sphorb--
             <a-entity id="yellowSphere" mixin="rotxyz" position="0 0 0" rotation="0 0 0" scale=".5 .5 .5" static-body gltf-exporter>
                 <a-entity id="orb1" gltf-model="#bb02" mixin="rotxx" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
                 <a-entity id="orb2" gltf-model="#bb03" mixin="rotyy" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
-                          animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+                          animation__rotation__xx="property rotation; dir: forward; dur: 9000;
                     repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
                 <a-entity id="orb3" gltf-model="#bb04" mixin="rotzz" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
                           animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
@@ -295,10 +311,10 @@
                     repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
 
             </a-entity>
-            <!--sphorb5-end-->
+        -->
         </a-entity>
 
-        <a-entity id="cam1" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 10; initialPosition: 0 5 7.5"></a-entity>
+        <a-entity id="cam1" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 10; initialPosition: 0 0 0"></a-entity>
 
 
 

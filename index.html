@@ -531,12 +531,12 @@
 
 
     <div id="mySidenav" class="sidenav">
-        <a id="mybutton01" class="clickable" onclick="newcube()" id="file">FILE</a>
-        <a id="mybutton02" class="clickable" onclick="newsphere()" id="file">FILE</a>
-        <a id="mybutton03" class="clickable" onclick="newcyl()" id="file">FILE</a>
-        <a id="mybutton04" class="clickable" onclick="newtet()" id="file">FILE</a>
-        <a id="mybutton05" class="clickable" onclick="cmm2()" id="file">FILE</a>
-        <a id="mybutton06" class="clickable" onclick="cmm1()" id="file">FILE</a>
+        <a id="mybutton01" class="clickable" onclick="newcube()" id="cube">CUBE</a>
+        <a id="mybutton02" class="clickable" onclick="newsphere()" id="sphere">SPHERE</a>
+        <a id="mybutton03" class="clickable" onclick="newcyl()" id="cylinder">CYL</a>
+        <a id="mybutton04" class="clickable" onclick="newtet()" id="tetrahedren">TET</a>
+        <a id="mybutton05" class="clickable" onclick="cmm2()" id="cam2">CAM2</a>
+        <a id="mybutton06" class="clickable" onclick="cmm1()" id="cam1">CAM1</a>
 
     </div>
     <div id="mySidenav2" class="sidenav">
@@ -545,7 +545,6 @@
         <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
 
     </div>
-    <a-scene>
         <a-scene gltf-exporter physics="gravity:-10;restitution:0.5;friction:0.2">
             <a-assets>
                 <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
@@ -1078,70 +1077,7 @@
         <button onclick="resetScene()">Reset Scene</button>
     </div-->
 
-    <a-scene id="main-scene" physics="debug: false; gravity: 0 -9.8 0" background="color: #000814">
-        <!-- Camera -->
-        <a-camera id="main-camera" position="0 2 15" look-controls wasd-controls>
-            <a-cursor color="#ffff00"></a-cursor>
-        </a-camera>
-
-        <!-- Lighting -->
-        <a-light type="ambient" color="#ffffff" intensity="0.6"></a-light>
-        <a-light type="directional" color="#ffffff" intensity="0.8" position="10 10 10"></a-light>
-        <a-light type="point" color="#00ff00" intensity="0.5" position="-10 5 10"></a-light>
-        <a-light type="point" color="#0099ff" intensity="0.5" position="10 5 -10"></a-light>
-
-        <!-- Virtual Cube Boundary (50m x 50m x 50m) -->
-        <a-entity id="boundary-box">
-            <!-- Floor -->
-            <a-plane id="floor" position="0 -25 0" rotation="-90 0 0" width="50" height="50"
-                     color="#1a3a52" opacity="0.3" static-body></a-plane>
-
-            <!-- Ceiling -->
-            <a-plane id="ceiling" position="0 25 0" rotation="90 0 0" width="50" height="50"
-                     color="#0f0f0f" opacity="0.2" static-body></a-plane>
-
-            <!-- Back Wall -->
-            <a-plane id="wall-back" position="0 0 -25" width="50" height="50"
-                     color="#003d5c" opacity="0.15" static-body></a-plane>
-
-            <!-- Front Wall -->
-            <a-plane id="wall-front" position="0 0 25" width="50" height="50"
-                     color="#003d5c" opacity="0.15" static-body></a-plane>
-
-            <!-- Left Wall -->
-            <a-plane id="wall-left" position="-25 0 0" rotation="0 90 0" width="50" height="50"
-                     color="#003d5c" opacity="0.15" static-body></a-plane>
-
-            <!-- Right Wall -->
-            <a-plane id="wall-right" position="25 0 0" rotation="0 90 0" width="50" height="50"
-                     color="#003d5c" opacity="0.15" static-body></a-plane>
-
-            <!-- Grid lines for reference -->
-            <a-entity id="grid">
-                <!-- Grid on floor -->
-                <a-entity position="0 -24.9 0" geometry="primitive: plane; width: 50; height: 50"
-                         material="shader: grid; color: #0099ff; cellSize: 2.5; cellColor: #006699"
-                         rotation="-90 0 0" opacity="0.1"></a-entity>
-            </a-entity>
-        </a-entity>
-
-        <!-- Parts Container -->
-        <a-entity id="parts-container"></a-entity>
-
-        <!-- Joints Container -->
-        <a-entity id="joints-container"></a-entity>
-
-        <!-- Assembly Base Platform -->
-        <a-box id="assembly-base" position="0 -20 0" width="10" height="1" depth="10"
-               color="#ff6b6b" static-body opacity="0.7"></a-box>
-
-        <!-- Coordinate Axis Helper -->
-        <a-entity position="0 0 0">
-            <a-cylinder color="#ff0000" height="5" radius="0.1" position="2.5 0 0"></a-cylinder>
-            <a-cylinder color="#00ff00" height="5" radius="0.1" position="0 2.5 0" rotation="90 0 0"></a-cylinder>
-            <a-cylinder color="#0000ff" height="5" radius="0.1" position="0 0 2.5" rotation="0 90 0"></a-cylinder>
-        </a-entity>
-    </a-scene>
+    
 
     <script>
         // Configuration

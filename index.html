@@ -521,7 +521,7 @@
         <a href="https://3dviewer.net" target="_blank" id="ijkl">Viewer</a>
 
     </div>
-    <!--div id="myNavh01" class="overlay">
+    <div id="myNavh01" class="overlay">
         <div class="overlay-content">
             <center>
                 <div id="btnnbar" display="inline-block">
@@ -715,7 +715,7 @@
     <div class="container-flex">
 
         <body>
-            <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" >
+            <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
                 <a-assets>
                     <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                              hoverable grabbable stretchable draggable droppable
@@ -1194,9 +1194,843 @@
                 <!--camera id="cam7" position="-12 6 0" look-controls active="false">
 
                 </!--a-camera>
+                <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
+
+                </a-camera>
+                <a-camera id="cam9" position="12 6 0" look-controls active="false">
+
+                </a-camera>
+
+                <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
+                    <a-cursor></a-cursor>
+                </a-entity-->
+
+                <a-sky radius="50" color="lightblue"></a-sky>
+
             </a-scene>
-            </a-body>
-            </a-html>
+            <script src="js/aframe-physics-system.min.js"></script>
+            <script>
+                document.querySelector('a-scene').addEventListener('loaded', function () {
+                    document.getElementById("myNavh01").style.display = "block";
+                })
+
+            </script>
+
+            <script>
+                function newassemblytemplate() {
+                    const bodie = document.querySelector("#part0");
+                    const connector1 = document.querySelector("#conn1")
+                    const limb = document.createElement("a-sphere");
+                    sphere.setAttribute("color", "#crimson");
+                    sphere.setAttribute("radius", "0.5");
+                    sphere.setAttribute("position", "-3 2 0");
+                    bodie.appendChild(limb);
+
+                    render();
+                }
+
+            </script>
+
+            <script type="text/javascript">
+                var mybutton01 = document.querySelector('#mybutton01');
+                mybutton01.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton02 = document.querySelector('#mybutton02');
+                mybutton02.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton03 = document.querySelector('#mybutton03');
+                mybutton03.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton04 = document.querySelector('#mybutton04');
+                mybutton04.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton05 = document.querySelector('#mybutton05');
+                mybutton05.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton06 = document.querySelector('#mybutton06');
+                mybutton06.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton07 = document.querySelector('#mybutton07');
+                mybutton07.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton08 = document.querySelector('#mybutton08');
+                mybutton08.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton09 = document.querySelector('#mybutton09');
+                mybutton09.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+
+            <script type="text/javascript">
+                var mybutton10 = document.querySelector('#mybutton10');
+                mybutton10.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton11 = document.querySelector('#mybutton11');
+                mybutton11.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton12 = document.querySelector('#mybutton12');
+                mybutton12.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton13 = document.querySelector('#mybutton13');
+                mybutton13.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton15 = document.querySelector('#mybutton15');
+                mybutton15.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton16 = document.querySelector('#mybutton16');
+                mybutton16.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton17 = document.querySelector('#mybutton17');
+                mybutton17.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton18 = document.querySelector('#mybutton18');
+                mybutton18.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton19 = document.querySelector('#mybutton19');
+                mybutton19.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton10 = document.querySelector('#mybutton10');
+                mybutton10.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton21 = document.querySelector('#mybutton21');
+                mybutton21.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton22 = document.querySelector('#mybutton22');
+                mybutton22.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton23 = document.querySelector('#mybutton23');
+                mybutton23.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton25 = document.querySelector('#mybutton25');
+                mybutton25.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton26 = document.querySelector('#mybutton26');
+                mybutton26.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton27 = document.querySelector('#mybutton27');
+                mybutton27.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton28 = document.querySelector('#mybutton28');
+                mybutton28.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+                var mybutton29 = document.querySelector('#mybutton29');
+                mybutton29.addEventListener('pressed', function () {
+                    // do stuff here.
+                });
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+            <script type="text/javascript">
+
+            </script>
+
+
+
+
+            <script>
+                function newsphere() {
+                    const scene = document.querySelector("a-scene");
+                    const sphere = document.createElement("a-sphere");
+                    sphere.setAttribute("color", "#crimson");
+                    sphere.setAttribute("radius", "1.0");
+                    sphere.setAttribute("position", "0 0 0");
+                    scene.appendChild(sphere);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcube() {
+                    const scene = document.querySelector("a-scene");
+                    const box = document.createElement("a-box");
+                    box.setAttribute("color", "blue");
+                    box.setAttribute("height", "2");
+                    box.setAttribute("width", "2");
+                    box.setAttribute("depth", "2");
+                    box.setAttribute("position", "0 0 0");
+                    scene.appendChild(box);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcyl() {
+                    const scene = document.querySelector("a-scene");
+                    const cylinder = document.createElement("a-cylinder");
+                    cylinder.setAttribute("color", "#FF9500");
+                    cylinder.setAttribute("height", "2");
+                    cylinder.setAttribute("radius", "0.5");
+                    cylinder.setAttribute("position", "0 0 0");
+                    scene.appendChild(cylinder);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newtet() {
+                    const scene = document.querySelector("a-scene");
+                    const tetrahedron = document.createElement("a-tetrahedron");
+                    tetrahedron.setAttribute("color", "#FF9500");
+                    tetrahedron.setAttribute("radius", "0.5");
+                    tetrahedron.setAttribute("position", "0 0 0");
+                    scene.appendChild(tetrahedron);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newline() {
+                    const scene = document.querySelector("a-scene");
+                    const line = document.createElement("a-line");
+                    line.setAttribute("color", "black");
+                    line.setAttribute("opacity", "1.0");
+                    line.setAttribute("points", "0 0 0, 0 10 0");
+                    scene.appendChild(line);
+
+                    render();
+                }
+
+            </script>
+            <script>
+                function newcircle() {
+                    const scene = document.querySelector("a-scene");
+                    const circle = document.createElement("a-circle");
+                    circle.setAttribute("color", "#FF9500");
+                    circle.setAttribute("radius", "0.5");
+                    circle.setAttribute("position", "0 0 0");
+                    scene.appendChild(circle);
+
+                    render();
+                }
+
+            </script>
+
+            <script>
+                function exportGLTF(input, options) {
+                    AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+                }
+
+                document.getElementById('export-scene').addEventListener('click', function () {
+                    exportGLTF();
+                });
+
+                document.getElementById('export-scene-bin').addEventListener('click', function () {
+                    exportGLTF(undefined, { binary: true });
+                });
+
+                document.getElementById('export-redbxx').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbxx'), { binary: true });
+                });
+
+                document.getElementById('export-redbyy').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbyy'), { binary: true });
+                });
+
+                document.getElementById('export-redbzz').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('redbzz'), { binary: true });
+                });
+
+                document.getElementById('export-ground').addEventListener('click', function () {
+                    exportGLTF(document.getElementById('ground'), { binary: true });
+                });
+
+                document.getElementById('export-two').addEventListener('click', function () {
+                    exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+                });
+
+                document.getElementById('export-selector').addEventListener('click', function () {
+                    exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+                });
+
+            </script>
+            <script>
+                function openNav() {
+                    document.getElementById("myNav").style.display = "block";
+                }
+
+                function closeAllNav() {
+                    document.getElementById("myNavh01").style.display = "none";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+                    document.getElementById("myNavh06").style.display = "none";
+
+                }
+            </script>
+            <script>
+                function myNavh1() {
+                    document.getElementById("myNavh01").style.display = "block";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+
+                }
+                function myNavh2() {
+                    document.getElementById("myNavh02").style.display = "block";
+                    document.getElementById("myNavh01").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+
+                }
+                function myNavh3() {
+                    document.getElementById("myNavh03").style.display = "block";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh01").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+
+                }
+                function myNavh4() {
+                    document.getElementById("myNavh04").style.display = "block";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh01").style.display = "none";
+                    document.getElementById("myNavh05").style.display = "none";
+
+                }
+                function myNavh5() {
+                    document.getElementById("myNavh05").style.display = "block";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh01").style.display = "none";
+
+                }
+                function myNavh6() {
+                    document.getElementById("myNavh06").style.display = "block";
+                    document.getElementById("myNavh05").style.display = "none";
+                    document.getElementById("myNavh02").style.display = "none";
+                    document.getElementById("myNavh03").style.display = "none";
+                    document.getElementById("myNavh04").style.display = "none";
+                    document.getElementById("myNavh01").style.display = "none";
+
+                }
+
+
+            </script>
+
+            <script>
+                function myPartsdisplay() {
+                    document.getElementById("part01").style.display = "block";
+                    document.getElementById("part02").style.display = "block";
+                    document.getElementById("part03").style.display = "block";
+                    document.getElementById("part04").style.display = "block";
+                    document.getElementById("part05").style.display = "block";
+                    document.getElementById("part06").style.display = "block";
+                    document.getElementById("part07").style.display = "block";
+                    document.getElementById("part08").style.display = "block";
+                    document.getElementById("part09").style.display = "block";
+                    document.getElementById("part0").style.display = "block";
+
+                }
+                function myPart01() {
+                    document.getElementById("part01").style.display = "block";
+                }
+                function myPart02() {
+                    document.getElementById("part02").style.display = "block";
+                }
+                function myPart05() {
+                    document.getElementById("part03").style.display = "block";
+                }
+                function myPart04() {
+                    document.getElementById("part04").style.display = "block";
+                }
+                function myPart05() {
+                    document.getElementById("part05").style.display = "block";
+                }
+                function myPart06() {
+                    document.getElementById("part06").style.display = "block";
+                }
+                function myPart07() {
+                    document.getElementById("part07").style.display = "block";
+                }
+                function myPart08() {
+                    document.getElementById("part08").style.display = "block";
+                }
+                function myPart09() {
+                    document.getElementById("part09").style.display = "block";
+                }
+                function myPart0() {
+                    document.getElementById("part0").style.display = "block";
+                }
+
+
+            </script>
+
+            <script>
+                function cmm1() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', true);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm2() {//load
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', true);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm3() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', true);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', trfalseue);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm4() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', true);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm5() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', true);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm6() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', true);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm7() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', true);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm8() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', true);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm9() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', true);
+                    var tenthCameraEl = document.querySelector('#cam10');
+                    tenthCameraEl.setAttribute('camera', 'active', false);
+                };
+
+                function cmm10() {
+                    var mainCameraEl = document.querySelector('#cam1');
+                    mainCameraEl.setAttribute('camera', 'active', false);
+
+                    var secondCameraEl = document.querySelector('#cam2');
+                    secondCameraEl.setAttribute('camera', 'active', false);
+                    var thirdCameraEl = document.querySelector('#cam3');
+                    thirdCameraEl.setAttribute('camera', 'active', false);
+                    var fourthCameraEl = document.querySelector('#cam4');
+                    fourthCameraEl.setAttribute('camera', 'active', false);
+                    var fifthCameraEl = document.querySelector('#cam5');
+                    fifthCameraEl.setAttribute('camera', 'active', false);
+                    var sixthCameraEl = document.querySelector('#cam6');
+                    sixthCameraEl.setAttribute('camera', 'active', false);
+                    var seventhCameraEl = document.querySelector('#cam7');
+                    seventhCameraEl.setAttribute('camera', 'active', false);
+                    var eigthCameraEl = document.querySelector('#cam8');
+                    eigthCameraEl.setAttribute('camera', 'active', false);
+                    var ninthCameraEl = document.querySelector('#cam9');
+                    ninthCameraEl.setAttribute('camera', 'active', false);
+                    var tenthCameraEl = document.querySelector('#cam10'); 0
+                    tenthCameraEl.setAttribute('camera', 'active', true);
+                };
+
+                /*to auto-enter-vr*/
+                function cmm11() {
+                    var scene = document.querySelector('a-scene');
+                    scene.enterVR();
+                };
+                /*opens help nav 01*/
+                function help01() {
+                    document.getElementById("myNavh1").style.display = "block";
+                };
+
+                function closehelp01() {
+                    document.getElementById("myNavh1").style.display = "none";
+                };
+                /*whatitdoes*/
+                function help02() {
+                    document.getElementById("myNavh2").style.display = "block";
+                };
+                /*whatitdoes*/
+                function closehelp02() {
+                    document.getElementById("myNavh2").style.display = "none";
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+                /*whatitdoes*/
+                function xxzz() {
+
+                };
+
+
+
+            </script>
 
 
 
@@ -1207,5 +2041,351 @@
 
 
 
+            <script>
+                // Update individual nodes
+                document.querySelector('a-scene').addEventListener('loaded', function () {
+                    document.getElementById("myNav").style.display = "block";
+                })
 
-    1111111111111111
+            </script>
+
+            <script>
+                function openNav() {
+                    document.getElementById("myNav").style.display = "block";
+                }
+
+                function closeNav() {
+                    document.getElementById("myNav").style.display = "none";
+                }
+            </script>
+            <script>
+                function autoEvr() {
+                    var scene = document.querySelector('a-scene');
+                    scene.enterVR();
+                };
+            </script>
+
+            <script>
+                function cmm7() {//cadboxx opacity
+                    var cadboxx = document.querySelector('planeboxx');
+                    entityEl.setAttribute('opacity', 0.25);
+                };
+
+                function cmm8() {//get element by selection
+                    sceneEl.components.inspector.openInspector();
+                };
+
+                function cmm9() {//set camera position from entity
+
+                };
+                function cmm10() {//click-animate a component part
+
+                };
+                function cmm11() {//open material dialogue for entity
+
+                };
+                function cmm12() {//export scene glb
+
+                };
+                function cmm13() {//export snapshot during animation dialogue
+
+                };
+                function cmm14() {//record avatar
+
+                };
+                function cmm15() {//open custom animation panel
+
+                };
+                function cmm16() {//set position relative to object plane
+
+                };
+
+                function cmm17() {//load
+                    var loadingpanelEl = document.q
+                };
+
+                function cmm18() {//To remove or detach a component from an entity, we can use
+                    //var cameraEl = document.querySelector('[camera]');
+                    //cameraEl.removeAttribute('wasd-controls');
+
+
+
+                };
+
+                function cmm19() {//
+                    // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
+                    entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
+                    // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
+
+                };
+                function cmm20() {//
+                    entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
+                    // Or entityEl.setAttribute('position', '1 2 -3');
+                };
+                function cmm21() {//
+
+                };
+                function cmm22() {//
+
+                };
+                function cmm23() {//
+
+                };
+                function cmm24() {//
+
+                };
+                function cmm25() {//
+
+                };
+                function cmm26() {//
+
+                };
+                function cmm27() {//
+
+                };
+                function cmm28() {//
+
+                };
+                function cmm29() {//
+
+                };
+                function cmm30() {//
+                    entityEl.setAttribute('dynamic-body', {
+                        shape: 'box',
+                        mass: 1.5,
+                        linearDamping: 0.005
+                    });
+                };
+                function newglbcube() {//
+
+                };
+                function newglbsphere() {//
+
+                };
+                function newglbconetf() {//
+
+                };
+                function newglbconetp() {//
+
+                };
+                function newglbcyl() {//
+
+                };
+                function newglbtube() {//
+
+                };
+                function newglbplane() {//
+
+                };
+                function newjoint1() {//
+
+                };
+                function cmmd9() {//
+
+                };
+                function cmmd10() {//
+
+                };
+                function cmmd11() {//
+
+                };
+                function cmmd12() {//
+
+                };
+                function cmmd13() {//
+
+                };
+                function cmmd14() {//
+
+                };
+                function cmmd15() {//
+
+                };
+                function cmmd16() {//
+
+                };
+                function cmmd17() {//
+
+                };
+                function cmmd18() {//
+
+                };
+                function cmmd19() {//
+
+                };
+                function cmmd20() {//
+
+                };
+                function cmmd21() {//
+
+                };
+                function cmmd22() {//
+
+                };
+                function cmmd23() {//
+
+                };
+                function cmmd24() {//
+
+                };
+                function cmmd25() {//
+
+                };
+
+                function cmma1() {//
+
+                };
+                function cmma2() {//
+
+                };
+                function cmma3() {//
+
+                };
+                function cmma4() {//
+
+                };
+                function cmma5() {//
+
+                };
+                function cmma6() {//
+
+                };
+                function cmma7() {//
+
+                };
+                function cmma8() {//
+
+                };
+                function cmma9() {//
+
+                };
+                function cmma10() {//
+
+                };
+                function cmma11() {//
+
+                };
+                function cmma12() {//
+
+                };
+                function cmma13() {//
+
+                };
+                function cmma14() {//
+
+                };
+                function cmma15() {//
+
+                };
+                function cmma16() {//
+
+                };
+                function cmma17() {//
+
+                };
+                function cmma18() {//
+
+                };
+                function cmma19() {//
+
+                };
+                function cmma20() {//
+
+                };
+                function cmma21() {//
+
+                };
+                function cmma22() {//
+
+                };
+                function cmma23() {//
+
+                };
+                function cmma24() {//
+
+                };
+                function cmma25() {//
+
+                };
+            </script>
+
+
+            <script>
+                function matl01() {
+                    var knot = document.getElementById("prt1");
+                    knot.setAttribute('material', 'src', '#m01');
+                }
+                function matl02() {
+                    var knot = document.getElementById("prt2");
+                    knot.setAttribute('material', 'src', '#m02');
+                }
+                function matl03() {
+                    var knot = document.getElementBySelection("cursor");
+                    knot.setAttribute('material', 'src', '#m03');
+                }
+                window.matl4 = function () {
+                    var knot = document.getElementById("prt4");
+                    knot.setAttribute('material', 'src', '#m04');
+                }
+                window.matl5 = function () {
+                    var knot = document.getElementById("prt5");
+                    knot.setAttribute('material', 'src', '#m05');
+                }
+                window.matl6 = function () {
+                    var knot = document.getElementById("prt6");
+                    knot.setAttribute('material', 'src', '#m06');
+                }
+                window.matl7 = function () {
+                    var knot = document.getElementById("prt7");
+                    knot.setAttribute('material', 'src', '#m07');
+                }
+                window.matl8 = function () {
+                    var knot = document.getElementById("prt8");
+                    knot.setAttribute('material', 'src', '#m08');
+                }
+                window.matl9 = function () {
+                    var knot = document.getElementById("prt9");
+                    knot.setAttribute('material', 'src', '#m09');
+                }
+                window.matl10 = function () {
+                    var knot = document.getElementById("prt10");
+                    knot.setAttribute('material', 'src', '#m10');
+                }
+                window.matl11 = function () {
+                    var knot = document.getElementById("prt11");
+                    knot.setAttribute('material', 'src', '#m11');
+                }
+                window.matl12 = function () {
+                    var knot = document.getElementById("prt12");
+                    knot.setAttribute('material', 'src', '#m12');
+                }
+                window.matl13 = function () {
+                    var knot = document.getElementById("prt13");
+                    knot.setAttribute('material', 'src', '#m13');
+                }
+                window.matl14 = function () {
+                    var knot = document.getElementById("prt14");
+                    knot.setAttribute('material', 'src', '#m14');
+                }
+                window.matl15 = function () {
+                    var knot = document.getElementById("prt15");
+                    knot.setAttribute('material', 'src', '#m15');
+                }
+                window.matl16 = function () {
+                    var knot = document.getElementById("prt16");
+                    knot.setAttribute('material', 'src', '#m16');
+                }
+                window.matl17 = function () {
+                    var knot = document.getElementById("prt17");
+                    knot.setAttribute('material', 'src', '#m17');
+                }
+                window.matl18 = function () {
+                    var knot = document.getElementById("prt18");
+                    knot.setAttribute('material', 'src', '#m18');
+                };
+            </script>
+
+        </body>
+    </div>
+
+</html>

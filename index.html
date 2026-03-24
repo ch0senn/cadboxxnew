@@ -490,11 +490,13 @@
 </head>
 <body>
     <div id="container">
-        <button id="export-scene" class="button"><span>Export Scene</span></button>
-        <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
-        <button id="export-sphere" class="button"><span>Export Sphere</span></button>
-        <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
-        <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
+
+        <button id="export-scene" class="button clickable"><span>Export Scene</span></button>
+        <button id="export-scene-bin" class="button clickable"><span>Export Scene Binary</span></button>
+        <button id="export-sphere" class="button clickable"><span>Export Sphere</span></button>
+        <button id="export-two" class="button clickable"><span>Export Sphere and Box (Array)</span></button>
+        <button id="export-selector" class="button clickable"><span>Export boxes (Selector)</span></button>
+    
     </div>
 
     <div id="mySidenav" class="sidenav">
@@ -715,7 +717,7 @@
     <div class="container-flex">
 
         <body>
-            <a-scene gltf-exporter physics="gravity:-10;restitrution:0.5;friction:0.2" " >
+            <a-scene gltf-exporter physics="gravity:-10;restitution:0.5;friction:0.2" " >
                 <a-assets>
                     <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                              hoverable grabbable stretchable draggable droppable

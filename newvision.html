@@ -4,11 +4,19 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+
+
+
+    
 </head>
 <body>
+    <a-scene>
+        <a-assets>
+            
+        </a-assets>
 
-</body>
-</html>
+
+
 <!--impulse-click-->
 <!--mouse click-->
 <a-box position="0 1.0 0" rotation="0 0 0" color="#4CC3D9" shadow
@@ -43,26 +51,35 @@
                  direction="alternate"
                  begin="click"></a-animation>
 </a-sphere>
+        
+        <!--3 rgb boxxes spinningb on xyz axes-->
+        <a-entity geometry="primitive: box" material="color:red" position="-3 1 0">
+            <a-animation attribute="rotation" to="360 0 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+        </a-entity>
+        <a-entity geometry="primitive: box" material="color:blue" position="0 1 0">
+            <a-animation attribute="rotation" to="0 0 360" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+        </a-entity>
+        <a-entity geometry="primitive: box" material="color:green" position="3 1 0">
+            <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+        </a-entity>
+        
+        <!--[3 spinning boxes at the same point]-->
+        <a-entity geometry="primitive: box" material="color:red" position="0 0 0">
+            <a-animation attribute="rotation" to="360 0 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+        </a-entity>
+        <a-entity geometry="primitive: box" material="color:blue" position="0 0 0">
+            <a-animation attribute="rotation" to="0 0 360" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+        </a-entity>
+        <a-entity geometry="primitive: box" material="color:green" position="0 0 0">
+            <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
+        </a-entity>
 
-<!--3 rgb boxxes spinningb on xyz axes-->
-<a-entity geometry="primitive: box" material="color:red" position="-3 1 0">
-    <a-animation attribute="rotation" to="360 0 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
-</a-entity>
-<a-entity geometry="primitive: box" material="color:blue" position="0 1 0">
-    <a-animation attribute="rotation" to="0 0 360" repeat="indefinite" easing="linear" dur="9600"></a-animation>
-</a-entity>
-<a-entity geometry="primitive: box" material="color:green" position="3 1 0">
-    <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
-</a-entity>
+        
+    </a-scene>
 
-<!--[3 spinning boxes at the same point]-->
-<a-entity geometry="primitive: box" material="color:red" position="0 0 0">
-    <a-animation attribute="rotation" to="360 0 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
-</a-entity>
-<a-entity geometry="primitive: box" material="color:blue" position="0 0 0">
-    <a-animation attribute="rotation" to="0 0 360" repeat="indefinite" easing="linear" dur="9600"></a-animation>
-</a-entity>
-<a-entity geometry="primitive: box" material="color:green" position="0 0 0">
-    <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="9600"></a-animation>
-</a-entity>
+</body>
+</html>
+
+
+
 

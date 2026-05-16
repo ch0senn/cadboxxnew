@@ -1141,18 +1141,612 @@
 
 
 
+ <a-entity id="gg1" gltf-model="#cadboxx-floor" position="0 0 0" rotation="0 0 0" static-body visible="false"></a-entity>
+            <a-entity id="gg2" gltf-model="#floor-t" position="0 0 0" rotation="0 0 0" static-body visible="true"></a-entity>
 
 
+            <!-- Hands. -->
+            <a-entity id="teleHand"
+                      hand-controls="left"
+                      teleport-controls="type: parabolic; collisionEntities: [mixin='voxelcb1'], #anchor"></a-entity>
+
+            <a-entity id="blockHand"
+                      hand-controls="right"
+                      controller-cursor
+                      intersection-spawn="event: click; mixin: voxelcb1"></a-entity>
+
+            <a-light type="point" color="#94c6ff" position="0 0 0" intensity="1" light="intensity: 2" visible="true"></a-light>
+            <a-light type="directional" directionaltarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 -16 16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="16 -16 -16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 -16 -16" intensity="1"></a-light>
+            <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="16 16 16" intensity="1"></a-light>
+
+            <a-light type="spot" color="#94c6ff" position="0 16 16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="0 16 -16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="16 16 16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="16 -16 16" intensity="1"></a-light>
+            <a-light type="spot" color="#94c6ff" position="16 0 16" intensity="1"></a-light>
 
 
-                <a-sky position="0 0 0" color="lightblue" radius="75" static-body ></a-sky>
-             <a-light id="l1" typeof="hemisphere" position="0 0 0" intensity="2" color="white"></a-light>
+            <a-camera id="cam1" position="0 6 12" look-controls active="true">
+                <a-cursor intersection-spawn="event: click; mixin: voxelcb1"></a-cursor>
+            </a-camera>
+            <a-camera id="cam2" position="-12 6 0" look-controls active="false">
+                <a-cursor intersection-spawn="event: click; mixin: voxelccyly"></a-cursor>
+            </a-camera>
+            <a-camera id="cam3" position="12 6 0" look-controls active="false">
+                <a-cursor intersection-spawn="event: click; mixin: voxelccylx"></a-cursor>
+            </a-camera>
+            <a-camera id="cam4" position="0 12 0" look-controls active="false">
+                <a-cursor intersection-spawn="event: click; mixin: voxelccylz"></a-cursor>
+            </a-camera>
+            <a-camera id="cam5" position="0 6 12" look-controls active="false">
+                <a-cursor intersection-spawn="event: click; mixin: voxelcdodd1"></a-cursor>
+            </a-camera>
+            <a-camera id="cam6" position="12 6 0" look-controls active="false">
+                <!---->
+            </a-camera>
+            <a-camera id="cam7" position="-12 6 0" look-controls active="false">
+
+            </a-camera>
+            <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
+
+            </a-camera>
+            <a-camera id="cam9" position="12 6 0" look-controls active="false">
+
+            </a-camera>
+
+            <a-entity id="cam10" active="false" camera universal-controls position="0 2 10" jump-ability kinematic-body>
+                <a-cursor></a-cursor>
+            </a-entity>
+            <!--a-camera>
+             a-cursor></a-cursor>
+             Or <a-entity cursor></a-entity>
+            </!a-camera>-->
+            <a-sky color="#ECECEC"></a-sky>
         </a-scene>
-    </body>
+    </div>
+    <script src="js/aframe-physics-system.min.js" ></script>
+    <script>
+            document.querySelector('a-scene').addEventListener('loaded', function () {
+                document.getElementById("myNav").style.display = "block";
+            })
+
+    </script>
+
+    <script>
+            function newassemblytemplate() {
+                const bodie = document.querySelector("#part0");
+                const connector1 = document.querySelector("#conn1")
+                const limb = document.createElement("a-sphere");
+                sphere.setAttribute("color", "#crimson");
+                sphere.setAttribute("radius", "0.5");
+                sphere.setAttribute("position", "-3 2 0");
+                bodie.appendChild(limb);
+
+                render();
+            }
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+    </script>
+
+
+
+
+    <script>
+            function newsphere() {
+                const scene = document.querySelector("a-scene");
+                const sphere = document.createElement("a-sphere");
+                sphere.setAttribute("color", "#crimson");
+                sphere.setAttribute("radius", "1.0");
+                sphere.setAttribute("position", "0 1 0");
+                scene.appendChild(sphere);
+
+                render();
+            }
+
+    </script>
+    <script>
+            function newcube() {
+                const scene = document.querySelector("a-scene");
+                const box = document.createElement("a-box");
+                box.setAttribute("color", "blue");
+                box.setAttribute("height", "2");
+                box.setAttribute("width", "2");
+                box.setAttribute("depth", "2");
+                box.setAttribute("position", "0 1 0");
+                scene.appendChild(box);
+
+                render();
+            }
+
+    </script>
+    <script>
+            function newcyl() {
+                const scene = document.querySelector("a-scene");
+                const cylinder = document.createElement("a-cylinder");
+                cylinder.setAttribute("color", "#FF9500");
+                cylinder.setAttribute("height", "2");
+                cylinder.setAttribute("radius", "0.5");
+                cylinder.setAttribute("position", "0 1.0 0");
+                scene.appendChild(cylinder);
+
+                render();
+            }
+
+    </script>
+    <script>
+            function newtet() {
+                const scene = document.querySelector("a-scene");
+                const tetrahedron = document.createElement("a-tetrahedron");
+                tetrahedron.setAttribute("color", "#FF9500");
+                tetrahedron.setAttribute("radius", "0.5");
+                tetrahedron.setAttribute("position", "3 3 2");
+                scene.appendChild(tetrahedron);
+
+                render();
+            }
+
+    </script>
+    <script>
+            function newline() {
+                const scene = document.querySelector("a-scene");
+                const line = document.createElement("a-line");
+                line.setAttribute("color", "black");
+                line.setAttribute("opacity", "1.0");
+                line.setAttribute("points", "0 0 0, 0 1 0");
+                scene.appendChild(line);
+
+                render();
+            }
+
+    </script>
+    <script>
+            function newcircle() {
+                const scene = document.querySelector("a-scene");
+                const circle = document.createElement("a-circle");
+                circle.setAttribute("color", "#FF9500");
+                circle.setAttribute("radius", "0.5");
+                circle.setAttribute("position", "3 3 2");
+                scene.appendChild(circle);
+
+                render();
+            }
+
+    </script>
+
+    <script>
+            function exportGLTF(input, options) {
+                AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+            }
+
+            document.getElementById('export-scene').addEventListener('click', function () {
+                exportGLTF();
+            });
+
+            document.getElementById('export-scene-bin').addEventListener('click', function () {
+                exportGLTF(undefined, { binary: true });
+            });
+
+            document.getElementById('export-redbxx').addEventListener('click', function () {
+                exportGLTF(document.getElementById('redbxx'), { binary: true });
+            });
+
+            document.getElementById('export-redbyy').addEventListener('click', function () {
+                exportGLTF(document.getElementById('redbyy'), { binary: true });
+            });
+
+            document.getElementById('export-redbzz').addEventListener('click', function () {
+                exportGLTF(document.getElementById('redbzz'), { binary: true });
+            });
+
+            document.getElementById('export-ground').addEventListener('click', function () {
+                exportGLTF(document.getElementById('ground'), { binary: true });
+            });
+
+            document.getElementById('export-two').addEventListener('click', function () {
+                exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+            });
+
+            document.getElementById('export-selector').addEventListener('click', function () {
+                exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+            });
+
+    </script>
+    <script>
+            function openNav() {
+                document.getElementById("myNav").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.display = "none";
+            }
+    </script>
+    <script>
+            function myNav() {
+
+            }
+    </script>
+    <script>
+            function cmm1() {//set position relative to object plane
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', true);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', false);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm2() {//load
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', true);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', false);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm3() {
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', true);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', trfalseue);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm4() {
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', true);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', false);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm5() {
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', true);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm6() {
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', false);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', true);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm7() {
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', false);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', true);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm8() {
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', false);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', true);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm9() {
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', false);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', true);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm10() {
+                var mainCameraEl = document.querySelector('#cam1');
+                mainCameraEl.setAttribute('camera', 'active', false);
+
+                var secondCameraEl = document.querySelector('#cam2');
+                secondCameraEl.setAttribute('camera', 'active', false);
+                var thirdCameraEl = document.querySelector('#cam3');
+                thirdCameraEl.setAttribute('camera', 'active', false);
+                var fourthCameraEl = document.querySelector('#cam4');
+                fourthCameraEl.setAttribute('camera', 'active', false);
+                var fifthCameraEl = document.querySelector('#cam5');
+                fifthCameraEl.setAttribute('camera', 'active', false);
+                var sixthCameraEl = document.querySelector('#cam6');
+                sixthCameraEl.setAttribute('camera', 'active', false);
+                var seventhCameraEl = document.querySelector('#cam7');
+                seventhCameraEl.setAttribute('camera', 'active', false);
+                var eigthCameraEl = document.querySelector('#cam8');
+                eigthCameraEl.setAttribute('camera', 'active', false);
+                var ninthCameraEl = document.querySelector('#cam9');
+                ninthCameraEl.setAttribute('camera', 'active', false);
+                var tenthCameraEl = document.querySelector('#cam10');
+                tenthCameraEl.setAttribute('camera', 'active', true);
+            };
+
+            /*to auto-enter-vr*/
+            function cmm11() {
+                var scene = document.querySelector('a-scene');
+                scene.enterVR();
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+            /*whatitdoes*/
+            function xxzz() {
+
+            };
+
+
+
+    </script>
+
+</a-scene>
+</body>
 </html>
-
-
-
 
 
 

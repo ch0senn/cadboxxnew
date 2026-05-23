@@ -191,8 +191,7 @@
     <body>
         <center>
             <div id="myEmbeddedScene">
-                <a-scene embedded physics="gravity:-10;restitution:0.5;friction:0.1"
-                         gltf-exporter>
+                <a-scene embedded physics="gravity:-10;restitution:0.5;friction:0.1" gltf-exporter>
                     <a-assets>
                         <a-mixin id="beveled-square" geometry="primitive: cone; radiusTop: 0.15; radiusBottom: 0.19; height: 0.02; segmentsRadial: 4; segmentsHeight: 1" rotation="0 45 0"></a-mixin>
                         <a-mixin id="square" geometry="primitive: box; width: 0.18; height: 0.025; depth: 0.18;" position="0 0.02 0"></a-mixin>
@@ -783,8 +782,8 @@
 
 
 
-                    <a-entity gltf-model="#floor-t" id="f1" poaition="0 0 0" static-body></a-entity>
-                    <a-entity gltf-model="#cadboxx-floor" id="f2" poaition="0 0 0" static-body></a-entity>
+                    <a-entity gltf-model="#floor-t" id="f1" position="0 0 0" static-body></a-entity>
+                    <a-entity gltf-model="#cadboxx-floor" id="f2" position="0 0 0" static-body></a-entity>
 
 
 
@@ -794,13 +793,7 @@
                         <a-cursor></a-cursor>
                     </a-camera>
                 </a-scene>
-
-                
             </div>
-        </center> 
-   
-    
-
-        
-</body>
+        </center>   
+    </body>
 </html>

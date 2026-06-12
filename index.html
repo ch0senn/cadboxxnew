@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>cadboxx</title>
-<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <meta charset="UTF-8">
+  <title>A-Frame Multi-GLB Drag & Drop</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r152/examples/js/controls/OrbitControls.js"></script>
+    <!--script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script-->
     <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
@@ -273,15 +274,34 @@
 
 
     
+    
+  <style>
+    body { margin: 0; overflow: hidden; }
+    #dropzone {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: sans-serif;
+      font-size: 24px;
+      background: rgba(0,0,0,0.3);
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-    <a-scene enviroment="preset:contact" >
-        <a-assets>
-            
-        </a-assets>
 
+<div id="dropzone">Drag & drop GLB files here</div>
 
-                    <a-entity id="planeboxxx" position="0 0 0" scale="1 1 1">
+<a-scene background="color: #222">
+
+<!--planeb boxx-->
+<a-entity id="planeboxxx" position="0 0 0" scale="1 1 1">
                         <a-entity id="planeboxx" position="0 0 0">
                             <a-entity id="planebox" position="0 0 0">
                                 <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body>
@@ -375,8 +395,6 @@
                         </a-entity>
                     </a-entity>
 
-                    <!--<a-sphere src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/cb-sphere.png?v=1691596177019" position="0 0 0" radius="50" ></a-sphere>
-    -->
                     <a-light type="point" color="#94c6ff" distance="15" position="0 0 -12" intensity="2" animation="property: light.intensity; from: 0; to: 2; delay: 750; dur: 500" light="intensity: 2" visible=""></a-light>
                     <a-light type="point" color="#94c6ff" distance="17" position="0 0 -6" intensity="2" animation="property: light.intensity; from: 0; to: 1; delay: 500; dur: 500" light="intensity: 1"></a-light>
                     <a-light type="hemisphere" position="0 0 0" color="#4f6487" intensity="2"></a-light>
@@ -390,8 +408,126 @@
                     <!--assembly planes-->
 
                     <!--cameras-->
+    
+  <a-entity id="models"></a-entity>
+  <a-light type="ambient" intensity="0.5"></a-light>
+  <a-light type="directional" intensity="1" position="1 2 3"></a-light>
+  <a-camera id="camera" position="0 1.6 0"></a-camera>
+</a-scene>
 
+<script>
+  const dropzone = document.getElementById('dropzone');
+  const modelsContainer = document.getElementById('models');
+  const camera = document.getElementById('camera');
 
-  </a-scene>
+  // Prevent default drag behaviors
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    window.addEventListener(eventName, e => e.preventDefault(), false);
+  });
+
+  // Highlight drop area
+  ['dragenter', 'dragover'].forEach(eventName => {
+    window.addEventListener(eventName, () => {
+      dropzone.style.background = 'rgba(0,0,0,0.6)';
+    }, false);
+  });
+
+  ['dragleave', 'drop'].forEach(eventName => {
+    window.addEventListener(eventName, () => {
+      dropzone.style.background = 'rgba(0,0,0,0.3)';
+    }, false);
+  });
+
+  // Function to add GLB to the scene
+  function addGLBModel(file) {
+    if (!file.name.endsWith('.glb')) {
+      alert('Please drop a .glb file');
+      return;
+    }
+
+    const url = URL.createObjectURL(file);
+
+    // Create a new entity for this model
+    const entity = document.createElement('a-entity');
+    entity.setAttribute('gltf-model', url);
+
+    // Random position in front of the camera
+    const camPos = camera.getAttribute('position');
+    const xOffset = (Math.random() - 0.5) * 2;
+    const yOffset = Math.random() * 1 + 0.5;
+    const zOffset = -2 - Math.random() * 1.5; // in front of camera
+    entity.setAttribute('position', {
+      x: camPos.x + xOffset,
+      y: camPos.y + yOffset,
+      z: camPos.z + zOffset
+    });
+
+    entity.setAttribute('scale', '1 1 1');
+
+    // Add simple rotation on drag
+    let isDragging = false;
+    let previousX;
+
+    entity.addEventListener('mousedown', e => {
+      isDragging = true;
+      previousX = e.clientX;
+    });
+
+    window.addEventListener('mouseup', () => isDragging = false);
+
+    window.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      const deltaX = e.clientX - previousX;
+      previousX = e.clientX;
+      const rotation = entity.getAttribute('rotation');
+      entity.setAttribute('rotation', {
+        x: rotation.x,
+        y: rotation.y + deltaX * 0.5,
+        z: rotation.z
+      });
+    });
+
+    // Add scroll to scale
+    window.addEventListener('wheel', e => {
+      const scale = entity.getAttribute('scale');
+      const factor = e.deltaY < 0 ? 1.05 : 0.95;
+      entity.setAttribute('scale', {
+        x: scale.x * factor,
+        y: scale.y * factor,
+        z: scale.z * factor
+      });
+    });
+
+    modelsContainer.appendChild(entity);
+  }
+
+  // Handle dropped files
+  window.addEventListener('drop', e => {
+    const files = e.dataTransfer.files;
+    if (files.length === 0) return;
+
+    dropzone.style.display = 'none';
+
+    for (let i = 0; i < files.length; i++) {
+      addGLBModel(files[i]);
+    }
+  });
+</script>
+
 </body>
 </html>
+
+
+
+
+
+ 
+
+
+                    
+
+                    
+                    
+
+
+  

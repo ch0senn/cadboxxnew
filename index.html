@@ -538,7 +538,7 @@
   <a-entity id="models"></a-entity>
   <a-light type="ambient" intensity="0.5"></a-light>
   <a-light type="directional" intensity="1" position="1 2 3"></a-light>
-  <a-camera id="camera" position="0 1.6 0"></a-camera>
+  <a-camera id="camera" target="0 0 0" position="0 5 10" look-controls wasd-controls orbit-controls ></a-camera>
 </a-scene>
 
 <script>
@@ -578,14 +578,14 @@
     entity.setAttribute('gltf-model', url);
 
     // Random position in front of the camera
-    const camPos = camera.getAttribute('position');
-    const xOffset = (Math.random() - 0.5) * 2;
-    const yOffset = Math.random() * 1 + 0.5;
-    const zOffset = -2 - Math.random() * 1.5; // in front of camera
+    //const camPos = camera.getAttribute('position');
+    //const xOffset = (Math.random() - 0.5) * 2;
+    //const yOffset = Math.random() * 1 + 0.5;
+    //const zOffset = -2 - Math.random() * 1.5; // in front of camera
     entity.setAttribute('position', {
-      x: camPos.x + xOffset,
-      y: camPos.y + yOffset,
-      z: camPos.z + zOffset
+      x: 0,  //camPos.x + xOffset,
+      y: 0, //camPos.y + yOffset,
+      z: 0 //camPos.z + zOffset
     });
 
     entity.setAttribute('scale', '1 1 1');

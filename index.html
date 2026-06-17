@@ -639,7 +639,535 @@
     }
   });
 </script>
+ <script>
+        // Update individual nodes
+        document.querySelector('a-scene').addEventListener('loaded', function () {
+            document.getElementById("myNav").style.display = "block";
+        })
 
+    </script>
+    <script>
+        function exportGLTF(input, options) {
+            AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+        }
+
+        document.getElementById('export-scene').addEventListener('click', function () {
+            exportGLTF();
+        });
+
+        document.getElementById('export-scene-bin').addEventListener('click', function () {
+            exportGLTF(undefined, { binary: true });
+        });
+
+        document.getElementById('export-redbxx').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redb1'), { binary: true });
+        });
+
+        document.getElementById('export-redbyy').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redb2'), { binary: true });
+        });
+
+        document.getElementById('export-redbzz').addEventListener('click', function () {
+            exportGLTF(document.getElementById('redbzz'), { binary: true });
+        });
+
+        document.getElementById('export-two').addEventListener('click', function () {
+            exportGLTF([document.getElementById('redbxx'), document.getElementById('redbyy')]);
+        });
+
+        document.getElementById('export-selector').addEventListener('click', function () {
+            exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+        });
+
+    </script>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+    </script>
+    <script>
+        function cmm1() {//set position relative to object plane
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', true);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        function cmm2() {//load
+            var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', true);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            var fourthCameraEl = document.querySelector('#cam4');
+            fourthCameraEl.setAttribute('camera', 'active', false);
+            var fifthCameraEl = document.querySelector('#cam5');
+            fifthCameraEl.setAttribute('camera', 'active', false);
+        };
+
+        /*<script>
+
+            function cmm1() {//set position relative to object plane
+                var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', true);
+
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm2() {//load
+                var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', true);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', false);
+            };
+
+            function cmm3() {
+                var mainCameraEl = document.querySelector('#cam1');
+            mainCameraEl.setAttribute('camera', 'active', false);
+
+
+            var secondCameraEl = document.querySelector('#cam2');
+            secondCameraEl.setAttribute('camera', 'active', false);
+            var thirdCameraEl = document.querySelector('#cam3');
+            thirdCameraEl.setAttribute('camera', 'active', true);
+            };
+
+            function cmm4() {
+                console.log(document.querySelector("prt1").getAttribute("material"))
+                if (document.querySelector("prt1").getAttribute("src") !== "m02") {
+                document.querySelector("prt1").setAttribute("src", "m01");
+                } else {
+                document.querySelector("prt1").setAttribute("src", "m02");
+
+                }
+            };
+
+            function cmm44() {//add + remove physics
+
+            };
+            function cmm5() {//gravity slider
+
+            };
+            function cmm6() {//lighting intensity
+
+            };
+                */
+        function evr() {
+            document.querySelector('a-scene').enterVR();
+        };
+        function screenshotr() {
+            document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+        };
+        function screenshotp() {
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
+        };
+        function cammy() {
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
+        };
+    </script>
+
+    <script>
+        function exportGLTF(input, options) {
+            AFRAME.scenes[0].systems['gltf-exporter'].export(input, options);
+        }
+
+        document.getElementById('export-scene').addEventListener('click', function () {
+            exportGLTF();
+        });
+
+        document.getElementById('export-scene-bin').addEventListener('click', function () {
+            exportGLTF(undefined, { binary: true });
+        });
+
+        document.getElementById('export-joint1').addEventListener('click', function () {
+            exportGLTF(document.getElementById('joint1'), { binary: true });
+        });
+
+        document.getElementById('export-joint2').addEventListener('click', function () {
+            exportGLTF(document.getElementById('joint2'), { binary: true });
+        });
+
+        document.getElementById('export-two').addEventListener('click', function () {
+            exportGLTF([document.getElementById('blueBox'), document.getElementById('blueBox')]);
+        });
+
+        document.getElementById('export-selector').addEventListener('click', function () {
+            exportGLTF(document.querySelectorAll("[geometry='primitive: box']"));
+        });
+
+    </script>
+    <script>
+		
+		function catty() {
+            document.getElementById('ctrl-alt-i').addEventListener('click', function () {
+                // create a new keyboard event
+                var event = new KeyboardEvent('keydown', {
+                    key: 'i',
+                    altKey: true,
+                    ctrlKey: true
+                });
+                // dispatch the ctrl-alt+i key press event
+                document.dispatchEvent(event);
+            });
+
+
+    /*to auto-enter-vr*/
+    function cmm6() {
+    
+    };
+
+    function cmm7() {//cadboxx opacity
+    var cadboxx = document.querySelector('planeboxx');
+    entityEl.setAttribute('opacity', 0.25);
+    };
+
+    function cmm8() {//get element by selection
+    
+    };
+
+    function cmm9() {//set camera position from entity
+
+
+    };
+    function cmm10() {//click-animate a component part
+
+    };
+    function cmm11() {//open material dialogue for entity
+
+    };
+    function cmm12() {//export scene glb
+
+    };
+    function cmm13() {//export snapshot during animation dialogue
+
+    };
+    function cmm14() {//record avatar
+
+    };
+    function cmm15() {//open custom animation panel
+
+    };
+    function cmm16() {//set position relative to object plane
+
+    };
+
+    function cmm17() {//load
+    
+    };
+
+    function cmm18() {
+
+
+    };
+
+    function cmm19() {//
+    
+    };
+    function cmm20() {//
+    
+    };
+    function cmm21() {//
+                
+    };
+    function cmm22() {//
+
+    };
+    function cmm23() {//
+
+    };
+    function cmm24() {//
+
+    };
+    function cmm25() {//
+
+    };
+    function cmm26() {//
+
+    };
+    function cmm27() {//
+
+    };
+    function cmm28() {//
+
+    };
+    function cmm29() {//
+
+    };
+    function cmm30() {//
+
+    };
+    
+    function cmmd1() {//
+
+    };
+    function cmmd2() {//
+
+    };
+    function cmmd3() {//
+
+    };
+    function cmmd4() {//
+
+    };
+    function cmmd5() {//
+
+    };
+    function cmmd6() {//
+
+    };
+    function cmmd7() {//
+
+    };
+    function cmmd8() {//
+
+    };
+    function cmmd9() {//
+
+    };
+    function cmmd10() {//
+
+    };
+    function cmmd11() {//
+
+    };
+    function cmmd12() {//
+
+    };
+    function cmmd13() {//
+
+    };
+    function cmmd14() {//
+
+    };
+    function cmmd15() {//
+
+    };
+    function cmmd16() {//
+
+    };
+    function cmmd17() {//
+
+    };
+    function cmmd18() {//
+
+    };
+    function cmmd19() {//
+
+    };
+    function cmmd20() {//
+
+    };
+    function cmmd21() {//
+
+    };
+    function cmmd22() {//
+
+    };
+    function cmmd23() {//
+
+    };
+    function cmmd24() {//
+
+    };
+    function cmmd25() {//
+
+    };
+
+
+
+
+
+    //cmma functions
+    function cmma1() {//enter vr
+        var scene = document.querySelector('a-scene');
+        scene.enterVR();
+    };
+    function cmma2() {//
+        entityEl.setAttribute('dynamic-body', {
+        shape: 'box',
+        mass: 1.5,
+        linearDamping: 0.005
+        });
+        };
+    };
+    function cmma3() {//
+        el.getObject3D('mesh').traverse(node => {
+          if (node.geometry) {
+            // node.geometry.attributes...
+          }
+        });
+    };
+    function cmma4() {//
+        sceneEl.components.inspector.openInspector();
+    };
+    function cmma5() {//
+        entityEl.setAttribute('position', { x: 1, y: 2: z: -3 });
+        // Or entityEl.setAttribute('position', '1 2 -3');
+    };
+    function cmma6() {//
+        // <a-entity geometry="primitive: cylinder; height: 4; radius: 2"></a-entity>
+        entityEl.setAttribute('geometry', { primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4 }, true);
+        // <a-entity geometry="primitive: torusKnot; p: 1; q: 3; radiusTubular: 4"></a-entity>
+
+    };
+    function cmma7() {//
+        //To remove or detach a component from an entity, we can use
+        //var cameraEl = document.querySelector('[camera]');
+        //cameraEl.removeAttribute('wasd-controls');
+
+    };
+    function cmma8() {//
+
+    };
+    function cmma9() {//
+
+    };
+    function cmma10() {//
+
+    };
+    function cmma11() {//
+
+    };
+    function cmma12() {//
+
+    };
+    function cmma13() {//
+
+    };
+    function cmma14() {//
+
+    };
+    function cmma15() {//
+
+    };
+    function cmma16() {//
+
+    };
+    function cmma17() {//
+
+    };
+    function cmma18() {//
+
+    };
+    function cmma19() {//
+
+    };
+    function cmma20() {//
+
+    };
+    function cmma21() {//
+
+    };
+    function cmma22() {//
+
+    };
+    function cmma23() {//
+
+    };
+    function cmma24() {//
+
+    };
+    function cmma25() {//
+
+    };
+    </script>
+
+
+    <script>
+        window.matl1 = function () {
+            var knot = document.getElementById("prt1");
+            knot.setAttribute('material', 'src', '#m01');
+        }
+        window.matl2 = function () {
+            var knot = document.getElementById("prt2");
+            knot.setAttribute('material', 'src', '#m02');
+        }
+        window.matl3 = function () {
+            var knot = document.getElementById("prt3");
+            knot.setAttribute('material', 'src', '#m03');
+        }
+        window.matl4 = function () {
+            var knot = document.getElementById("prt4");
+            knot.setAttribute('material', 'src', '#m04');
+        }
+        window.matl5 = function () {
+            var knot = document.getElementById("prt5");
+            knot.setAttribute('material', 'src', '#m05');
+        }
+        window.matl6 = function () {
+            var knot = document.getElementById("prt6");
+            knot.setAttribute('material', 'src', '#m06');
+        }
+        window.matl7 = function () {
+            var knot = document.getElementById("prt7");
+            knot.setAttribute('material', 'src', '#m07');
+        }
+        window.matl8 = function () {
+            var knot = document.getElementById("prt8");
+            knot.setAttribute('material', 'src', '#m08');
+        }
+        window.matl9 = function () {
+            var knot = document.getElementById("prt9");
+            knot.setAttribute('material', 'src', '#m09');
+        }
+        window.matl10 = function () {
+            var knot = document.getElementById("prt10");
+            knot.setAttribute('material', 'src', '#m10');
+        }
+        window.matl11 = function () {
+            var knot = document.getElementById("prt11");
+            knot.setAttribute('material', 'src', '#m11');
+        }
+        window.matl12 = function () {
+            var knot = document.getElementById("prt12");
+            knot.setAttribute('material', 'src', '#m12');
+        }
+        window.matl13 = function () {
+            var knot = document.getElementById("prt13");
+            knot.setAttribute('material', 'src', '#m13');
+        }
+        window.matl14 = function () {
+            var knot = document.getElementById("prt14");
+            knot.setAttribute('material', 'src', '#m14');
+        }
+        window.matl15 = function () {
+            var knot = document.getElementById("prt15");
+            knot.setAttribute('material', 'src', '#m15');
+        }
+        window.matl16 = function () {
+            var knot = document.getElementById("prt16");
+            knot.setAttribute('material', 'src', '#m16');
+        }
+        window.matl17 = function () {
+            var knot = document.getElementById("prt17");
+            knot.setAttribute('material', 'src', '#m17');
+        }
+        window.matl18 = function () {
+            var knot = document.getElementById("prt18");
+            knot.setAttribute('material', 'src', '#m18');
+        };
+    </script>
 </body>
 </html>
 

@@ -427,22 +427,20 @@
 <a-entity id="planeboxxx" position="0 0 0" scale="1 1 1">
                         <a-entity id="planeboxx" position="0 0 0">
                             <a-entity id="planebox" position="0 0 0">
-                                <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body>
-
-                                </a-plane>
+                                <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
                                 <a-plane side="double" color="green" position="0 20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
                                 <a-plane side="double" color="blue" position="0 0 20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>
                                 <a-plane side="double" color="blue" position="0 0 -20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>
                                 <a-plane side="double" color="red" position="20 0 0" rotation="0 -90 0" height="40" width="40" material="" static-body></a-plane>
                                 <a-plane side="double" color="red" position="-20 0 0" rotation="0 90 0" height="40" width="40" material="" static-body></a-plane>
                             </a-entity>
-                            <!--mesh overlay for walls-->
+                            <!--mesh overlay for walls-
                             <a-box position="0 -20 0" rotation="0 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="" gridhelper="size: 25;divisions:5" static-body></a-box>
                             <a-box position="0 20 0" rotation="0 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
                             <a-box position="0 0 -20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="" gridhelper="size: 25;divisions:5" static-body></a-box>
                             <a-box position="0 0 20" rotation="90 0 0" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
                             <a-box position="-20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1" gridhelper="size: 25;divisions:5" static-body></a-box>
-                            <a-box position="20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1.0" gridhelper="size: 25;divisions:5" static-body></a-box>
+                            <a-box position="20 0 0" rotation="0 0 90" width="30" depth="30" height="0.2" color="yellow" opacity="1.0" gridhelper="size: 25;divisions:5" static-body></a-box-->
 
 
                             <a-box position="0 0 -20" rotation="0 0 0" width="40" depth="0.5" height="40" color="lightblue" opacity=".1" static-body>
@@ -518,7 +516,7 @@
                         </a-entity>
                     </a-entity>
 
-  <a-light type="point" color="#94c6ff" position="0 0 0" intensity="1" light="intensity: 1" visible="true"></a-light>
+            <a-light type="point" color="#94c6ff" position="0 0 0" intensity="1" light="intensity: 1" visible="true"></a-light>
             <a-light type="directional" directionaltarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>
             <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="-16 -16 16" intensity="1"></a-light>
             <a-light type="directional" directionalTarget="0 0 0" color="#94c6ff" position="16 -16 -16" intensity="1"></a-light>
@@ -532,6 +530,7 @@
             <a-light type="spot" color="#white" position="-16 16 16" intensity="1"></a-light>
             <a-light type="spot" color="#white" position="16 -16 16" intensity="1"></a-light>
             <a-light type="spot" color="#white" position="16 0 16" intensity="1"></a-light>
+  
             <a-entity light="type: hemisphere; color: #white; groundColor: #3C3; intensity: 2"></a-entity>
 
             <a-entity camera id="cam1" active="true" look-controls wasd-controls position="0 5 15"
@@ -561,7 +560,7 @@
             </a-camera>
             <!--camera id="cam7" position="-12 6 0" look-controls active="false">
 
-    </!--a-camera>
+    </a-camera>
     <a-camera id="cam8" position="0 6 12" camera orbit-controls="target: 0 0 0; minDistance: 0.5; maxDistance: 18; initialPosition: 0 5 7.5" active="true">
 
     </a-camera>

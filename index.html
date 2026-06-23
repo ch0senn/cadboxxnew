@@ -422,7 +422,7 @@
 
 <div id="dropzone">Drag & drop GLB files here</div>
 
-<a-scene background="color: #222">
+<a-scene>
 
   
     <a-assets>
@@ -952,6 +952,9 @@
                             </a-box>
                         </a-entity>
                     </a-entity>
+
+             <a-entity gltf-model="#cadboxx-floor" mixin="#" position="0 0 0" rotation="0 0 0" static-body></a-entity>
+
 
             <a-light type="point" color="#94c6ff" position="0 0 0" intensity="1" light="intensity: 1" visible="true"></a-light>
             <a-light type="directional" directionaltarget="0 0 0" color="#94c6ff" position="-16 16 16" intensity="1"></a-light>

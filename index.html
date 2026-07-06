@@ -422,7 +422,7 @@
 
 <div id="dropzone">Drag & drop GLB files here</div>
 
- <a-scene gltf-exporter physics="gravity:-10;restitution:0.5;friction:0.2" " >
+ <a-scene gltf-exporter physics="gravity:-10;restitution:0.5;friction:0.2" >
             <a-assets>
                 <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
                          hoverable grabbable stretchable draggable droppable
@@ -911,7 +911,7 @@
             <a-camera id="cam6" position="12 6 0" look-controls active="false">
 
             </a-camera>
-            <!--freewheel working-->
+            <!--freewheel working--
             <a-entity position="5 0 0">
                 <a-entity id="anchor"
                           geometry="primitive: box;"
@@ -933,7 +933,7 @@
             <a-sky radius="60" color="lightblue"></a-sky>
 
         </a-scene>
-    </
+    
             <script src="js/aframe-physics-system.min.js"></script>
             <script>
                 document.querySelector('a-scene').addEventListener('loaded', function () {

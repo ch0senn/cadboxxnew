@@ -17,6 +17,7 @@
   
     <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.x/dist/aframe-controller-cursor-component.min.js"></script>
+    
     <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
     <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
     <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/intersection-spawn.js"></script>
@@ -774,6 +775,7 @@
                       colliderEndEventProperty: clearedEls;"></a-mixin>
 
             </a-assets>
+   
             <a-entity id="chassis" src="#chass" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
             <a-entity id="wheel" src="#whell" position="0 0 0" rotation="0 0 0" scale="1 1 1" static-body></a-entity>
 
@@ -886,7 +888,7 @@
             <a-light type="spot" color="white" position="16 0 16" intensity="1"></a-light>
             <a-entity light="type: hemisphere; color: white; groundColor: #3C3; intensity: 2"></a-entity>
 
-            <a-entity camera id="cam2" active="false" look-controls wasd-controls position="0 5 15"
+            <a-entity camera id="cam2" active="true" look-controls wasd-controls position="0 5 15"
                       capture-mouse
                       raycaster cursor="rayOrigin:mouse"
                       body="type: static; shape: sphere; sphereRadius: 0.001"
@@ -911,7 +913,7 @@
             <a-camera id="cam6" position="12 6 0" look-controls active="false">
 
             </a-camera>
-            <!--freewheel working--
+            <!--freewheel working-->
             <a-entity position="5 0 0">
                 <a-entity id="anchor"
                           geometry="primitive: box;"

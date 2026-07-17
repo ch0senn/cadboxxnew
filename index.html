@@ -1,10 +1,12 @@
-
 <html>
     <head>
             <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
-            
+            <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.6/dist/aframe-orbit-controls-component.js"></script>
+            <script src="https://morandd.github.io/dans-aframe-camera-juggler/dans-camera-juggler.js"></script>
+
     </head>
     <body>
+        <!--a-scene dans-camera-juggler="paradigm:orbit"-->
         <a-scene>
             <a-assets>
                    <a-asset-item id="chink1" src="https://www.dropbox.com/scl/fi/ky9zpsq010k0eo0hgomf4/chink1.glb?rlkey=0bahbul3zgvi58ynulaavd7s8&st=k7jkpa3o&dl=0"  ></a-asset-item>
@@ -12,18 +14,30 @@
     
             </a-assets>
 
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+              <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+              <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+              <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+              
+              <a-entity gltf-model="#chink1" id="link1" position="0 0 0" rotation="0 0 0" scale="100 100 100" static-body ></a-entity>
       
-      <a-entity gltf-model="#chink1" id="link1" position="0 0 0" rotation="0 0 0" scale="100 100 100" static-body ></a-entity>
       
+              <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      
-                      <a-gltf-model id="chink3" src="https://www.dropbox.com/scl/fi/x92tyvymnc1pi88zlfqiy/chink2.glb?rlkey=04tn5gzk2h4rlw3byvkmn6672&st=5bkw7ri5&dl=0" position="0 0 0"  rotation="90 0 0" scale="10 10 10"  static-body ></a-gltf-model>
-        </a-scene>
+              <a-gltf-model id="chink3" src="https://www.dropbox.com/scl/fi/x92tyvymnc1pi88zlfqiy/chink2.glb?rlkey=04tn5gzk2h4rlw3byvkmn6672&st=5bkw7ri5&dl=0" position="0 0 0"  rotation="90 0 0" scale="10 10 10"  static-body ></a-gltf-model>
+        
+        
+            <a-entity id="camera_orbit" camera="active:true" orbit-controls>
+            <a-entity id="camera_look" camera="active:false" look-controls>
+                    
+                    
 
+            
+        </a-scene>
+            
+        
+
+            
+        
             <script src="js/aframe-physics-system.min.js"></script>
             <script>
                 document.querySelector('a-scene').addEventListener('loaded', function () {

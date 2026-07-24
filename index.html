@@ -244,20 +244,20 @@
 
 
 </head>
-<body>
-    <a-scene physics="gravity: -10" friction="0.1" restitution="0.6">
-        <!-- Ground element -->
-        <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="50" color="#7BC8A4" static-body="friction: 0.1; restitution: 0.6;"></a-plane>
-
-        <!-- River bed walls -->
-        <a-box position="7.5 1 0" width="1" height="2" depth="50" color="#8B4513" static-body="friction: 0.1; restitution: 0.6;"></a-box>
-        <a-box position="-7.5 1 0" width="1" height="2" depth="50" color="#8B4513" static-body="friction: 0.1; restitution: 0.6;"></a-box>
-
-        <!-- Initial Spheres -->
-        <a-entity id="sphereContainer" waterfall="interval: 1000" dynamic-body ></a-entity>
-
-        <!-- Camera -->
-        <a-entity camera position="0 5 20" rotation="0 0 0" target="0 1 0" look-controls wasd-controls oculus-touch-controls orbit-controls ></a-entity>
-    </a-scene>
-</body>
+    <body>
+        <a-scene physics="gravity: -10" friction="0.1" restitution="0.6">
+            <!-- Ground element -->
+            <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="50" color="#7BC8A4" static-body="friction: 0.1; restitution: 0.6;"></a-plane>
+    
+            <!-- River bed walls -->
+            <a-box position="7.5 1 0" width="1" height="2" depth="50" color="#8B4513" static-body="friction: 0.1; restitution: 0.6;"></a-box>
+            <a-box position="-7.5 1 0" width="1" height="2" depth="50" color="#8B4513" static-body="friction: 0.1; restitution: 0.6;"></a-box>
+    
+            <!-- Initial Spheres -->
+            <a-entity id="sphereContainer" waterfall="interval: 1000" dynamic-body ></a-entity>
+    
+            <!-- Camera -->
+            <a-entity camera position="0 5 20" rotation="0 0 0" target="0 1 0" look-controls wasd-controls oculus-touch-controls orbit-controls ></a-entity>
+        </a-scene>
+    </body>
 </html>
